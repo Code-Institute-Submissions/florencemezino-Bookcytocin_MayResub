@@ -1,5 +1,297 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>MyBooklog</h1>
+
+<!-- Goal - Commitment -->
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Goal</h1>
+        <p class="lead text-muted">Decide, Commit, Suceed.<br>
+          Commitment is what transforms a promise into a reality.</p>
+        </p>
+        <form>
+          <div class="mb-3">
+            <label for="exampleInputStatement1" class="form-label form-commitment">I commit to complete reading the following number of books per year</label>
+            <!-- <div class="dropdown" >
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" required>
+                Select a number
+              </button> -->
+            <a class="btn btn-md dropdown-toggle btn-secondary" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Select your level<span class="caret"></span></a>
+              <div id="dropdown-list" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item beginner" href="#">Beginner : between 1 - 12 books per year</a>
+                <a class="dropdown-item intermediate" href="#">Intermediate : between 12 - 24 books per year</a>
+                <a class="dropdown-item experts" href="#">Expert : between 24 - 36 books per year</a>
+                <a class="dropdown-item masters" href="#">Master : 36+ books per year</a>
+              </div>
+              <div id="level-info"></div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputStatement2" class="form-label form-commitment">I choose to complete my reading commitment mentionned above because</label>
+            <input type="text" class="form-control" id="exampleInputStatement2" aria-describedby="commitmentHelp" required>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputStatement3" class="form-label form-commitment">When I run into obstacles or lack of motivation at some point, I will</label>
+            <input type="text" class="form-control" id="exampleInputStatement3" required>
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">I will achieve my reading goal</label>
+          </div>
+          <label for="exampleInputStatement2" class="form-label form-commitment">Commit here by typing your name</label>
+          <input type="text" class="form-control" id="exampleInputStatement2" aria-describedby="commitmentHelp" required>
+        </div>
+
+        <div class="mb-3">
+          <button type="submit" class="btn btn-secondary">Edit</button>
+          <button type="submit" class="btn btn-primary">Save my commitment</button>
+        </form>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MyReads  -->
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-12 col-md-8 mx-auto">
+        <h1 class="fw-light">MyReads</h1>
+        <p class="lead text-muted">What's hot this month? Hop into something comfy and binge our selection of trendy readings.</p>
+          <a href="#" class="btn btn-primary my-2">All</a>
+          <a href="#" class="btn btn-primary my-2">Saved</a>
+          <a href="#" class="btn btn-primary my-2">Reading</a>
+          <a href="#" class="btn btn-primary my-2">Finished</a>
+          <a href="#" class="btn btn-primary my-2">Release</a>
+        </p>
+      </div>
+    </div>
+
+<!-- MyReads details all -->
+    <div class="container-fluid">
+      <div class="col-lg-12">
+        <div class="row">
+          <div class="col-md-2 mx-auto">
+            <div class="card" style="width: 18rem;">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Book title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">collection</li>
+                <li class="list-group-item">status<span class="caret"></span></li>
+              </ul>
+              <div class="card-body">
+                <a href="#" class="btn btn-secondary my-2">View on Amazon</a>
+                <a href="#" class="card-link"><i class="fab fa-solid fa-glasses-round fa-1x"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 mx-auto">
+            <div class="card" style="width: 18rem;">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Book title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">collection</li>
+                <li class="list-group-item">status<span class="caret"></span></li>
+              </ul>
+              <div class="card-body">
+                <a href="#" class="btn btn-secondary my-2">View on Amazon</a>
+                <a href="#" class="card-link"><i class="fab fa-solid fa-glasses-round fa-1x"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 mx-auto">
+            <div class="card" style="width: 18rem;">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Book title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">collection</li>
+                <li class="list-group-item">status<span class="caret"></span></li>
+              </ul>
+              <div class="card-body">
+                <a href="#" class="btn btn-secondary my-2">View on Amazon</a>
+                <a href="#" class="card-link"><i class="fab fa-solid fa-glasses-round fa-1x"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 mx-auto">
+            <div class="card" style="width: 18rem;">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Book title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">collection</li>
+                <li class="list-group-item">status<span class="caret"></span></li>
+              </ul>
+              <div class="card-body">
+                <a href="#" class="btn btn-secondary my-2">View on Amazon</a>
+                <a href="#" class="card-link"><i class="fab fa-solid fa-glasses-round fa-1x"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 mx-auto">
+            <div class="card" style="width: 18rem;">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Book title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">collection</li>
+                <li class="list-group-item">status<span class="caret"></span></li>
+              </ul>
+              <div class="card-body">
+                <a href="#" class="btn btn-secondary my-2">View on Amazon</a>
+                <a href="#" class="card-link"><i class="fab fa-solid fa-glasses-round fa-1x"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="row">
+        <div class="col-md-2 mx-auto">
+          <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Book title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">collection</li>
+              <li class="list-group-item">status<span class="caret"></span></li>
+            </ul>
+            <div class="card-body">
+              <a href="#" class="btn btn-secondary my-2">View on Amazon</a>
+              <a href="#" class="card-link"><i class="fab fa-solid fa-glasses-round fa-1x"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2 mx-auto">
+          <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Book title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">collection</li>
+              <li class="list-group-item">status<span class="caret"></span></li>
+            </ul>
+            <div class="card-body">
+              <a href="#" class="btn btn-secondary my-2">View on Amazon</a>
+              <a href="#" class="card-link"><i class="fab fa-solid fa-glasses-round fa-1x"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2 mx-auto">
+          <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Book title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">collection</li>
+              <li class="list-group-item">status<span class="caret"></span></li>
+            </ul>
+            <div class="card-body">
+              <a href="#" class="btn btn-secondary my-2">View on Amazon</a>
+              <a href="#" class="card-link"><i class="fab fa-solid fa-glasses-round fa-1x"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2 mx-auto">
+          <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Book title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">collection</li>
+              <li class="list-group-item">status<span class="caret"></span></li>
+            </ul>
+            <div class="card-body">
+              <a href="#" class="btn btn-secondary my-2">View on Amazon</a>
+              <a href="#" class="card-link"><i class="fab fa-solid fa-glasses-round fa-1x"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2 mx-auto">
+          <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Book title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">collection</li>
+              <li class="list-group-item">status<span class="caret"></span></li>
+            </ul>
+            <div class="card-body">
+              <a href="#" class="btn btn-secondary my-2">View on Amazon</a>
+              <a href="#" class="card-link"><i class="fab fa-solid fa-glasses-round fa-1x"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+  <!-- MyReads details saved -->
+
+  <!-- MyReads details reading -->
+
+  <!-- MyReads details finished-->
+      <!-- recommendation button -->
+
+  <!-- MyReads details release-->
+      <!-- add new -->
+
+
+    
+  <!-- Insights  -->
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-12 col-md-8 mx-auto">
+        <h1 class="fw-light">Insights</h1>
+        <p class="lead text-muted">You are doing fantastic, keep nourrishing your soul with amazing readings and inspire others to do the same!</p>
+          <a href="#" class="btn btn-secondary my-2"><i class="fas fa-refresh-alt fa-3x"></i>Refresh for the latest insights</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-img bg-primary text-white" style="padding:10px;">
+            <h1 class="card-title" style="padding-top: 10px;">12</h1>
+            <h5 class="card-title" style="padding-top: 10px;">Books finished</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+            <div class="card-img bg-primary text-white" style="padding:10px;">
+              <h1 class="card-title" style="padding-top: 10px;">8</h1>
+              <h5 class="card-title" style="padding-top: 10px;">Books recommended</h5>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 {% endblock %}
     
