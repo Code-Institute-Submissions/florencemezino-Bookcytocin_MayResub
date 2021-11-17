@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sell books about personal development">
+    <meta name="keywords" content="Personal development, Personal growth, Books, Library">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Bookcytocin </title>
+</head>
+<body>
+
+<!-- Navigation-->
+  <nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+        <a class="navbar-brand" href="{ url_for('index') }}">Bookcytocin</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{ url_for('index') }}">Readflix</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{ url_for('collections') }}">Collections</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{ url_for('community') }}">Community</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{ url_for('mybooklog') }}">MyBookLog</a>
+                    </li>
+                </ul>
+        <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-secondary" type="submit">Go</button>
+        </form> 
+        <a class="btn btn-primary" href="#login">Log in</a>
+        <a class="btn btn-primary" href="#signup">Sign Up</a>
+    </div>
+</nav>
+
+<!-- Carousel-->
+
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+    <div class="carousel-item active">
+        <img src="{{ url_for('static', filename='assets/img/bg-masthead.jpg') }}" class="d-block w-100" alt="...">
+
+        <div class="container">
+        <div class="carousel-caption text-start">
+            <h1>Find your inner power </h1>
+            <p>Discover personal development dimensions with your new read</p>
+            <p><a class="btn btn-lg btn-primary" href="">Explore</a></p>
+        </div>
+        </div>
+    </div>
+    <div class="carousel-item">
+        <img src="{{ url_for('static', filename='assets/img/bg-masthead.jpg') }}" class="d-block w-100" alt="...">
+
+        <div class="container">
+        <div class="carousel-caption">
+            <h1>Get inspired by our readers community</h1>
+            <p>Check out book recommendations from successful people</p>
+            <p><a class="btn btn-lg btn-primary" href="">Browse</a></p>
+        </div>
+        </div>
+    </div>
+    <div class="carousel-item">
+        <img src="{{ url_for('static', filename='assets/img/bg-masthead.jpg') }}" class="d-block w-100" alt="...">
+
+        <div class="container">
+        <div class="carousel-caption text-end">
+            <h1>Become the best version of you</h1>
+            <p>Unlock your potential and log in to "MyLab" to reach your reading goal.</p>
+            <p>Register now and get a free ebook "Release your bookcytocin"</p>
+            <p><a class="btn btn-lg btn-primary" href="">Log in</a></p>
+        </div>
+        </div>
+    </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+
+
+
+<!-- Masthead-->
+<header class="masthead" style="background-image: url('{{ url_for('static', filename='assets/img/bg-masthead.jpg') }}')">
+    <div class="container position-relative">
+        <div class="row justify-content-center">
+            <div class="col-xl-6">
+                <div class="text-center text-white">
+                    <!-- Page heading-->
+                    <h1 class="mb-5">Generate more leads with a professional landing page!</h1>
+                    <!-- Signup form-->
+                    <!-- * * * * * * * * * * * * * * *-->
+                    <!-- * * SB Forms Contact Form * *-->
+                    <!-- * * * * * * * * * * * * * * *-->
+                    <!-- This form is pre-integrated with SB Forms.-->
+                    <!-- To make this form functional, sign up at-->
+                    <!-- https://startbootstrap.com/solution/contact-forms-->
+                    <!-- to get an API token!-->
+                    <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN">
+                        <!-- Email address input-->
+                        <div class="row">
+                            <div class="col">
+                                <input class="form-control form-control-lg" id="emailAddress" type="email" placeholder="Email Address" data-sb-validations="required,email" />
+                                <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:required">Email Address is required.</div>
+                                <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:email">Email Address Email is not valid.</div>
+                            </div>
+                            <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
+                        </div>
+                        <!-- Submit success message-->
+                        <!---->
+                        <!-- This is what your users will see when the form-->
+                        <!-- has successfully submitted-->
+                        <div class="d-none" id="submitSuccessMessage">
+                            <div class="text-center mb-3">
+                                <div class="fw-bolder">Form submission successful!</div>
+                                <p>To activate this form, sign up at</p>
+                                <a class="text-white" href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                            </div>
+                        </div>
+                        <!-- Submit error message-->
+                        <!---->
+                        <!-- This is what your users will see when there is-->
+                        <!-- an error submitting the form-->
+                        <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<!-- Icons Grid- / Main content-->
+<section class="features-icons bg-light text-center">
+    <div class="container">
+
+        {% block content %}
+        {% endblock %}
+        
+    </div>
+</section>
+<!-- Footer-->
+<footer class="footer bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
+                <ul class="list-inline mb-2">
+                    <li class="list-inline-item"><a href="#!">Terms of Use</a></li>
+                    <li class="list-inline-item">⋅</li>
+                    <li class="list-inline-item"><a href="#!">Privacy Policy</a></li>
+                </ul>
+                <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2021. All Rights Reserved.</p>
+            </div>
+            <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item me-4">
+                        <a href="#!"><i class="bi-facebook fs-3"></i></a>
+                    </li>
+                    <li class="list-inline-item me-4">
+                        <a href="#!"><i class="bi-twitter fs-3"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#!"><i class="bi-instagram fs-3"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Bootstrap core JS-->
+<script src="{{ url_for('static', filename='vendor/jquery/script.js') }}"></script>
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+<!-- * *                               SB Forms JS                               * *-->
+<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    
+</body>
+</html>
