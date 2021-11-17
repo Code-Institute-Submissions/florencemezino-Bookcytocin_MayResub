@@ -12,17 +12,17 @@ def index():
 
 @app.route("/collections")
 def collections():
-    return render_template("collections.html")
+    return render_template("collections.html", page_title="Collections")
 
 
 @app.route("/community")
 def community():
-    return render_template("community.html") 
+    return render_template("community.html", page_title="Community") 
 
 
 @app.route("/mybooklog")
 def mybooklog():
-    return render_template("mybooklog.html") 
+    return render_template("mybooklog.html", page_title="MyBookLog")
 
 
 if __name__ == "__main__":
