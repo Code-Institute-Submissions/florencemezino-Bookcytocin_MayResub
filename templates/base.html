@@ -37,8 +37,8 @@
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-secondary" type="submit">Go</button>
         </form> 
-        <a class="btn btn-primary" href="#login">Log in</a>
         <a class="btn btn-primary" href="#signup">Sign Up</a>
+        <a class="btn btn-primary" href="#login">Log in</a>
     </div>
 </nav>
 
@@ -49,39 +49,82 @@
     <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
     <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 4"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 5"></button>
     </div>
     <div class="carousel-inner">
     <div class="carousel-item active">
-        <img src="{{ url_for('static', filename='assets/img/bg-masthead.jpg') }}" class="d-block w-100" alt="...">
+        <img src="{{ url_for('static', filename='assets/img/carousel_readflix_1.jpeg') }}" class="d-block w-100" alt="...">
 
         <div class="container">
         <div class="carousel-caption text-start">
-            <h1>Find your inner power </h1>
-            <p>Discover personal development dimensions with your new read</p>
+            <h1>Find your inner power with Readflix</h1>
+            <p>Embrace your personal development and binge our new trendy readings</p>
             <p><a class="btn btn-lg btn-primary" href="">Explore</a></p>
         </div>
         </div>
     </div>
     <div class="carousel-item">
-        <img src="{{ url_for('static', filename='assets/img/bg-masthead.jpg') }}" class="d-block w-100" alt="...">
+        <img src="{{ url_for('static', filename='assets/img/carousel_collections_2.jpeg') }}" class="d-block w-100" alt="...">
 
         <div class="container">
         <div class="carousel-caption">
-            <h1>Get inspired by our readers community</h1>
-            <p>Check out book recommendations from successful people</p>
+            <h1>Dive into personal growth dimensions </h1>
+            <p>Explore our extensive library of 12 books collections to reconnect with your true self</p>
             <p><a class="btn btn-lg btn-primary" href="">Browse</a></p>
         </div>
         </div>
     </div>
     <div class="carousel-item">
-        <img src="{{ url_for('static', filename='assets/img/bg-masthead.jpg') }}" class="d-block w-100" alt="...">
+        <img src="{{ url_for('static', filename='assets/img/carousel_community_3.jpeg') }}" class="d-block w-100" alt="...">
 
         <div class="container">
         <div class="carousel-caption text-end">
+            <h1>Get inspired by the Bookcytocin club</h1>
+            <p>Check out book recommendations from our successful readers community</p>
+            <p><a class="btn btn-lg btn-primary" href="">Browse</a></p>
+        </div>
+        </div>
+    </div>
+    <div class="carousel-item">
+        <img src="{{ url_for('static', filename='assets/img/carousel_mybooklog_4.jpeg') }}" class="d-block w-100" alt="...">
+
+        <div class="container">
+        <div class="carousel-caption">
             <h1>Become the best version of you</h1>
-            <p>Unlock your potential and log in to "MyLab" to reach your reading goal.</p>
-            <p>Register now and get a free ebook "Release your bookcytocin"</p>
+            <p>Unlock your potential with MyBookLog profile and reach your reading goal.</p>
             <p><a class="btn btn-lg btn-primary" href="">Log in</a></p>
+        </div>
+        </div>
+    </div>
+    <div class="carousel-item">
+        <img src="{{ url_for('static', filename='assets/img/carousel_free_ebook_5.jpeg') }}" class="d-block w-100" alt="...">
+
+        <div class="container">
+        <div class="carousel-caption">
+            <h1>The time to embrace the book love hormone is always now</h1>
+            <p>Get your free ebook : "5 ways to release your Bookcytocin"</p>
+            <!-- Email input-->
+            <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6 ">
+                        <input class="form-control form-control-lg" id="emailAddress" type="email" placeholder="Email Address" data-sb-validations="required,email" />
+                        <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:required">Email Address is required.</div>
+                        <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:email">Email Address is not valid.</div>
+                    </div>
+                    <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
+                </div>
+                <!-- Submit success message-->
+                <div class="d-none" id="submitSuccessMessage">
+                    <div class="text-center mb-3">
+                        <div class="fw-bolder">Request submission successful!</div>
+                        <p>To activate this form, enter your email</p>
+                        <a class="text-white" href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                    </div>
+                </div>
+                <!-- Submit error message-->
+                <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+            </form>
         </div>
         </div>
     </div>
@@ -96,51 +139,45 @@
     </button>
 </div>
 
+<!--  Main content-->
+<!-- <section class="features-icons bg-light text-center"> -->
+    <div class="container">
+
+        {% block content %}
+        {% endblock %}
+        
+    </div>
+<!-- </section> -->
 
 
 
-<!-- Masthead-->
-<header class="masthead" style="background-image: url('{{ url_for('static', filename='assets/img/bg-masthead.jpg') }}')">
+<!-- Call to action Free ebook -->
+<header class="masthead" style="background-image: url('{{ url_for('static', filename='assets/img/cta_free_ebook.jpeg') }}')">
     <div class="container position-relative">
         <div class="row justify-content-center">
             <div class="col-xl-12">
                 <div class="text-center text-white">
-                    <!-- Page heading-->
-                    <h1 class="mb-3">Sign up now and get a free ebook <br>"5 ways to release your Bookcytocin"</h1>
+                    <h1 class="mb-3">Get your free ebook <br>"5 ways to release your Bookcytocin"</h1>
                     <h3 class="mt-1 mb-5">The ultimate method to embrace your reading experience and become the best version of yourself</h3>
-                    <!-- Signup form-->
-                    <!-- * * * * * * * * * * * * * * *-->
-                    <!-- * * SB Forms Contact Form * *-->
-                    <!-- * * * * * * * * * * * * * * *-->
-                    <!-- This form is pre-integrated with SB Forms.-->
-                    <!-- To make this form functional, sign up at-->
-                    <!-- https://startbootstrap.com/solution/contact-forms-->
-                    <!-- to get an API token!-->
+                    <!-- Email input-->
                     <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN">
-                        <!-- Email address input-->
                         <div class="row justify-content-center">
                             <div class="col-xl-6 ">
                                 <input class="form-control form-control-lg" id="emailAddress" type="email" placeholder="Email Address" data-sb-validations="required,email" />
                                 <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:required">Email Address is required.</div>
-                                <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:email">Email Address Email is not valid.</div>
+                                <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:email">Email Address is not valid.</div>
                             </div>
                             <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
                         </div>
                         <!-- Submit success message-->
-                        <!---->
-                        <!-- This is what your users will see when the form-->
-                        <!-- has successfully submitted-->
                         <div class="d-none" id="submitSuccessMessage">
                             <div class="text-center mb-3">
-                                <div class="fw-bolder">Form submission successful!</div>
-                                <p>To activate this form, sign up at</p>
+                                <div class="fw-bolder">Request submission successful!</div>
+                                <p>To activate this form, visit</p>
                                 <a class="text-white" href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
                             </div>
                         </div>
                         <!-- Submit error message-->
-                        <!---->
-                        <!-- This is what your users will see when there is-->
-                        <!-- an error submitting the form-->
                         <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                     </form>
                 </div>
@@ -150,15 +187,6 @@
 </header>
 
 
-<!-- Icons Grid- / Main content-->
-<section class="features-icons bg-light text-center">
-    <div class="container">
-
-        {% block content %}
-        {% endblock %}
-        
-    </div>
-</section>
 <!-- Footer-->
 <footer class="footer bg-light">
     <div class="container">
