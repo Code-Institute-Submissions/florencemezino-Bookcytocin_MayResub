@@ -15,7 +15,7 @@
     </div>
   </section>
 
-{% for members in club %}
+{% for member in members_club %}
 
 <!-- community / book recommendation by member -->
 <section class="testimonials text-center bg-light">
@@ -24,115 +24,25 @@
       <div class="col-lg-3">
           <div class="testimonial-item mx-auto mb-5 mb-lg-0">
               <img class="img-fluid rounded-circle mb-3" src="{{ members.profile_picture}}" alt="..." />
-              <h5>{{ members.name }}</h5>
-              <p class="font-weight-light mb-0">{{ members.position }}</p>
+              <h5>{{ member.name }}</h5>
+              <p class="font-weight-light mb-0">{{ member.position }}</p>
               <!-- top 3 : book 1 -->
-              <img class="img-fluid mb-3" src="{{ members.top3_books.image_url[0] }}" alt="..." />
-              <p class="font-weight-light mb-0">{{ members.title }}</p>
-              <p><a class="btn btn-secondary" href="">{{ members.top3_books.amazon_link[0] }}</a></p>
+              <img class="img-fluid mb-3 center-align" src="{{ members.top3_books.image_url[0] }}" alt="..." />
+              <p class="font-weight-light text-center mb-0">{{ member.title[0] }}</p>
+              <p class="font-weight-light text-center mb-0">{{ member.author[0]}}</p>
+              <p><a class="btn btn-secondary" href="">{{ member.top3_books.amazon_link[0] }}</a></p>
 
               <!-- top 3 : book 2 -->
               <img class="img-fluid mb-3" src="{{ members.top3_books.image_url[1] }}" alt="..." />
-              <p><a class="btn btn-secondary" href="">{{ members.top3_books.amazon_link[1] }}</a></p>
+              <p class="font-weight-light text-center mb-0">{{ member.title[1] }}</p>
+              <p class="font-weight-light text-center mb-0">{{ member.author[1]}}</p>
+              <p><a class="btn btn-secondary" href="">{{ member.top3_books.amazon_link[1] }}</a></p>
 
               <!-- top 3 : book 3 -->
               <img class="img-fluid mb-3" src="{{ members.top3_books.image_url[2] }}" alt="..." />
-              <p><a class="btn btn-secondary" href="">{{ members.top3_books.amazon_link[2] }}</a></p>
-          </div>
-      </div>
-      <div class="col-lg-3">
-        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-            <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-1.jpg" alt="..." />
-            <h5>Florence Mezino</h5>
-            <p class="font-weight-light mb-0">Full Stack Software Developer</p>
-            <p><a class="btn btn-secondary" href="#">View recommendations &raquo;</a></p>
-        </div>
-      </div>
-      <div class="col-lg-3">
-        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-            <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-1.jpg" alt="..." />
-            <h5>Florence Mezino</h5>
-            <p class="font-weight-light mb-0">Full Stack Software Developer</p>
-            <p><a class="btn btn-secondary" href="#">View recommendations &raquo;</a></p>
-        </div>
-    </div>
-    <div class="col-lg-3">
-        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-            <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-1.jpg" alt="..." />
-            <h5>Florence Mezino</h5>
-            <p class="font-weight-light mb-0">Full Stack Software Developer</p>
-            <p><a class="btn btn-secondary" href="#">View recommendations &raquo;</a></p>
-        </div>
-    </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-3">
-            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-1.jpg" alt="..." />
-                <h5>Florence Mezino</h5>
-                <p class="font-weight-light mb-0">Full Stack Software Developer</p>
-                <p><a class="btn btn-secondary" href="#">View recommendations &raquo;</a></p>
-            </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-              <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-1.jpg" alt="..." />
-              <h5>Florence Mezino</h5>
-              <p class="font-weight-light mb-0">Full Stack Software Developer</p>
-              <p><a class="btn btn-secondary" href="#">View recommendations &raquo;</a></p>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-              <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-1.jpg" alt="..." />
-              <h5>Florence Mezino</h5>
-              <p class="font-weight-light mb-0">Full Stack Software Developer</p>
-              <p><a class="btn btn-secondary" href="#">View recommendations &raquo;</a></p>
-          </div>
-      </div>
-      <div class="col-lg-3">
-          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-              <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-1.jpg" alt="..." />
-              <h5>Florence Mezino</h5>
-              <p class="font-weight-light mb-0">Full Stack Software Developer</p>
-              <p><a class="btn btn-secondary" href="#">View recommendations &raquo;</a></p>
-          </div>
-      </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-3">
-            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-1.jpg" alt="..." />
-                <h5>Florence Mezino</h5>
-                <p class="font-weight-light mb-0">Full Stack Software Developer</p>
-                <p><a class="btn btn-secondary" href="#">View recommendations &raquo;</a></p>
-            </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-              <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-1.jpg" alt="..." />
-              <h5>Florence Mezino</h5>
-              <p class="font-weight-light mb-0">Full Stack Software Developer</p>
-              <p><a class="btn btn-secondary" href="#">View recommendations &raquo;</a></p>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-              <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-1.jpg" alt="..." />
-              <h5>Florence Mezino</h5>
-              <p class="font-weight-light mb-0">Full Stack Software Developer</p>
-              <p class="font-weight-light mb-0">Full Stack Software Developer</p>
-              <p><a class="btn btn-secondary" href="#">View recommendations &raquo;</a></p>
-              <p><a class="btn btn-secondary" href="#">View recommendations &raquo;</a></p>
-              <p><a class="btn btn-secondary" href="#">View recommendations &raquo;</a></p>
-          </div>
-      </div>
-      <div class="col-lg-3">
-          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-              <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-1.jpg" alt="..." />
-              <h5>Florence Mezino</h5>
-              <p class="font-weight-light mb-0">Full Stack Software Developer</p>
-              <p><a class="btn btn-secondary" href="#">View recommendations &raquo;</a></p>
+              <p class="font-weight-light text-center mb-0">{{ member.title[2] }}</p>
+              <p class="font-weight-light text-center mb-0">{{ member.author[2]}}</p>
+              <p><a class="btn btn-secondary" href="">{{ member.top3_books.amazon_link[2] }}</a></p>
           </div>
       </div>
       </div>
@@ -140,174 +50,6 @@
 </section>
 
 {% endfor %}
-  
-  <!-- community profile + recommendations -->
-  
-  <div class="community-profile text-center container">
-    <div class="row">
-      <div class="col-lg-3">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-  
-        <h4>Florence Mezino</h4>
-        <p>Full Stack Software Developer</p>
-        <!-- <div class="col-md-4 d-flex align-items-center">
-          <div class="col-md-2 d-flex align-items-center">
-            <ul class="list-inline social-links">
-                <li class="list-inline-item">
-                  <a target="_blank" href="https://github.com/">
-                    <i class="fab fa-github fa-1x" aria-hidden="true"></i>
-                    <span class="sr-only">Github</span>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a target="_blank" href="https://twitter.com/">
-                    <i class="fab fa-twitter fa-1x" aria-hidden="true"></i>
-                    <span class="sr-only">Twitter</span>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a target="_blank" href="https://www.linkedin.com/">
-                    <i class="fab fa-linkedin fa-1x" aria-hidden="true"></i>
-                    <span class="sr-only">LinkedIn</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div> -->
-        <p><a class="btn btn-secondary" href="#">View recommendations &raquo;</a></p>
-      </div>
-      <div class="col-lg-3">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-  
-        <h4>Jim Kwik</h4>
-        <p>Brain & Memory Coach</p>
-        <p><a class="btn btn-secondary" href="#">View recommendations &raquo;</a></p>
-      </div>
-      <div class="col-lg-3">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-  
-        <h4>Vishen Lakhiani</h4>
-        <p>CEO of Mindvalley</p>
-        <p><a class="btn btn-secondary" href="#">View recommendations &raquo;</a></p>
-      </div>
-      <div class="col-lg-3">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-  
-        <h4>Marisa Peer</h4>
-        <p>Author</p>
-        <p><a class="btn btn-secondary" href="#">View recommendations &raquo;</a></p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-3">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-  
-        <h4>Florence Mezino</h4>
-        <p>Full Stack Software Developer</p>
-        <!-- <div class="col-md-4 d-flex align-items-center">
-          <div class="col-md-2 d-flex align-items-center">
-            <ul class="list-inline social-links">
-                <li class="list-inline-item">
-                  <a target="_blank" href="https://github.com/">
-                    <i class="fab fa-github fa-1x" aria-hidden="true"></i>
-                    <span class="sr-only">Github</span>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a target="_blank" href="https://twitter.com/">
-                    <i class="fab fa-twitter fa-1x" aria-hidden="true"></i>
-                    <span class="sr-only">Twitter</span>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a target="_blank" href="https://www.linkedin.com/">
-                    <i class="fab fa-linkedin fa-1x" aria-hidden="true"></i>
-                    <span class="sr-only">LinkedIn</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div> -->
-        <p><a class="btn btn-secondary" href="#">View recommendations &raquo;</a></p>
-      </div>
-      <div class="col-lg-3">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-  
-        <h4>Jim Kwik</h4>
-        <p>Brain & Memory Coach</p>
-        <p><a class="btn btn-secondary" href="#">View recommendations &raquo;</a></p>
-      </div>
-      <div class="col-lg-3">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-  
-        <h4>Vishen Lakhiani</h4>
-        <p>CEO of Mindvalley</p>
-        <p><a class="btn btn-secondary" href="#">View recommendations &raquo;</a></p>
-      </div>
-      <div class="col-lg-3">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-  
-        <h4>Marisa Peer</h4>
-        <p>Author</p>
-        <p><a class="btn btn-secondary" href="#">View recommendations &raquo;</a></p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-3">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-  
-        <h4>Florence Mezino</h4>
-        <p>Full Stack Software Developer</p>
-        <!-- <div class="col-md-4 d-flex align-items-center">
-          <div class="col-md-2 d-flex align-items-center">
-            <ul class="list-inline social-links">
-                <li class="list-inline-item">
-                  <a target="_blank" href="https://github.com/">
-                    <i class="fab fa-github fa-1x" aria-hidden="true"></i>
-                    <span class="sr-only">Github</span>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a target="_blank" href="https://twitter.com/">
-                    <i class="fab fa-twitter fa-1x" aria-hidden="true"></i>
-                    <span class="sr-only">Twitter</span>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a target="_blank" href="https://www.linkedin.com/">
-                    <i class="fab fa-linkedin fa-1x" aria-hidden="true"></i>
-                    <span class="sr-only">LinkedIn</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div> -->
-        <p><a class="btn btn-secondary" href="#">View recommendations &raquo;</a></p>
-      </div>
-      <div class="col-lg-3">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-  
-        <h4>Jim Kwik</h4>
-        <p>Brain & Memory Coach</p>
-        <p><a class="btn btn-secondary" href="#">View recommendations &raquo;</a></p>
-      </div>
-      <div class="col-lg-3">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-  
-        <h4>Vishen Lakhiani</h4>
-        <p>CEO of Mindvalley</p>
-        <p><a class="btn btn-secondary" href="#">View recommendations &raquo;</a></p>
-      </div>
-      <div class="col-lg-3">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-  
-        <h4>Marisa Peer</h4>
-        <p>Author</p>
-        <p><a class="btn btn-secondary" href="#">View recommendations &raquo;</a></p>
-      </div>
-    </div>
-  <div>
-  
   
   <!-- articles -->
   <section class="py-5 text-center container">

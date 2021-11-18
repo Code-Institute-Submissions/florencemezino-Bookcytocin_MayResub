@@ -11388,6 +11388,10 @@ footer.footer {
 /* READFLIX
   -------------------------------------------------- */
 
+  .navbar-brand{
+    font-weight:bold;
+  }
+
   /* --- Customize the carousel (format) --- */
   
   /* Carousel base class */

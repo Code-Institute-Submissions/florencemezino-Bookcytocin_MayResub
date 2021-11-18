@@ -4,7 +4,7 @@
 <section class="py-5 text-center container" style="background-image: url('{{ url_for('static', filename='assets/img/signup.jpeg') }}')">
   <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">   
-          <form class="form-signin" method="POST" action="{ url_for('signup') }}">
+          <form class="form-signin" method="POST" action="{{ url_for('signup') }}">
               <img class="mb-4" src="" alt="" width="72" height="72">
               <h1 class="fw-bold">{{page_title}}</h1>
               <label for="inputUsername" class="sr-only">Username</label>
@@ -17,7 +17,7 @@
               </label>
               </div>
               <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
-              <p class="mt-5 mb-3 text-muted">Already registered ? Access your profile <a class="login" href="{ url_for('log in') }}">here</a></p>
+              <p class="mt-5 mb-3 text-muted">Already registered ? Access your profile <a class="login" href="{{ url_for('login') }}">here</a></p>
           </form>
       </div>
   </div>

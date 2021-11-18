@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 
-<section class="py-5 text-center container" style="background-image: url('{{ url_for('static', filename='assets/img/login.jpeg') }}')">
+<section class="py-5 text-center" style="background-image: url('{{ url_for('static', filename='assets/img/login.jpeg') }}')">
+<div class="container-fluid">
   <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
           <form class="form-signin" method="POST" action="{{ url_for('login') }}">
@@ -17,9 +18,10 @@
               </label>
               </div>
               <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-              <p class="mt-5 mb-3 text-muted">No account yet ? Sign up <a class="signup" href="{{ url_for('signup') }}">here</a></p>
+              <p class="mt-5 mb-3 ">No account yet ? Sign up <a class="signup" href="{{ url_for('signup') }}">here</a></p>
           </form>
       </div>
+    </div>
   </div>
 </section>
   

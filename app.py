@@ -21,7 +21,9 @@ def community():
     data = []
     with open("data/members_club.json", "r") as json_data:
         data = json.load(json_data)
-    return render_template("community.html", page_title="The Bookcytocin Club", members_club=data) 
+    print(data)    
+    return render_template("community.html", page_title="The Bookcytocin Club", members_club=data)
+         
 
 
 @app.route("/mybooklog")
