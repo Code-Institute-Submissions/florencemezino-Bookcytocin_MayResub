@@ -5,27 +5,30 @@
 <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-12 col-md-8 mx-auto">
-        <h1 class="fw-light">The Bookcytocin Club</h1>
+        <h1 class="fw-bold">{{page_title}}</h1>
         <p class="lead text-muted">Not sure about what can be your next reading ? Take a look at the great recommendations from our amazing community.<br>
           Coming together is a beginning, keeping together is a progress, working together is a success.<br>
         Not a member yet ? Register to take part of the reading journey.</p>
         </p>
-        <a href="#" class="btn btn-primary my-2">Register</a>
+        <a href="{ url_for('signup') }}" class="btn btn-primary my-2">Sign up</a>
       </div>
     </div>
   </section>
 
+{% for members in club %}
 
-<!-- community / book recommendation by profile-->
+<!-- community / book recommendation by member -->
 <section class="testimonials text-center bg-light">
     <div class="container">
     <div class="row">
       <div class="col-lg-3">
           <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-              <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-1.jpg" alt="..." />
-              <h5>Florence Mezino</h5>
-              <p class="font-weight-light mb-0">Full Stack Software Developer</p>
-              <p><a class="btn btn-secondary" href="#">View recommendations &raquo;</a></p>
+              <img class="img-fluid rounded-circle mb-3" src="{{ members.profile_picture}}" alt="..." />
+              <h5>{{ members.name }}</h5>
+              <p class="font-weight-light mb-0">{{ members.position }}</p>
+              <p><a class="btn btn-secondary" href="">{{ members.top3_books.amazon_link[0] }}</a></p>
+              <p><a class="btn btn-secondary" href="">{{ members.top3_books.amazon_link[1] }}</a></p>
+              <p><a class="btn btn-secondary" href="">{{ members.top3_books.amazon_link[2] }}</a></p>
           </div>
       </div>
       <div class="col-lg-3">
@@ -109,6 +112,9 @@
               <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-1.jpg" alt="..." />
               <h5>Florence Mezino</h5>
               <p class="font-weight-light mb-0">Full Stack Software Developer</p>
+              <p class="font-weight-light mb-0">Full Stack Software Developer</p>
+              <p><a class="btn btn-secondary" href="#">View recommendations &raquo;</a></p>
+              <p><a class="btn btn-secondary" href="#">View recommendations &raquo;</a></p>
               <p><a class="btn btn-secondary" href="#">View recommendations &raquo;</a></p>
           </div>
       </div>
@@ -123,6 +129,8 @@
       </div>
     </div>
 </section>
+
+{% endfor %}
   
   <!-- community profile + recommendations -->
   

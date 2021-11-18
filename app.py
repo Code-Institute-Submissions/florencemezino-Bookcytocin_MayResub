@@ -1,4 +1,5 @@
 import os
+import json
 from flask import Flask, render_template
 
 
@@ -7,7 +8,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("index.html", page_title="Readflix")
 
 
 @app.route("/collections")
@@ -17,7 +18,10 @@ def collections():
 
 @app.route("/community")
 def community():
-    return render_template("community.html", page_title="Community") 
+    data = []
+    with open("data/members_club.json", "r") as json_data:
+        data = json.load(json_data)
+    return render_template("community.html", page_title="The Bookcytocin Club", members_club=data) 
 
 
 @app.route("/mybooklog")
@@ -32,7 +36,7 @@ def signup():
 
 @app.route("/login")
 def login():
-    return render_template("login.html", page_title="login")
+    return render_template("login.html", page_title="Login")
 
 
 if __name__ == "__main__":
