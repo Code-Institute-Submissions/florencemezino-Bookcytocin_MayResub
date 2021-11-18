@@ -5,3 +5,8 @@
 */
 // This file is intentionally blank
 // Use this file to add JavaScript to your project
+
+
+// Update copyright year
+// const copyright = document.querySelector('#copyright');
+//     $("#copyright").text(new Date().getFullYear());

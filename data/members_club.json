@@ -21,7 +21,7 @@
       ]},
       {
         "name": "Carrie Green",
-        "position": "",
+        "position": "Author",
         "reading_level": "expert",
         "profile_picture": "",
         "top3_books": [
@@ -45,7 +45,7 @@
          "reading_level": "master",
          "profile_picture": "",
          "top3_books": [
-            { "title":"", "author":"", "image_url":"", "amazon_link":"" },
+            { "title":"What Happened to You?", "author":"Oprah Winfrey", "image_url":"https://images-na.ssl-images-amazon.com/images/I/31LXam5J2IL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg", "amazon_link":"" },
             { "title":"", "author":"", "image_url":"", "amazon_link":"" },
             { "title":"", "author":"", "image_url":"", "amazon_link":"" }
         ]},
