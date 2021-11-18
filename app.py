@@ -25,6 +25,16 @@ def mybooklog():
     return render_template("mybooklog.html", page_title="MyBookLog")
 
 
+@app.route("/signup")
+def signup():
+    return render_template("signup.html", page_title="Signup") 
+
+
+@app.route("/login")
+def login():
+    return render_template("login.html", page_title="login")
+
+
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP", "0.0.0.0"),
