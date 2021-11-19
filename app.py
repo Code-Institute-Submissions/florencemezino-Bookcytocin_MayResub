@@ -1,7 +1,7 @@
 import os
 from flask import (
     Flask, render_template, redirect,
-    request, session, url_for)
+    request, session, url_for, flash)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -35,11 +35,12 @@ def readflix():
 def signup():
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
-    
+            {"username": request.form.get("username")})
+
         if existing_user:
             flash("Username already exists")
             return redirect(url_for("signup"))
+        print("password", request.form.get("password"))
 
         signup = {
             "username": request.form.get("username").lower(),
@@ -79,10 +80,12 @@ def login():
 def collections():
     return render_template("collections.html", page_title="Collections")
 
-
+#Community
 @app.route("/community")
 def community():
-    return render_template("community.html", page_title="The Bookcytocin Club")
+    users = mongo.db.users.find()
+    print("Users in community:", users)
+    return render_template("community.html", page_title="The Bookcytocin Club", users=users)
 
 
 @app.route("/mybooklog")
