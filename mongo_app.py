@@ -25,12 +25,13 @@ def mongo_connect(url):
 
 # MyBookLog (get user info + list of books from book status )
 
-    def show_user_book_status():
-        print("")
-        print("1. Saved")
-        print("2. Reading")
-        print("3. Finished")
-        print("4. Upvoted") # upvoted = finished + upvoted )
+def user_book_status():
+    print("")
+    print("1. Saved")
+    print("2. Reading")
+    print("3. Finished")
+    print("4. Upvoted") # upvoted = finished + upvoted )
+    print("5. Exit")
 
     option = input("Enter option: ")
     return option
@@ -38,7 +39,7 @@ def mongo_connect(url):
 
 def main_loop():
     while True:
-        option = show_menu()
+        option = user_book_status()
         if option == "1":
             print("What will be your next read ? Pick one from your saved books")
         elif option == "2":
