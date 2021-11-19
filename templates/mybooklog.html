@@ -111,6 +111,14 @@
                   <ul class="list-group ">
                     <li class="list-group-item float-right">{{book.saved.title}}</li>
                     <li class="list-float-right">{{book.saved.auhor}}</li>
+                    <li class="list-float-right">
+                      <form>
+                        <div>
+                          <label for="due-date">due date: {{book.saved.due_date}}:</label>
+                          <input type="date" id="due-date" name="due-date">
+                        </div>
+                      </form>
+                    </li>
                     <li class="list-group-item"><a href="{{ book.amazon_link }}" class="btn btn-secondary my-2" target="_blank">View on Amazon</a></li>
                     <!-- dropdown to change status -->
                     <div class="mb-3">
@@ -190,43 +198,6 @@
         </div>
       </div>
   </section>
-
-
-<!-- MyReads accordion filter results -->
-    <div class="container-fluid">
-      <div class="col-lg-12">
-        <div class="row">
-          <div class="col-md-2 mx-auto">
-            <div class="card" style="width: 18rem;">
-              <img src="..." class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Book title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">collection</li>
-                <li class="list-group-item">status<span class="caret"></span></li>
-              </ul>
-              <div class="card-body">
-                <a href="#" class="btn btn-secondary my-2">View on Amazon</a>
-                <a href="#" class="card-link"><i class="fab fa-solid fa-glasses-round fa-1x"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  <!-- MyReads details saved -->
-
-  <!-- MyReads details reading -->
-
-  <!-- MyReads details finished-->
-      <!-- recommendation button -->
-
-  <!-- MyReads details release-->
-      <!-- add new -->
-
 
     
   <!-- Insights  -->
