@@ -30,7 +30,7 @@ def user_book_status():
     print("1. Saved")
     print("2. Reading")
     print("3. Finished")
-    print("4. Upvoted") # upvoted = finished + upvoted )
+    print("4. Upvoted")
     print("5. Exit")
 
     option = input("Enter option: ")
@@ -41,13 +41,13 @@ def main_loop():
     while True:
         option = user_book_status()
         if option == "1":
-            print("What will be your next read ? Pick one from your saved books")
+            print("What will be your next read?")
         elif option == "2":
-            print("Reading is to the mind what exercice is to the body. Keep it up!")
+            print("Keep it up!")
         elif option == "3":
-            print("Success is not given, it is earned. Well done! Upvote your favorite ones!")
+            print("Success is not given, it is earned!")
         elif option == "4":
-            print("Here is the list of your upvoted books. The more we share, the more we have.")
+            print("The more we share, the more we have.")
         elif option == "5":
             conn.close()
             break
@@ -59,3 +59,4 @@ def main_loop():
 conn = mongo_connect(MONGO_URI)
 coll = conn[DATABASE][COLLECTION]
 main_loop()
+    
