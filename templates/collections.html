@@ -128,29 +128,29 @@
       </div>
 
 
-  <!-- Books per collection  -->
+  <!-- Books per collection / search bar result -->
 
-<section class="py-5 text-center container-fluid">
-  <div class="col-lg-12 col-md-8 mx-auto">
-    <div class="row py-lg-5">
+  <div class="col-lg-12 container-fluid">
+    <div class="row py-lg-5 text-center">
       <div class="col-md-2 mx-auto">
-      <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Book title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="{{ book.image_url }}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{ book.title }}</h5>
+            <p class="card-text">{{ book.author }}</p>
+            <p class="card-text">{{ book.description }}</p>
+          </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">collection</li>
+          <li class="list-group-item">{{ book.collection_name }}</li>
         </ul>
         <div class="card-body">
-          <a href="{{ amazon_link }}" class="btn btn-secondary my-2">View on Amazon</a>
-          <a href="{{ saved_book }}" class="card-link"><i class="fab fa-solid fa-glasses-round fa-1x"></i></a>
+          <a href="{{ book.amazon_link }}" class="btn btn-secondary my-2" target="_blank">View on Amazon</a>
+          <a href="#" class="card-link"><i class="fab fa-solid fa-glasses-round fa-2x"></i></a>
         </div>
       </div>
     </div>
   </div>
-</section>
+</div>
 
 
 
