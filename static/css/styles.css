@@ -3957,7 +3957,7 @@ textarea.form-control-lg {
   }
 }
 .nav-link:hover, .nav-link:focus {
-  color: #0a58ca;
+  color: #6752d7;
 }
 .nav-link.disabled {
   color: #6c757d;
@@ -11392,6 +11392,9 @@ footer.footer {
     font-weight:bold;
   }
 
+
+ 
+
   /* --- Customize the carousel (format) --- */
   
   /* Carousel base class */
@@ -11466,9 +11469,23 @@ footer.footer {
 
 
 
-
   /* MYBOOKLOG
   -------------------------------------------------- */
+
+  /* Style buttons */
+.btn-refresh-insights {
+  background-color: DodgerBlue; /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 12px 16px; /* Some padding */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
 
   
   /* LOG IN
