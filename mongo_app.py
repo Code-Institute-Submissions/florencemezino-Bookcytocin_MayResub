@@ -16,15 +16,67 @@ def mongo_connect(url):
     except pymongo.errors.ConnectionFailure as e:
         print("Could not connect to MongoDB: %s") % e
 
+# Readflix (get the last 10 upvoted books among all users and all books)
+def users_upvoted_book():
+    print("")
+    print("1. Book 1")
+    print("2. Book 2")
+    print("3. Book 3")
+    print("4. Book 4")
+    print("5. Book 5")
+    print("6. Book 6")
+    print("7. Book 7")
+    print("8. Book 8")
+    print("9. Book 9")
+    print("10. Book 10")
 
-# Readflix (get the last 10 upvoted books among all users)
+    option = input("Enter option: ")
+    return option
 
 # Collections (get all books per collection when clicking on one collection)
+def books_per_collection():
+    print("")
+    print("1. Books")
+
+    option = input("Enter option: ")
+    return option
 
 # Community (get 6/12 users info + their 3 last upvoted books)
+def show_6_users_last_3_upvoted_books():
+    print("")
+    print("1. User details")
+    print("2. Book 1")
+    print("3. Book 2")
+    print("4. Book 3")
 
-# MyBookLog (get user info + list of books from book status )
+    option = input("Enter option: ")
+    return option
 
+# MyBookLog/Login
+
+def user_login():
+
+# MyBookLog/Register
+
+def user_signup():
+
+# MyBookLog/Create (login needed: option to save books in user from books list)
+def saved_book():
+    print("")
+    print("1. Saved book")
+
+    option = input("Enter option: ")
+    return option
+
+# MyBookLog/Delete (login needed: remove from saved list)
+def remove_saved_book():
+    print("")
+    print("1. Remove book")
+
+    option = input("Enter option: ")
+    return option
+
+# MyBookLog/Update (login needed: update book user status from saved list)
 def user_book_status():
     print("")
     print("1. Saved")
@@ -59,4 +111,3 @@ def main_loop():
 conn = mongo_connect(MONGO_URI)
 coll = conn[DATABASE][COLLECTION]
 main_loop()
-    
