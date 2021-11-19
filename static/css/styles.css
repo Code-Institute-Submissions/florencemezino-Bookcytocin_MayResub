@@ -11483,8 +11483,13 @@ footer.footer {
 }
 
 /* Darker background on mouse-over */
-.btn:hover {
+
+.btn {
   background-color: RoyalBlue;
+}
+
+.btn:hover {
+  background-color: var(--bs-purple);
 }
 
   
