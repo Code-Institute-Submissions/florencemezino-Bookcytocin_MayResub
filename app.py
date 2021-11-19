@@ -23,7 +23,7 @@ def index():
     return render_template("index.html", page_title="Readflix")
 
 
-# Get books for readflix (last 10 books from users)
+# Readflix : Get the last 10 books saved by users for readflix 
 @app.route("/readflix")
 def readflix():
     books = mongo.db.books.find()
@@ -50,7 +50,9 @@ def signup():
 
 
         session["user"] = request.form.get("username").lower()
-        flash("Registration Successful!")
+        flash("You are in! Registration Successful.")
+        return redirect(url_for("mybooklog", username=session["user"]))
+
     return render_template("signup.html", page_title="Sign up")
 
 #Log in
@@ -64,7 +66,8 @@ def login():
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
-                    flash("Welcome to Bookcytocin".format(request.form.get("username")))
+                    flash("Welcome! Your inner journey is just a page away.".format(request.form.get("username")))
+                    return redirect(url_for("mybooklog", username=session["user"]))
             else:
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
@@ -75,22 +78,24 @@ def login():
 
     return render_template("login.html", page_title="Login")
 
-#Collection
+#Collection : Find a book via search bar or collection options
 @app.route("/collections")
 def collections():
     return render_template("collections.html", page_title="Collections")
 
-#Community
+#Community : Get user to share their book reference / #1 book
 @app.route("/community")
 def community():
     users = mongo.db.users.find()
     print("Users in community:", users)
     return render_template("community.html", page_title="The Bookcytocin Club", users=users)
 
-
-@app.route("/mybooklog")
-def mybooklog():
-    return render_template("mybooklog.html", page_title="MyBookLog")
+#Welcome user to their profile : MyBookLog
+@app.route("/mybooklog/<username>, methods=["GET", "POST"])")
+def mybooklog(username):
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    return render_template("mybooklog.html", page_title="MyBookLog" username=username) 
 
 
 if __name__ == "__main__":

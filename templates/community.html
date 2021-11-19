@@ -13,39 +13,25 @@
     </div>
   </section>
 
-{% for user in users %}
+{% for users in users %}
 
 <!-- community / book recommendation by member -->
-<section class="testimonials text-center bg-light">
+  <section class="testimonials bg-light">
     <div class="container">
-    <div class="row">
-      <div class="col-lg-3">
-          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-              <img class="img-fluid rounded-circle mb-3" src="{{ user.profile_picture}}" alt="..." />
-              <h5>{{ user.name }}</h5>
-              <p class="font-weight-light mb-0">{{ user.position }}</p>
-              <!-- top 3 : book 1 -->
-              <!-- <img class="img-fluid mb-3 center-align" src="{{ user.top3_books.image_url[0] }}" alt="..." /> -->
-              <p class="font-weight-light text-center mb-0">{{ user.title[0] }}</p>
-              <p class="font-weight-light text-center mb-0">{{ user.author[0]}}</p>
-              <!-- <p><a class="btn btn-secondary" href="">{{ user.top3_books.amazon_link[0] }}</a></p> -->
-
-              <!-- top 3 : book 2 -->
-              <!-- <img class="img-fluid mb-3" src="{{ user.top3_books.image_url[1] }}" alt="..." /> -->
-              <p class="font-weight-light text-center mb-0">{{ user.title[1] }}</p>
-              <p class="font-weight-light text-center mb-0">{{ user.author[1]}}</p>
-              <!-- <p><a class="btn btn-secondary" href="">{{ user.top3_books.amazon_link[1] }}</a></p> -->
-
-              <!-- top 3 : book 3 -->
-              <!-- <img class="img-fluid mb-3" src="{{ user.top3_books.image_url[2] }}" alt="..." /> -->
-              <p class="font-weight-light text-center mb-0">{{ user.title[2] }}</p>
-              <p class="font-weight-light text-center mb-0">{{ user.author[2]}}</p>
-              <!-- <p><a class="btn btn-secondary" href="">{{ user.top3_books.amazon_link[2] }}</a></p> -->
-          </div>
-      </div>
+      <div class="row featurette">
+        <div class="col-md-7">
+          <img class="img-fluid rounded-circle mb-3" src="{{ user.profile_picture}}" alt="..." />
+          <h2 class="featurette-heading">{{ user.name }}</h2>
+          <span class="lead">{{ user.position }} </span>
+          <p class="lead">My reference: {{user.book.title }} by {{user.book.author }}</p>
+          <p class="lead">"{{user.book_review}}"</p>
+        </div>
+        <div class="col-md-5">
+          <img class="img-fluid mb-3" src="{{ book.image_url}}" alt="..." />
+        </div>
       </div>
     </div>
-</section>
+  </section>
 
 {% endfor %}
   

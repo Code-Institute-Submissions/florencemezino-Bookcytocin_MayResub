@@ -7,11 +7,14 @@
       <div class="col-lg-6 col-md-8 mx-auto">
           <form class="form-signin" method="POST" action="{{ url_for('login') }}">
               <h1 class="fw-bold">{{page_title}}</h1>
+              <br>
               <label for="inputUsername" class="sr-only">Username</label>
               <input type="text" id="inputUsername" name="username" class="form-control" placeholder="Username" required autofocus>
+              <br>
               <label for="inputPassword" class="sr-only">Password</label>
               <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
               <div class="checkbox mb-3">
+              <br>
               <label>
                   <input type="checkbox" value="remember-me"> Remember me
               </label>
