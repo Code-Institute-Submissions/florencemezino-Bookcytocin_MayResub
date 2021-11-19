@@ -91,11 +91,22 @@ def community():
     return render_template("community.html", page_title="The Bookcytocin Club", users=users)
 
 #Welcome user to their profile : MyBookLog
-@app.route("/mybooklog/<username>, methods=["GET", "POST"])")
+@app.route("/mybooklog/<username>", methods=["GET", "POST"])
 def mybooklog(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    return render_template("mybooklog.html", page_title="MyBookLog" username=username) 
+    if session["user"]:
+        return render_template("profile.html",  page_title="MyBookLog", username=username)
+
+    
+    return redirect(url_for("login")
+
+#Logout
+@app.route("/logout")
+def logout():
+    flash("You have been logged out")
+    session.pop("user")
+    return redirect(url_for("login"))
 
 
 if __name__ == "__main__":
