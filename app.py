@@ -13,8 +13,7 @@ app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
-app.secret_key = os.environ.get("mongodb+srv://florence:flomezino3@clusterci.ouatk.mongodb.net/ms3DB?retryWrites=true&w=majority")
-
+app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
@@ -24,23 +23,58 @@ def index():
     return render_template("index.html", page_title="Readflix")
 
 
-@app.route("/signup", methods=["GET", "POST"])
-def signup():
-    return render_template("signup.html", page_title="Signup")
-
-
-@app.route("/login", methods=["GET", "POST"])
-def login():
-    return render_template("login.html", page_title="Login")
-
-
-@app.route("/get_last_10_upvoted_books")
-def get_last_10_upvoted_books():
+# Get books for readflix (last 10 books from users)
+@app.route("/readflix")
+def readflix():
     books = mongo.db.books.find()
-    print(books)
+    print("Books in collection: ", books)
     return render_template("index.html", books=books)
 
+#Sign up
+@app.route("/signup", methods=["GET", "POST"])
+def signup():
+    if request.method == "POST":
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+    
+        if existing_user:
+            flash("Username already exists")
+            return redirect(url_for("signup"))
 
+        signup = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password"))
+        }
+        mongo.db.users.insert_one(signup)
+
+
+        session["user"] = request.form.get("username").lower()
+        flash("Registration Successful!")
+    return render_template("signup.html", page_title="Sign up")
+
+#Log in
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            if check_password_hash(
+                existing_user["password"], request.form.get("password")):
+                    session["user"] = request.form.get("username").lower()
+                    flash("Welcome to Bookcytocin".format(request.form.get("username")))
+            else:
+                flash("Incorrect Username and/or Password")
+                return redirect(url_for("login"))
+
+        else:
+            flash("Incorrect Username and/or Password")
+            return redirect(url_for("login"))
+
+    return render_template("login.html", page_title="Login")
+
+#Collection
 @app.route("/collections")
 def collections():
     return render_template("collections.html", page_title="Collections")
