@@ -4,6 +4,7 @@ from flask import (
     request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
@@ -17,9 +18,27 @@ app.secret_key = os.environ.get("mongodb+srv://florence:flomezino3@clusterci.oua
 
 mongo = PyMongo(app)
 
+
 @app.route("/")
 def index():
     return render_template("index.html", page_title="Readflix")
+
+
+@app.route("/signup", methods=["GET", "POST"])
+def signup():
+    return render_template("signup.html", page_title="Signup")
+
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    return render_template("login.html", page_title="Login")
+
+
+@app.route("/get_last_10_upvoted_books")
+def get_last_10_upvoted_books():
+    books = mongo.db.books.find()
+    print(books)
+    return render_template("index.html", books=books)
 
 
 @app.route("/collections")
@@ -35,16 +54,6 @@ def community():
 @app.route("/mybooklog")
 def mybooklog():
     return render_template("mybooklog.html", page_title="MyBookLog")
-
-
-@app.route("/signup")
-def signup():
-    return render_template("signup.html", page_title="Signup")
-
-
-@app.route("/login")
-def login():
-    return render_template("login.html", page_title="Login")
 
 
 if __name__ == "__main__":

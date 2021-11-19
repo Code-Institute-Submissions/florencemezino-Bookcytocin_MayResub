@@ -1,15 +1,15 @@
 {% extends "base.html"%}
 {% block content %}
 
-<section class="py-5 text-center container-fluid" style="background-image: url('{{ url_for('static', filename='assets/img/signup.jpeg') }}')">
+<section class="py-5 text-center container-fluid" style="background-image: url('{{ url_for('static', filename='assets/img/signup.jpeg') }}');">
   <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">   
           <form class="form-signin" method="POST" action="{{ url_for('signup') }}">
               <img class="mb-4" src="" alt="" width="72" height="72">
               <h1 class="fw-bold">{{page_title}}</h1>
-              <label for="inputUsername" class="sr-only">Username</label>
+              <label for="inputUsername" name="username" class="sr-only"><i class="fas fa-user-plus"></i>Username</label>
               <input type="text" id="inputUsername" class="form-control" placeholder="Username" pattern="^[a-zA-z0-9]{5,15}$" minlenght="5" malenght="15" required autofocus>
-              <label for="inputPassword" class="sr-only">Password</label>
+              <label for="inputPassword" name="password" class="sr-only"><i class="fas fa-user-lock"></i>Password</label>
               <input type="password" id="inputPassword" class="form-control" placeholder="Password" pattern="^[a-zA-z0-9]{5,15}$" minlenght="5" malenght="15" required>
               <div class="checkbox mb-3">
               <label>

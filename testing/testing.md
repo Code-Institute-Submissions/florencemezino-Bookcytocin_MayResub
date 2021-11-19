@@ -12,6 +12,7 @@ W3C Markup Validator - `Success`
 W3C CSS Validator - `Success`
 JShint - `Success`
 Pep8 - `Success`
+Jinja - `Success` to validate Jinja code is to open up a webpage in your app, right click the page, click view source, and copy that code into the W3 HTML validator. That will give you the rendered HTML code - i.e. all of the Jinja will have been converted into HTML that can be validated.
 
 Lighthouse - [Results](assets/testing/lighthousems3_results.png)
 
