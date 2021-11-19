@@ -21,10 +21,10 @@ def community():
     data = []
     with open("data/members_club.json", "r") as json_data:
         data = json.load(json_data)
-    print(data)    
-    return render_template("community.html", page_title="The Bookcytocin Club", members_club=data)
+    print(data)
+    return render_template("community.html", 
+    page_title="The Bookcytocin Club", members_club=data)
          
-
 
 @app.route("/mybooklog")
 def mybooklog():
@@ -46,3 +46,5 @@ if __name__ == "__main__":
         host=os.environ.get("IP", "0.0.0.0"),
         port=int(os.environ.get("PORT", "5000")),
         debug=True)
+
+
