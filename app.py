@@ -49,7 +49,6 @@ def signup():
         }
         mongo.db.users.insert_one(signup)
 
-
         session["user"] = request.form.get("username").lower()
         flash("You are in! Registration Successful.")
         return redirect(url_for("mybooklog", username=session["user"]))
@@ -67,11 +66,11 @@ def login():
         if existing_user:
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
-                session["user"] = request.form.get("username").lower()
-                flash("Welcome {}".format(
-                    request.form.get("username")))
-                return redirect(url_for(
-                    "mybooklog", username=session["user"]))
+                    session["user"] = request.form.get("username").lower()
+                    flash("Welcome {}".format(
+                        request.form.get("username")))
+                    return redirect(url_for(
+                        "mybooklog", username=session["user"]))
             else:
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
@@ -92,22 +91,32 @@ def collections():
 # Community : Get user to share their book reference / #1 book
 @app.route("/community")
 def community():
-    users = mongo.db.users.find()
-    print("Users in community:", users)
+    upvoted_book = mongo.db.users.find_many()
+    print("The Bookcytocin Club:", users)
     return render_template(
         "community.html", page_title="The Bookcytocin Club", users=users)
 
 
-# Welcome user to their profile : MyBookLog
+# MyBookLog : Welcome user to their profile
 @app.route("/mybooklog/<username>", methods=["GET", "POST"])
 def mybooklog(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     if session["user"]:
         return render_template(
-            "profile.html",  page_title="MyBookLog", username=username)
+            "mybooklog.html",  page_title="MyBookLog", username=username)
 
-    return redirect(url_for("login")
+    return redirect(url_for("login"))
+
+
+# MyBookLog ; Save / Edit goal statement
+@app.route("/goal", methods=["GET", "POST"])
+def goal():
+    goal = mongo.db.users.find_one(
+        {"goal": session["user"]})["goal"]
+    print("Your goal statement ", users)
+    return render_template("mybooklog.html", users=users)
+
 
 # Logout
 @app.route("/logout")
@@ -122,3 +131,4 @@ if __name__ == "__main__":
         host=os.environ.get("IP"),
         port=int(os.environ.get("PORT")),
         debug=True)
+

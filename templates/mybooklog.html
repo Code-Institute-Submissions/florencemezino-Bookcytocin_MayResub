@@ -12,6 +12,13 @@
   </div>
 </section>
 
+{% for goal in users %}
+  {{goal.reading_level}}
+  {{goal.reason}}
+  {{goal.obstacle}}
+  {{goal.signature_fullname}}
+{% endfor %}
+
 <!-- Goal - Commitment -->
 <section class="py-5 text-center container">
     <div class="row py-lg-5">
@@ -30,28 +37,24 @@
             <a class="btn btn-md dropdown-toggle btn-secondary" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Select your level<span class="caret"></span></a>
               <div id="dropdown-list" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item beginner" href="{{user.reading_level}}">Beginner : between 1 - 12 books per year</a>
-                <a class="dropdown-item intermediate" href="{{user.reading_level}}">Intermediate : between 12 - 24 books per year</a>
-                <a class="dropdown-item experts" href="{{user.reading_level}}">Expert : between 24 - 36 books per year</a>
-                <a class="dropdown-item masters" href="{{user.reading_level}}">Master : 36+ books per year</a>
+                <a class="dropdown-item beginner" href="{{goal.reading_level}}">Beginner : between 1 - 12 books per year</a>
+                <a class="dropdown-item intermediate" href="{{goal.reading_level}}">Intermediate : between 12 - 24 books per year</a>
+                <a class="dropdown-item experts" href="{{goal.reading_level}}">Expert : between 24 - 36 books per year</a>
+                <a class="dropdown-item masters" href="{{goal.reading_level}}">Master : 36+ books per year</a>
               </div>
               <div id="level-info"></div>
             </div>
           </div>
           <div class="mb-3">
             <label for="exampleInputStatement2" class="form-label form-commitment">I choose to complete my reading commitment mentionned above because</label>
-            <input type="text" class="form-control" id="exampleInputStatement2" aria-describedby="commitmentHelp" required>
+            <input type="text" class="form-control" name ="reason" id="exampleInputStatement2" aria-describedby="commitmentHelp" required>
           </div>
           <div class="mb-3">
             <label for="exampleInputStatement3" class="form-label form-commitment">When I run into obstacles or lack of motivation at some point, I will</label>
-            <input type="text" class="form-control" id="exampleInputStatement3" required>
-          </div>
-          <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">I will achieve my reading goal</label>
+            <input type="text" class="form-control" name="obstacle" id="exampleInputStatement3" required>
           </div>
           <label for="exampleInputStatement2" class="form-label form-commitment">Commit here by typing your name</label>
-          <input type="text" class="form-control" id="exampleInputStatement2" aria-describedby="commitmentHelp" required>
+          <input type="text" class="form-control" name="signature" id="exampleInputStatement2" aria-describedby="commitmentHelp" required>
         </div>
 
         <div class="mb-3">
@@ -62,6 +65,22 @@
       </div>
     </div>
   </section>
+
+
+{% book in users %}
+  {{ book.saved }}
+    {{ book.title }}
+    {{ book.auhor }}
+    {{ book.amazon_link }}
+  {{book.finished_books}}
+    {{ book.title }}
+    {{ book.auhor }}
+    {{ book.amazon_link }}
+  {{ book.upvoted }}
+    {{ book.title }}
+    {{ book.auhor }}
+    {{ book.amazon_link }}
+{% endfor %}
 
   <!-- MyReads  -->
     <section class="py-5 text-center container">
@@ -219,7 +238,7 @@
         <div class="card">
           <div class="card-img bg-primary text-white text-center" style="padding:10px;">
             <h1 class="card-title" style="padding-top: 10px;">12</h1>
-            <h5 class="card-title" style="padding-top: 10px;">Books finished</h5>
+            <h5 class="card-title" style="padding-top: 10px;">Books saved</h5>
           </div>
         </div>
       </div>
@@ -227,7 +246,7 @@
         <div class="card">
             <div class="card-img bg-primary text-white text-center" style="padding:10px;">
               <h1 class="card-title" style="padding-top: 10px;">8</h1>
-              <h5 class="card-title" style="padding-top: 10px;">Books recommended</h5>
+              <h5 class="card-title" style="padding-top: 10px;">Books finished</h5>
             </div>
         </div>
       </div>
