@@ -11392,8 +11392,13 @@ footer.footer {
     font-weight:bold;
   }
 
+  .author-text{
+    color: var(--bs-purple);
+  }
 
- 
+ .collection-font{
+   font-style:italic;
+ }
 
   /* --- Customize the carousel (format) --- */
   
@@ -11462,11 +11467,21 @@ footer.footer {
  
   /* COLLECTIONS
   -------------------------------------------------- */
+  .search-book {
+    color: var(--bs-purple);
+  }
+
 
 
   /* COMMUNITY
   -------------------------------------------------- */
 
+  .blog-label {
+    color: #fafafa;
+    text-align: center;
+    background-color: var(--bs-purple);
+    border-radius:10%;
+  }
 
 
   /* MYBOOKLOG

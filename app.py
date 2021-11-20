@@ -23,13 +23,48 @@ def index():
     return render_template("index.html", page_title="Readflix")
 
 
-# Readflix : Get the last 10 books saved by users
+# Readflix : show last 12 saved books from users
 @app.route("/readflix")
 def readflix():
-    books = list(mongo.db.books.find())
-    print("Books in collection: ", books)
+    books = list(mongo.db.books.find().limit(12))
+    print("Books in collections: ", books)
     return render_template("index.html", books=books)
 
+
+# Collection : Find a book via search bar
+@app.route("/search")
+def search():
+    query = request.form.get("query")
+    books = list(mongo.db.books.find())
+    return render_template("collections.html", page_title="Collections", books=books)
+
+
+# Collection : Find a book via book collection button
+@app.route("/collections")
+def collections():
+    if request.method == 'POST':
+        if request.books['collection_name'] == 'Show books collection':
+            pass 
+        elif request.books['collection_name'] == 'Do Something Else':
+            pass # do something else
+        else:
+            pass # unknown
+    elif request.method == 'GET':
+        return render_template('collections.html', books=books)
+
+
+# Community : Get 8 random users to share 1 book among their upvoted books
+@app.route("/community")
+def community():
+    users = list(mongo.db.users.find().limit(8))
+    for user in user.upvoted_books :
+        if book in upvoted_books:
+            print(random.choice(upvoted_books))
+        else:
+            pass
+            print("The Bookcytocin Club:", users)
+    return render_template(
+        "community.html", page_title="The Bookcytocin Club", user=users)
 
 # Sign up
 @app.route("/signup", methods=["GET", "POST"])
@@ -82,24 +117,20 @@ def login():
     return render_template("login.html", page_title="Login")
 
 
-# Collection : Find a book via search bar or collection options
-@app.route("/collections")
-def collections():
-    return render_template("collections.html", page_title="Collections")
 
 
-# Community : Get user to share their book reference / #1 book
-@app.route("/community")
-def community():
-    upvoted_book = mongo.db.users.find_many()
+# MyBookLog 
+@app.route("/mybooklog")
+def mybooklog():
+    users = mongo.db.users.find_one()
     print("The Bookcytocin Club:", users)
     return render_template(
-        "community.html", page_title="The Bookcytocin Club", users=users)
+        "mybooklog.html", page_title="MyBookLog", users=users)
 
 
 # MyBookLog : Welcome user to their profile
-@app.route("/mybooklog/<username>", methods=["GET", "POST"])
-def mybooklog(username):
+@app.route("/welcome/<username>", methods=["GET", "POST"])
+def welcome(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     if session["user"]:
@@ -107,15 +138,6 @@ def mybooklog(username):
             "mybooklog.html",  page_title="MyBookLog", username=username)
 
     return redirect(url_for("login"))
-
-
-# MyBookLog ; Save / Edit goal statement
-@app.route("/goal", methods=["GET", "POST"])
-def goal():
-    goal = mongo.db.users.find_one(
-        {"goal": session["user"]})["goal"]
-    print("Your goal statement ", users)
-    return render_template("mybooklog.html", users=users)
 
 
 # Logout
@@ -131,4 +153,3 @@ if __name__ == "__main__":
         host=os.environ.get("IP"),
         port=int(os.environ.get("PORT")),
         debug=True)
-

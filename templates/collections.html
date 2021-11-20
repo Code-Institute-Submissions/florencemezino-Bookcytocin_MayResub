@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
+
 <!-- Search for a book -->
 
 <section class="py-5 text-center container">
@@ -12,20 +13,21 @@
       </div>
     </div>
     <div class="col-lg-6 col-md-8 mx-auto">
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search by book title or author" aria-label="Search">
+      <form class="d-flex" action="{{ url_for('search') }}">
+        <input class="form-control me-2" name="query" id="query" type="search" placeholder="book title or author" aria-label="Search">
+        <label for="query" class="search-book">Search Books</label>
         <button class="btn btn-outline-secondary" type="submit">Submit</button>
     </form> 
     </div>
   </section>
-  
-      
+
+  {% for book in books %}
    <!-- collections + books -->
   
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-3 ">
-              <a href="#" class="card btn btn-secondary my-3">
+              <a href="{{ book.collection_name }}" class="card btn btn-secondary my-3">
                 <div class="card-img bg-primary text-white" style="padding:5px;">
                   <span><i class="fas fa-dumbbell fa-3x"></i></span>
                   <h5 class="card-title" style="padding-top: 10px;">Health & Fitness</h5>
@@ -33,7 +35,7 @@
               </a>
           </div>
           <div class="col-md-3">
-            <a href="#" class="card btn btn-secondary my-3">
+            <a href="{{ book.collection_name }}" class="card btn btn-secondary my-3">
               <div class="card-img bg-primary text-white" style="padding:5px;">
                   <span><i class="fas fa-brain fa-3x"></i></span>
                   <h5 class="card-title" style="padding-top: 10px;">Intellectual</h5>
@@ -41,7 +43,7 @@
               </a>
           </div>
           <div class="col-md-3">
-            <a href="#" class="card btn btn-secondary my-3">
+            <a href="{{ book.collection_name }}" class="card btn btn-secondary my-3">
               <div class="card-img bg-primary text-white" style="padding:5px;">
                   <span><i class="fas fa-smile-beam fa-3x"></i></span>
                   <h5 class="card-title" style="padding-top: 10px;">Emotional</h5>
@@ -49,7 +51,7 @@
             </a>
           </div>
           <div class="col-md-3">
-            <a href="#" class="card btn btn-secondary my-3">
+            <a href="{{ book.collection_name }}" class="card btn btn-secondary my-3">
               <div class="card-img bg-primary text-white" style="padding:5px;">
                   <span><i class="fas fa-bolt fa-3x"></i></span>
                   <h5 class="card-title" style="padding-top: 10px;">Character</h5>
@@ -58,7 +60,7 @@
           </div>
           <div class="row">
             <div class="col-md-3">
-              <a href="#" class="card btn btn-secondary my-3">
+              <a href="{{ book.collection_name }}" class="card btn btn-secondary my-3">
                 <div class="card-img bg-primary text-white" style="padding:5px;">
                     <span><i class="fas fa-cloud fa-3x"></i></span>
                     <h5 class="card-title" style="padding-top: 10px;">Spiritual</h5>
@@ -66,7 +68,7 @@
                 </a>
             </div>
             <div class="col-md-3">
-            <a href="#" class="card btn btn-secondary my-3 ">
+            <a href="{{ book.collection_name }}" class="card btn btn-secondary my-3 ">
                 <div class="card-img bg-primary text-white" style="padding:5px;">
                     <span><i class="fas fa-heartbeat fa-3x"></i></span>
                     <h5 class="card-title" style="padding-top: 10px;">Love relationship</h5>
@@ -74,7 +76,7 @@
                 </a>
             </div>
             <div class="col-md-3">
-              <a href="#" class="card btn btn-secondary my-3 ">
+              <a href="{{ book.collection_name }}" class="card btn btn-secondary my-3 ">
                 <div class="card-img bg-primary text-white" style="padding:5px;">
                     <span><i class="fas fa-baby fa-3x"></i></span>
                     <h5 class="card-title" style="padding-top: 10px;">Parenting</h5>
@@ -82,7 +84,7 @@
                 </a>
             </div>
             <div class="col-md-3">
-              <a href="#" class="card btn btn-secondary my-3 ">
+              <a href="{{ book.collection_name }}" class="card btn btn-secondary my-3 ">
                 <div class="card-img bg-primary text-white" style="padding:5px;">
                     <span><i class="fas fa-user-friends fa-3x"></i></span>
                     <h5 class="card-title" style="padding-top: 10px;">Social</h5>
@@ -91,7 +93,7 @@
             </div>
           <div class="row">
             <div class="col-md-3">
-              <a href="#" class="card btn btn-secondary my-3 ">
+              <a href="{{ book.collection_name }}" class="card btn btn-secondary my-3 ">
                 <div class="card-img bg-primary text-white" style="padding:5px;">
                     <span><i class="fas fa-suitcase fa-3x"></i></span>
                     <h5 class="card-title" style="padding-top: 10px;">Career</h5>
@@ -99,7 +101,7 @@
                 </a>
             </div>
             <div class="col-md-3">
-              <a href="#" class="card btn btn-secondary my-3 ">
+              <a href="{{ book.collection_name }}" class="card btn btn-secondary my-3 ">
                 <div class="card-img bg-primary text-white" style="padding:5px;">
                     <span><i class="fas fa-money-check-alt fa-3x"></i></span>
                     <h5 class="card-title" style="padding-top: 10px;">Financial</h5>
@@ -107,7 +109,7 @@
                 </a>
             </div>
             <div class="col-md-3">
-              <a href="#" class="card btn btn-secondary my-3 ">
+              <a href="{{ book.collection_name }}" class="card btn btn-secondary my-3 ">
                 <div class="card-img bg-primary text-white" style="padding:5px;">
                     <span><i class="fas fa-check fa-3x"></i></span>
                     <h5 class="card-title" style="padding-top: 10px;">Quality of life</h5>
@@ -115,7 +117,7 @@
                 </a>
             </div>
             <div class="col-md-3">
-              <a href="#" class="card btn btn-secondary my-3 ">
+              <a href="{{ book.collection_name }}" class="card btn btn-secondary my-3 ">
                 <div class="card-img bg-primary text-white" style="padding:5px;">
                     <span><i class="fas fa-eye fa-3x"></i></span>
                     <h5 class="card-title" style="padding-top: 10px;">Life vision</h5>
@@ -127,32 +129,29 @@
       </div>
       </div>
 
-
-  <!-- Books per collection / search bar result -->
-
-  <div class="col-lg-12 container-fluid">
+  <!-- Show books results when clicking on a specific collection / search bar result -->
+  <div class= container-fluid>   
     <div class="row py-lg-5 text-center">
-      <div class="col-md-2 mx-auto">
-        <div class="card" style="width: 18rem;">
-          <img src="{{ book.image_url }}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">{{ book.title }}</h5>
-            <p class="card-text">{{ book.author }}</p>
-            <p class="card-text">{{ book.description }}</p>
+            <div class="col-12 col-md-3">
+              <div class="card text-center" style="width: 18rem;">
+                <img src="{{book.image_url}}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ book.title }}</h5>
+                    <p class="card-text author-text">{{ book.author }}</p>
+                    <p class="card-text">{{ book.description }}</p>
+                  </div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item collection-font">{{ book.collection_name }}</li>
+                    </ul>
+                  <div class="card-body">
+                    <a href="{{ book.amazon_link }}" class="btn btn-secondary my-2" target="_blank">View on Amazon</a>
+                    <a href="user.saved_books" class="card-link"><i class="fab fa-solid fa-glasses-round fa-2x"></i></a>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
           </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">{{ book.collection_name }}</li>
-        </ul>
-        <div class="card-body">
-          <a href="{{ book.amazon_link }}" class="btn btn-secondary my-2" target="_blank">View on Amazon</a>
-          <a href="{{ book.saved }}" class="card-link"><i class="fab fa-solid fa-glasses-round fa-2x"></i></a>
-        </div>
       </div>
-    </div>
-  </div>
-</div>
-
-
 
 {% endblock %}
     

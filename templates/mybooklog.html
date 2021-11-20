@@ -67,19 +67,28 @@
   </section>
 
 
-{% book in users %}
-  {{ book.saved }}
-    {{ book.title }}
-    {{ book.auhor }}
-    {{ book.amazon_link }}
-  {{book.finished_books}}
-    {{ book.title }}
-    {{ book.auhor }}
-    {{ book.amazon_link }}
-  {{ book.upvoted }}
-    {{ book.title }}
-    {{ book.auhor }}
-    {{ book.amazon_link }}
+{% for book in user.saved_books %}
+  {{ book.title }}
+  {{ book.auhor }}
+  {{ book.amazon_link }}
+{% endfor %}
+
+{% for book in user.reading_books %}
+  {{ book.title }}
+  {{ book.auhor }}
+  {{ book.amazon_link }}
+{% endfor %}
+
+{% for book in user.finished_books %}
+  {{ book.title }}
+  {{ book.auhor }}
+  {{ book.amazon_link }}
+{% endfor %}
+
+{% for book in user.upvoted_books %}
+  {{ book.title }}
+  {{ book.auhor }}
+  {{ book.amazon_link }}
 {% endfor %}
 
   <!-- MyReads  -->
@@ -89,6 +98,8 @@
           <h1 class="fw-light">MyReads</h1>
           <p class="lead text-muted">Manage your reading progres. Remember, the world belongs to those who reads.</p>
           <div class="accordion" id="accordionExample">
+            <!-- Saved book -->
+            {% for book in user.saved_books %}
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingOne">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -118,6 +129,7 @@
                 </div>
               </div>
             </div>
+            {% endfor %}
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingOne">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
