@@ -2,27 +2,28 @@
 
 [View the live project here](link)
 
-![Bookinner](assets/testing/responsivems3.png)
+![Bookcytocin](assets/testing/responsivems3.png)
 
 ## User Experience (UX)
 
 ### End user 
 
 1. Goal
-End users for this project are readers who wants to focus on their personal development. 
+End users for this project are readers who wants to focus on their personal development and use the book as a real tool to grow in every area of life (Love, finance, career, spiritual, intellectual, health etc.) 
 
 
 2.  Profile : Readers
 
-Readers who want to focus on their personnal development and want to include more readings in their life. They want to take time to read more and share their recommendations. They want to have the possibility to buy, sell or simply exchange books.
+Users who want to focus on their personnal development and want to include more readings in their life. They want to integrate more readings in their life by using the book as a real tool on their personnal development journey. They want to take time to read more and share their recommendations/reviews. They want to have the possibility to see recommandations and buy books online.
 
 
 a. identity and behaviours
 
 Readers interacting with the site are English speaker and we can determine different profiles :
-- beginner : users who read very rarely like 1 book every 6 months and wish to read more.
-- intermediate : users who read 1 book every month or two months and wants to read more.
-- advanced : user who reads several books a month and is keen to share their recommendations online / interact with a community. They have a important recommendations books library and wish to sell or even exchange their books.
+- Beginner : between 1 - 12 books per year : Mostly users who read very rarely.
+- Intermediate : between 12 - 24 books per year : Mostly users who read minimum 1 book per month
+- Expert : between 24 - 36 books per year : Users who reads very frequently and it is part of their habits 
+- Master : 36+ books per year : User who can read several books a month and is keen to share their recommendations online / interact with a community. At this level, users might work in the field such as book writer or book publisher. They have a important recommendations books library and wish to expand their knowledge by accessing more books, reading more books and reviews
 
 b. expectations 
 - Readers want to extend their knowledge on different dimensions of personal development such as nutrition, career, finance etc.
@@ -31,7 +32,7 @@ b. expectations
 - Readers wants to read reviews with great insights to esily choose their next reading
 
 c. restraints
-- Readers believe they don't have time to read
+- Readers believe they don't have time to read and rarely ommit to make reading a real activity, part of their daily life
 - Readers feel overwhelmed about all the great books they could read and they don't dare to start
 - Beginner readers might feel impostor symdrome when seeing other reading progress and recommendations
 
