@@ -132,7 +132,7 @@ Imagery is important in this website in order to illustrate the books library an
     - Quality of life
     - Life vision
 * In each section, readers  can find a list of books related to the genre.
-* From each book, users has the option to add to their reading list (mybookinnerlab page) or be redirected to Amazon website.
+* From each book, users has the option to add to their reading list (MyBookLog page) or be redirected to Amazon website.
 
 
 #### Experts
@@ -141,7 +141,7 @@ Imagery is important in this website in order to illustrate the books library an
 * Users can find also multiples articles on how to integrate more reading into their life and make it part of their persoal development.
 For example : 10 ways to make mre time for reading
 
-#### MyBookinnerLab
+#### MyBookLog
 * The `MyBookLog` page features 1 column wide for mobile devices, 2 columns wide for tablets and 4 columns wide for desktop. 
 * Users can find register option 
 * Users can find sign in option if they already have an account
@@ -175,8 +175,8 @@ In the mobile version the navigation bar is turning into a hamburger menu for a 
     - specificity 2 : 
 
 ### Features to implement in the future
-* Buy directly on the Bookinner platform directly and not go through affiliate link via Amazon
-* Leave reviews on the Bookinner platform directly and not collect reviews
+* Buy directly on the Bookcytocin platform directly and not go through affiliate link via Amazon
+* Leave reviews on the Bookcytocin platform directly and not collect reviews
 * Users can exchange their books
 * Users can give away their book in exchange of discounts
 * Users can build a reading list paired with a time tracker with reminders
