@@ -23,14 +23,15 @@ def index():
     return render_template("index.html", page_title="Readflix")
 
 
-# Readflix : Get the last 10 books saved by users for readflix 
+# Readflix : Get the last 10 books saved by users
 @app.route("/readflix")
 def readflix():
     books = mongo.db.books.find()
     print("Books in collection: ", books)
     return render_template("index.html", books=books)
 
-#Sign up
+
+# Sign up
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
     if request.method == "POST":
@@ -55,7 +56,8 @@ def signup():
 
     return render_template("signup.html", page_title="Sign up")
 
-#Log in
+
+# Log in
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -65,9 +67,11 @@ def login():
         if existing_user:
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome! Your inner journey is just a page away.".format(request.form.get("username")))
-                    return redirect(url_for("mybooklog", username=session["user"]))
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome {}".format(
+                    request.form.get("username")))
+                return redirect(url_for(
+                    "mybooklog", username=session["user"]))
             else:
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
@@ -78,30 +82,34 @@ def login():
 
     return render_template("login.html", page_title="Login")
 
-#Collection : Find a book via search bar or collection options
+
+# Collection : Find a book via search bar or collection options
 @app.route("/collections")
 def collections():
     return render_template("collections.html", page_title="Collections")
 
-#Community : Get user to share their book reference / #1 book
+
+# Community : Get user to share their book reference / #1 book
 @app.route("/community")
 def community():
     users = mongo.db.users.find()
     print("Users in community:", users)
-    return render_template("community.html", page_title="The Bookcytocin Club", users=users)
+    return render_template(
+        "community.html", page_title="The Bookcytocin Club", users=users)
 
-#Welcome user to their profile : MyBookLog
+
+# Welcome user to their profile : MyBookLog
 @app.route("/mybooklog/<username>", methods=["GET", "POST"])
 def mybooklog(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     if session["user"]:
-        return render_template("profile.html",  page_title="MyBookLog", username=username)
+        return render_template(
+            "profile.html",  page_title="MyBookLog", username=username)
 
-    
     return redirect(url_for("login")
 
-#Logout
+# Logout
 @app.route("/logout")
 def logout():
     flash("You have been logged out")
