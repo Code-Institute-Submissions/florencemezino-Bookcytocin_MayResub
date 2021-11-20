@@ -26,7 +26,7 @@ def index():
 # Readflix : Get the last 10 books saved by users
 @app.route("/readflix")
 def readflix():
-    books = mongo.db.books.find()
+    books = list(mongo.db.books.find())
     print("Books in collection: ", books)
     return render_template("index.html", books=books)
 
