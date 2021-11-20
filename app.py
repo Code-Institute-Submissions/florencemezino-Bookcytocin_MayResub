@@ -32,39 +32,30 @@ def readflix():
 
 
 # Collection : Find a book via search bar
-@app.route("/search")
+@app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
-    books = list(mongo.db.books.find())
-    return render_template("collections.html", page_title="Collections", books=books)
+    books = list(mongo.db.books.find({"$text": {"$search": query}}))
+    return render_template(
+        "collections.html", page_title="Collections", books=books)
 
 
 # Collection : Find a book via book collection button
 @app.route("/collections")
 def collections():
-    if request.method == 'POST':
-        if request.books['collection_name'] == 'Show books collection':
-            pass 
-        elif request.books['collection_name'] == 'Do Something Else':
-            pass # do something else
-        else:
-            pass # unknown
-    elif request.method == 'GET':
-        return render_template('collections.html', books=books)
+    books = list(mongo.db.books.find())
+    print("Books in collections: ", books)
+    return render_template(
+        "collections.html", page_title="Collections", books=books)
 
 
 # Community : Get 8 random users to share 1 book among their upvoted books
 @app.route("/community")
 def community():
     users = list(mongo.db.users.find().limit(8))
-    for user in user.upvoted_books :
-        if book in upvoted_books:
-            print(random.choice(upvoted_books))
-        else:
-            pass
-            print("The Bookcytocin Club:", users)
     return render_template(
         "community.html", page_title="The Bookcytocin Club", user=users)
+
 
 # Sign up
 @app.route("/signup", methods=["GET", "POST"])
@@ -101,11 +92,11 @@ def login():
         if existing_user:
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome {}".format(
-                        request.form.get("username")))
-                    return redirect(url_for(
-                        "mybooklog", username=session["user"]))
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome {}".format(
+                    request.form.get("username")))
+                return redirect(url_for(
+                    "mybooklog", username=session["user"]))
             else:
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
@@ -117,13 +108,20 @@ def login():
     return render_template("login.html", page_title="Login")
 
 
-
-
-# MyBookLog 
-@app.route("/mybooklog")
-def mybooklog():
+# MyBookLog : user can edit and save commitment
+@app.route("/goal")
+def goal():
     users = mongo.db.users.find_one()
-    print("The Bookcytocin Club:", users)
+    print("Your reading goal statement", users)
+    return render_template(
+        "mybooklog.html", page_title="MyBookLog", users=users)
+
+
+# MyBookLog : user can upload a review 
+@app.route("/review")
+def review():
+    users = mongo.db.users.find_one()
+    print("Leave a review", users)
     return render_template(
         "mybooklog.html", page_title="MyBookLog", users=users)
 

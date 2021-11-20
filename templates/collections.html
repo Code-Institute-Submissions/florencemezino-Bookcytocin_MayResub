@@ -13,15 +13,17 @@
       </div>
     </div>
     <div class="col-lg-6 col-md-8 mx-auto">
-      <form class="d-flex" action="{{ url_for('search') }}">
-        <input class="form-control me-2" name="query" id="query" type="search" placeholder="book title or author" aria-label="Search">
-        <label for="query" class="search-book">Search Books</label>
-        <button class="btn btn-outline-secondary" type="submit">Submit</button>
+      <form class="d-flex" action="{{ url_for('search') }}" method="POST">
+        <input class="form-control me-2 validate" name="query" id="query" type="search" placeholder="Search book by title or author" aria-label="Search" required>
+        <label for ="query">Search</label>
+        <a href="{{ url_for('readflix') }}" class="btn btn-secondary">Reset</a>
+        <button class="btn btn-outline-light" type="submit">Submit</button>
     </form> 
     </div>
   </section>
+  
 
-  {% for book in books %}
+  
    <!-- collections + books -->
   
       <div class="container-fluid">
@@ -133,6 +135,7 @@
   <div class= container-fluid>   
     <div class="row py-lg-5 text-center">
             <div class="col-12 col-md-3">
+              {% for book in books %}
               <div class="card text-center" style="width: 18rem;">
                 <img src="{{book.image_url}}" class="card-img-top" alt="...">
                   <div class="card-body">

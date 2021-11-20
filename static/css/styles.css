@@ -11394,10 +11394,17 @@ footer.footer {
 
   .author-text{
     color: var(--bs-purple);
+    font-weight: bold;
   }
 
  .collection-font{
    font-style:italic;
+   color: #B24DD1;
+ }
+
+ .card-book {
+   margin-bottom:20px;
+
  }
 
   /* --- Customize the carousel (format) --- */
@@ -11426,7 +11433,6 @@ footer.footer {
   
   /* --- Customize carousel (marketing content) --- */
   
-  /* Center align the text within the three columns below the carousel */
   .marketing .col-lg-4 {
     margin-bottom: 1.5rem;
     text-align: center;
@@ -11434,25 +11440,21 @@ footer.footer {
   .marketing h2 {
     font-weight: 400;
   }
-  /* rtl:begin:ignore */
+  
   .marketing .col-lg-4 p {
     margin-right: .75rem;
     margin-left: .75rem;
   }
-  /* rtl:end:ignore */
-  
   
   /* --- Featurettes --- */
   
   .featurette-divider {
-    margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+    margin: 5rem 0; 
   }
   
-  /* Thin out the marketing headings */
   .featurette-heading {
     font-weight: 300;
     line-height: 1;
-    /* rtl:remove */
     letter-spacing: -.05rem;
   }
   
@@ -11467,10 +11469,7 @@ footer.footer {
  
   /* COLLECTIONS
   -------------------------------------------------- */
-  .search-book {
-    color: var(--bs-purple);
-  }
-
+ 
 
 
   /* COMMUNITY

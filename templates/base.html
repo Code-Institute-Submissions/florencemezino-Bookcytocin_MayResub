@@ -99,8 +99,8 @@
         <div class="carousel-caption">
             <h1>Become the best version of you</h1>
             <p>Unlock your potential and access MyBookLog profile to reach your reading goal.</p>
-            <p><a class="btn btn-lg btn-primary" href="{{ url_for('signup') }}">Sign up</a>
-                <a class="btn btn-lg btn-primary" href="{{ url_for('login') }}">Log in</a></p>
+            <p><a class="btn btn-lg btn-primary" href="{{ url_for('signup') }}">Log in</a>
+                <a class="btn btn-lg btn-primary" href="{{ url_for('login') }}">Sign up</a></p>
         </div>
         </div>
     </div>
@@ -124,7 +124,7 @@
                 <div class="row py-lg-5">
                     <div class="col-lg-12 col-md-8 mx-auto">
                         <div class="row flashes">
-                            <h5 class="fw-bold" style="background-color: plum;">{{ message }}</h5>
+                            <h5 class="fw-bold" style="background-color: #B24DD1; color:#fafafa;">{{ message }}</h5>
                         </div>
                     </div>
                 </div>
@@ -162,7 +162,7 @@
                                 <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:required">Email Address is required.</div>
                                 <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:email">Email Address is not valid.</div>
                             </div>
-                            <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
+                            <div class="col-auto"><button class="btn btn-primary btn-lg" id="submitButton" type="submit">Submit</button></div>
                         </div>
                         <!-- Submit success message-->
                         <div class="d-none" id="submitSuccessMessage">

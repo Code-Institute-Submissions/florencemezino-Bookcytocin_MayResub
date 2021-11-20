@@ -10,3 +10,11 @@
 // Update copyright year
 // const copyright = document.querySelector('#copyright');
 //     $("#copyright").text(new Date().getFullYear());
+
+
+// Collection button
+
+document.getElementById("myCollection").addEventListener("click", function() {
+    alert("Hello World!");
+  });
+
