@@ -131,7 +131,7 @@ def mybooklog():
         else:
             flash("Commit to your goal, fill in your statement")
             return redirect(url_for(
-                "mybooklog")), username = session["user"])
+                "mybooklog")), username=session["user"])
 
         return render_template(
             "mybooklog.html", page_title = "MyBookLog", user=user)
