@@ -56,7 +56,7 @@ def collections():
         "collections.html", page_title="Collections", books=books)
 
 
-# Community : Get 8 random users to share 1 book review
+# Community : display reviews and blog
 @app.route("/community")
 def community():
     users = list(mongo.db.users.find().limit(8))

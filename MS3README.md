@@ -72,10 +72,10 @@ The color scheme choosen is in blue , purple, grey tones as these colors reflect
 
 The main colours used for this project are as follow : 
 " 
-* `#fafafa`: "Whisper" is a color between the white and the grey for the light shades.
+* `#fafafa`: this is creamy white for the light shades.
 This color will be used as the background for the dark on light designs and the text color of an inverted design
 
-* `#676990`: "Kimberly" is a grey-blue color for the light accent. A simmilar version `RoyalBlue` is also use on certain elements.
+* `RoyalBlue`: this is a grey-blue color for the light accent. A simmilar version  is also use on certain elements.
 This color is used to bring attention to design elements by contrasting with the rest of the palette.
 
 * `var(--bs-purple)`: "Purple heart" is a deep bright purple for the dark accent and `#B24DD1` : "Cindy' is a pop magenta. These colors will be to work on the dark accents. for the dark accents
