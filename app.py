@@ -35,7 +35,14 @@ def readflix():
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
-    books = list(mongo.db.books.find({"$text": {"$search": query}}))
+    books = list(mongo.db.books.find({"$text": {"$search": query}})),
+    
+    if books.length > 0:
+        return render_template("collections.html")
+    else:
+        flash("No result found")
+        return redirect(url_for("search"))
+
     return render_template(
         "collections.html", page_title="Collections", books=books)
 
