@@ -57,6 +57,18 @@ def community():
         "community.html", page_title="The Bookcytocin Club", user=users)
 
 
+# MyBookLog : user can add a review 
+@app.route("/review", methods=["POST"])
+def review():
+    if existing_user:
+        username=session["user"]
+        user=mongo.db.users.find_one({"username": username})
+        print("Add a review", user)
+
+    return render_template(
+        "community.html", page_title="Community", user=user)
+
+
 # Sign up
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
@@ -93,7 +105,7 @@ def login():
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
-                flash("Welcome".format(
+                flash("Welcome to Bookcytocin".format(
                     request.form.get("username")))
                 return redirect(url_for(
                     "mybooklog", username=session["user"]))
@@ -111,24 +123,18 @@ def login():
 # MyBookLog : user can edit and save goal commitment
 @app.route("/mybooklog", methods=["GET", "POST"])
 def mybooklog():
-    username = session["user"]
-    user = mongo.db.users.find_one({"username": username})
+    if request.method == "POST":
+        if exiting_goal:
+            username = session["user"]
+            user = mongo.db.users.find_one({"username": username})
+            pass
+        else:
+            flash("Commit to your goal, fill in your statement")
+            return redirect(url_for(
+                "mybooklog")), username = session["user"])
 
-
-    print("Commit to your Goal", users)
-    return render_template(
-        "mybooklog.html", page_title="MyBookLog", user=user)
-
-
-# MyBookLog : user can upload a review (history + post in community)
-@app.route("/review")
-def review():
-    username = session["user"]
-    user = mongo.db.users.find_one({"username": username})
-    print("Add a review", users)
-    return render_template(
-        "community.html", page_title="Community", user=user)
-
+        return render_template(
+            "mybooklog.html", page_title = "MyBookLog", user=user)
 
 # Logout
 @app.route("/logout")
