@@ -167,9 +167,11 @@ Most common paths through the website:
 ## Known Bugs
 
 * Contact Form not active : user won't receive a free ebook
+* History reviews are not listed or stored
 * Insights saved books and reviews numbers are not generating the correct number (to be build with javascript)
 * Carousel : after finishing displaying all the slides, not possible to use the arrow to back to first slide
-* 
+* Adding review / No flash to specify if review was added successfully or failed
+* Goal statement / No flash to specify if goal was added successfully or failed
 
 
 ## Feedback

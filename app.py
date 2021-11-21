@@ -77,7 +77,7 @@ def signup():
 
         session["user"] = request.form.get("username").lower()
         flash("You are in! Registration Successful.")
-        return redirect(url_for("mybooklog", username=session["user"]))
+        return redirect(url_for("login", username=session["user"]))
 
     return render_template("signup.html", page_title="Sign up")
 
@@ -93,7 +93,7 @@ def login():
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
-                flash("Welcome {}".format(
+                flash("Welcome".format(
                     request.form.get("username")))
                 return redirect(url_for(
                     "mybooklog", username=session["user"]))
@@ -108,34 +108,26 @@ def login():
     return render_template("login.html", page_title="Login")
 
 
-# MyBookLog : user can edit and save commitment
-@app.route("/goal")
-def goal():
-    users = mongo.db.users.find_one()
-    print("Your reading goal statement", users)
+# MyBookLog : user can edit and save goal commitment
+@app.route("/mybooklog", methods=["GET", "POST"])
+def mybooklog():
+    username = session["user"]
+    user = mongo.db.users.find_one({"username": username})
+
+
+    print("Commit to your Goal", users)
     return render_template(
-        "mybooklog.html", page_title="MyBookLog", users=users)
+        "mybooklog.html", page_title="MyBookLog", user=user)
 
 
 # MyBookLog : user can upload a review (history + post in community)
 @app.route("/review")
 def review():
-    users = mongo.db.users.find_one()
-    print("Leave a review", users)
+    username = session["user"]
+    user = mongo.db.users.find_one({"username": username})
+    print("Add a review", users)
     return render_template(
-        "mybooklog.html", page_title="MyBookLog", users=users)
-
-
-# MyBookLog : Welcome user to their profile
-@app.route("/welcome/<username>", methods=["GET", "POST"])
-def welcome(username):
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-    if session["user"]:
-        return render_template(
-            "mybooklog.html",  page_title="MyBookLog", username=username)
-
-    return redirect(url_for("login"))
+        "community.html", page_title="Community", user=user)
 
 
 # Logout

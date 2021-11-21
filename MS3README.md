@@ -316,8 +316,9 @@ SECRET_KEY :
 
 
 2. Collections
-* 
-* 
+* “how to display information if button is pressed flask” [Here](https://www.codegrepper.com/code-examples/python/how+to+display+information+if+button+is+pressed+flask)
+* how to detect which update button was clicked with Flask python(mongoDB) [Here](https://stackoverflow.com/questions/55089384/how-to-detect-which-update-button-was-clicked-with-flask-pythonmongodb)
+* HTML DOM addEventListener() Method for the button collections [Here](https://www.w3schools.com/jsref/met_element_addeventlistener.asp)
 * 
 
 3. Community
@@ -326,8 +327,8 @@ SECRET_KEY :
 * 
 
 4. MyBooklog
-* How To Create Icon Buttons : [here](https://www.w3schools.com/howto/howto_css_icon_buttons.asp)
-* 
+* How To Create Icon Buttons : [Here](https://www.w3schools.com/howto/howto_css_icon_buttons.asp)
+* How can I randomly select an item from a list? for the MyBookLog goal statement form / dropdown reading level [Here](https://stackoverflow.com/questions/306400/how-can-i-randomly-select-an-item-from-a-list)
 * 
 
 5. General 
@@ -361,13 +362,6 @@ Readme.md sample from Anna Greaves's portrait artist [View](https://github.com/A
 - My Mentor [Jack Washira](https://github.com/iamjackwachira) for continuous helpful feedback.
 - Tutor support at Code Institute for their support.
 - Peer to peer support from Code Institute Slack community.
-
-## FAQ
-#### Question 1 : 
-* 
-
-#### Question 2 : 
-* 
 
 ## Author 
 - Florence Mezino, studying Full Stack Software Development at Code Institute (March 2021 - March 2022)
