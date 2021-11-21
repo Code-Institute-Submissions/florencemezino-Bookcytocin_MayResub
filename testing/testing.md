@@ -25,92 +25,67 @@ Most common paths through the website:
 
 #### As a reader and a new visitor to the website :
 
-
-
-1. As a reader, I want to have access to a great book library online so that I can have plenty of choice to select my next book to read
-- 
-- 
+* As a reader, I want to have access to a great book library online so that I can have plenty of choice to select my next book to read
 - 
 - 
 
-2. As a reader, I want to buy a book in few steps so that I can progress quickly on my reading goals
-- 
-- 
-- 
-- 
-
-3. As a reader, I want to have access to recommendations about books so that it can help me to choose the next book to read
-- 
-- 
+* As a reader, I want to buy a book in few steps so that I can progress quickly on my reading goals
 - 
 - 
 
-4. As a reader, I want to sell books I read already so that I can invest in buying new ones
-- 
-- 
+* As a reader, I want to have access to recommendations/ reviews about books so that it can help me to choose the next book to read
 - 
 - 
 
-5.  As a reader, I want to exchange the books I read with other readers so that I can save money and interact with the readers community
+* As a reader, I want to sell books I read already so that I can invest in buying new ones
 - 
 - 
+
+* As a reader, I want to exchange the books I read with other readers so that I can save money and interact with the readers community
 - 
 - 
 
 #### As a reader and returning visitor to the website :
 
 
-1. As a reader, I want to be encouraged to read more so that I can reach my reading goal 
-- 
-- 
-- 
-- 
-
-2. As a reader, I want to see my reading goals progress so that I can be motivated to read more
-- 
-- 
+* As a reader, I want to be encouraged to read more so that I can reach my reading goal 
 - 
 - 
 
-3. As a reader, I want to be able to edit the book I uploaded online to sell so that I can market it better or remove it if it is sold out
-- 
-- 
+* As a reader, I want to see my reading goals progress so that I can be motivated to read more
 - 
 - 
 
-4. As a reader, I want to recommend the books I read so that I can share my experience with the readers community
+* As a reader, I want to be able to share reviews about my readings so that I can also help others to decide their reading 
 - 
 - 
+
+* As a reader, I want to recommend the books I read so that I can have the feeling to be part of a community and it will motivates me to reach my goal
+- 
+- 
+
+* As a reader, I want to be able to eupload online a book to sell so that I can market it better or remove it when it is sold out
 - 
 - 
 
 
-#### As a reader who frequents often the website 
+#### As a reader and returning visitor to the website :
 
-1. As a reader, I want to have to see the most likes/successful book on a certain period to not miss out so that I can be up to date about trendy readings
-- 
-- 
+* As a reader, I want to see the most liked/successful/trendy books on a certain period to not miss out so that I can be up to date about trendy readings
 - 
 - 
 
-2. As a reader, i want to be able to vote 
-- 
-- 
+* As a reader, I want to be informed about new books releases, events, masterclass so that I can improve my learning skils in general. 
 - 
 - 
 
-3. As a reader, I want to be informed about new books releases so that I can potentially be the first to recommend great readings.
-- 
-- 
-- 
-- 
 
 ### Manual (logical) testing of all elements and functionality on every page.
 
-#### Books
+#### Readflix
 
 1. Header / Navigation bar
-- Go to "Books" from a desktop
+- Go to "Readflix" from a desktop
 - Click on the logo : we are redirected to the main page "Books"
 - Click on a different tab of the navigation bar to check if the active tab is highlighted when clicked and visiting the related page
 - Click on each
@@ -118,7 +93,7 @@ Most common paths through the website:
 - Check if navigation bar is responsive on tablet and mobile. Confirm navigation bar collapses to become a toggle menu with a dropdown of the navigation links.
 
 2. Footer
-- Go to "Books" from a desktop
+- Go to "Readflix" from a desktop
 - Scroll down to the bottom of the page
 - Check if content is not hidden behind footer and is responsive.
 - Click on social media links Facebook, Twitter, Linkedin. The three links redirects to the respective social media.
@@ -135,7 +110,7 @@ Most common paths through the website:
 
 > For every point mentionned above : Repeat verification of functionality and responsiveness on mobile phone and tablet via Developer Tool,
 
-#### Dimensions
+#### Collections
 
 1. Header / Navigation bar
 - Navbar code is identical on all html pages. Testing already completed.
@@ -149,7 +124,7 @@ Most common paths through the website:
 
 > For every point mentionned above : Repeat verification of functionality and responsiveness on mobile phone and tablet via Developer Tool,
 
-#### Experts
+#### Community
 
 1. Header / Navigation bar
 - Navbar code is identical on all html pages. Testing already completed.
@@ -166,8 +141,7 @@ Most common paths through the website:
 
 > Repeat verification of functionality and responsiveness on mobile phone and tablet via Developer Tool
 
-#### MyBookinnerLab
-
+#### MyBookLog
 1. Header / Navigation bar
 - Navbar code is identical on all html pages. Testing already completed.
 
@@ -192,7 +166,7 @@ Most common paths through the website:
 
 ## Known Bugs
 
-* 
+* Contact Form not active : user won't receive a free ebook
 * 
 * 
 
