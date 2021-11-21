@@ -63,168 +63,36 @@
 
   {% endfor %}
 
-
-{% for book in user.saved_books %}
-  {{ book.title }}
-  {{ book.auhor }}
-  {{ book.amazon_link }}
-{% endfor %}
-
-{% for book in user.reading_books %}
-  {{ book.title }}
-  {{ book.auhor }}
-  {{ book.amazon_link }}
-{% endfor %}
-
-{% for book in user.finished_books %}
-  {{ book.title }}
-  {{ book.auhor }}
-  {{ book.amazon_link }}
-{% endfor %}
-
-{% for book in user.upvoted_books %}
-  {{ book.title }}
-  {{ book.auhor }}
-  {{ book.amazon_link }}
-{% endfor %}
-
-  <!-- MyReads  -->
-    <section class="py-5 text-center container">
-      <div class="row py-lg-5">
-        <div class="col-lg-12 col-md-8 mx-auto">
-          <h1 class="fw-light">MyReads</h1>
-          <p class="lead text-muted">Manage your reading progres. Remember, the world belongs to those who reads.</p>
-          <div class="accordion" id="accordionExample">
-            <!-- Saved book -->
-            {% for book in user.saved_books %}
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  Saved
-                </button>
-              </h2>
-              <!-- book details -->
-              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                  <ul class="list-group ">
-                    <li class="list-group-item float-right">{{book.saved.title}}</li>
-                    <li class="list-group-item float-right">{{book.saved.auhor}}</li>
-                    <li class="list-group-item float-right"><a href="{{ book.amazon_link }}" class="btn btn-secondary my-2" target="_blank">View on Amazon</a></li>
-                    <!-- dropdown to change status -->
-                    <div class="mb-3">
-                      <label for="exampleInputStatement1" class="form-label form-commitment">I commit to complete reading the following number of books per year</label>
-                      <a class="btn btn-md dropdown-toggle btn-secondary" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Select your level<span class="caret"></span></a>
-                        <div id="dropdown-list" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                          <a class="dropdown-item beginner" href="#">Saved</a>
-                          <a class="dropdown-item intermediate" href="#">Finished</a>
-                          <a class="dropdown-item experts" href="#">Upvoted</a>
-                        </div>
-                        <div id="level-info"></div>
-                      </div>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            {% endfor %}
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  Reading
-                </button>
-              </h2>
-              <!-- book details -->
-              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                  <ul class="list-group ">
-                    <li class="list-group-item float-right">{{book.saved.title}}</li>
-                    <li class="list-float-right">{{book.saved.auhor}}</li>
-                    <li class="list-float-right">
-                      <form>
-                        <div>
-                          <label for="due-date">due date: {{book.saved.due_date}}:</label>
-                          <input type="date" id="due-date" name="due-date">
-                        </div>
-                      </form>
-                    </li>
-                    <li class="list-group-item"><a href="{{ book.amazon_link }}" class="btn btn-secondary my-2" target="_blank">View on Amazon</a></li>
-                    <!-- dropdown to change status -->
-                    <div class="mb-3">
-                      <label for="exampleInputStatement1" class="form-label form-commitment">I commit to complete reading the following number of books per year</label>
-                      <a class="btn btn-md dropdown-toggle btn-secondary" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Select your level<span class="caret"></span></a>
-                        <div id="dropdown-list" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                          <a class="dropdown-item beginner" href="#">Saved</a>
-                          <a class="dropdown-item intermediate" href="#">Finished</a>
-                          <a class="dropdown-item experts" href="#">Upvoted</a>
-                        </div>
-                        <div id="level-info"></div>
-                      </div>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  Finished
-                </button>
-              </h2>
-              <!-- book details -->
-              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                  <ul class="list-group ">
-                    <li class="list-group-item float-right">{{book.saved.title}}</li>
-                    <li class="list-float-right">{{book.saved.auhor}}</li>
-                    <li class="list-group-item"><a href="{{ book.amazon_link }}" class="btn btn-secondary my-2" target="_blank">View on Amazon</a></li>
-                    <!-- dropdown to change status -->
-                    <div class="mb-3">
-                      <label for="exampleInputStatement1" class="form-label form-commitment">I commit to complete reading the following number of books per year</label>
-                      <a class="btn btn-md dropdown-toggle btn-secondary" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Select your level<span class="caret"></span></a>
-                        <div id="dropdown-list" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                          <a class="dropdown-item beginner" href="#">Saved</a>
-                          <a class="dropdown-item intermediate" href="#">Finished</a>
-                          <a class="dropdown-item experts" href="#">Upvoted</a>
-                        </div>
-                        <div id="level-info"></div>
-                      </div>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  Upvoted
-                </button>
-              </h2>
-              <!-- book details -->
-              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                  <ul class="list-group ">
-                    <li class="list-group-item float-right">{{book.saved.title}}</li>
-                    <li class="list-float-right">{{book.saved.auhor}}</li>
-                    <li class="list-group-item"><a href="{{ book.amazon_link }}" class="btn btn-secondary my-2" target="_blank">View on Amazon</a></li>
-                    <!-- dropdown to change status -->
-                    <div class="mb-3">
-                      <label for="exampleInputStatement1" class="form-label form-commitment">I commit to complete reading the following number of books per year</label>
-                      <a class="btn btn-md dropdown-toggle btn-secondary" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Select your level<span class="caret"></span></a>
-                        <div id="dropdown-list" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                          <a class="dropdown-item beginner" href="#">Saved</a>
-                          <a class="dropdown-item intermediate" href="#">Finished</a>
-                          <a class="dropdown-item experts" href="#">Upvoted</a>
-                        </div>
-                        <div id="level-info"></div>
-                      </div>
-                  </ul>
-                </div>
+  <!-- MyReviews-->
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-12 col-md-8 mx-auto">
+        <h1 class="fw-light">MyReview</h1>
+        <p class="lead text-muted">Manage your reading progres by reviewing the books you read. Remember, the world belongs to those who reads.</p>
+        <div class="accordion" id="accordionExample">
+          {% for book in user.review %}
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                History
+              </button>
+            </h2>
+            <!-- review details -->
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <ul class="list-group ">
+                  <li class="list-group-item float-right">{{book.title}}</li>
+                  <li class="list-group-item float-right">{{book.auhor}}</li>
+                  <li class="list-group-item float-right">{{book.review}</li>
+                </ul>
               </div>
             </div>
           </div>
+          {% endfor %}
+          </div>
         </div>
       </div>
+    </div>
   </section>
 
     
@@ -255,7 +123,7 @@
         <div class="card">
             <div class="card-img bg-primary text-white text-center" style="padding:10px;">
               <h1 class="card-title" style="padding-top: 10px;">8</h1>
-              <h5 class="card-title" style="padding-top: 10px;">Books finished</h5>
+              <h5 class="card-title" style="padding-top: 10px;">Reviews shared</h5>
             </div>
         </div>
       </div>

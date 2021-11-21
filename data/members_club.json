@@ -4,17 +4,15 @@
       "position": "Full Stack Software Developer",
       "reading_level": "intermediate",
       "profile_picture": "http://www.filmofilia.com/wp-content/uploads/2011/07/hobbit_0.jpg",
-      "top3_books": [
-        { "title":"", "author":"", "image_url":"", "amazon_link":"" },
-        { "title":"", "author":"", "image_url":"", "amazon_link":"" },
-        { "title":"", "author":"", "image_url":"", "amazon_link":"" }
+      "Book_review": [
+        {"title":"The path : accelerating your journey to financial freedom", "author":"Tony Robbins", "image_url":"https://images-na.ssl-images-amazon.com/images/I/41mI+AK9JPL._SX331_BO1,204,203,200_.jpg", "amazon_link":"https://www.amazon.com/gp/product/1642937010/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1642937010&linkCode=as2&tag=robbinsresear-20&linkId=172202544aeb6f5aef5f7127ce56d661", "review":"Incredible perspective on life, I highly recommend this book" }
     ]},
     {
        "name": "Tony Robbins",
        "position": "Personal Development Coach, Author",
        "reading_level": "master",
        "profile_picture": "https://scontent.frun1-1.fna.fbcdn.net/v/t1.6435-1/p480x480/198012367_355143779308308_1669344488117158606_n.png?_nc_cat=1&ccb=1-5&_nc_sid=c6021c&_nc_ohc=QJtzmtNAhUkAX9XxzkY&_nc_ht=scontent.frun1-1.fna&oh=28a7ba0b6899e7415e759161e52a3887&oe=61BBA1EB",
-       "top3_books": [
+       "Book_review": [
          { "title":"The path : accelerating your journey to financial freedom", "author":"Tony Robbins", "image_url":"https://images-na.ssl-images-amazon.com/images/I/41mI+AK9JPL._SX331_BO1,204,203,200_.jpg", "amazon_link":"https://www.amazon.com/gp/product/1642937010/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1642937010&linkCode=as2&tag=robbinsresear-20&linkId=172202544aeb6f5aef5f7127ce56d661"},
          { "title":"Unshakable power", "author":"Tony Robbins", "image_url":"https://images-na.ssl-images-amazon.com/images/I/41ufJBk4AbL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg", "amazon_link":"https://www.amazon.com/gp/product/1642937010/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1642937010&linkCode=as2&tag=robbinsresear-20&linkId=172202544aeb6f5aef5f7127ce56d661" },
          { "title":"Awaken the Giant within", "author":"Tony Robbins", "image_url":"https://images-na.ssl-images-amazon.com/images/I/51lXzR+xTOL._SX327_BO1,204,203,200_.jpg", "amazon_link":"https://www.amazon.com/gp/product/0671791540/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0671791540&linkCode=as2&tag=tw-tonyrobbins18-20&linkId=37807d93184fed8a58e6dd492210d23a" }

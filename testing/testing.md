@@ -167,8 +167,10 @@ Most common paths through the website:
 ## Known Bugs
 
 * Contact Form not active : user won't receive a free ebook
+* Insights saved books and reviews numbers are not generating the correct number (to be build with javascript)
+* Carousel : after finishing displaying all the slides, not possible to use the arrow to back to first slide
 * 
-* 
+
 
 ## Feedback
 
