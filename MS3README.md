@@ -116,10 +116,10 @@ Imagery is important in this website in order to illustrate the books library an
 
 ### Wireframes
 
-1. All Wireframes - [View]()
-2. Mobile Wireframes - [View]()
-3. Tablet Wireframes - [View]()
-4. Web Wireframes - [View]()
+1. All Wireframes - [View](static/assets/wireframes/all_wireframes.pdf)
+2. Mobile Wireframes - [View](static/assets/wireframes/mobile_wireframes.pdf)
+3. Tablet Wireframes - [View](static/assets/wireframes/tablet_wireframes.pdf)
+4. Desktop Wireframes - [View](static/assets/wireframes/desktop_wireframes.pdf)
 
 ### Database CRUD (Create, Read, Update, Delete)
 
@@ -223,13 +223,16 @@ In the mobile version the navigation bar is turning into a hamburger menu for a 
 * Users can exchange their books with other member
 * Users can give away their book in exchange of discounts
 * Users can build a reading list paired with a time tracker with reminders
-* Users can have access to an history of their activities. A record is accessible if they bought a book, exchange a book or leave a review etc.
+* Users can have access to an history of their activities. A record is accessible if they buy a book, exchange a book or leave a review etc.
 * Users can contact the website owner to request general information thanks to a contact form
 * Users receives a confirmation email once the contact form is completed.
 * Users can follow a profile from experts to receive recommendations by email
 * Users can track their readings by amending the status of the book in their account (ie : status : saved, reading or finished )
 * Users can sell their books to be listed in the dimensions and experts page and edit their entry
 * Possibility to edit review via MyBookLog page profile / history review
+* Vote for the readflix of the month
+* Save a book in wishlist
+* Share a book with a friend via social media
 
 ## Technologie Used 
 
@@ -312,31 +315,32 @@ SECRET_KEY :
 ### Code
 
 1. Readflix
-* 
-* 
-
+* Using for loop in Flask [Here](https://www.geeksforgeeks.org/python-using-for-loop-in-flask/)
+* how to position an element bootstrap [Here](https://www.geeksforgeeks.org/bootstrap-positioning-an-element-with-examples/)
 
 2. Collections
 * “how to display information if button is pressed flask” [Here](https://www.codegrepper.com/code-examples/python/how+to+display+information+if+button+is+pressed+flask)
 * how to detect which update button was clicked with Flask python(mongoDB) [Here](https://stackoverflow.com/questions/55089384/how-to-detect-which-update-button-was-clicked-with-flask-pythonmongodb)
 * HTML DOM addEventListener() Method for the button collections [Here](https://www.w3schools.com/jsref/met_element_addeventlistener.asp)
-* 
+
 
 3. Community
-* 
-* 
-* 
+* get bootstrap blog features for the community [Here](https://getbootstrap.com/docs/5.1/examples/blog/)
+
 
 4. MyBooklog
 * How To Create Icon Buttons : [Here](https://www.w3schools.com/howto/howto_css_icon_buttons.asp)
 * How can I randomly select an item from a list? for the MyBookLog goal statement form / dropdown reading level [Here](https://stackoverflow.com/questions/306400/how-can-i-randomly-select-an-item-from-a-list)
-* 
+
+5. Sign up / Log in / Log out
+* Code Institute task's manager project : [Here](https://github.com/Code-Institute-Solutions/TaskManagerAuth)
+* Jinja loops and conditionnal tutorial [Here](https://ttl255.com/jinja2-tutorial-part-2-loops-and-conditionals/)
 
 5. General 
 
 * Werzeug security helpers [Here](https://werkzeug.palletsprojects.com/en/2.0.x/utils/#module-werkzeug.security)
-* Code Institute task's manager mini project : [Here](https://github.com/Code-Institute-Solutions/TaskManagerAuth)
-* Code Institute flask project Thorin et company 
+* Code Institute task's manager project  for the authenfication : [Here](https://github.com/Code-Institute-Solutions/TaskManagerAuth)
+* Code Institute flask project Thorin et company (comparing json and mongo)
 
 
 ### Content 

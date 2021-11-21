@@ -173,6 +173,7 @@ Most common paths through the website:
 * Adding review / No flash to specify if review was added successfully or failed
 * Goal statement / No flash to specify if goal was added successfully or failed
 * Entering email in the goal statement won't send a copy of statement to user
+* Navigation bar / burger icon doesn't close after opening.(refresh is required)
 
 
 ## Feedback
