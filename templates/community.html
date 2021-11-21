@@ -10,16 +10,6 @@
           Coming together is a beginning, keeping together is a progress, working together is a success.</p>
         </p>
       </div>
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <form class="d-flex" action="#" method="POST">
-          <input class="form-control me-2 validate" name="" id="" type="search" placeholder="eneter the title" aria-label="book title required">
-          <label for ="">Book Tittle</label>
-          <input class="form-control me-2 validate" name="" id="" type="search" placeholder="eneter the title" aria-label="book title required">
-          <label for ="">Book Tittle</label>
-          <a href="#" class="btn btn-secondary">Reset</a>
-          <button class="btn btn-outline-light" type="submit">Add </button>
-      </form> 
-      </div>
     </div>
   </section>
 
@@ -46,6 +36,43 @@
   </section>
 
 {% endfor %}
+
+<section class="py-5 text-center container">
+  <div class="row py-lg-5">
+    <div class="col-lg-5 col-md-8 mx-auto">
+      <h3 class="fw-bold">Add a review</h3>
+      <p class="lead text-muted">Share your reading experience with the Bookcytocin Club</p>
+      <form>
+        <div class="mb-3">
+          <label for ="title">Title</label>
+          <input class="form-control me-2 validate" name="" id="" type="text" placeholder="" aria-label="author" required>
+        </div>
+        <div class="mb-3">
+          <label for ="author">Author</label>
+          <input class="form-control me-2 validate" name="" id="" type="text" placeholder="" aria-label="author" required>
+        </div>
+        <div class="mb-3">
+          <label for ="review"> Review</label>
+          <textarea class="form-control me-2 validate" name="" id="" type="text" placeholder="Write your review here" aria-label="author" required></textarea>
+        </div>
+        <div class="mb-3">
+        <label for ="full-name">Full Name</label>
+        <input class="form-control me-2 validate" name="" id="" type="text" placeholder="" aria-label="author" required>
+        </div>
+      </div>
+      <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Submit review</button>
+      </form>
+    </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
   
 <!-- add a review-->
 <section class="py-5 text-center container">
@@ -57,18 +84,22 @@
     </div>
     <div class="col-lg-6 col-md-8 mx-auto">
       <form class="d-flex" action="#" method="POST">
-        <input class="form-control me-2 validate" name="" id="" type="text" placeholder="" aria-label="title" required>
-        <label for ="">Title</label>
-        <input class="form-control me-2 validate" name="" id="" type="text" placeholder="" aria-label="author" required>
-        <label for ="">Author</label>
-        <input class="form-control me-2 validate" name="" id="" type="text" placeholder="" aria-label="author" required>
-        <label for ="">Image link</label>
-        <input class="form-control me-2 validate" name="" id="" type="text" placeholder="" aria-label="author" required>
+        <div class="mb-3">
+          <label for ="">Title</label>
+          <input class="form-control me-2 validate" name="" id="" type="text" placeholder="" aria-label="author" required>
+        </div>
+        <div class="mb-3">
+          <label for ="">Author</label>
+          <input class="form-control me-2 validate" name="" id="" type="text" placeholder="" aria-label="author" required>
+        </div>
         <label for ="">Amazon Link</label>
         <input class="form-control me-2 validate" name="" id="" type="text" placeholder="" aria-label="author" required>
-        <label for =""> Your Review</label>
-        <input class="form-control me-2 validate" name="" id="" type="text" placeholder="" aria-label="author" required>
+        <label for =""> Review</label>
+        <input class="form-control me-2 validate" name="" id="" type="text" placeholder="write your review" aria-label="author" required>
+        <label for ="">Email</label>
+        <input class="form-control me-2 validate" name="" id="" type="text" placeholder="enter your email to receive your statement" aria-label="author" required>
         <label for ="">Full Name</label>
+        <input class="form-control me-2 validate" name="" id="" type="text" placeholder="" aria-label="author" required>
         <a href="#" class="btn btn-secondary">Edit</a>
         <button class="btn btn-outline-light" type="submit">Submit</button>
     </form> 

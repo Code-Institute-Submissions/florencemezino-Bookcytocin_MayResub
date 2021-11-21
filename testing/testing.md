@@ -172,6 +172,7 @@ Most common paths through the website:
 * Carousel : after finishing displaying all the slides, not possible to use the arrow to back to first slide
 * Adding review / No flash to specify if review was added successfully or failed
 * Goal statement / No flash to specify if goal was added successfully or failed
+* Entering email in the goal statement won't send a copy of statement to user
 
 
 ## Feedback

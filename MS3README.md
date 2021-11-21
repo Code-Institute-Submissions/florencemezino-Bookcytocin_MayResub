@@ -229,6 +229,7 @@ In the mobile version the navigation bar is turning into a hamburger menu for a 
 * Users can follow a profile from experts to receive recommendations by email
 * Users can track their readings by amending the status of the book in their account (ie : status : saved, reading or finished )
 * Users can sell their books to be listed in the dimensions and experts page and edit their entry
+* Possibility to edit review via MyBookLog page profile / history review
 
 ## Technologie Used 
 
