@@ -23,7 +23,7 @@ def index():
     return render_template("index.html", page_title="Readflix")
 
 
-# Readflix : show last 12 saved books from users
+# Readflix : show last 12 saved in database manually
 @app.route("/readflix")
 def readflix():
     books = list(mongo.db.books.find().limit(12))
@@ -105,7 +105,7 @@ def login():
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
-                flash("Welcome to Bookcytocin".format(
+                flash("Welcome to Bookcytocin {}".format(
                     request.form.get("username")))
                 return redirect(url_for(
                     "mybooklog", username=session["user"]))
@@ -123,18 +123,10 @@ def login():
 # MyBookLog : user can edit and save goal commitment
 @app.route("/mybooklog", methods=["GET", "POST"])
 def mybooklog():
-    if request.method == "POST":
-        if exiting_goal:
-            username = session["user"]
-            user = mongo.db.users.find_one({"username": username})
-            pass
-        else:
-            flash("Commit to your goal, fill in your statement")
-            return redirect(url_for(
-                "mybooklog")), username=session["user"])
+    username = session["user"]
+    user = mongo.db.users.find_one({"username": username})
+    return render_template("mybooklog.html", page_title="MyBookLog", user=user)
 
-        return render_template(
-            "mybooklog.html", page_title = "MyBookLog", user=user)
 
 # Logout
 @app.route("/logout")
