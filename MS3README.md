@@ -97,11 +97,46 @@ Imagery is important in this website in order to illustrate the books library an
 * Free images from topic "reading" "books" "library" "purple" were selected on websites sush as [Pexel](https://www.pexels.com/fr-fr/) and [Unsplash](https://unsplash.com/login) in order to illustrate the colors chosen. Also each book has their own book image displayedbooks datatbase.
 * Book image were taken from amazon and hosted in Cloudinary
 
+### Branding research 
+
+[Smashinglogo maker]() program was used to generate branding ideas and color scheme. Below see some materials :
+* Logo
+    - Bookcytocin white / plum purple - [View](static/mindmap/logo1.png)
+    - Bookcytocin dark blue/ plum purple - [View](static/mindmap/logo2.png)
+    - Bookcytocin white / light grey - [View](static/mindmap/logo3.png)
+
+* Covers / Hero image examples
+    - Bookcytocin global cover - [View](static/mindmap/cover1.png)
+    - Bookcytocin white / outdoor window - [View](static/mindmap/cover2.png)
+    - Bookcytocin white / plum purple - [View](static/mindmap/cover3.png)
+
+* Merchandise 
+    - Bookcytocin cup / business card - [View](static/reasearch_branding/merchandise.png)
+
+
 ### Wireframes
+
 1. All Wireframes - [View]()
 2. Mobile Wireframes - [View]()
 3. Tablet Wireframes - [View]()
 4. Web Wireframes - [View]()
+
+### Database CRUD (Create, Read, Update, Delete)
+
+#### Mindmap with Lucidchart
+1. Database Structure - [View](static/mindmap/database_structure.png)
+2. Mindmap programs : 
+    - programs / functions overview - [[View](static/mindmap/programs.png)
+        - register / login / search bar - [[View](static/mindmap/program1.png)
+        - view books selections / browse books collections / browse recommendations - [View](static/mindmap/program2.png)
+        - view and edit goal statement / manage reading performance / add and view review / view reading or review insights - [View](static/mindmap/program3.png)
+    
+
+#### MongoDB database / collections structure
+1. Books - [[View](static/mongo_data/books.png)
+2. Collections - [[View](static/mongo_data/collections.png)
+3. Users - [[View](static/mongo_data/users.png)
+
 
 ## General Features
 
@@ -206,29 +241,47 @@ In the mobile version the navigation bar is turning into a hamburger menu for a 
 
 
 ### Frameworks, Librairies & Programs Used
+
 1. [Git](https://git-scm.com/)
 Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+
 2. [GitHub](https://github.com/)
 GitHub is used to store the projects code after being pushed from Git.
+
 3. [Heroku](https://dashboard.heroku.com/)
-Heroku was used to deply the website
+Heroku was used to deploy the website
+
 4. [Balsamiq](https://balsamiq.com/)
 Balsamiq was used to create [the wireframes](All Wireframes.pdf) during the design process.
+
 5. [Flask](https://en.wikipedia.org/wiki/Flask_(web_framework))
 Flask was used as a library to facilitate running all python functons
+
 6. [MongoDB](https://en.wikipedia.org/wiki/MongoDB#:~:text=MongoDB%20(de%20l'anglais%20humongous,est%20%C3%A9crit%20en%20C%2B%2B.)
 MongoDB was used to build databases / collections
+
 7. [Cloudinary](https://cloudinary.com/)
 Cloudinary was used to host images, specifically tje book images
+
 8. [Hover.css](https://ianlunn.github.io/Hover/)
+
 Hover.css was used on`social media icons for styling and give dynamim
 9. [Google Fonts](https://fonts.google.com/)
-Google fonts were used to import the `xxxxxx` font into the style.css file which is used on all pages throughout the project.
+
+Google fonts were used to import the `Lato` font into the style.css file which is used on all pages throughout the project.
+
 10. [Font Awesome](https://fontawesome.com/)
 Font Awesome was used on all pages throughout the website to add icons for aesthetic purposes.
 
+11. [StartBootstrap](https://startbootstrap.com/theme/landing-page)
+StartBootstrap was used to get a landing page template to build the app
+
+12. [Lucidchart](https://lucid.app/)
+Luci app was used to have mindmp and have an overview of the database strategies and structure
+
 
 ## Testing 
+
 Testing information can be found in the following file [View](testing.md))
 
 ## Deployment
@@ -278,12 +331,14 @@ SECRET_KEY :
 * 
 
 5. General 
+
 * Werzeug security helpers [Here](https://werkzeug.palletsprojects.com/en/2.0.x/utils/#module-werkzeug.security)
 * Code Institute task's manager mini project : [Here](https://github.com/Code-Institute-Solutions/TaskManagerAuth)
 * Code Institute flask project Thorin et company 
-* StartBootstrap, to get a template
+
 
 ### Content 
+
 * All content was written by the developer.
 * Color scheme was found on the website Colormind, you can view it [Here](http://colormind.io/)
 * Psychological properties of colours was found [Here](http://www.colour-affects.co.uk/psychological-properties-of-colours)
@@ -291,6 +346,12 @@ SECRET_KEY :
 * Readme.md inspiration models : 
 Readme.md sample from Code Institute [View](https://github.com/Code-Institute-Solutions/SampleREADME)
 Readme.md sample from Anna Greaves's portrait artist [View](https://github.com/AJGreaves/portrait-artist/blob/master/README.md)
+
+* Websites benchmark :
+- Optimize [Here](https://www.optimize.me/?gclid=Cj0KCQjw_fiLBhDOARIsAF4khR0VuMLVgM7upWtouIID8wwwlaDQ3zpRCrrKqvt46zWOAqQkaHNgW8AaAkaKEALw_wcB)
+- Bookauthority [Here](https://bookauthority.org/)
+- Bingebooks [Here](https://bingebooks.com/)
+- Mindvalley [Here](https://www.mindvalley.com/lifebook)
 
 
 ### Media
