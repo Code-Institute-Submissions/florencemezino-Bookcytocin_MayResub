@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<!-- community section + add a review-->
+<!-- community section -->
 <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-12 col-md-8 mx-auto">
@@ -12,6 +12,42 @@
       </div>
     </div>
   </section>
+
+  <!-- reviews examples -->
+        
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-12 col-md-8 mx-auto">
+  <div class="row">
+    <div class="col-lg-4">
+      <img src="static/assets/img/author_vishen.png" class="bd-placeholder-img rounded-circle" alt="..." width="200" height="200">
+      <h4 class="fw-light">The Code of the Extraordinary Mind</h4>
+      <p class="fst-italic">"I am very proud to have written The Code of the Extraordinary Mind. It is a real blueprint of laws to break us free from the shackles of an ordinary life."</p>
+      <p class="fw-bold">Vishen Lakhiani, CEO Mindvalley</p>
+      <p><a class="btn btn-secondary" href="https://www.vishen.com/" target="_blank">More info</a></p>
+    </div>
+    <div class="col-lg-4">
+      <img src="static/assets/img/author_marisa.jpeg" class="bd-placeholder-img rounded-circle" alt="..." width="200" height="200">
+      <h4 class="fw-light">I am Enough</h4>
+      <p class="fst-italic">"Through this book, you will realize how powerful your thoughts are and the effect they have on your body, energy relationships etc. I am very happy to have put together a real tool to change your mindset for the best."</p>
+      <p class="fw-bold">Marisa Peer, Life coach</p>
+      <p><a class="btn btn-secondary" href="https://marisapeer.com/books/" target="_blank">More info</a></p>
+    </div>
+    <div class="col-lg-4">
+      <img src="static/assets/img/author_jim.jpeg" class="bd-placeholder-img rounded-circle" alt="..." width="200" height="200">
+      <h4 class="fw-light">Limitless</h4>
+      <p class="fst-italic">"Reading Limitless and joining the 10-day Kwik Start Program will help you put the ideas into action and make you smarter. I realize that’s a bold claim, but I’m completely convinced it’s true!"</p>
+      <p class="fw-bold">Jim Kwik, Brain coach</p>
+      <p><a class="btn btn-secondary" href="https://www.limitlessbook.com/" target="_blank">More info</a></p>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+</div>
+</section>
+
+
 
 
 {% for user in users %}
@@ -37,75 +73,9 @@
 
 {% endfor %}
 
-<section class="py-5 text-center container">
-  <div class="row py-lg-5">
-    <div class="col-lg-5 col-md-8 mx-auto">
-      <h3 class="fw-bold">Add a review</h3>
-      <p class="lead text-muted">Share your reading experience with the Bookcytocin Club</p>
-      <form>
-        <div class="mb-3">
-          <label for ="title">Title</label>
-          <input class="form-control me-2 validate" name="" id="" type="text" placeholder="" aria-label="author" required>
-        </div>
-        <div class="mb-3">
-          <label for ="author">Author</label>
-          <input class="form-control me-2 validate" name="" id="" type="text" placeholder="" aria-label="author" required>
-        </div>
-        <div class="mb-3">
-          <label for ="review"> Review</label>
-          <textarea class="form-control me-2 validate" name="" id="" type="text" placeholder="Write your review here" aria-label="author" required></textarea>
-        </div>
-        <div class="mb-3">
-        <label for ="full-name">Full Name</label>
-        <input class="form-control me-2 validate" name="" id="" type="text" placeholder="" aria-label="author" required>
-        </div>
-      </div>
-      <div class="mb-3">
-        <button type="submit" class="btn btn-primary">Submit review</button>
-      </form>
-    </div>
-    </div>
-  </div>
-</section>
+<!-- community / book recommendation by member -->
 
 
-
-
-
-
-  
-<!-- add a review-->
-<section class="py-5 text-center container">
-  <div class="row py-lg-5">
-    <div class="col-lg-12 col-md-8 mx-auto">
-      <h3 class="fw-bold">Add a review</h3>
-      <p class="lead text-muted">Share your reading experience with the Bookcytocin Club</p>
-      </p>
-    </div>
-    <div class="col-lg-6 col-md-8 mx-auto">
-      <form class="d-flex" action="#" method="POST">
-        <div class="mb-3">
-          <label for ="">Title</label>
-          <input class="form-control me-2 validate" name="" id="" type="text" placeholder="" aria-label="author" required>
-        </div>
-        <div class="mb-3">
-          <label for ="">Author</label>
-          <input class="form-control me-2 validate" name="" id="" type="text" placeholder="" aria-label="author" required>
-        </div>
-        <label for ="">Amazon Link</label>
-        <input class="form-control me-2 validate" name="" id="" type="text" placeholder="" aria-label="author" required>
-        <label for =""> Review</label>
-        <input class="form-control me-2 validate" name="" id="" type="text" placeholder="write your review" aria-label="author" required>
-        <label for ="">Email</label>
-        <input class="form-control me-2 validate" name="" id="" type="text" placeholder="enter your email to receive your statement" aria-label="author" required>
-        <label for ="">Full Name</label>
-        <input class="form-control me-2 validate" name="" id="" type="text" placeholder="" aria-label="author" required>
-        <a href="#" class="btn btn-secondary">Edit</a>
-        <button class="btn btn-outline-light" type="submit">Submit</button>
-    </form> 
-    </div>
-  </div>
-</section>
 
 
   <!-- articles section -->
