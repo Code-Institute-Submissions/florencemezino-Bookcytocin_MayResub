@@ -23,7 +23,7 @@ def index():
     return render_template("index.html", page_title="Readflix")
 
 
-# Readflix : show last 12 saved in database manually
+# Readflix : show the last 8 book entries made by site owner
 @app.route("/readflix")
 def readflix():
     books = list(mongo.db.books.find().limit(8))
@@ -31,7 +31,7 @@ def readflix():
     return render_template("index.html", books=books)
 
 
-# Collection : Find a book via search bar
+# Collection : find a book via search bar
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
@@ -40,7 +40,7 @@ def search():
         "collections.html", page_title="Collections", books=books)
 
 
-# Collection : Display books in collection
+# Collection : display books in collection
 @app.route("/collections")
 def collections():
     books = list(mongo.db.books.find())
@@ -49,7 +49,7 @@ def collections():
         "collections.html", page_title="Collections", books=books)
 
 
-# Community : display reviews and blog
+# Community : display community / bog
 @app.route("/community")
 def community():
     users = list(mongo.db.users.find().limit(8))
@@ -57,11 +57,11 @@ def community():
         "community.html", page_title="The Bookcytocin Club", user=users)
 
 
-# MyBookLog : user can add a review 
+# MyBookLog : user can view possibility to add review 
 @app.route("/review", methods=["POST"])
 def review():
-    username=session["user"]
-    user=mongo.db.users.find_one({"username": username})
+    username = session["user"]
+    user = mongo.db.users.find_one({"username": username})
     print("Add a review", user)
     return render_template(
         "community.html", page_title="Community", user=user)
@@ -118,11 +118,26 @@ def login():
     return render_template("login.html", page_title="Login")
 
 
-# MyBookLog : user can save/edit goal commitment
-@app.route("/mybooklog", methods=["GET", "POST"])
+# MyBookLog : user save goal commitment
+@app.route("/mybooklog", methods=["POST", "GET"])
 def mybooklog():
     username = session["user"]
     user = mongo.db.users.find_one({"username": username})
+    if request.method == "POST":
+        dta = {
+            "goal_reason": request.form.get("goal_reason"),
+            "goal_obstacle": request.form.get("goal_obstacle"),
+            "goal_email": request.form.get("goal_email"),
+            "goal_signature": request.form.get("goal_signature"),
+        }
+
+        print("My reading goal", user)
+        print(dta)
+        flash("Your commitment has been saved!")
+        mongo.db.users.update_one({"username": session["user"]}, {"$set": dta})
+        return render_template(
+            "mybooklog.html", page_title="MyBookLog", user=user)
+
     return render_template("mybooklog.html", page_title="MyBookLog", user=user)
 
 

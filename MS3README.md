@@ -234,6 +234,16 @@ In the mobile version the navigation bar is turning into a hamburger menu for a 
 * Vote for the readflix of the month
 * Save a book in wishlist
 * Share a book with a friend via social media
+* Edit goal commitment (crud compliant)
+* Agregate readflix function
+* Include level in goal setting of user
+    - Beginner : between 1 - 12 books per year
+    - Intermediate : between 12 - 24 books per year
+    - Expert : between 24 - 36 books per year
+    - Master : 36+ books per year
+
+
+
 
 ## Technologie Used 
 
@@ -337,6 +347,8 @@ SECRET_KEY :
 * How To Create Icon Buttons : [Here](https://www.w3schools.com/howto/howto_css_icon_buttons.asp)
 * How can I randomly select an item from a list? for the MyBookLog goal statement form / dropdown reading level [Here](https://stackoverflow.com/questions/306400/how-can-i-randomly-select-an-item-from-a-list)
 * HTML textarea tag [Here]https://www.w3schools.com/tags/tag_textarea.asp
+* How to use $set for the goal statment [Here](https://docs.mongodb.com/manual/reference/operator/update/set/)
+* How do I partially update an object in MongoDB so the new object will overlay / merge with the existing one [Here](https://stackoverflow.com/questions/10290621/how-do-i-partially-update-an-object-in-mongodb-so-the-new-object-will-overlay)
 
 5. Sign up / Log in / Log out
 * Code Institute task's manager project : [Here](https://github.com/Code-Institute-Solutions/TaskManagerAuth)
@@ -371,7 +383,7 @@ Readme.md sample from Anna Greaves's portrait artist [View](https://github.com/A
 
 ### Acknowledgements
 - My Mentor [Jack Washira](https://github.com/iamjackwachira) for continuous helpful feedback.
-- Tutor support at Code Institute for their support. Special mention for Igor, Alan and James.
+- Tutor support at Code Institute for their support. Special mention for Igor and Fatima.
 - Peer to peer support from Code Institute Slack community.
 
 ## Author 

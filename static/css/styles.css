@@ -11504,6 +11504,11 @@ footer.footer {
   background-color: var(--bs-purple);
 }
 
+.form-label{
+  color:purple;
+  font-weight:bold;
+
+}
   
   /* LOG IN
   -------------------------------------------------- */
