@@ -7,7 +7,7 @@ View the live project [here]()
 
 The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
 
-W3C Markup Validator - `Success`
+W3C Markup Validator - `Success` (sidenote : validator claims 1 error line 132, "end p tag" but not the case)
 W3C CSS Validator - `Success`
 JShint - `Success`
 Pep8 - `Success`
@@ -165,13 +165,26 @@ Most common paths through the website:
 
 ## Known Bugs
 
-* Contact Form not active : user won't receive a free ebook
-* History reviews are not listed or stored
-* Insights saved books and reviews numbers are not generating the correct number (to be build with javascript)
-* Carousel : after finishing displaying all the slides, not possible to use the arrow to back to first slide
-* Adding review / No flash to specify if review was added successfully or failed
-* Goal statement / No flash to specify if goal was added successfully or failed
+a- Functions
+
+* Login : When logging in via MyBookLog page + clicking x page and coming back to MyBookLog 
+
+* Goal statement is not storing data
+* Goal statement / no flash to specify if goal was added successfully or failed
 * Entering email in the goal statement won't send a copy of statement to user
+
+* Adding reviews and listing history
+* Adding review / no flash to specify if review was added successfully or failed
+* Insights saved books and reviews numbers are not generating the correct number
+
+* Footer , copyright section, the year is not updating.
+
+* CTA free ebook : Contact Form not active : user won't receive a free ebook
+
+
+b- style
+
+* Carousel : after finishing displaying all the slides, not possible to use the arrow to go back to previous slide
 * Navigation bar / burger icon doesn't close after opening.(refresh is required)
 
 

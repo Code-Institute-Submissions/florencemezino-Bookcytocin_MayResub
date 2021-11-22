@@ -5,7 +5,7 @@
 <section class="py-5 text-center container">
   <div class="row py-lg-5">
     <div class="col-lg-12 col-md-8 mx-auto">
-      <h1 class="fw-bold">{{page_title}}</h1>
+      <h2 class="fw-bold">{{page_title}}</h2>
       <p class="lead text-muted"> Welcome {{username}} ! Set your goal, monitor your readings and get some great insights.</p>
       </p>
     </div>
@@ -13,20 +13,16 @@
 </section>
 
 <!-- Goal - Commitment -->
-<section class="py-5 text-center container">
+<section class="py-5 text-center container bg-light" style="border-radius:10%;">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Goal</h1>
+        <h2 class="fw-light">Goal</h2>
         <p class="lead text-muted">Decide, Commit, Suceed.<br>
           Commitment is what transforms a promise into a reality.</p>
-        </p>
+
         <form>
           <div class="mb-3">
             <label for="exampleInputStatement1" class="form-label form-commitment">I commit to complete reading the following number of books per year</label>
-            <!-- <div class="dropdown" >
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" required>
-                Select a number
-              </button> -->
             <a class="btn btn-md dropdown-toggle btn-secondary" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Select your level<span class="caret"></span></a>
               <div id="dropdown-list" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -48,17 +44,16 @@
           </div>
           <div class="mb-3">
           <label for ="">Email</label>
-          <input class="form-control me-2 validate" name="" id="" type="text" placeholder="receive your goal statement by email" aria-label="author" required>
+          <input class="form-control me-2 validate" name="" id="" type="text" placeholder="" aria-label="author" required>
           </div>
           <label for="exampleInputStatement2" class="form-label form-commitment">Commit here by typing your name</label>
           <input type="text" class="form-control" name="signature" id="exampleInputStatement2" aria-describedby="commitmentHelp" required>
         </div>
-
         <div class="mb-3">
           <button type="submit" class="btn btn-secondary">Edit</button>
           <button type="submit" class="btn btn-primary">Save my commitment</button>
         </form>
-      </div>
+        </div>
       </div>
     </div>
   </section>
@@ -67,8 +62,11 @@
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-12 col-md-8 mx-auto">
-        <h1 class="fw-light">My Reviews</h1>
+        <h2 class="fw-light">My Reviews</h2>
         <p class="lead text-muted">Manage your reading progress by reviewing the books you read. Remember, the world belongs to those who reads.</p>
+        <div class="row mb-4">
+          <img src="static/assets/img/my_booklog.png" class="bd-placeholder-img" alt="..." width="100%" height="auto" style="border-radius: 5%;">
+        </div>
         <div class="accordion" id="accordionExample">
           {% for book in user.review %}
           <div class="accordion-item">
@@ -97,11 +95,11 @@
 
 
   <!-- add a review-->
-<section class="py-5 text-center container">
-  <div class="row py-lg-5">
-    <div class="col-lg-5 col-md-8 mx-auto">
-      <h3 class="fw-bold">Add a review</h3>
-      <p class="lead text-muted">Share your reading experience with the Bookcytocin Club</p>
+<section class="container">
+  <div class="col-lg-6 col-md-8 mx-auto text-center">
+    <div class="row mb-3">
+      <h4 class="fw-bold">Add a review</h4>
+      <p class="text-muted">Share your reading experience with the Bookcytocin Club</p>
       <form>
         <div class="mb-3">
           <label for ="title">Title</label>
@@ -119,13 +117,13 @@
         <label for ="full-name">Full Name</label>
         <input class="form-control me-2 validate" name="" id="" type="text" placeholder="" aria-label="author" required>
         </div>
+        <div class="mb-3">
+          <button type="submit" class="btn btn-primary">Submit review</button>
+        </div>
+        </form>
       </div>
-      <div class="mb-3">
-        <button type="submit" class="btn btn-primary">Submit review</button>
-      </form>
     </div>
     </div>
-  </div>
 </section>
 
 
@@ -134,7 +132,7 @@
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-12 col-md-8 mx-auto">
-        <h1 class="fw-light">Insights</h1>
+        <h2 class="fw-light">Insights</h2>
         <p class="lead text-muted">Here is an overview of your reading progress.<br>
           You are doing fantastic, keep nourrishing your soul with amazing readings and inspire others to do the same!</p>
         </p>

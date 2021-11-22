@@ -12,7 +12,7 @@
 //     $("#copyright").text(new Date().getFullYear());
 
 
-// Collection button
+// Copyright : Updating year automatically
 
 document.getElementById("myCollection").addEventListener("click", function() {
     alert("Hello World!");
