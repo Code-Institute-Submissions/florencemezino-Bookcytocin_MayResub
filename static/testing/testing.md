@@ -15,7 +15,7 @@ W3C CSS Validator - `Success`
 JShint - `Success`
 Pep8 - `Success`
 
-Lighthouse - [Results](assets/testing/lighthousems3_results.png)
+Lighthouse - [Results](static/assets/testing/lighthousems3_results.png)
 
 ### Testing User Stories from User Experience (UX) Section
 
@@ -58,6 +58,7 @@ Most common paths through the website:
 > Listed as future feature in Readme file
 
 * As a reader, I want to recommend the books I read so that I can have the feeling to be part of a community and it will motivates me to reach my goal
+- User is able to to submit their review via a "add review " functionnality. User gets notified that the review is being treated.
 - The commnunity page shows a strong sense of validation that to the many format a recommendation can be give. In the blog from the community page, user can read articles, participate to events etc.
 
 
@@ -68,11 +69,10 @@ Most common paths through the website:
 #### As a reader and returning visitor to the website :
 
 * As a reader, I want to see the most liked/successful/trendy books on a certain period to not miss out so that I can be up to date about trendy readings
-- Readers have access to a special selection of books provided via Readflix
-
+- Readers have access to a special selection of books provided via Readflix. for every time they visit they will have a different selection.
 
 * As a reader, I want to be informed about new books releases, events, masterclass so that I can improve my learning skils in general. 
-- To be informed about lastest news , tips , events etc
+- To be informed about lastest news , tips , events, user can visit the community page
 
 
 ### Manual (logical) testing of all elements and functionality on every page.
@@ -211,18 +211,8 @@ User can search by book title, author and collection types.
 
 a- Functions
 
-* Login : When logging in via MyBookLog page + clicking x page and coming back to MyBookLog 
-
-* Goal statement is not storing data
-* Goal statement / no flash to specify if goal was added successfully or failed
-* Entering email in the goal statement won't send a copy of statement to user
-
-* Adding reviews and listing history
-* Adding review / no flash to specify if review was added successfully or failed
-* Insights saved books and reviews numbers are not generating the correct number
-
+* Login : When logging in via MyBookLog page + clicking x page and coming back to MyBookLog
 * Footer , copyright section, the year is not updating.
-
 * CTA free ebook : Contact Form not active : user won't receive a free ebook
 
 

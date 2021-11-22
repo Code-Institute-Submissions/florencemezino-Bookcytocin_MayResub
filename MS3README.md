@@ -2,7 +2,8 @@
 
 [View the live project here](https://bookcytocin-project.herokuapp.com/)
 
-![Bookcytocin](static/assets/img/bookcytocin_responsive.png)
+![Bookcytocin](http://url/to/bookcytocin_responsive.png)
+
 
 
 ## User Experience (UX)
@@ -241,8 +242,6 @@ In the mobile version the navigation bar is turning into a hamburger menu for a 
     - Intermediate : between 12 - 24 books per year
     - Expert : between 24 - 36 books per year
     - Master : 36+ books per year
-
-
 
 
 ## Technologie Used 

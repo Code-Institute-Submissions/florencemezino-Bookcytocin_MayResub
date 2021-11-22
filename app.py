@@ -23,10 +23,12 @@ def index():
     return render_template("index.html", page_title="Readflix")
 
 
-# Readflix : show the last 8 book entries made by site owner
+# Readflix : show 8 random books for every page visit
 @app.route("/readflix")
 def readflix():
-    books = list(mongo.db.books.find().limit(8))
+    books = list(mongo.db.books.aggregate([
+        {"$sample": {"size": 8}}
+    ]))
     print("Books in collections: ", books)
     return render_template("index.html", books=books)
 
@@ -57,7 +59,7 @@ def community():
         "community.html", page_title="The Bookcytocin Club", user=users)
 
 
-# MyBookLog : user can view possibility to add review 
+# MyBookLog : user can submit a review
 @app.route("/review", methods=["POST"])
 def review():
     username = session["user"]
@@ -71,12 +73,12 @@ def review():
         }
         print("My reading goal", user)
         print(data)
-        flash("Your review is being processed. You will be notified when it is published!")
-        mongo.db.users.update_one({"username": session["user"]}, {"$set": data})
-   
+        flash("Your review is being processed. Stay tune!")
+        mongo.db.users.update_one(
+            {"username": session["user"]}, {"$set": data})
+
         print("Add a review", user)
-        return render_template(
-        "mybooklog.html", page_title="MyBookLog", user=user)
+    return render_template("mybooklog.html", page_title="MyBookLog", user=user)
 
 
 # Sign up
@@ -113,7 +115,7 @@ def login():
 
         if existing_user:
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
+                    existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome to Bookcytocin {}".format(
                     request.form.get("username")))
