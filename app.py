@@ -40,7 +40,7 @@ def search():
         "collections.html", page_title="Collections", books=books)
 
 
-# Collection : Find a book via book collection button
+# Collection : Display books in collection
 @app.route("/collections")
 def collections():
     books = list(mongo.db.books.find())
@@ -118,7 +118,7 @@ def login():
     return render_template("login.html", page_title="Login")
 
 
-# MyBookLog : user can edit and save goal commitment
+# MyBookLog : user can save/edit goal commitment
 @app.route("/mybooklog", methods=["GET", "POST"])
 def mybooklog():
     username = session["user"]

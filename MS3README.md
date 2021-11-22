@@ -1,8 +1,9 @@
 # Bookcytocin, evolve to your best self
 
-[View the live project here](link)
+[View the live project here](https://bookcytocin-project.herokuapp.com/)
 
-![Bookcytocin](assets/testing/responsivems3.png)
+![Bookcytocin](static/assets/img/bookcytocin_responsive.png)
+
 
 ## User Experience (UX)
 
