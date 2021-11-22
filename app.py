@@ -62,9 +62,21 @@ def community():
 def review():
     username = session["user"]
     user = mongo.db.users.find_one({"username": username})
-    print("Add a review", user)
-    return render_template(
-        "community.html", page_title="Community", user=user)
+    if request.method == "POST":
+        data = {
+            "review_title": request.form.get("review_title"),
+            "review_author": request.form.get("review_author"),
+            "review_content": request.form.get("review_content"),
+            "review_full_name": request.form.get("review_full_name"),
+        }
+        print("My reading goal", user)
+        print(data)
+        flash("Your review is being processed. You will be notified when it is published!")
+        mongo.db.users.update_one({"username": session["user"]}, {"$set": data})
+   
+        print("Add a review", user)
+        return render_template(
+        "mybooklog.html", page_title="MyBookLog", user=user)
 
 
 # Sign up
