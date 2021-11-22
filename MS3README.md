@@ -228,7 +228,7 @@ In the mobile version the navigation bar is turning into a hamburger menu for a 
 * Users receives a confirmation email once the contact form is completed.
 * Users can follow a profile from experts to receive recommendations by email
 * Users can track their readings by amending the status of the book in their account (ie : status : saved, reading or finished )
-* Users can sell their books to be listed in the dimensions and experts page and edit their entry
+* Users can sell their books edit their entry
 * Possibility to edit review via MyBookLog page profile / history review
 * Vote for the readflix of the month
 * Save a book in wishlist
@@ -331,6 +331,7 @@ SECRET_KEY :
 4. MyBooklog
 * How To Create Icon Buttons : [Here](https://www.w3schools.com/howto/howto_css_icon_buttons.asp)
 * How can I randomly select an item from a list? for the MyBookLog goal statement form / dropdown reading level [Here](https://stackoverflow.com/questions/306400/how-can-i-randomly-select-an-item-from-a-list)
+* HTML textarea tag [Here]https://www.w3schools.com/tags/tag_textarea.asp
 
 5. Sign up / Log in / Log out
 * Code Institute task's manager project : [Here](https://github.com/Code-Institute-Solutions/TaskManagerAuth)

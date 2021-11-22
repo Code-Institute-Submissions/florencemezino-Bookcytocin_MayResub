@@ -7,11 +7,13 @@ View the live project [here]()
 
 The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
 
-W3C Markup Validator - `Success` (sidenote : validator claims 1 error line 132, "end p tag" but not the case)
+W3C Markup Validator  / Jinja - `Success` 
+> to validate Jinja code is to open up a webpage in your app, right click the page, click view source, and copy that code into the W3 HTML validator.
+(sidenote : validator claims 1 error line 132, "end p tag" but not the case)
+
 W3C CSS Validator - `Success`
 JShint - `Success`
 Pep8 - `Success`
-Jinja - `Success` to validate Jinja code is to open up a webpage in your app, right click the page, click view source, and copy that code into the W3 HTML validator. That will give you the rendered HTML code - i.e. all of the Jinja will have been converted into HTML that can be validated.
 
 Lighthouse - [Results](assets/testing/lighthousems3_results.png)
 
@@ -25,70 +27,63 @@ Most common paths through the website:
 #### As a reader and a new visitor to the website :
 
 * As a reader, I want to have access to a great book library online so that I can have plenty of choice to select my next book to read
-- 
-- 
+- Reader receives suggestions of trendy books thanks to Readflix section. Every time a book gets added manually in the database, user will see it appearing in the Readflix page.
+- Reader has access via a search bar in the page Collections to a large library of books organized in 12 collections. 
 
 * As a reader, I want to buy a book in few steps so that I can progress quickly on my reading goals
-- 
-- 
+- Reader is redirected in one click to amazon to buy the book of their choice.
 
 * As a reader, I want to have access to recommendations/ reviews about books so that it can help me to choose the next book to read
-- 
-- 
+- In the community page, the reader has access to reviews from members of the Bookcytocin club.
+- Users gets recommendations and life advice through articles, events, matercass etc thank to the blog
 
 * As a reader, I want to sell books I read already so that I can invest in buying new ones
-- 
-- 
+> Listed as future feature in Readme file
 
 * As a reader, I want to exchange the books I read with other readers so that I can save money and interact with the readers community
-- 
-- 
+> Listed as future feature in Readme file
+
 
 #### As a reader and returning visitor to the website :
 
-
 * As a reader, I want to be encouraged to read more so that I can reach my reading goal 
-- 
-- 
+- User can log in to access their personal profile in which they can complete a reading commitment goal to make sure they reach their goal.
 
 * As a reader, I want to see my reading goals progress so that I can be motivated to read more
-- 
-- 
+- Reader has access to a section Insights in their profile in which they can see the number of books saved and the numbers of books finished and reviewed.
+> Listed as future feature in Readme file
 
 * As a reader, I want to be able to share reviews about my readings so that I can also help others to decide their reading 
-- 
-- 
+- Reader can add a review about a book they read. User needs to be logged in first in order to proceed.
+> Listed as future feature in Readme file
 
 * As a reader, I want to recommend the books I read so that I can have the feeling to be part of a community and it will motivates me to reach my goal
-- 
-- 
+- The commnunity page shows a strong sense of validation that to the many format a recommendation can be give. In the blog from the community page, user can read articles, participate to events etc.
 
-* As a reader, I want to be able to eupload online a book to sell so that I can market it better or remove it when it is sold out
-- 
-- 
+
+* As a reader, I want to be able to upload online a book to sell so that I can market it better or remove it when it is sold out
+> Listed as future feature in Readme file
 
 
 #### As a reader and returning visitor to the website :
 
 * As a reader, I want to see the most liked/successful/trendy books on a certain period to not miss out so that I can be up to date about trendy readings
-- 
-- 
+- Readers have access to a special selection of books provided via Readflix
+
 
 * As a reader, I want to be informed about new books releases, events, masterclass so that I can improve my learning skils in general. 
-- 
-- 
+- To be informed about lastest news , tips , events etc
 
 
 ### Manual (logical) testing of all elements and functionality on every page.
 
-#### Readflix
+#### Readflix 
 
 1. Header / Navigation bar
 - Go to "Readflix" from a desktop
-- Click on the logo : we are redirected to the main page "Books"
+- Click on the logo : we are redirected to the main page "Readflix"
 - Click on a different tab of the navigation bar to check if the active tab is highlighted when clicked and visiting the related page
-- Click on each
-- Click on button ""
+- Click on each sign up butto in the nav bar and the user can access the sign up form
 - Check if navigation bar is responsive on tablet and mobile. Confirm navigation bar collapses to become a toggle menu with a dropdown of the navigation links.
 
 2. Footer
@@ -97,14 +92,14 @@ Most common paths through the website:
 - Check if content is not hidden behind footer and is responsive.
 - Click on social media links Facebook, Twitter, Linkedin. The three links redirects to the respective social media.
 
-3. Hero image
-- Go to "Books" from a desktop
-- Confirm hero image is visible and responsive on all devices.
-- Confirm mouse hover hero image works by zooming on content
+3. Carousel
+- Go to any page from the site, the carousel will appear and show 4 slides.
+- Confirm images are visible and responsive on all devices.
+- Confirm all buttons from each redirect to the desired / correct page.
 
 4. Website purpose / description
-- Go to "Books" from a desktop
-- Confirm that the purpose is stated and all destinations are listed.
+- Go to "Readflix" from a desktop
+- Confirm that the purpose of the site is mentionned on each slide of the carousel
 - Confirm the headings are responsive on all devices.
 
 > For every point mentionned above : Repeat verification of functionality and responsiveness on mobile phone and tablet via Developer Tool,
@@ -117,9 +112,10 @@ Most common paths through the website:
 2. Footer
 - Footer code is identical on all html pages. Testing already completed.
 
-3. Dropdown to select a destination
-- Go to "Dimensions"from a desktop
-- The Dimension page appears with ...
+3. Search bar function
+- Go to "Collection "from a desktop
+- The Collection page appears with a section presentation of the page + a search
+User can search by book title, author and collection types.
 
 > For every point mentionned above : Repeat verification of functionality and responsiveness on mobile phone and tablet via Developer Tool,
 
@@ -132,9 +128,9 @@ Most common paths through the website:
 - Footer code is identical on all html pages. Testing already completed.
 
 3. Profiles
-- Go to "Experts" from a desktop
-- Check if the title  and the image of the report article (main article) appears
-- Check if the smal articles appears well with the description
+- Go to "Community" from a desktop
+- Check if the images appears 
+- Check if the member profiles are responsibve
 - Check the quality of the content/image displayed for each article
 
 
@@ -147,14 +143,61 @@ Most common paths through the website:
 2. Footer
 - Footer code is identical on all html pages. Testing already completed.
 
-3. Contact form
-- Go to "MyBookinnerLab" from a desktop
-- Check contact form layout and colors
-- Check if functionality " required field" works properly
-- Check for the contact form to clear up as soon as the form if submitted with the send button
-- Check if email is received via email.js
+3. 3 sections to verify
+- Go to "MyBookLog" from a desktop
+    - Check goal statement form if responsive annd working
+    - Check for reviews section if possible add a review 
+    - Check for reviews section if possible view a review 
+    - Check for reviews section if possible edit a review 
+    - Check for reviews section if possible edit a review 
+
 
 > Repeat verification of functionality and responsiveness on mobile phone and tablet via Developer Tool
+
+#### Log in
+1. Header / Navigation bar
+- Navbar code is identical on all html pages. Testing already completed.
+
+2. Footer
+- Footer code is identical on all html pages. Testing already completed.
+
+3. Log in is reachable through "MyBooklog" tab amd through last slide of carousel , button "Go"
+- Go to "MyBookLog" from a desktop
+    - Log in successful, there is a flash message welcoming the user.
+    - Check if user have access to content from My Booklog page (goal statement, reviews)
+    - Check for reviews section if possible view a review 
+    - Check for reviews section if possible edit a review 
+    - Check for reviews section if possible edit a review 
+
+#### Log out
+1. Header / Navigation bar
+- Navbar code is identical on all html pages. Testing already completed.
+
+2. Footer
+- Footer code is identical on all html pages. Testing already completed.
+
+3. Log out appear
+- Go to "MyBookLog" from a desktop
+    - Log in through the form
+    - Check for button sign up transform into button log out for when user wants to log out
+    - Check when loggin out if flash appears : You are successfully logged out
+
+
+#### Sign up
+
+1. Header / Navigation bar
+- Navbar code is identical on all html pages. Testing already completed.
+
+2. Footer
+- Footer code is identical on all html pages. Testing already completed.
+
+3. Sign up buttons 
+- Go to "Sign up" button in the top corner left from a desktop
+    - Check buttons redirects to sign up form
+    - Check if the link "already user" from the sign up workd
+    - Check that the flash messages is working : Registration successful!
+    - Check for an existing user, flash is working : User alread exist
+
 
 ## Further Testing
 
@@ -162,6 +205,7 @@ Most common paths through the website:
 * The website was viewed on a variety of devices such as Desktop, Laptop, iPhone7, iPhone 8 & iPhoneX (using developper tool)
 * A large amount of testing was done to ensure that all pages were linking correctly.
 * Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
+
 
 ## Known Bugs
 
