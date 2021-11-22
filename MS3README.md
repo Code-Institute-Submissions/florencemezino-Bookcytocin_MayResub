@@ -317,6 +317,10 @@ SECRET_KEY :
 1. Readflix
 * Using for loop in Flask [Here](https://www.geeksforgeeks.org/python-using-for-loop-in-flask/)
 * how to position an element bootstrap [Here](https://www.geeksforgeeks.org/bootstrap-positioning-an-element-with-examples/)
+* Python string length | len() method Example [Here](https://www.guru99.com/python-string-length-len.html)
+* Using the len() Function in Python [Here](https://realpython.com/len-python-function/)
+* MongoDB — What is the best way to retrieve a random document from a collection? [Here](MongoDB — What is the best way to retrieve a random document from a collection?)
+
 
 2. Collections
 * “how to display information if button is pressed flask” [Here](https://www.codegrepper.com/code-examples/python/how+to+display+information+if+button+is+pressed+flask)
@@ -366,7 +370,7 @@ Readme.md sample from Anna Greaves's portrait artist [View](https://github.com/A
 
 ### Acknowledgements
 - My Mentor [Jack Washira](https://github.com/iamjackwachira) for continuous helpful feedback.
-- Tutor support at Code Institute for their support.
+- Tutor support at Code Institute for their support. Special mention for Igor, Alan and James.
 - Peer to peer support from Code Institute Slack community.
 
 ## Author 

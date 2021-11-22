@@ -26,7 +26,7 @@ def index():
 # Readflix : show last 12 saved in database manually
 @app.route("/readflix")
 def readflix():
-    books = list(mongo.db.books.find().limit(12))
+    books = list(mongo.db.books.find().limit(8))
     print("Books in collections: ", books)
     return render_template("index.html", books=books)
 
@@ -35,14 +35,7 @@ def readflix():
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
-    books = list(mongo.db.books.find({"$text": {"$search": query}})),
-    
-    if books.length > 0:
-        return render_template("collections.html")
-    else:
-        flash("No result found")
-        return redirect(url_for("search"))
-
+    books = list(mongo.db.books.find({"$text": {"$search": query}}))
     return render_template(
         "collections.html", page_title="Collections", books=books)
 
@@ -67,11 +60,9 @@ def community():
 # MyBookLog : user can add a review 
 @app.route("/review", methods=["POST"])
 def review():
-    if existing_user:
-        username=session["user"]
-        user=mongo.db.users.find_one({"username": username})
-        print("Add a review", user)
-
+    username=session["user"]
+    user=mongo.db.users.find_one({"username": username})
+    print("Add a review", user)
     return render_template(
         "community.html", page_title="Community", user=user)
 
