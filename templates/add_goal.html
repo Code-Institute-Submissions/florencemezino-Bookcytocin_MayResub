@@ -56,8 +56,8 @@
   </section>
 
   <!-- MyReviews-->
-  <section class="py-2 text-center container-fluid bg-review mt-5" style="border-radius:10%;">
-    <div class="py-5 text-center container-fluid">
+  <section class="py-2 text-center container bg-review mt-5" style="border-radius:10%;">
+    <div class="py-5 text-center container">
       <div class="row mb-2">
         <div class="col-lg-12 col-md-8 mx-auto">
           <h2 class="fw-light">My Reviews</h2>
@@ -95,31 +95,30 @@
           <h4 class="fw-bold">Overview</h4>
           <div class="review-history table-responsive">
             <table class="table table-sm table-borderless">
-                <thead class="text-muted">
-                    <tr>
-                        <th>Book</th>
-                        <th>Title</th>
-                        <th>Review</th>
-                        <th>Update</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for review in reviews %}
-                        <tr>
-                            <td>{{ item.book.title }} by {{ item.book.author }}</td>
-                            <td>{{ review.title }}</td> 
-                            <td>{{ review.content }}</td> 
-                            <td><i class="fa-solid fa-pen-to-square">{{ review.content.edit }}</i><i class="fa-solid fa-circle-trash">{{ review.content.delete}}</i></td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+              <thead class="text-muted">
+                  <tr>
+                      <th>Book</th>
+                      <th>Title</th>
+                      <th>Review</th>
+                      <th>Update</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  {% for review in reviews %}
+                      <tr>
+                          <td>{{ item.book.title }} by {{ item.book.author }}</td>
+                          <td>{{ review.title }}</td> 
+                          <td>{{ review.content }}</td> 
+                          <td><i class="fa-solid fa-pen-to-square">{{ review.content.edit }}</i><i class="fa-solid fa-circle-trash">{{ review.content.delete}}</i></td>
+                      </tr>
+                  {% endfor %}
+              </tbody>
+          </table>
           </div>
         </div>
       </div>
     </div>
 </section>
-
 
     
   <!-- Insights (future feature) -->
@@ -167,3 +166,4 @@
   </section>
 
 {% endblock %}
+    

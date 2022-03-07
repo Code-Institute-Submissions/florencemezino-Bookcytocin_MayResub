@@ -11513,15 +11513,21 @@ footer.footer {
 .bg-review {
   background-color: rgba(218, 198, 232, 0.5);
 }
-  
-  /* LOG IN
+
+  /* Community
   -------------------------------------------------- */
 
+  .bg-community-title{
+    background-color: rgba(218, 198, 232, 0.5);
+    padding: 25px;
+  }
   
 
-  /* REGISTER
+  
+  /* LOG IN / REGISTER
   -------------------------------------------------- */
- 
+
+
 
 
     /* MEDIA QUERIES
