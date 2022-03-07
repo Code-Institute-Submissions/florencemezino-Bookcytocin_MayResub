@@ -11509,6 +11509,10 @@ footer.footer {
   font-weight:bold;
 
 }
+
+.bg-review {
+  background-color: rgba(218, 198, 232, 0.5);
+}
   
   /* LOG IN
   -------------------------------------------------- */

@@ -2,7 +2,7 @@
 
 [View the live project here](https://bookcytocin-project.herokuapp.com/)
 
-![Bookcytocin](/static/assets/img/bookcytocin_responsive.png)
+![Bookcytocin](static/assets/img/bookcytocin_responsive.png)
 
 
 
