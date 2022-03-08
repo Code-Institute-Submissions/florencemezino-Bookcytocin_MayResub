@@ -25,8 +25,8 @@
       </div>
 
       <div class="col-12 col-md-6">
-        <form class="" method="POST" action="{{ url_for('mybooklog') }}">
-
+        {% if is_goal %} 
+        <form class="" method="POST" action="{{ url_for('edit_goal') }}">
           <div class="mb-3">
             <label for="goal_level" class="form-label form-commitment mt-5 mr-5">My reading commitment </label>
             <textarea type="text" class="form-control text-center" name ="goal_level" id="goal_level" aria-describedby="commitmentHelp" required>goal.level</textarea>
@@ -42,9 +42,36 @@
           <label for="goal_signature" class="form-label form-commitment">Commit here by typing your full name</label>
           <textarea type="text" class="form-control text-center" name="goal_signature" id="goal_signature" required>goal.signature</textarea>
         <div class="mb-3">
+         
           <button type="submit" class="btn btn-primary mt-5">Update my commitment</button>
           <button type="submit" class="btn btn-primary mt-5">Delete my commitment</button>
         </form>
+        {% else %} 
+        <form class="" method="POST" action="{{ url_for('mybooklog') }}">
+          <div class="mb-3">
+            <label for="goal_level" class="form-label form-commitment mt-5 mr-5">Choose your reading commitment :</label>
+            <select id="goal_level" name="goal_level" required>
+              <option value="between 1 - 12 books per year">between 1 - 12 books per year</option>
+              <option value="between 12 - 24 books per year">between 12 - 24 books per year</option>
+              <option value="between 24 - 36 books per year">between 24 - 36 books per year</option>
+              <option value="36+ books per year">36+ books per year</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="goal_reason" class="form-label form-commitment">I choose to complete this commitment mentionned above because</label>
+            <textarea type="text" class="form-control" name ="goal_reason" id="goal_reason" aria-describedby="commitmentHelp" required></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="goal_obstacle" class="form-label form-commitment">When I run into obstacles or lack of motivation at some point, I will</label>
+            <textarea type="text" class="form-control" name="goal_obstacle" id="goal_obstacle" required></textarea>
+          </div>
+          <div class="mb-3">
+          <label for="goal_signature" class="form-label form-commitment">Commit here by typing your full name</label>
+          <input type="text" class="form-control" name="goal_signature" id="goal_signature" aria-describedby="commitmentHelp" required>
+          </div>
+          <button type="submit" class="btn btn-primary mt-5">Save my commitment</button>
+        </form>
+        {% endif %} 
         </div>
       </div>
   </section>
@@ -65,24 +92,24 @@
         <div class="col-lg-6 col-md-8 text-center">
         <h4 class="fw-bold">Add a review</h4>
         <p class="text-muted">Share your reading experience with the Bookcytocin Club.</p>
-        <form class="text-center" method="POST" action="">
+        <form class="text-center" method="POST" action="{{ url_for('mybooklog') }}">
           <div class="mb-3">
-            <label for ="books" class="label-form form-label"> Select a book :</label>
-              <select id="books" name="books" required>
-                <option value="books">book.title + book.author</option>
+            <label for ="review_book" class="label-form form-label"> Select a book :</label>
+              <select id="review_book" name="review_book" required>
+                <option value="books">book.title </option>
               </select>
           </div>
           <div class="mb-3">
-            <label for ="review" class="label-form form-label"> Give a title to your review </label>
-            <textarea class="form-control me-2 validate" name="review_content" id="" type="text" placeholder="Write your review title here" aria-label="author" required></textarea>
+            <label for ="review_title" class="label-form form-label"> Give a title to your review </label>
+            <textarea class="form-control me-2 validate" name="review_title" id="review_title" type="text" placeholder="Write your review title here" aria-label="author" required></textarea>
           </div>
           <div class="mb-3">
-            <label for ="review" class="label-form form-label"> Leave your review </label>
-            <textarea class="form-control me-2 validate" name="review_content" id="" type="text" placeholder="Write your review content here" aria-label="author" required></textarea>
+            <label for ="review_content" class="label-form form-label"> Leave your review </label>
+            <textarea class="form-control me-2 validate" name="review_content" id="review_content" type="text" placeholder="Write your review content here" aria-label="author" required></textarea>
           </div>
           <div class="mb-3">
-          <label for ="full-name" class="label-form form-label">Full Name</label>
-          <input class="form-control me-2 validate" name="review_full_name" id="" type="text" placeholder="" aria-label="author" required>
+          <label for ="review_full_name" class="label-form form-label">Full Name</label>
+          <input class="form-control me-2 validate" name="review_full_name" id="review_full_name" type="text" placeholder="" aria-label="author" required>
           </div>
           <div class="mb-3">
             <button type="submit" class="btn btn-primary mb-5">Submit review</button>

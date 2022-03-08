@@ -25,13 +25,18 @@
 <div class="reviews">
   <div class="row blockquote review-item mx-auto">
     <div class="col-md-9">
-      <small class="review-book"><a href="book">book.title - book author</a></small> 
-      <h5>review title</h5>
+      <small class="review_book"><a href="review_book">review_book</a></small> 
+      <h5>review_title</h5>
       <div class="ratebox text-center" data-id="0" data-rating="5"></div>
-      <p class="review-text"> "review.content / Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede."</p>
-      <small>by <a href="#user">mybooklog.username</a></small>
+      <p class="review_content"> "review.content / Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede."</p>
+      <small>by <a href="#user">review_full_name</a></small>
       <div>
-        <small class="review-update">review.edit / review.delete</small> 
+        {% if session.user %}    
+        <small class="review_update">review.edit / review.delete</small>
+        {% else %} 
+        <small class="review_update"> <a href="review_edit">review_edit</a> <a href="review_delete">review_delete</a></small>
+    
+        {% endif %} 
     </div>
     </div>                          
   </div>  

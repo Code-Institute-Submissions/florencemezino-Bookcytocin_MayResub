@@ -30,7 +30,7 @@ def readflix():
     return render_template(
         "index.html", page_title="Readflix", books=books)
 
-# Collection : display books in collection
+# Collection : display books
 @app.route("/collections")
 def collections():
     books = list(mongo.db.books.find())
@@ -46,12 +46,12 @@ def search():
     return render_template(
         "collections.html", page_title="Collections", books=books)
 
-#Collection : display a single collection of books
-# def search(collection_id):
-#     books = mongo.db.collection_name.find_one({"_id": ObjectId(collection_id)})
-#     print("Books in collections: ", books)
-#     return render_template(
-#         "collections.html", page_title="Collections", books=books)
+# Collection : display books per collection
+@app.route("/search/<collection_name>", methods=["GET", "POST"])
+def collection_name():
+    books = list(mongo.db.books.find())
+    return render_template(
+        "collections.html", page_title="Collections", collections=books)
 
 # Community : display review community / blog
 @app.route("/community")
@@ -126,7 +126,7 @@ def profile(username):
 
     if session["user"]:
         return render_template("mybooklog.html", username=username)
-        
+
     return redirect(url_for("login"))
 
 # MyBookLog : user add a goal
@@ -136,6 +136,7 @@ def mybooklog():
     user = mongo.db.users.find_one({"username": username})
     if request.method == "POST":
         dta = {
+            "goal_level": request.form.get("goal_level"),
             "goal_reason": request.form.get("goal_reason"),
             "goal_obstacle": request.form.get("goal_obstacle"),
             "goal_email": request.form.get("goal_email"),
@@ -144,7 +145,7 @@ def mybooklog():
 
         print("My reading goal", user)
         print(dta)
-        flash("Your goal has been saved!")
+        flash("Goal Successfully Saved!")
         mongo.db.users.update_one({"username": session["user"]}, {"$set": dta})
         return render_template(
             "mybooklog.html", page_title="MyBookLog", user=user)
@@ -158,6 +159,7 @@ def edit_goal(goal_id):
     if request.method == "POST":
         is_goal = "on" if request.form.get("is_goal") else "off"
         submit = {
+            "goal_level": request.form.get("goal_level"),
             "goal_reason": request.form.get("goal_reason"),
             "goal_obstacle": request.form.get("goal_obstacle"),
             "goal_email": request.form.get("goal_email"),
@@ -184,19 +186,20 @@ def review():
     user = mongo.db.users.find_one({"username": username})
     if request.method == "POST":
         data = {
+            "review_book": request.form.get("review_book"),
             "review_title": request.form.get("review_title"),
-            "review_author": request.form.get("review_author"),
             "review_content": request.form.get("review_content"),
             "review_full_name": request.form.get("review_full_name"),
         }
         print("My reading goal", user)
         print(data)
-        flash("Your review is being processed. Stay tune!")
+        flash("Your review was successfully published")
         mongo.db.users.update_one(
             {"username": session["user"]}, {"$set": data})
 
         print("Add a review", user)
     return render_template("mybooklog.html", page_title="MyBookLog", user=user)
+    return render_template("community.html", page_title="Community", user=user)
 
 
 # MyBookLog : user view / edit review
