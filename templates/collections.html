@@ -8,6 +8,11 @@
         <h2 class="fw-bold">{{page_title}}</h2>
         <p class="lead fw-light text-muted">The powerful journey of life in 12 collections. Travel through our library of  100+ books to explore all roads leading to your inner power.</p>
         <p class="fw-bold" style="color:purple;">Health and Fitness - Intellectual - Emotionnal - Character - Spiritual - Love Relationship - Parenting - Social - Career - Financial - Quality of life - Life vision </p>
+        
+        <!-- <ul class="fw-bold" style="color:purple;">
+          <li>book.collection_name</li>
+        </ul> -->
+
       </div>
     </div>
     <div class="col-lg-6 col-md-8 mx-auto">
@@ -23,7 +28,7 @@
   <div class= container-fluid>   
     <div class="row py-lg-5 text-center">
       {% for book in books %}
-            <div class="col-12 col-md-3">
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
               <div class="card text-center" style="width: 18rem;">
                 <img src="{{book.image_url}}" class="card-img-top" alt="...">
                   <div class="card-body">

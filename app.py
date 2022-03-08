@@ -22,28 +22,13 @@ mongo = PyMongo(app)
 def index():
     return render_template("index.html", page_title="Readflix")
 
-# search for one collection
-# search for 4 books
-# render 4 books of one category in index.html
-
+# Readflix : find 4 books in one collection
 @app.route("/readflix")
 def readflix():
-    books = list(mongo.db.books.aggregate([
-        {"$sample": {"size": 4}}
-    ]))
+    books = list(mongo.db.books.find({"collection_name": "Character"}).limit(4))
     print("Books in collections: ", books)
     return render_template(
         "index.html", page_title="Readflix", books=books)
-
-
-# Collection : find a book via search bar
-@app.route("/search", methods=["GET", "POST"])
-def search():
-    query = request.form.get("query")
-    books = list(mongo.db.books.find({"$text": {"$search": query}}))
-    return render_template(
-        "collections.html", page_title="Collections", books=books)
-
 
 # Collection : display books in collection
 @app.route("/collections")
@@ -53,14 +38,20 @@ def collections():
     return render_template(
         "collections.html", page_title="Collections", books=books)
 
+# Collection : find a book via search bar
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    books = list(mongo.db.books.find({"$text": {"$search": query}}))
+    return render_template(
+        "collections.html", page_title="Collections", books=books)
 
-# Community : display community / blog
+# Community : display review community / blog
 @app.route("/community")
 def community():
-    users = list(mongo.db.users.find().limit(8))
+    users = list(mongo.db.users.find().limit(6))
     return render_template(
         "community.html", page_title="The Bookcytocin Club", user=users)
-
 
 # Sign up
 @app.route("/signup", methods=["GET", "POST"])

@@ -7,16 +7,19 @@
     <div class="col-lg-12 col-md-8 mx-auto">
       <h2 class="fw-bold">Readflix</h2>
       <p class="lead text-muted">What's hot this month? Hop into something comfy and check out this month special selection of trendy readings.</p>
+      <p class="lead fw-bold mt-5" style="color:purple;">Discover the focus of the month : CHARACTER </p>
+      <p class="lead" style="color:purple;"><small>Do you know your true character? Are there any parts of you that you’re suppressing or are afraid to step into? Are you afraid to shine your light too brightly, or that you may be rejected if you were to step into your authentic self? This month explore our selection of books about : Character</small></p>
     </div>
-    <div class="col-lg-12 col-md-8 mx-auto">
+    <div class="col-lg-6 col-md-8">
     </div>
   </div>
   <!-- readflix : show 4 random books on a specific book collection -->
-  {% for book in books %}
-<p class="lead fw-bold" style="color:purple;">Discover the focus of the month : {{ book.collection_name }} </p>
+ 
+
 <div class= "container-fluid">   
-  <div class="row py-md-5 text-center">
-    <div class="col-12 col-md-3">
+  <div class="row py-md-5 text-center mx-auto">
+    {% for book in books %}
+    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
       <div class="card card-book text-center" style="width: 18rem;">
         <img src="{{book.image_url}}" class="card-img-top" alt="..." style="max-width: 100%; height: auto;">
           <div class="card-body">
