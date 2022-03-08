@@ -24,34 +24,27 @@
         <img src="static/assets/img/my_booklog.png" class="bd-placeholder-img" alt="..." width="100%" height="auto" style="border-radius: 5%;">
       </div>
       <div class="col-12 col-md-6">
-        <form class="" method="POST" action="{{ url_for('edit_goal') }}">
+        <form class="" method="POST" action="{{ url_for('mybooklog') }}">
+
           <div class="mb-3">
-            <label for="goal_level" class="form-label form-commitment mt-5 mr-5">Choose your reading commitment :</label>
-            <select id="goal_level" name="goal_level" required>
-              <option value="between 1 - 12 books per year">between 1 - 12 books per year</option>
-              <option value="between 12 - 24 books per year">between 12 - 24 books per year</option>
-              <option value="between 24 - 36 books per year">between 24 - 36 books per year</option>
-              <option value="36+ books per year">36+ books per year</option>
-            </select>
+            <label for="goal_level" class="form-label form-commitment mt-5 mr-5">My reading commitment </label>
+            <textarea type="text" class="form-control text-center" name ="goal_level" id="goal_level" aria-describedby="commitmentHelp" required>goal.level</textarea>
           </div>
           <div class="mb-3">
             <label for="goal_reason" class="form-label form-commitment">I choose to complete this commitment mentionned above because</label>
-            <textarea type="text" class="form-control" name ="goal_reason" id="goal_reason" aria-describedby="commitmentHelp" required></textarea>
+            <textarea type="text" class="form-control text-center" name ="goal_reason" id="goal_reason" aria-describedby="commitmentHelp" required>goal.reason</textarea>
           </div>
           <div class="mb-3">
             <label for="goal_obstacle" class="form-label form-commitment">When I run into obstacles or lack of motivation at some point, I will</label>
-            <textarea type="text" class="form-control" name="goal_obstacle" id="goal_obstacle" required></textarea>
-          </div>
-          <div class="mb-3">
-          <label for="goal_email" class="form-label form-commitment">Enter your email to receive a copy</label>
-          <input class="form-control me-2 validate" name="goal_email"  id="email" type="text" placeholder="" aria-label="author" required>
+            <textarea type="text" class="form-control text-center" name="goal_obstacle" id="goal_obstacle" required>goal.obstacle</textarea>
           </div>
           <label for="goal_signature" class="form-label form-commitment">Commit here by typing your full name</label>
-          <input type="text" class="form-control" name="goal_signature" id="goal_signature" aria-describedby="commitmentHelp" required>
+          <textarea type="text" class="form-control text-center" name="goal_signature" id="goal_signature" required>goal.signature</textarea>
         <div class="mb-3">
           <button type="submit" class="btn btn-primary mt-5">Update my commitment</button>
         </form>
         </div>
+
       </div>
   </section>
 

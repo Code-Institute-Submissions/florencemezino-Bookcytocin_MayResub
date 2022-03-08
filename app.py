@@ -22,15 +22,18 @@ mongo = PyMongo(app)
 def index():
     return render_template("index.html", page_title="Readflix")
 
+# search for one collection
+# search for 4 books
+# render 4 books of one category in index.html
 
-# Readflix : show 8 random books for every page visit
 @app.route("/readflix")
 def readflix():
     books = list(mongo.db.books.aggregate([
-        {"$sample": {"size": 8}}
+        {"$sample": {"size": 4}}
     ]))
     print("Books in collections: ", books)
-    return render_template("index.html", books=books)
+    return render_template(
+        "index.html", page_title="Readflix", books=books)
 
 
 # Collection : find a book via search bar
@@ -170,10 +173,10 @@ def edit_goal(goal_id):
     goal = mongo.db.tasks.find_one({"_id": ObjectId(goal_id)})
     return render_template("edit_goal.html", goal=goal)
 
+
 # MyBookLog : user view / delete goal
-@app.route("/delete_goal/<goal_id>")
 def delete_goal(goal_id):
-    mongo.db.goals.remove({"_id": ObjectId(goal_id)})
+    mongo.db.goal.remove({"_id": ObjectId(goal_id)})
     flash("Goal Successfully Deleted")
     return redirect(url_for("add_goal"))
 
