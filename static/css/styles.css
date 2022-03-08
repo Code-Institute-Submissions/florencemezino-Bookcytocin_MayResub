@@ -11561,3 +11561,14 @@ footer.footer {
       }
     }
   
+
+  .list-collection {
+      text-decoration: none;
+      text-align :center;
+      color:purple;
+      font-size: large;
+    }
+
+  .list-collection:hover {
+    color:var(--bs-blue);
+  }

@@ -4,27 +4,38 @@
 <!-- Search for a book -->
 <section class="py-5 text-center container">
     <div class="row py-lg-5">
-      <div class="col-lg-12 col-md-8 mx-auto">
+      <div class="col-lg-12 col-md-8 mx-auto list-inline-item">
         <h2 class="fw-bold">{{page_title}}</h2>
         <p class="lead fw-light text-muted">The powerful journey of life in 12 collections. Travel through our library of  100+ books to explore all roads leading to your inner power.</p>
-        <p class="fw-bold" style="color:purple;">Health and Fitness - Intellectual - Emotionnal - Character - Spiritual - Love Relationship - Parenting - Social - Career - Financial - Quality of life - Life vision </p>
-        
-        <!-- <ul class="fw-bold" style="color:purple;">
-          <li>book.collection_name.collection_id</li>
-        </ul> -->
-
+        <ul class="fw-bold list-inline list-collection">
+          <li>
+            <a class="list-inline-item list-collection" href="{{ url_for('collections') }}">Health and Fitness</a>
+            <a class="list-inline-item list-collection" href="{{ url_for('collections') }}">Intellectual</a>
+            <a class="list-inline-item list-collection" href="{{ url_for('collections') }}">Emotionnal</a>
+            <a class="list-inline-item list-collection" href="{{ url_for('collections') }}">Character</a>
+            <a class="list-inline-item list-collection" href="{{ url_for('collections') }}">Spiritual</a>
+            <a class="list-inline-item list-collection" href="{{ url_for('collections') }}">Love Relationship</a>
+            <a class="list-inline-item list-collection" href="{{ url_for('collections') }}">Parenting</a>
+            <a class="list-inline-item list-collection" href="{{ url_for('collections') }}">Social</a>
+            <a class="list-inline-item list-collection" href="{{ url_for('collections') }}">Career</a>
+            <a class="list-inline-item list-collection" href="{{ url_for('collections') }}">Financial</a>
+            <a class="list-inline-item list-collection" href="{{ url_for('collections') }}">Quality of Life</a>
+            <a class="list-inline-item list-collection" href="{{ url_for('collections') }}">Life vision</a>
+          </li>
+        </ul>
       </div>
     </div>
     <div class="col-lg-6 col-md-8 mx-auto">
       <form class="d-flex" action="{{ url_for('search') }}" method="POST">
         <input class="form-control me-2 validate" name="query" id="query" type="search" placeholder="Search book by title, author or collection" aria-label="Search" required>
         <a href="{{ url_for('collections') }}" class="btn btn-secondary">Reset</a>
-        <button class="btn btn-outline-light" type="submit">Submit</button>
+        <button class="btn btn-outline-light" style="color:whitesmoke" type="submit">Submit</button>
     </form> 
     </div>
+  
   </section>
   
-  <!-- Show books results when clicking on a specific collection / search bar result -->
+  <!-- Show books results when searching with search bar -->
   <div class= container-fluid>   
     <div class="row py-lg-5 text-center">
       {% for book in books %}
