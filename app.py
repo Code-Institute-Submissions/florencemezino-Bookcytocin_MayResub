@@ -46,6 +46,13 @@ def search():
     return render_template(
         "collections.html", page_title="Collections", books=books)
 
+#Collection : display a single collection of books
+# def search(collection_id):
+#     books = mongo.db.collection_name.find_one({"_id": ObjectId(collection_id)})
+#     print("Books in collections: ", books)
+#     return render_template(
+#         "collections.html", page_title="Collections", books=books)
+
 # Community : display review community / blog
 @app.route("/community")
 def community():
@@ -73,7 +80,7 @@ def signup():
 
         session["user"] = request.form.get("username").lower()
         flash("You are in! Registration Successful.")
-        return redirect(url_for("login", username=session["user"]))
+        return redirect(url_for("mybooklog", username=session["user"]))
 
     return render_template("signup.html", page_title="Sign up")
 
@@ -103,19 +110,6 @@ def login():
 
     return render_template("login.html", page_title="Login")
 
-
-# MyBookLog : view
-def profile(username):
-    # grab the session user's username from db
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-
-    if session["user"]:
-        return render_template("mybooklog.html", username=username)
-
-    return redirect(url_for("login"))
-
-
 # Logout
 @app.route("/logout")
 def logout():
@@ -123,6 +117,17 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
+
+# MyBookLog : user session profile
+@app.route("/mybooklog/<username>", methods=["GET", "POST"])
+def profile(username):
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    if session["user"]:
+        return render_template("mybooklog.html", username=username)
+        
+    return redirect(url_for("login"))
 
 # MyBookLog : user add a goal
 @app.route("/mybooklog/add_goal", methods=["POST", "GET"])

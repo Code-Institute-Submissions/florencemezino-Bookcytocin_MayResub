@@ -17,6 +17,7 @@
 </head>
 <body>
 
+<header>  
 <!-- Navigation -->
   <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
     <div class="container">
@@ -35,9 +36,15 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('community') }}">Community</a>
                     </li>
+                {% if session.user %}    
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('login', username=session['user']) }}">MyBookLog</a>
+                        <a class="nav-link" href="{{ url_for('mybooklog', username=session['user']) }}">MyBookLog</a>
                     </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('login') }}">MyBookLog</a>
+                    </li>
+                {% endif %} 
                 </ul>
                 {% if session.user %}
                     <a class="btn btn-primary" href="{{ url_for('logout') }}">Log out</a>
@@ -47,6 +54,7 @@
             </div>
         </div> 
     </nav>
+</header>  
 
 <!-- Carousel-->
 <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">

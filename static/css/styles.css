@@ -3958,7 +3958,7 @@ textarea.form-control-lg {
   color: #6752d7;
 }
 .nav-link.disabled {
-  color: #6c757d;
+  color: purple;
   pointer-events: none;
   cursor: default;
 }
@@ -3978,7 +3978,7 @@ textarea.form-control-lg {
   isolation: isolate;
 }
 .nav-tabs .nav-link.disabled {
-  color: #6c757d;
+  color: purple;
   background-color: transparent;
   border-color: transparent;
 }
