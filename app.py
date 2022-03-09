@@ -20,7 +20,7 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def index():
-    return render_template("index.html", page_title="Readflix")
+    return render_template("index.html", page_title="Readflix")   
 
 # Readflix : find 4 books in one collection
 @app.route("/readflix")
@@ -39,11 +39,20 @@ def collections():
         "collections.html", page_title="Collections", books=books)
 
 # Collection : display books per collection name on click
-@app.route("/collections/category", methods=["GET", "POST"])
-def category():
-    collection_name = list(mongo.db.books.find({"collection_name": ObjectId(12)}))
+@app.route("/show_collections")
+def show_collections():
+    collections = list(mongo.db.collections.find())
     return render_template(
-        "collections.html", page_title="Collections", collections=collections)  
+        "collections.html", page_title="Collections", collections=collections)
+
+
+@app.route("/get_collections/<collection_name>", methods=["GET", "POST"])
+def get_collections(collection_name):
+    collections = list(mongo.db.collections.find())
+    books = list(mongo.db.books.find({"collection_name": collection_name}))
+    print(books)
+    return render_template(
+        "collections.html", page_title="Collections", collections=collections, books=books)  
 
 # Collection : find a book via search bar
 @app.route("/search", methods=["GET", "POST"])

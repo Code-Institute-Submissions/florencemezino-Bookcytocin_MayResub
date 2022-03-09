@@ -16,7 +16,7 @@
 <section class="py-2 text-center container bg-light" style="border-radius:10%;">
     <div class="row mb-2">
       <h2 class="fw-light mt-5">Goal</h2>
-      <p class="lead text-muted">Decide, Commit, Suceed.<br>
+      <p class="lead text-muted">Decide, Commit, Succeed.<br>
         Commitment is what transforms a promise into a reality.</p>
     </div>
     <div class="row mb-2">
@@ -25,7 +25,7 @@
       </div>
 
       <div class="col-12 col-md-6">
-        {% if is_goal %} 
+        {% if is_goal == "on" %} 
         <form class="" method="POST" action="{{ url_for('edit_goal') }}">
           <div class="mb-3">
             <label for="goal_level" class="form-label form-commitment mt-5 mr-5">My reading commitment </label>
