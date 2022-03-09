@@ -10,7 +10,7 @@
         <ul class="fw-bold list-inline list-collection">
           {% for collection in collections %}
           <li>
-            <a class="list-inline-item list-collection" href="{{ url_for('search/collection_name') }}">book.collection_name </a>
+            <a class="list-inline-item list-collection" href="{{ url_for('collections') }}">{{ collection_name }}</a>
           </li>
           {% endfor %}
         </ul>

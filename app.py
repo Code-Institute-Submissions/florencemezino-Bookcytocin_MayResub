@@ -38,6 +38,13 @@ def collections():
     return render_template(
         "collections.html", page_title="Collections", books=books)
 
+# Collection : display books per collection name on click
+@app.route("/collections/category", methods=["GET", "POST"])
+def category():
+    collection_name = list(mongo.db.books.find({"collection_name": ObjectId(12)}))
+    return render_template(
+        "collections.html", page_title="Collections", collections=collections)  
+
 # Collection : find a book via search bar
 @app.route("/search", methods=["GET", "POST"])
 def search():
@@ -45,13 +52,6 @@ def search():
     books = list(mongo.db.books.find({"$text": {"$search": query}}))
     return render_template(
         "collections.html", page_title="Collections", books=books)
-
-# Collection : display books per collection
-@app.route("/search/<collection_name>", methods=["GET", "POST"])
-def collection_name():
-    books = list(mongo.db.books.find())
-    return render_template(
-        "collections.html", page_title="Collections", collections=books)
 
 # Community : display review community / blog
 @app.route("/community")
