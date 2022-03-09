@@ -20,7 +20,12 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def index():
-    return render_template("index.html", page_title="Readflix")   
+    return render_template("index.html", page_title="Readflix")
+
+# About Bookcytocin
+@app.route("/bookcytocin")
+def about():
+    return render_template("bookcytocin.html", page_title="Bookcytocin")
 
 # Readflix : find 4 books in one collection
 @app.route("/readflix")
