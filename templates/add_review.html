@@ -1,71 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 
-<!-- mybooklog section -->
-<section class="py-5 text-center container">
-  <div class="row py-lg-5">
-    <div class="col-lg-12 col-md-8 mx-auto">
-      <h2 class="fw-bold">{{page_title}}</h2>
-      <p class="lead text-muted"> Welcome {{username}} ! Set your goal, monitor your readings and get some great insights.</p>
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- Goal - Commitment -->
-<section class="py-2 text-center container bg-light" style="border-radius:10%;">
-    <div class="row mb-2">
-      <h2 class="fw-light mt-5">Goal</h2>
-      <p class="lead text-muted">Decide, Commit, Suceed.<br>
-        Commitment is what transforms a promise into a reality.</p>
-    </div>
-    <div class="row mb-2">
-      <div class="col-12 col-md-6 mt-5">
-        <img src="static/assets/img/my_booklog.png" class="bd-placeholder-img" alt="..." width="100%" height="auto" style="border-radius: 5%;">
-      </div>
-      <div class="col-12 col-md-6">
-        <form class="" method="POST" action="{{ url_for('mybooklog') }}">
-          <div class="mb-3">
-            <label for="goal_level" class="form-label form-commitment mt-5 mr-5">Choose your reading commitment :</label>
-            <select id="goal_level" name="goal_level" required>
-              <option value="between 1 - 12 books per year">between 1 - 12 books per year</option>
-              <option value="between 12 - 24 books per year">between 12 - 24 books per year</option>
-              <option value="between 24 - 36 books per year">between 24 - 36 books per year</option>
-              <option value="36+ books per year">36+ books per year</option>
-            </select>
-          </div>
-          <div class="mb-3">
-            <label for="goal_reason" class="form-label form-commitment">I choose to complete this commitment mentionned above because</label>
-            <textarea type="text" class="form-control" name ="goal_reason" id="goal_reason" aria-describedby="commitmentHelp" required></textarea>
-          </div>
-          <div class="mb-3">
-            <label for="goal_obstacle" class="form-label form-commitment">When I run into obstacles or lack of motivation at some point, I will</label>
-            <textarea type="text" class="form-control" name="goal_obstacle" id="goal_obstacle" required></textarea>
-          </div>
-          <div class="mb-3">
-          <label for="goal_email" class="form-label form-commitment">Enter your email to receive a copy</label>
-          <input class="form-control me-2 validate" name="goal_email"  id="email" type="text" placeholder="" aria-label="author" required>
-          </div>
-          <label for="goal_signature" class="form-label form-commitment">Commit here by typing your full name</label>
-          <input type="text" class="form-control" name="goal_signature" id="goal_signature" aria-describedby="commitmentHelp" required>
-        <div class="mb-3">
-          <button type="submit" class="btn btn-primary mt-5">Save my commitment</button>
-        </form>
-        </div>
-      </div>
-  </section>
-
-  <!-- MyReviews-->
-  <section class="py-2 text-center container bg-review mt-5" style="border-radius:10%;">
-    <div class="py-5 text-center container">
-      <div class="row mb-2">
-        <div class="col-lg-12 col-md-8 mx-auto">
-          <h2 class="fw-light">My Reviews</h2>
-          <p class="lead text-muted">Manage your reading progress by reviewing the books you read. Remember, the world belongs to those who reads.</p>
-          </div>
-      </div>
-  </div>
-
   <!-- Add a review -->
       <div class="row mb-2">
         <div class="col-lg-6 col-md-8 text-center">
@@ -77,6 +12,10 @@
               <select id="books" name="books" required>
                 <option value="books">book.title + book.author</option>
               </select>
+          </div>
+          <div class="mb-3">
+            <label for ="review_title" class="label-form form-label"> Give a title to your review </label>
+            <textarea class="form-control me-2 validate" name="review_title" id="review_title" type="text" placeholder="Write your review title here" aria-label="author" required></textarea>
           </div>
           <div class="mb-3">
             <label for ="review" class="label-form form-label"> Review</label>
@@ -119,52 +58,6 @@
       </div>
     </div>
 </section>
-
-
-    
-  <!-- Insights (future feature) -->
-  <section class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-12 col-md-8 mx-auto">
-        <h2 class="fw-light">Insights</h2>
-        <p class="lead text-muted">Here is an overview of your reading progress.<br>
-          You are doing fantastic, keep nourrishing your soul with amazing readings and inspire others to do the same!</p>
-        </p>
-      </div>
-    </div>
-  </section>
-
-
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-img bg-primary text-white text-center" style="padding:10px;">
-            <h1 class="card-title" style="padding-top: 10px;">12</h1>
-            <h5 class="card-title" style="padding-top: 10px;">Books saved</h5>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card">
-            <div class="card-img bg-primary text-white text-center" style="padding:10px;">
-              <h1 class="card-title" style="padding-top: 10px;">8</h1>
-              <h5 class="card-title" style="padding-top: 10px;">Reviews shared</h5>
-            </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <section class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-12 col-md-8 mx-auto ">
-        <button class="btn btn-refresh-insights"><i class="fa fa-refresh fa-3x"></i></button>
-          <p class="lead text-muted">Refresh for the latest insights</p>
-        </p>
-      </div>
-    </div>
-  </section>
 
 {% endblock %}
     

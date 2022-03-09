@@ -21,33 +21,32 @@
     </div>
     <div class="row mb-2">
       <div class="col-12 col-md-6 mt-5">
-        <img src="static/assets/img/my_booklog.png" class="bd-placeholder-img" alt="..." width="100%" height="auto" style="border-radius: 5%;">
+        <img src="static/assets/img/my_booklog.png" class="bd-placeholder-img" alt="phone with logo" width="100%" height="auto" style="border-radius: 5%;">
       </div>
 
       <div class="col-12 col-md-6">
         {% if is_goal == "on" %} 
-        <form class="" method="POST" action="{{ url_for('edit_goal') }}">
+        <form class="" method="POST" action="{{ url_for('edit_goal', goal_id=goal._id) }}">
           <div class="mb-3">
             <label for="goal_level" class="form-label form-commitment mt-5 mr-5">My reading commitment </label>
-            <textarea type="text" class="form-control text-center" name ="goal_level" id="goal_level" aria-describedby="commitmentHelp" required>goal.level</textarea>
+            <textarea type="text" class="form-control text-center" name ="goal_level" id="goal_level" aria-describedby="commitmentHelp" required> {{ goal.level }}</textarea>
           </div>
           <div class="mb-3">
             <label for="goal_reason" class="form-label form-commitment">I choose to complete this commitment mentionned above because</label>
-            <textarea type="text" class="form-control text-center" name ="goal_reason" id="goal_reason" aria-describedby="commitmentHelp" required>goal.reason</textarea>
+            <textarea type="text" class="form-control text-center" name ="goal_reason" id="goal_reason" aria-describedby="commitmentHelp" required>{{ goal.reason }}</textarea>
           </div>
           <div class="mb-3">
             <label for="goal_obstacle" class="form-label form-commitment">When I run into obstacles or lack of motivation at some point, I will</label>
-            <textarea type="text" class="form-control text-center" name="goal_obstacle" id="goal_obstacle" required>goal.obstacle</textarea>
+            <textarea type="text" class="form-control text-center" name="goal_obstacle" id="goal_obstacle" required> {{ goal.obstacle }}</textarea>
           </div>
           <label for="goal_signature" class="form-label form-commitment">Commit here by typing your full name</label>
-          <textarea type="text" class="form-control text-center" name="goal_signature" id="goal_signature" required>goal.signature</textarea>
+          <textarea type="text" class="form-control text-center" name="goal_signature" id="goal_signature" required>{{ goal.signature }}</textarea>
         <div class="mb-3">
-         
-          <button type="submit" class="btn btn-primary mt-5">Update my commitment</button>
-          <button type="submit" class="btn btn-primary mt-5">Delete my commitment</button>
+          <a href="{{ url_for('edit_goal', goal_id=goal._id) }}" class="btn btn-secondary mt-5">Update</a>
+          <a href="{{ url_for('delete_goal', goal_id=goal._id) }}" class="btn btn-secondary mt-5">Delete</a>
         </form>
         {% else %} 
-        <form class="" method="POST" action="{{ url_for('mybooklog') }}">
+        <form class="" method="POST" action="{{ url_for('add_goal', goal_id=goal._id) }}">
           <div class="mb-3">
             <label for="goal_level" class="form-label form-commitment mt-5 mr-5">Choose your reading commitment :</label>
             <select id="goal_level" name="goal_level" required>
@@ -70,6 +69,7 @@
           <input type="text" class="form-control" name="goal_signature" id="goal_signature" aria-describedby="commitmentHelp" required>
           </div>
           <button type="submit" class="btn btn-primary mt-5">Save my commitment</button>
+          <a href="{{ url_for('mybooklog') }}" class="btn btn-secondary mt-5">Save my commitment</a>
         </form>
         {% endif %} 
         </div>
@@ -117,7 +117,7 @@
           </form>
         </div>
         <div class="col-lg-6 col-md-8 text-center">
-          <img src="static/assets/img/bookcytocin_review.png" class="bd-placeholder-img" alt="..." width="100%" height="auto" style="border-radius: 5%;">
+          <img src="static/assets/img/bookcytocin_review.png" class="bd-placeholder-img" alt="bookcytocin logo" width="100%" height="auto" style="border-radius: 5%;">
         </div>
         </div>
         <div class="row mb-2">
@@ -151,27 +151,25 @@
     </div>
 </section>
 
-
-    
   <!-- Insights (future feature) -->
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-12 col-md-8 mx-auto">
+        <p class="lead fw-bold mb-5" style="color:purple;">COMING SOON</p>
         <h2 class="fw-light">Insights</h2>
-        <p class="lead text-muted">Here is an overview of your reading progress.<br>
+        <p class="lead text-muted">Here is an overview of the books you saved and reviews shared.<br>
           You are doing fantastic, keep nourrishing your soul with amazing readings and inspire others to do the same!</p>
         </p>
       </div>
     </div>
   </section>
 
-
-  <div class="container">
-    <div class="row">
+  <section class="container">
+    <div class="row mx-auto mb-5">
       <div class="col-md-6">
         <div class="card">
           <div class="card-img bg-primary text-white text-center" style="padding:10px;">
-            <h1 class="card-title" style="padding-top: 10px;">12</h1>
+            <h1 class="card-title" style="padding-top: 10px;">--</h1>
             <h5 class="card-title" style="padding-top: 10px;">Books saved</h5>
           </div>
         </div>
@@ -179,20 +177,10 @@
       <div class="col-md-6">
         <div class="card">
             <div class="card-img bg-primary text-white text-center" style="padding:10px;">
-              <h1 class="card-title" style="padding-top: 10px;">8</h1>
+              <h1 class="card-title" style="padding-top: 10px;">--</h1>
               <h5 class="card-title" style="padding-top: 10px;">Reviews shared</h5>
             </div>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <section class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-12 col-md-8 mx-auto ">
-        <button class="btn btn-refresh-insights"><i class="fa fa-refresh fa-3x"></i></button>
-          <p class="lead text-muted">Refresh for the latest insights</p>
-        </p>
       </div>
     </div>
   </section>

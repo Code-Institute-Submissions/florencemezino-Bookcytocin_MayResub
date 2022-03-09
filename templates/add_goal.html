@@ -1,18 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<!-- mybooklog section -->
-<section class="py-5 text-center container">
-  <div class="row py-lg-5">
-    <div class="col-lg-12 col-md-8 mx-auto">
-      <h2 class="fw-bold">{{page_title}}</h2>
-      <p class="lead text-muted"> Welcome {{username}} ! Set your goal, monitor your readings and get some great insights.</p>
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- Goal - Commitment -->
+<!-- Add a goal -->
 <section class="py-2 text-center container bg-light" style="border-radius:10%;">
     <div class="row mb-2">
       <h2 class="fw-light mt-5">Goal</h2>
@@ -21,10 +10,10 @@
     </div>
     <div class="row mb-2">
       <div class="col-12 col-md-6 mt-5">
-        <img src="static/assets/img/my_booklog.png" class="bd-placeholder-img" alt="..." width="100%" height="auto" style="border-radius: 5%;">
+        <img src="static/assets/img/my_booklog.png" class="bd-placeholder-img" alt="phone with logo" width="100%" height="auto" style="border-radius: 5%;">
       </div>
       <div class="col-12 col-md-6">
-        <form class="" method="POST" action="{{ url_for('mybooklog') }}">
+        <form class="" method="POST" action="{{ url_for('add_goal', goal_id=goal._id) }}">
           <div class="mb-3">
             <label for="goal_level" class="form-label form-commitment mt-5 mr-5">Choose your reading commitment :</label>
             <select id="goal_level" name="goal_level" required>
@@ -50,122 +39,10 @@
           <input type="text" class="form-control" name="goal_signature" id="goal_signature" aria-describedby="commitmentHelp" required>
         <div class="mb-3">
           <button type="submit" class="btn btn-primary mt-5">Save my commitment</button>
+          <!-- <a href="{{ url_for('mybooklog') }}" class="btn btn-secondary mt-5">Save my commitment</a> -->
         </form>
         </div>
       </div>
-  </section>
-
-  <!-- MyReviews-->
-  <section class="py-2 text-center container bg-review mt-5" style="border-radius:10%;">
-    <div class="py-5 text-center container">
-      <div class="row mb-2">
-        <div class="col-lg-12 col-md-8 mx-auto">
-          <h2 class="fw-light">My Reviews</h2>
-          <p class="lead text-muted">Manage your reading progress by reviewing the books you read. Remember, the world belongs to those who reads.</p>
-          </div>
-      </div>
-  </div>
-
-  <!-- Add a review -->
-      <div class="row mb-2">
-        <div class="col-lg-6 col-md-8 text-center">
-        <h4 class="fw-bold">Add a review</h4>
-        <p class="text-muted">Share your reading experience with the Bookcytocin Club.</p>
-        <form class="text-center" method="POST" action="">
-          <div class="mb-3">
-            <label for ="books" class="label-form form-label"> Select a book :</label>
-              <select id="books" name="books" required>
-                <option value="books">book.title + book.author</option>
-              </select>
-          </div>
-          <div class="mb-3">
-            <label for ="review" class="label-form form-label"> Review</label>
-            <textarea class="form-control me-2 validate" name="review_content" id="" type="text" placeholder="Write your review here" aria-label="author" required></textarea>
-          </div>
-          <div class="mb-3">
-          <label for ="full-name" class="label-form form-label">Full Name</label>
-          <input class="form-control me-2 validate" name="review_full_name" id="" type="text" placeholder="" aria-label="author" required>
-          </div>
-          <div class="mb-3">
-            <button type="submit" class="btn btn-primary mb-5">Submit review</button>
-          </div>
-          </form>
-        </div>
-        <div class="col-lg-6 col-md-8 text-center">
-          <img src="static/assets/img/bookcytocin_review.png" class="bd-placeholder-img" alt="..." width="100%" height="auto" style="border-radius: 5%;">
-        </div>
-        <div class="col-lg-6 col-md-8 text-center">
-          <h4 class="fw-bold">Overview</h4>
-          <div class="review-history table-responsive">
-            <table class="table table-sm table-borderless">
-              <thead class="text-muted">
-                  <tr>
-                      <th>Book</th>
-                      <th>Title</th>
-                      <th>Review</th>
-                      <th>Update</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  {% for review in reviews %}
-                      <tr>
-                          <td>{{ item.book.title }} by {{ item.book.author }}</td>
-                          <td>{{ review.title }}</td> 
-                          <td>{{ review.content }}</td> 
-                          <td><i class="fa-solid fa-pen-to-square">{{ review.content.edit }}</i><i class="fa-solid fa-circle-trash">{{ review.content.delete}}</i></td>
-                      </tr>
-                  {% endfor %}
-              </tbody>
-          </table>
-          </div>
-        </div>
-      </div>
-    </div>
-</section>
-
-    
-  <!-- Insights (future feature) -->
-  <section class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-12 col-md-8 mx-auto">
-        <h2 class="fw-light">Insights</h2>
-        <p class="lead text-muted">Here is an overview of your reading progress.<br>
-          You are doing fantastic, keep nourrishing your soul with amazing readings and inspire others to do the same!</p>
-        </p>
-      </div>
-    </div>
-  </section>
-
-
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-img bg-primary text-white text-center" style="padding:10px;">
-            <h1 class="card-title" style="padding-top: 10px;">12</h1>
-            <h5 class="card-title" style="padding-top: 10px;">Books saved</h5>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card">
-            <div class="card-img bg-primary text-white text-center" style="padding:10px;">
-              <h1 class="card-title" style="padding-top: 10px;">8</h1>
-              <h5 class="card-title" style="padding-top: 10px;">Reviews shared</h5>
-            </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <section class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-12 col-md-8 mx-auto ">
-        <button class="btn btn-refresh-insights"><i class="fa fa-refresh fa-3x"></i></button>
-          <p class="lead text-muted">Refresh for the latest insights</p>
-        </p>
-      </div>
-    </div>
   </section>
 
 {% endblock %}

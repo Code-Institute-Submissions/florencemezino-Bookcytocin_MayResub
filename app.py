@@ -20,7 +20,7 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def index():
-    return render_template("index.html", page_title="Readflix")
+    return render_template("bookcytocin.html", page_title="Bookcytocin")
 
 # About Bookcytocin
 @app.route("/bookcytocin")
@@ -143,8 +143,8 @@ def profile(username):
 
     return redirect(url_for("login"))
 
-# MyBookLog : user add a goal
-@app.route("/mybooklog/add_goal", methods=["POST", "GET"])
+# MyBookLog : add a goal
+@app.route("/mybooklog/add_goal/<goal_id>", methods=["POST", "GET"])
 def mybooklog():
     username = session["user"]
     user = mongo.db.users.find_one({"username": username})
@@ -162,38 +162,40 @@ def mybooklog():
         flash("Goal Successfully Saved!")
         mongo.db.users.update_one({"username": session["user"]}, {"$set": dta})
         return render_template(
-            "mybooklog.html", page_title="MyBookLog", user=user)
+            "edit_goal.html", page_title="MyBookLog", user=user)
 
-    return render_template("mybooklog.html", page_title="MyBookLog", user=user)
+    goal = mongo.db.tasks.find_one({"_id": ObjectId(goal_id)})
+    return render_template("edit_goal.html", page_title="MyBookLog", user=user, goal=goal)
 
 
-# MyBookLog : user view / edit goal 
+# MyBookLog : edit goal 
 @app.route("/mybooklog/edit_goal/<goal_id>", methods=["GET", "POST"])
 def edit_goal(goal_id):
+    username = session["user"]
+    user = mongo.db.users.find_one({"username": username})
     if request.method == "POST":
         is_goal = "on" if request.form.get("is_goal") else "off"
         submit = {
             "goal_level": request.form.get("goal_level"),
             "goal_reason": request.form.get("goal_reason"),
             "goal_obstacle": request.form.get("goal_obstacle"),
-            "goal_email": request.form.get("goal_email"),
             "goal_signature": request.form.get("goal_signature"),
         }
         mongo.db.goals.update({"_id": ObjectId(goal_id)}, submit)
         flash("Goal Successfully Updated")
 
     goal = mongo.db.tasks.find_one({"_id": ObjectId(goal_id)})
-    return render_template("edit_goal.html", goal=goal)
+    return render_template("edit_goal.html", user=user, goal=goal)
 
 
-# MyBookLog : user view / delete goal
+# MyBookLog : delete goal
 def delete_goal(goal_id):
     mongo.db.goal.remove({"_id": ObjectId(goal_id)})
     flash("Goal Successfully Deleted")
     return redirect(url_for("add_goal"))
 
 
-# MyBookLog : user add a review
+# MyBookLog : add a review
 @app.route("/add_review", methods=["POST"])
 def review():
     username = session["user"]
@@ -216,7 +218,7 @@ def review():
     return render_template("community.html", page_title="Community", user=user)
 
 
-# MyBookLog : user view / edit review
+# MyBookLog : edit review
 @app.route("/mybooklog/edit_review/<review_id>", methods=["GET", "POST"])
 def edit_review(review_id):
     if request.method == "POST":
@@ -233,7 +235,7 @@ def edit_review(review_id):
     return render_template("edit_review.html", review=review)
 
 
-# MyBookLog : user view / delete review
+# MyBookLog : delete review
 def delete_review(review_id):
     mongo.db.reviews.remove({"_id": ObjectId(review_id)})
     flash("Review Successfully Deleted")
