@@ -21,110 +21,53 @@
     </div>
     <div class="row mb-2">
       <div class="col-12 col-md-6 mt-5">
-        <img src="/static/assets/img/my_booklog.png" class="bd-placeholder-img" alt="phone with logo" width="100%" height="auto" style="border-radius: 5%;">
+        <img src="/static/assets/img/my_booklog.png" class="bd-placeholder-img mt-5" alt="phone with logo" width="100%" height="500" style="border-radius: 5%;">
       </div>
-
       <div class="col-12 col-md-6">
-        {% if goal_id == "on" %} 
-        <form class="" method="POST" action="{{ url_for('edit_goal', goal_id=goal._id) }}">
-          <div class="mb-3">
-            <label for="goal_level" class="form-label form-commitment mt-5 mr-5">My reading commitment </label>
-            <textarea type="text" class="form-control text-center" name ="goal_level" id="goal_level" aria-describedby="commitmentHelp" required> {{ goal.level }}</textarea>
-          </div>
-          <div class="mb-3">
-            <label for="goal_reason" class="form-label form-commitment">I choose to complete this commitment mentionned above because</label>
-            <textarea type="text" class="form-control text-center" name ="goal_reason" id="goal_reason" aria-describedby="commitmentHelp" required>{{ goal.reason }}</textarea>
-          </div>
-          <div class="mb-3">
-            <label for="goal_obstacle" class="form-label form-commitment">When I run into obstacles or lack of motivation at some point, I will</label>
-            <textarea type="text" class="form-control text-center" name="goal_obstacle" id="goal_obstacle" required> {{ goal.obstacle }}</textarea>
-          </div>
-          <label for="goal_signature" class="form-label form-commitment">Commit here by typing your full name</label>
-          <textarea type="text" class="form-control text-center" name="goal_signature" id="goal_signature" required>{{ goal.signature }}</textarea>
-        <div class="mb-3">
-          <a href="{{ url_for('edit_goal', goal_id=goal._id) }}" class="btn btn-secondary mt-5">Update</a>
-          <a href="{{ url_for('delete_goal', goal_id=goal._id) }}" class="btn btn-secondary mt-5">Delete</a>
-        </form>
-        {% else %} 
-        <form class="" method="POST" action="{{ url_for('add_goal') }}">
-          <div class="mb-3">
-            <label for="goal_level" class="form-label form-commitment mt-5 mr-5">Choose your reading commitment :</label>
-            <select id="goal_level" name="goal_level" required>
-              <option value="between 1 - 12 books per year">between 1 - 12 books per year</option>
-              <option value="between 12 - 24 books per year">between 12 - 24 books per year</option>
-              <option value="between 24 - 36 books per year">between 24 - 36 books per year</option>
-              <option value="36+ books per year">36+ books per year</option>
-            </select>
-          </div>
-          <div class="mb-3">
-            <label for="goal_reason" class="form-label form-commitment">I choose to complete this commitment mentionned above because</label>
-            <textarea type="text" class="form-control" name ="goal_reason" id="goal_reason" aria-describedby="commitmentHelp" required></textarea>
-          </div>
-          <div class="mb-3">
-            <label for="goal_obstacle" class="form-label form-commitment">When I run into obstacles or lack of motivation at some point, I will</label>
-            <textarea type="text" class="form-control" name="goal_obstacle" id="goal_obstacle" required></textarea>
-          </div>
-          <div class="mb-3">
-          <label for="goal_signature" class="form-label form-commitment">Commit here by typing your full name</label>
-          <input type="text" class="form-control" name="goal_signature" id="goal_signature" aria-describedby="commitmentHelp" required>
-          </div>
-          <a href="{{ url_for('edit_goal', goal_id=goal._id) }}" class="btn btn-secondary mt-5">Save my commitment</a>
-        </form>
-        {% endif %} 
+      {% if session['user'] %} 
+        {% include 'edit_goal.html' %}
+      {% endif %}  
         </div>
       </div>
-  </section>
+</section>
 
-  <!-- MyReviews-->
-  <section class="py-2 text-center container-fluid bg-review mt-5" style="border-radius:10%;">
-    <div class="py-5 text-center container-fluid">
-      <div class="row mb-2">
-        <div class="col-lg-12 col-md-8 mx-auto">
-          <h2 class="fw-light">My Reviews</h2>
-          <p class="lead text-muted">Manage your reading progress by reviewing the books you read. Remember, the world belongs to those who reads.</p>
-          </div>
-      </div>
-  </div>
-
-  <!-- Add a review -->
-      <div class="row mb-2">
-        <div class="col-lg-6 col-md-8 text-center">
-        <h4 class="fw-bold">Add a review</h4>
-        <p class="text-muted">Share your reading experience with the Bookcytocin Club.</p>
-        <form class="text-center" method="POST" action="{{ url_for('add_review') }}">
-          <div class="mb-3">
-            <label for ="review_book" class="label-form form-label"> Select a book :</label>
-              <select id="review_book" name="review_book" required>
-                {% for book in books %}
-                <option value="books">{{ book.title }} by {{ book.author }}</option>
-                {% endfor %}
-              </select>
-          </div>
-          <div class="mb-3">
-            <label for ="review_title" class="label-form form-label"> Give a title to your review </label>
-            <textarea class="form-control me-2 validate" name="review_title" id="review_title" type="text" placeholder="Write your review title here" aria-label="author" required></textarea>
-          </div>
-          <div class="mb-3">
-            <label for ="review_content" class="label-form form-label"> Leave your review </label>
-            <textarea class="form-control me-2 validate" name="review_content" id="review_content" type="text" placeholder="Write your review content here" aria-label="author" required></textarea>
-          </div>
-          <div class="mb-3">
-          <label for ="review_full_name" class="label-form form-label">Full Name</label>
-          <input class="form-control me-2 validate" name="review_full_name" id="review_full_name" type="text" placeholder="" aria-label="author" required>
-          </div>
-          <div class="mb-3">
-            <button type="submit" class="btn btn-primary mb-5">Submit review</button>
-          </div>
-          </form>
+<!-- MyBookwish-->
+<section class="py-2 text-center container-fluid bg-review mt-5" style="border-radius:10%;">
+  <div class="py-5 text-center container-fluid">
+    <div class="row mb-2">
+      <div class="col-lg-12 col-md-8 mx-auto">
+        <h2 class="fw-light">My Saved Books</h2>
+        <p class="lead text-muted">Manage your books wishlist. Remember, the world belongs to those who reads.</p>
         </div>
-        <div class="col-lg-6 col-md-8 text-center">
-          <img src="/static/assets/img/review.png" class="bd-placeholder-img mt-2" alt="bookcytocin logo" width="100%" height="450" style="border-radius: 5%;">
-        </div>
-        <p class="lead fw-bold" style="color:blue;"><small>View all reviews published in the <a href="{{ url_for('community') }}">Bookcytocin Community page </a></small></p>
+    </div>
+    <div class="row mb-2"> 
+      <div class="col-lg-12 col-md-8 text-center">
+        <div class="review-history table-responsive">
+          <table class="table table-sm table-borderless">
+              <thead class="text-muted">
+                  <tr class="lead" style="color:purple;">
+                    <th>Book</th>
+                    <th>Title & Author</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                  </tr>
+              </thead>
+              <hr>
+              <tbody>
+                  <tr>
+                    <td>savedbook.image</td>
+                    <td>savedbook.title</td> 
+                    <td>savedbook.description</td> 
+                    <td><button type="submit" class="btn btn-primary btn-sm mr-5">View on Amazon</button> || <button type="submit" class="btn btn-primary btn-sm">Delete</button></td>
+                  </tr>
+              </tbody>
+          </table>
         </div>
       </div>
     </div>
+  </div>
 </section>
+
 
   <!-- Insights (future feature) -->
   <section class="py-5 text-center container">

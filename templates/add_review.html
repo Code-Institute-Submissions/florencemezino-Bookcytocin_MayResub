@@ -1,16 +1,13 @@
-{% extends "base.html" %}
 {% block content %}
 
   <!-- Add a review -->
-      <div class="row mb-2">
-        <div class="col-lg-6 col-md-8 text-center">
-        <h4 class="fw-bold">Add a review</h4>
-        <p class="text-muted">Share your reading experience with the Bookcytocin Club.</p>
         <form class="text-center" method="POST" action="{{ url_for('add_review') }}">
           <div class="mb-3">
-            <label for ="books" class="label-form form-label"> Select a book :</label>
-              <select id="books" name="books" required>
-                <option value="books">book.title + book.author</option>
+            <label for ="review_book" class="label-form form-label"> Select a book :</label>
+              <select id="review_book" name="review_book" required>
+                {% for book in books %}
+                <option value="books">{{ book.title }} by {{ book.author }}</option>
+                {% endfor %}
               </select>
           </div>
           <div class="mb-3">
@@ -18,46 +15,17 @@
             <textarea class="form-control me-2 validate" name="review_title" id="review_title" type="text" placeholder="Write your review title here" aria-label="author" required></textarea>
           </div>
           <div class="mb-3">
-            <label for ="review" class="label-form form-label"> Review</label>
-            <textarea class="form-control me-2 validate" name="review_content" id="" type="text" placeholder="Write your review here" aria-label="author" required></textarea>
+            <label for ="review_content" class="label-form form-label"> Leave your review </label>
+            <textarea class="form-control me-2 validate" name="review_content" id="review_content" type="text" placeholder="Write your review content here" aria-label="author" required></textarea>
           </div>
           <div class="mb-3">
-          <label for ="full-name" class="label-form form-label">Full Name</label>
-          <input class="form-control me-2 validate" name="review_full_name" id="" type="text" placeholder="" aria-label="author" required>
+          <label for ="review_full_name" class="label-form form-label">Full Name</label>
+          <input class="form-control me-2 validate" name="review_full_name" id="review_full_name" type="text" placeholder="" aria-label="author" required>
           </div>
           <div class="mb-3">
             <button type="submit" class="btn btn-primary mb-5">Submit review</button>
           </div>
-          </form>
-        </div>
-        <div class="col-lg-6 col-md-8 text-center">
-          <h4 class="fw-bold">Overview</h4>
-          <div class="review-history table-responsive">
-            <table class="table table-sm table-borderless">
-                <thead class="text-muted">
-                    <tr>
-                        <th>Book</th>
-                        <th>Title</th>
-                        <th>Review</th>
-                        <th>Update</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for review in reviews %}
-                        <tr>
-                            <td>{{ item.book.title }} by {{ item.book.author }}</td>
-                            <td>{{ review.title }}</td> 
-                            <td>{{ review.content }}</td> 
-                            <td><i class="fa-solid fa-pen-to-square">{{ review.content.edit }}</i><i class="fa-solid fa-circle-trash">{{ review.content.delete}}</i></td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-</section>
+      </form>
 
 {% endblock %}
     

@@ -42,17 +42,10 @@ def readflix():
 @app.route("/collections")
 def collections():
     books = list(mongo.db.books.find())
+    collections = list(mongo.db.collections.find())
     print("Books in collections: ", books)
     return render_template(
-        "collections.html", page_title="Collections", books=books)
-
-
-# Collection : display books per collection name on click
-@app.route("/show_collections")
-def show_collections():
-    collections = list(mongo.db.collections.find())
-    return render_template(
-        "collections.html", page_title="Collections", collections=collections)
+        "collections.html", page_title="Collections", books=books, collections=collections)
 
 
 @app.route("/get_collections/<collection_name>", methods=["GET", "POST"])
@@ -101,7 +94,7 @@ def signup():
 
         session["user"] = request.form.get("username").lower()
         flash("You are in! Registration Successful.")
-        return redirect(url_for("mybooklog", username=session["user"]))
+        return redirect(url_for("login", username=session["user"]))
 
     return render_template("signup.html", page_title="Sign up")
 
@@ -143,13 +136,29 @@ def logout():
 # MyBookLog 
 @app.route("/mybooklog/<username>", methods=["GET", "POST"])
 def profile(username):
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
+    print("method:", request.method)
+    user = mongo.db.users.find_one(
+        {"username": session["user"]})
 
-    if session["user"]:
-        return render_template("mybooklog.html", username=username)
+    if user:
+        if request.method == "POST":
+            goal = {
+                "goal_level": request.form.get("goal_level"),
+                "goal_reason": request.form.get("goal_reason"),
+                "goal_obstacle": request.form.get("goal_obstacle"),
+                "goal_email": request.form.get("goal_email"),
+                "goal_signature": request.form.get("goal_signature"),
+            }
+            print("My reading goal", user)
+            print(goal)
+            flash("Goal Successfully Saved!")
+            mongo.db.users.find_one_and_update({"username": session["user"]}, {"$set": goal})
+            return render_template(
+                "mybooklog.html", page_title="MyBookLog", user=user)
+    
+        return render_template("mybooklog.html", user=user)
 
-    return redirect(url_for("login"))
+    return redirect(url_for("profile"))
 
 
 # Add a goal
@@ -158,7 +167,7 @@ def add_goal():
     username = session["user"]
     user = mongo.db.users.find_one({"username": username})
     if request.method == "POST":
-        dta = {
+        goal = {
             "goal_level": request.form.get("goal_level"),
             "goal_reason": request.form.get("goal_reason"),
             "goal_obstacle": request.form.get("goal_obstacle"),
@@ -167,9 +176,9 @@ def add_goal():
         }
 
         print("My reading goal", user)
-        print(dta)
+        print(goal)
         flash("Goal Successfully Saved!")
-        mongo.db.users.update_one({"username": session["user"]}, {"$set": dta})
+        mongo.db.users.update_one({"username": session["user"]}, {"$set": goal})
         return render_template(
             "mybooklog.html", page_title="MyBookLog", user=user)
 
@@ -182,7 +191,6 @@ def edit_goal(goal_id):
     username = session["user"]
     user = mongo.db.users.find_one({"username": username})
     if request.method == "POST":
-        goal_id = "on" if request.form.get("goal_id") else "off"
         submit = {
             "goal_level": request.form.get("goal_level"),
             "goal_reason": request.form.get("goal_reason"),
@@ -193,16 +201,16 @@ def edit_goal(goal_id):
         flash("Goal Successfully Updated")
 
     goal = mongo.db.goals.find_one({"_id": ObjectId(goal_id)})
+    print("goal: ", goal)
     return render_template(
         "edit_goal.html", page_title="MyBookLog", user=user, goal=goal)
 
 
 # Delete a goal
 def delete_goal(goal_id):
-    goal = mongo.db.goals.remove({"_id": ObjectId(goal_id)})
+    mongo.db.goals.remove({"_id": ObjectId(goal_id)})
     flash("Goal Successfully Deleted")
-    return redirect(url_for(
-        "add_goal", page_title="MyBookLog", user=user, goal=goal)
+    return redirect(url_for("add_goal"))
 
 
 # Add a review

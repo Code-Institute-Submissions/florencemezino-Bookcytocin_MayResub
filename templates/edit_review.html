@@ -6,55 +6,32 @@
         <div class="col-lg-6 col-md-8 text-center">
         <h4 class="fw-bold">Edit a review</h4>
         <p class="text-muted">Update your reading experience with the Bookcytocin Club.</p>
-        <form class="text-center" method="POST" action="{{ url_for('edit_review') }}">
+        <form class="text-center" method="POST" action="{{ url_for('edit_review', review_id=review._id) }}">
           <div class="mb-3">
             <label for ="books" class="label-form form-label"> Select a book :</label>
               <select id="books" name="books" required>
-                <option value="books">book.title + book.author</option>
+                {% for book in books %}
+                <option value="books">{{ book.title }} by {{ book.author }}</option>
+                {% endfor %}
               </select>
           </div>
           <div class="mb-3">
             <label for ="review_title" class="label-form form-label"> Give a title to your review </label>
-            <textarea class="form-control me-2 validate" name="review_title" id="review_title" type="text" placeholder="Write your review title here" aria-label="author" required></textarea>
+            <textarea class="form-control me-2 validate" name="review_title" id="review_title" type="text" placeholder="Write your review title here" aria-label="author" required> {{ review.title }}</textarea>
           </div>
           <div class="mb-3">
             <label for ="review" class="label-form form-label"> Review</label>
-            <textarea class="form-control me-2 validate" name="review_content" id="" type="text" placeholder="Write your review here" aria-label="author" required></textarea>
+            <textarea class="form-control me-2 validate" name="review_content" id="" type="text" placeholder="Write your review here" aria-label="author" required> {{ review.content}</textarea>
           </div>
           <div class="mb-3">
           <label for ="full-name" class="label-form form-label">Full Name</label>
           <input class="form-control me-2 validate" name="review_full_name" id="" type="text" placeholder="" aria-label="author" required>
           </div>
           <div class="mb-3">
-            <button type="submit" class="btn btn-primary mb-5">Update review</button>
-            <button type="submit" class="btn btn-primary mb-5">Delete review</button>
+            <a href="{{ url_for('community') }}" class="btn btn-secondary mt-5">Update</a>
+            <a href="{{ url_for('delete_review') }}" class="btn btn-secondary mt-5">Delete</a>
           </div>
           </form>
-        </div>
-        <div class="col-lg-6 col-md-8 text-center">
-          <h4 class="fw-bold">Overview</h4>
-          <div class="review-history table-responsive">
-            <table class="table table-sm table-borderless">
-                <thead class="text-muted">
-                    <tr>
-                        <th>Book</th>
-                        <th>Title</th>
-                        <th>Review</th>
-                        <th>Update</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for review in reviews %}
-                        <tr>
-                            <td>{{ item.book.title }} by {{ item.book.author }}</td>
-                            <td>{{ review.title }}</td> 
-                            <td>{{ review.content }}</td> 
-                            <td><i class="fa-solid fa-pen-to-square">{{ review.content.edit }}</i><i class="fa-solid fa-circle-trash">{{ review.content.delete}}</i></td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-          </div>
         </div>
       </div>
     </div>

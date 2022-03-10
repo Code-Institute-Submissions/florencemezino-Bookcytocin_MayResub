@@ -11514,6 +11514,29 @@ footer.footer {
   background-color: rgba(218, 198, 232, 0.5);
 }
 
+.btn-save {
+  color: #fafafa;
+  background-color: purple;
+}
+
+.btn-save:hover{
+  color: purple;
+  background-color: #fafafa;
+  border-color: purple;
+}
+
+.btn-review {
+  color: #fafafa;
+  background-color: #00315B;
+}
+
+.btn-review:hover {
+  color: #00315B;
+  background-color: #fafafa;
+  border-color: #00315B;
+
+}
+
   /* Community
   -------------------------------------------------- */
 
@@ -11572,3 +11595,5 @@ footer.footer {
   .list-collection:hover {
     color:var(--bs-blue);
   }
+
+
