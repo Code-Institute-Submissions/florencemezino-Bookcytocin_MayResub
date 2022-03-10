@@ -13,7 +13,7 @@
         <img src="static/assets/img/my_booklog.png" class="bd-placeholder-img" alt="phone with logo" width="100%" height="auto" style="border-radius: 5%;">
       </div>
       <div class="col-12 col-md-6">
-        <form class="" method="POST" action="{{ url_for('add_goal', goal_id=goal._id) }}">
+        <form class="" method="POST" action="{{ url_for('add_goal') }}">
           <div class="mb-3">
             <label for="goal_level" class="form-label form-commitment mt-5 mr-5">Choose your reading commitment :</label>
             <select id="goal_level" name="goal_level" required>
@@ -39,7 +39,6 @@
           <input type="text" class="form-control" name="goal_signature" id="goal_signature" aria-describedby="commitmentHelp" required>
         <div class="mb-3">
           <button type="submit" class="btn btn-primary mt-5">Save my commitment</button>
-          <!-- <a href="{{ url_for('mybooklog') }}" class="btn btn-secondary mt-5">Save my commitment</a> -->
         </form>
         </div>
       </div>

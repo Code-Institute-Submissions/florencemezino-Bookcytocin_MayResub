@@ -11,35 +11,45 @@
       </div>
     </div>
     <p class="lead fw-bold" style="color:purple;">Coming together is a beginning, keeping together is a progress, working together is a success.</p>
-  </section>
+</section>
 
  
 <!-- users reviews -->
 <img src="static/assets/img/the_club_review.png" class="bd-placeholder-img" alt="people smiling" width="100%" height="auto" style="border-radius: 5%;">
 <section class="py-5 container">
-<div class="reviews">
-  <div class="row blockquote review-item mx-auto">
-    <div class="col-md-9">
-      <small class="review_book"><a href="review_book">review_book</a></small> 
-      <h5>review_title</h5>
-      <div class="ratebox text-center" data-id="0" data-rating="5"></div>
-      <p class="review_content"> "review.content / Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede."</p>
-      <small>by <a href="#user">review_full_name</a></small>
-      <div>
-        {% if session.user %}    
-        <small class="review_update">review.edit / review.delete</small>
-        {% else %} 
-        <small class="review_update"> <a href="review_edit">review_edit</a> <a href="review_delete">review_delete</a></small>
-        {% endif %} 
-    </div>
-    </div>                          
-  </div>  
-</div>
+  <div class="row py-lg-5">
+    <div class="col-lg-4 col-md-6">
+      <div class="reviews">
+        <div class="row blockquote review-item mx-auto">
+          <div class="col-md-9">
+            <small class="review_book"><a href="review_book">review_book</a></small> 
+            <h5>review_title</h5>
+            <div class="ratebox text-center" data-id="0" data-rating="5"></div>
+            <p class="review_content"> "review.content / Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede."</p>
+            <small>by <a href="#user">review_full_name</a></small>
+            <div>
+              {% if session.user %}    
+              <small class="review_update">review.edit / review.delete</small>
+              {% else %} 
+              <small class="review_update"> <a href="review_edit">review_edit</a> <a href="review_delete">review_delete</a></small>
+              
+          </div>
+          </div>                          
+        </div> 
+      </div>
+    </div> 
+  </div>
 </section>
 
+{% if session.user %}
+<a href="{{ url_for('add_review') }}" class="btn btn-secondary mt-5">Add review</a>
+{% endif %} 
+
+
  <!-- ambassadors testimonies -->
+ <hr>
  <section class="py-5 text-center container">
-  <p class="lead fw-bold" style="color:purple;">From Bookcytocin ambassadors and book authors</p>
+  <p class="lead fw-bold" style="color:purple;">From Bookcytocin ambassadors and book authors ...</p>
   <div class="row py-lg-5">
     <div class="col-lg-12 col-md-8 mx-auto">
 <div class="row">

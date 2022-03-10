@@ -29,10 +29,8 @@
           <label for="goal_signature" class="form-label form-commitment">Commit here by typing your full name</label>
           <textarea type="text" class="form-control text-center" name="goal_signature" id="goal_signature" required>{{ goal.signature }}</textarea>
         <div class="mb-3">
-          <!-- <a href="{{ url_for('edit_goal', goal_id=goal._id) }}" class="btn btn-secondary mt-5">Update</a>
-          <a href="{{ url_for('delete_goal', goal_id=goal._id) }}" class="btn btn-secondary mt-5">Delete</a> -->
-          <button type="submit" class="btn btn-primary mt-5">Update</button>
-          <button type="submit" class="btn btn-primary mt-5">Delete</button>
+          <a href="{{ url_for('edit_goal', goal_id=goal._id) }}" class="btn btn-secondary mt-5">Update</a>
+          <a href="{{ url_for('delete_goal', goal_id=goal._id) }}" class="btn btn-secondary mt-5">Delete</a>
         </form>
         </div>
 
