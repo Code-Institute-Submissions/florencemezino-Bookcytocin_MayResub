@@ -17,12 +17,12 @@ The site owner goal is to make money ot of each sell thanks to a affiliate link 
 
 2.  Profile : Readers
 
-Users who want to focus on their personnal development and want to include more readings in their life. They want to integrate more readings in their life by using the book as a real tool on their personnal development journey. They want to take time to read more and share their recommendations/reviews. They want to have the possibility to see recommandations and buy books online.
+Users who want to focus on their personnal development and want to include more readings in their life. They want to integrate more readings in their life by using the book as a real tool on their personnal development journey. They want to take time to read more and share their recommendations/reviews. They want to have the possibility to see recommandations, save books for later and buy books online.
 
 
 a. identity and behaviours
 
-Readers interacting with the site are English speaker and we can determine different profiles :
+Readers interacting with the site are English speaker and we can determine different reader profiles :
 - Beginner : between 1 - 12 books per year : Mostly users who read very rarely.
 - Intermediate : between 12 - 24 books per year : Mostly users who read minimum 1 book per month
 - Expert : between 24 - 36 books per year : Users who reads very frequently and it is part of their habits 
@@ -47,6 +47,7 @@ c. restraints
 * As a reader, I want to have access to a great book library online so that I can have plenty of choice to select my next book to read
 * As a reader, I want to buy a book in few steps so that I can progress quickly on my reading goals
 * As a reader, I want to have access to recommendations/ reviews about books so that it can help me to choose the next book to read
+* As a reader, I want to save book in a wishlist so that I can buy it later
 * As a reader, I want to sell books I read already so that I can invest in buying new ones
 * As a reader, I want to exchange the books I read with other readers so that I can save money and interact with the readers community
 

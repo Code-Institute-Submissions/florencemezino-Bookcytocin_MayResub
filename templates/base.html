@@ -105,7 +105,11 @@
         <div class="carousel-caption">
             <h1>Become the best version of you</h1>
             <p>Unlock your potential and access MyBookLog profile to reach your reading goal.</p>
+            {% if session.user %}
+            <p><a class="btn btn-lg btn-primary" href="{{ url_for('profile', username=session['user']) }}">Go</a></p>
+            {% else %}
             <p><a class="btn btn-lg btn-primary" href="{{ url_for('login') }}">Go</a></p>
+            {% endif %}
         </div>
         </div>
     </div>
@@ -156,26 +160,9 @@
                 <div class="text-center text-white">
                     <h1 class="mb-3">Get your free ebook <br>"5 ways to release your Bookcytocin"</h1>
                     <h3 class="mt-1 mb-5">The ultimate method to embrace your reading experience and become the best version of yourself</h3>
-                    <!-- Email input-->
-                    <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN">
-                        <div class="row justify-content-center">
-                            <!-- <div class="col-xl-6 ">
-                                <input class="form-control form-control-lg" id="emailAddress" type="email" placeholder="Email Address" data-sb-validations="required,email" />
-                                <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:required">Email Address is required.</div>
-                                <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:email">Email Address is not valid.</div>
-                            </div>
-                            <div class="col-auto"><button class="btn btn-primary btn-lg" id="submitButton" type="submit">Submit</button></div> -->
-                            <button type="button" class="btn btn-primary btn-lg" onclick=" window.open('static/assets/file/free_ebook.pdf'); return true;">Download</button>
-                        </div>
-                        <!-- Submit success message-->
-                        <div class="d-none" id="submitSuccessMessage">
-                            <div class="text-center mb-3">
-                                <div class="fw-bolder">Request submission successful!</div>
-                            </div>
-                        </div>
-                        <!-- Submit error message-->
-                        <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                    </form>
+                    <div class="row justify-content-center">
+                        <button type="button" class="btn btn-primary btn-lg" onclick=" window.open('static/assets/file/free_ebook.pdf'); return true;">Download</button>
+                    </div>
                 </div>
             </div>
         </div>

@@ -136,10 +136,8 @@ def logout():
 # MyBookLog 
 @app.route("/mybooklog/<username>", methods=["GET", "POST"])
 def profile(username):
-    print("method:", request.method)
     user = mongo.db.users.find_one(
         {"username": session["user"]})
-
     if user:
         if request.method == "POST":
             goal = {
@@ -149,8 +147,7 @@ def profile(username):
                 "goal_email": request.form.get("goal_email"),
                 "goal_signature": request.form.get("goal_signature"),
             }
-            print("My reading goal", user)
-            print(goal)
+
             flash("Goal Successfully Saved!")
             mongo.db.users.find_one_and_update({"username": session["user"]}, {"$set": goal})
             return render_template(
@@ -185,7 +182,7 @@ def add_goal():
     return render_template("mybooklog.html", page_title="MyBookLog", user=user)
 
 
-# Edit a goal
+# Add / Edit a goal
 @app.route("/mybooklog/edit_goal/<goal_id>", methods=["GET", "POST"])
 def edit_goal(goal_id):
     username = session["user"]
@@ -203,7 +200,7 @@ def edit_goal(goal_id):
     goal = mongo.db.goals.find_one({"_id": ObjectId(goal_id)})
     print("goal: ", goal)
     return render_template(
-        "edit_goal.html", page_title="MyBookLog", user=user, goal=goal)
+        "mybooklog.html", page_title="MyBookLog", user=user, goal=goal)
 
 
 # Delete a goal
@@ -235,6 +232,7 @@ def add_review():
 
     return render_template("mybooklog.html", page_title="MyBookLog", user=user)
 
+
 # Edit a review
 @app.route("/community/edit_review/<review_id>", methods=["GET", "POST"])
 def edit_review(review_id):
@@ -248,7 +246,7 @@ def edit_review(review_id):
             "review_content": request.form.get("review_content"),
             "review_full_name": request.form.get("review_full_name"),
         }
-        mongo.db.goals.update({"_id": ObjectId(review_id)}, submit)
+        mongo.db.reviews.update({"_id": ObjectId(review_id)}, submit)
         flash("Review Successfully Updated")
 
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
@@ -260,6 +258,33 @@ def delete_review(review_id):
     mongo.db.reviews.remove({"_id": ObjectId(review_id)})
     flash("Review Successfully Deleted")
     return redirect(url_for("add_review"))
+
+
+# Saved book (wishlist)
+@app.route("/mybooklog/saved_book/<book_id>", methods=["GET", "POST"])
+def saved_book(book_id):
+    username = session["user"]
+    user = mongo.db.users.find_one({"username": username})
+    if request.method == "POST":
+        saved = {
+            "book_image_url": request.form.get("book_image_url"),
+            "book_title": request.form.get("book_title"),
+            "book_description": request.form.get("book_description"),
+            "book_amazon_link": request.form.get("book_amazon_link"),
+        }
+        mongo.db.user.update({"_id": ObjectId(book_id)}, saved)
+        flash("Book Successfully Saved")
+
+    book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
+    return render_template(
+        "saved_book.html", page_title="MyBookLog", user=user, book=book)
+
+
+# Delete a saved book
+def delete_saved_book(review_id):
+    mongo.db.reviews.remove({"_id": ObjectId(review_id)})
+    flash("Book Successfully Removed from wishlist")
+    return redirect(url_for("delete_saved_book"))
 
 
 if __name__ == "__main__":

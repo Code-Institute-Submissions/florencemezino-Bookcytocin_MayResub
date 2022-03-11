@@ -37,6 +37,10 @@ Most common paths through the website:
 - In the community page, the reader has access to reviews from members of the Bookcytocin club.
 - Users gets recommendations and life advice through articles, events, matercass etc thank to the blog
 
+TO BE TESTED
+* As a reader, I want to save book in a wishlist so that I can buy it later
+- User can find books in the collections and save them in their profile (wishlist format) in order to buy them later
+
 * As a reader, I want to sell books I read already so that I can invest in buying new ones
 > Listed as future feature in Readme file
 
@@ -53,6 +57,7 @@ Most common paths through the website:
 - Reader has access to a section Insights in their profile in which they can see the number of books saved and the numbers of books finished and reviewed.
 > Listed as future feature in Readme file
 
+TO BE TESTED
 * As a reader, I want to be able to share reviews about my readings so that I can also help others to decide their reading 
 - Reader can add a review about a book they read. User needs to be logged in first in order to proceed.
 > Listed as future feature in Readme file
@@ -69,7 +74,7 @@ Most common paths through the website:
 #### As a reader and returning visitor to the website :
 
 * As a reader, I want to see the most liked/successful/trendy books on a certain period to not miss out so that I can be up to date about trendy readings
-- Readers have access to a special selection of books provided via Readflix. for every time they visit they will have a different selection.
+- Readers have access to a special selection of books provided via Readflix. (a specific focus every month)
 
 * As a reader, I want to be informed about new books releases, events, masterclass so that I can improve my learning skils in general. 
 - To be informed about lastest news , tips , events, user can visit the community page
@@ -77,13 +82,18 @@ Most common paths through the website:
 
 ### Manual (logical) testing of all elements and functionality on every page.
 
+#### Bookcytocin
+
+1. Logo
+- Click on the logo "Bookcytocin"
+- Check if it redirect to the welcome page
+
 #### Readflix 
 
-1. Header / Navigation bar
+1. Navigation bar
 - Go to "Readflix" from a desktop
-- Click on the logo : we are redirected to the main page "Readflix"
 - Click on a different tab of the navigation bar to check if the active tab is highlighted when clicked and visiting the related page
-- Click on each sign up butto in the nav bar and the user can access the sign up form
+- Click on each sign up button in the nav bar and the user can access the sign up form
 - Check if navigation bar is responsive on tablet and mobile. Confirm navigation bar collapses to become a toggle menu with a dropdown of the navigation links.
 
 2. Footer
@@ -211,9 +221,11 @@ User can search by book title, author and collection types.
 
 a- Functions
 
-* Login : When logging in via MyBookLog page + clicking x page and coming back to MyBookLog
-* Footer , copyright section, the year is not updating.
-* CTA free ebook : Contact Form not active : user won't receive a free ebook
+- Goal form in my booklog profile is updating on refresh and on login again  (not via update button)
+- Button Save on books doesn't save books to profile section
+- Button Review on books doesn't redirect to community page
+- Add review form is not displaying and not adding reviews to community page
+- Edit review and delete review icon on community page don't work
 
 
 b- style
