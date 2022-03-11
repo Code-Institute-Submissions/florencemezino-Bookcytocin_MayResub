@@ -1,7 +1,6 @@
 # Bookcytocin, evolve to your best self
 
-Main MS3README.md file [here]()
-View the live project [here]()
+View the live project [here](https://bookcytocin-project.herokuapp.com/)
 
 ## Testing 
 
@@ -9,7 +8,6 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 W3C Markup Validator  / Jinja - `Success` 
 > to validate Jinja code is to open up a webpage in your app, right click the page, click view source, and copy that code into the W3 HTML validator.
-(sidenote : validator claims 1 error line 132, "end p tag" but not the case)
 
 W3C CSS Validator - `Success`
 JShint - `Success`
