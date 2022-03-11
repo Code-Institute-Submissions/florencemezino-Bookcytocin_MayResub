@@ -1,6 +1,6 @@
 {% block content %}
 
-<form class="" method="POST" action="{{ url_for('profile', username=session['user']) }}">
+<form class="" method="POST" action="{{ url_for('profile', username=session['user','book_id']) }}">
   <table class="table table-sm table-borderless">
       <thead class="text-muted">
           <tr class="lead" style="color:purple;">
@@ -13,10 +13,12 @@
       <hr>
       <tbody>
           <tr>
-            <td>{{ user.book.image_url }}</td>
-            <td>{{ user.book.title }} by {{ user.book.author }}</td> 
-            <td>{{ user.book.description }}</td> 
-            <td><a href="{{ book.amazon_link }}" class="btn btn-secondary btn-sm my-2" target="_blank">View on Amazon</a> || <a href="{{ url_for('delete_saved_book') }}" class="btn btn-secondary btn-sm my-2" target="_blank">Delete</a> </td>
+            {% for book in books %}
+            <td><img src="{{ book.image_url }}" class="" alt="book" width="100" height="100"></td>
+            <td>{{ book.title }} by {{ book.author }}</td> 
+            <td>{{ book.description }}</td> 
+            <td><a href="{{book.amazon_link}}" class="btn btn-secondary btn-sm my-2" target="_blank">View on Amazon</a> || <a href="{{ url_for('delete_saved_book') }}" class="btn btn-secondary btn-sm my-2" target="_blank">Delete</a> </td>
+            {% endfor %}
           </tr>
       </tbody>
   </table>

@@ -221,9 +221,7 @@ User can search by book title, author and collection types.
 
 a- Functions
 
-- Goal form in my booklog profile is updating on refresh and on login again  (not via update button)
-- Button Save on books doesn't save books to profile section
-- Button Review on books doesn't redirect to community page
+- Button Save on books doesn't save books to saved book profile section
 - Add review form is not displaying and not adding reviews to community page
 - Edit review and delete review icon on community page don't work
 
@@ -231,7 +229,7 @@ a- Functions
 b- style
 
 * Carousel : after finishing displaying all the slides, not possible to use the arrow to go back to previous slide
-* Navigation bar / burger icon doesn't close after opening.(refresh is required)
+* Navigation bar / burger icon doesn't close upon clicking on icon. Refresh or navigation selection is required.
 
 
 ## Feedback

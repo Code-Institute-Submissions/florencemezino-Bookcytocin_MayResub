@@ -32,7 +32,7 @@
       {% for book in books %}
         <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-5">
           <div class="card text-center" style="width: 18rem;">
-            <img src="{{book.image_url}}" class="card-img-top" alt="book">
+            <img src="{{book.image_url}}" class="card-img" alt="book" max-width="100%" height="auto">
               <div class="card-body">
                 <h5 class="card-title">{{ book.title }}</h5>
                 <p class="card-text author-text">{{ book.author }}</p>
@@ -45,8 +45,8 @@
                 <a href="{{ book.amazon_link }}" class="btn btn-secondary btn-sm my-2" target="_blank">View on Amazon</a>
                 {% if session.user %}
                 <br>
-                <a href="{{ url_for('add_review', username=session['user']) }}" class="btn btn-review btn-sm my-2">Review</a>
-                <a href="{{ url_for('saved_book', username=session['user']) }}"class="btn btn-save btn-sm my-2">Save</a>
+                <a href="{{ url_for('add_review', username=session['user', 'book']) }}" class="btn btn-review btn-sm my-2">Review</a>
+                <a href="{{ url_for('saved_book', username=session['user', 'book']) }}"class="btn btn-save btn-sm my-2">Save</a>
                 {% endif %} 
               </div>
             </div>
