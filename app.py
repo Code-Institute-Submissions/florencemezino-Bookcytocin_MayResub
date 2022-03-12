@@ -49,7 +49,7 @@ def readflix():
         flash("Book Successfully Saved in your Wishlist!")
         user = mongo.db.users.find_one({"username": session["user"]})
         return render_template(
-                "mybooklog.html", page_title="MyBookLog", user=user)       
+                "saved_book.html", page_title="MyBookLog", user=user)       
         return render_template("mybooklog.html", user=user)
 
     books = list(mongo.db.books.find(
@@ -78,7 +78,7 @@ def readflix():
 #                 {"username": session["user"]}, {"$set": book})
 #         user = mongo.db.users.find_one({"username": session["user"]})
 #         return render_template(
-#             "index.html", page_title="Readflix", user=user)       
+#             "saved.html.html", page_title="MyBookLog", user=user)       
 
 #     return redirect(url_for("profile")) 
 

@@ -13,13 +13,13 @@ W3C CSS Validator - `Success`
 JShint - `Success`
 Pep8 - `Success`
 
-Lighthouse - [Results](static/assets/testing/lighthousems3_results.png)
+Lighthouse - [Results](static/assets/testing/lighthousems3_results_resubmit.png)
 
 ### Testing User Stories from User Experience (UX) Section
 
 Most common paths through the website:
 1. Reaflix > Collections > Community > MyBookLog
-2. MyBookLog > Community > Reaflix > Collections
+2. MyBookLog > Reaflix > Collections > Community
 
 
 #### As a reader and a new visitor to the website :
