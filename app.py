@@ -49,8 +49,8 @@ def readflix():
         flash("Book Successfully Saved in your Wishlist!")
         user = mongo.db.users.find_one({"username": session["user"]})
         return render_template(
-                "saved_book.html", page_title="MyBookLog", user=user)       
-        return render_template("mybooklog.html", user=user)
+                "saved_book.html", page_title="MyBookLog", user=user)  
+    return render_template("mybooklog.html", user=user)
 
     books = list(mongo.db.books.find(
         {"collection_name": "Character"}).limit(4))
