@@ -44,7 +44,7 @@ def readflix():
                               "author"],
                         "book_description": book["description"],
                         "book_amazon_link": book["amazon_link"]}}, },
-                {book_id: True}
+                {upsert: True}
         )
         flash("Book Successfully Saved in your Wishlist!")
         user = mongo.db.users.find_one({"username": session["user"]})
@@ -52,16 +52,46 @@ def readflix():
                 "mybooklog.html", page_title="MyBookLog", user=user)       
         return render_template("mybooklog.html", user=user)
 
-    return redirect(url_for("profile")) 
-
     books = list(mongo.db.books.find(
         {"collection_name": "Character"}).limit(4))
     return render_template(
         "index.html", page_title="Readflix", books=books)
 
+    return redirect(url_for("profile")) 
+
+# OPTION 2 Readflix : find 4 books in one collection and save books to profile
+# @app.route("/readflix", methods=["GET", "POST"])
+# def readflix():
+#     book_id = request.form.get("book_id")
+#     book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
+#     if request.method == "POST":
+#         book_id = {
+#             "book.image_url": request.form.get("book.image_url"),
+#             "book.amazon_link": request.form.get("book.amazon_link"),
+#             "book.title": request.form.get("book.title"),
+#             "book.author": request.form.get("book.author"),
+#             "book_description": request.form.get("book_description"),
+#             "book_amazon_link": request.form.get("review_full_name"),
+#         }
+#         flash("Book Successfully Saved in your Wishlist!")
+#         mongo.db.users.find_one_and_update(
+#                 {"username": session["user"]}, {"$set": book})
+#         user = mongo.db.users.find_one({"username": session["user"]})
+#         return render_template(
+#             "index.html", page_title="Readflix", user=user)       
+
+#     return redirect(url_for("profile")) 
+
+#     books = list(mongo.db.books.find(
+#         {"collection_name": "Character"}).limit(4))
+#     return render_template(
+#         "index.html", page_title="Readflix", books=books)
+
+#     return redirect(url_for("profile")) 
+
 
 # Collection : display books and save books to profile
-@app.route("/collections")
+@app.route("/collections", methods=["GET", "POST"])
 def collections():
     books = list(mongo.db.books.find())
     collections = list(mongo.db.collections.find())
