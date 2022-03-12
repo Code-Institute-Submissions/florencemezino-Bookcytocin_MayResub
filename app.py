@@ -35,59 +35,26 @@ def readflix():
     if request.method == "POST":
         book_id = request.form.get("book_id")
         book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
-        print(book)
-        mongo.db.users.update(
-            {"username": session["user"]},
-            {
-                "$push": {"saved_books": {"book_image_url": book["image_url"],
-                          "book_title": book["title"], "book_author": book[
-                              "author"],
-                        "book_description": book["description"],
-                        "book_amazon_link": book["amazon_link"]}}, },
-                {upsert: True}
-        )
+
+        user_saved_book = {
+                "book_image_url": book["image_url"], 
+                "book_title": book["title"],
+                "book_author": book["author"],
+                "book_description": book["description"],
+                "book_amazon_link": book["amazon_link"]
+        }
+
         flash("Book Successfully Saved in your Wishlist!")
-        user = mongo.db.users.find_one({"username": session["user"]})
+        user = mongo.db.users.update_one({"username": session["user"]}, {"$push": {"saved_books": user_saved_book }})
         return render_template(
-                "saved_book.html", page_title="MyBookLog", user=user)  
-    return render_template("mybooklog.html", user=user)
+            "mybooklog.html", page_title="MyBookLog", user=user)  
 
     books = list(mongo.db.books.find(
         {"collection_name": "Character"}).limit(4))
     return render_template(
         "index.html", page_title="Readflix", books=books)
 
-    return redirect(url_for("profile")) 
-
-# OPTION 2 Readflix : find 4 books in one collection and save books to profile
-# @app.route("/readflix", methods=["GET", "POST"])
-# def readflix():
-#     book_id = request.form.get("book_id")
-#     book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
-#     if request.method == "POST":
-#         book_id = {
-#             "book.image_url": request.form.get("book.image_url"),
-#             "book.amazon_link": request.form.get("book.amazon_link"),
-#             "book.title": request.form.get("book.title"),
-#             "book.author": request.form.get("book.author"),
-#             "book_description": request.form.get("book_description"),
-#             "book_amazon_link": request.form.get("review_full_name"),
-#         }
-#         flash("Book Successfully Saved in your Wishlist!")
-#         mongo.db.users.find_one_and_update(
-#                 {"username": session["user"]}, {"$set": book})
-#         user = mongo.db.users.find_one({"username": session["user"]})
-#         return render_template(
-#             "saved.html.html", page_title="MyBookLog", user=user)       
-
-#     return redirect(url_for("profile")) 
-
-#     books = list(mongo.db.books.find(
-#         {"collection_name": "Character"}).limit(4))
-#     return render_template(
-#         "index.html", page_title="Readflix", books=books)
-
-#     return redirect(url_for("profile")) 
+    return redirect(url_for("readflix"))
 
 
 # Collection : display books and save books to profile
@@ -126,13 +93,32 @@ def community():
     return render_template(
         "community.html", page_title="The Bookcytocin Club", user=users)
 
+# MyBookLog (Add / Edit / Delete goal)
+@app.route("/mybooklog/<username>", methods=["GET", "POST"])
+def profile(username):
+    user = mongo.db.users.find_one(
+        {"username": session["user"]})
+    if user:
+        if request.method == "POST":
+            goal = {
+                "goal_level": request.form.get("goal_level"),
+                "goal_reason": request.form.get("goal_reason"),
+                "goal_obstacle": request.form.get("goal_obstacle"),
+                "goal_email": request.form.get("goal_email"),
+                "goal_signature": request.form.get("goal_signature"),
+            }
 
-# Delete a saved book
-def delete_saved_book():
-    book_id = request.form.get("book_id")
-    mongo.db.users.remove({"_id": ObjectId(book_id)})
-    flash("Book Successfully Removed from your Wishlist")
-    return redirect(url_for("delete_saved_book"))
+            flash("Goal Successfully Saved!")
+            mongo.db.users.find_one_and_update(
+                {"username": session["user"]}, {"$set": goal})
+            user = mongo.db.users.find_one({"username": session["user"]})
+            return render_template(
+                "mybooklog.html", page_title="MyBookLog", user=user)  
+
+        books = user["saved_books"]
+
+        return render_template("mybooklog.html", user=user, books=books)
+    return redirect(url_for("profile", username=username)) 
 
 
 # Sign up
@@ -149,7 +135,8 @@ def signup():
 
         signup = {
             "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password"))
+            "password": generate_password_hash(request.form.get("password")),
+            "save_books": []
         }
         mongo.db.users.insert_one(signup)
 
@@ -192,32 +179,6 @@ def logout():
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
-
-
-# MyBookLog (Add / Edit / Delete goal)
-@app.route("/mybooklog/<username>", methods=["GET", "POST"])
-def profile(username):
-    user = mongo.db.users.find_one(
-        {"username": session["user"]})
-    if user:
-        if request.method == "POST":
-            goal = {
-                "goal_level": request.form.get("goal_level"),
-                "goal_reason": request.form.get("goal_reason"),
-                "goal_obstacle": request.form.get("goal_obstacle"),
-                "goal_email": request.form.get("goal_email"),
-                "goal_signature": request.form.get("goal_signature"),
-            }
-
-            flash("Goal Successfully Saved!")
-            mongo.db.users.find_one_and_update(
-                {"username": session["user"]}, {"$set": goal})
-            user = mongo.db.users.find_one({"username": session["user"]})
-            return render_template(
-                "mybooklog.html", page_title="MyBookLog", user=user)       
-        return render_template("mybooklog.html", user=user)
-
-    return redirect(url_for("profile")) 
 
 
 if __name__ == "__main__":

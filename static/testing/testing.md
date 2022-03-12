@@ -9,9 +9,8 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 W3C Markup Validator  / Jinja - `Success` 
 > to validate Jinja code is to open up a webpage in your app, right click the page, click view source, and copy that code into the W3 HTML validator.
 
-W3C CSS Validator - `Success`
-JShint - `Success`
-Pep8 - `Success`
+- W3C CSS Validator - `Success`
+- Pep8 - `Success`
 
 Lighthouse - [Results](static/assets/testing/lighthousems3_results_resubmit.png)
 
@@ -82,9 +81,11 @@ TO BE TESTED
 
 #### Bookcytocin
 
-1. Logo
+1. Website purpose / description
 - Click on the logo "Bookcytocin"
 - Check if it redirect to the welcome page
+- Confirm that the purpose of the site is mentionned on each slide of the carousel
+- Confirm the headings are responsive on all devices.
 
 #### Readflix 
 
@@ -105,10 +106,10 @@ TO BE TESTED
 - Confirm images are visible and responsive on all devices.
 - Confirm all buttons from each redirect to the desired / correct page.
 
-4. Website purpose / description
-- Go to "Readflix" from a desktop
-- Confirm that the purpose of the site is mentionned on each slide of the carousel
-- Confirm the headings are responsive on all devices.
+4. Book collection focus
+- cHECK IF 4 books of a specific collection appears
+- Check if Amazon link redirect user to the book details on Aamazon to purchase
+- Check if Save on wishlist button pushes data to profile
 
 > For every point mentionned above : Repeat verification of functionality and responsiveness on mobile phone and tablet via Developer Tool,
 
@@ -153,11 +154,8 @@ User can search by book title, author and collection types.
 
 3. 3 sections to verify
 - Go to "MyBookLog" from a desktop
-    - Check goal statement form if responsive annd working
-    - Check for reviews section if possible add a review 
-    - Check for reviews section if possible view a review 
-    - Check for reviews section if possible edit a review 
-    - Check for reviews section if possible edit a review 
+    - Check goal statement form if responsive and if form can be updated
+    - Check that saved book are rendered using "save on wishlist" button
 
 
 > Repeat verification of functionality and responsiveness on mobile phone and tablet via Developer Tool

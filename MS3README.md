@@ -225,24 +225,17 @@ In the mobile version the navigation bar is turning into a hamburger menu for a 
 * Buy directly on the Bookcytocin platform directly and not go through affiliate link via Amazon
 * Users can exchange their books with other member
 * Users can give away their book in exchange of discounts
-* Users can build a reading list paired with a time tracker with reminders
 * Users can have access to an history of their activities. A record is accessible if they buy a book, exchange a book or leave a review etc.
 * Users can contact the website owner to request general information thanks to a contact form
 * Users receives a confirmation email once the contact form is completed.
 * Users can follow a profile from experts to receive recommendations by email
-* Users can track their readings by amending the status of the book in their account (ie : status : saved, reading or finished )
+* Users can track their readings with more status than saved (ie : status : saved, reading or finished )
 * Users can sell their books edit their entry
 * Possibility to edit review via MyBookLog page profile / history review
 * Vote for the readflix of the month
-* Save a book in wishlist
 * Share a book with a friend via social media
-* Edit goal commitment (crud compliant)
-* Agregate readflix function
-* Include level in goal setting of user
-    - Beginner : between 1 - 12 books per year
-    - Intermediate : between 12 - 24 books per year
-    - Expert : between 24 - 36 books per year
-    - Master : 36+ books per year
+* Extend feature save to wishlist into collections\
+* Delete a save book
 
 
 ## Technologie Used 

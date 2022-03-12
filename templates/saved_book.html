@@ -4,23 +4,22 @@
   <table class="table table-sm table-borderless">
       <thead class="text-muted">
           <tr class="lead" style="color:purple;">
-            <th>Book</th>
+            <!-- <th>Book</th> -->
             <th>Title & Author</th>
             <th>Description</th>
             <th>Action</th>
           </tr>
       </thead>
       <hr>
+      {% for book in books %}
       <tbody>
           <tr>
-            {% for book in books %}
-            <td><a href ="{{ book.amazon_link }}" class="bd-placeholder-img" alt="book" width="200" height="200">{{ book.image_url }}</a></td>
-            <td><p class="fw-bold">{{ book.title }} by {{ book.author }}</p></td> 
-            <td>{{ book.description }}</td> 
-            <td><a href="{{book.amazon_link}}" class="btn btn-secondary btn-sm my-2" target="_blank">View on Amazon</a> || <a href="{{ url_for('delete_saved_book') }}" class="btn btn-secondary btn-sm my-2" target="_blank">Delete</a> </td>
-            {% endfor %}
+            <td><p class="fw-bold">{{ book.book_title }} by {{ book.book_author }}</p></td> 
+            <td>{{ book.book_description }}</td>
+            <td><a href="{{book.book_amazon_link}}" class="btn btn-secondary btn-sm my-2" target="_blank">View on amazon</a></td>  
           </tr>
       </tbody>
+      {% endfor %}
   </table>
 </form>
 
