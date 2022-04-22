@@ -1,13 +1,12 @@
 {% extends "base.html"%}
 {% block content %}
-
-
 <section class="py-5 text-center container-fluid" >
   <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">   
           <form class="form-signin" method="POST" action="{{ url_for('signup') }}">
               <h1 class="fw-bold">{{page_title}}</h1>
               <br>
+              <p class="lead text-muted">Register to start building your wishlist</p>
               <label for="inputUsername" name="username" class="sr-only"><i class="fab fa-user-plus"></i>Username</label>
               <input type="text" id="username" name="username" class="form-control" placeholder="Username" pattern="^[a-zA-z0-9]{5,15}$" minlenght="5" malenght="15" required autofocus>
               <br>
@@ -25,5 +24,4 @@
       </div>
   </div>
 </section>
-
 {% endblock %}

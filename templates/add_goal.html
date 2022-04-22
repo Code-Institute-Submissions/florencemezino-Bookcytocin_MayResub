@@ -1,6 +1,4 @@
 {% block content %}
-
-<!-- Add a goal -->
   <form class="" method="POST" action="{{ url_for('profile', username=session['user']) }}">
     <div class="mb-3">
       <label for="goal_level" class="form-label form-commitment mt-5 mr-5">Choose your reading commitment :</label>
@@ -25,6 +23,5 @@
     </div>
     <button type="submit" class="btn btn-primary mt-5">Save my commitment</button>
   </form>
-
 {% endblock %}
     

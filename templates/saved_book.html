@@ -1,10 +1,8 @@
 {% block content %}
-
 <form class="" method="POST" action="{{ url_for('profile', username=session['user','book_id']) }}">
   <table class="table table-sm table-borderless">
       <thead class="text-muted">
           <tr class="lead" style="color:purple;">
-            <!-- <th>Book</th> -->
             <th>Title & Author</th>
             <th>Description</th>
             <th>Action</th>
@@ -22,5 +20,4 @@
       {% endfor %}
   </table>
 </form>
-
 {% endblock %}

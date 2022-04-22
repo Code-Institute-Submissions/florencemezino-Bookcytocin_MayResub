@@ -1,6 +1,4 @@
 {% block content %}
-
-<!-- Edit / Delete Goal -->
   <form class="" method="POST" action="{{ url_for('profile', username=session['user']) }}">
     <div class="mb-3">
       <label for="goal_level" class="form-label form-commitment mt-5 mr-5">My reading commitment </label>
@@ -19,6 +17,6 @@
     <textarea type="text" class="form-control text-center" name="goal_signature" id="goal_signature" required>{{ user.goal_signature }}</textarea>
   <div class="mb-3">
     <button type="submit" class="btn btn-primary mt-5">Update</button>
+    <button type="submit" class="btn btn-primary mt-5">Delete</button>
   </form>
-
 {% endblock %}

@@ -37,7 +37,7 @@ def readflix():
         book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
 
         user_saved_book = {
-                "book_image_url": book["image_url"], 
+                "book_image_url": book["image_url"],
                 "book_title": book["title"],
                 "book_author": book["author"],
                 "book_description": book["description"],
@@ -45,9 +45,10 @@ def readflix():
         }
 
         flash("Book Successfully Saved in your Wishlist!")
-        user = mongo.db.users.update_one({"username": session["user"]}, {"$push": {"saved_books": user_saved_book }})
+        user = mongo.db.users.update_one({"username": session["user"]}, {
+            "$push": {"saved_books": user_saved_book}})
         return render_template(
-            "mybooklog.html", page_title="MyBookLog", user=user)  
+            "index.html", page_title="Readflix", user=user)  
 
     books = list(mongo.db.books.find(
         {"collection_name": "Character"}).limit(4))
@@ -93,7 +94,8 @@ def community():
     return render_template(
         "community.html", page_title="The Bookcytocin Club", user=users)
 
-# MyBookLog (Add / Edit / Delete goal)
+
+# MyBookLog (Add / Edit goal)
 @app.route("/mybooklog/<username>", methods=["GET", "POST"])
 def profile(username):
     user = mongo.db.users.find_one(
@@ -113,12 +115,28 @@ def profile(username):
                 {"username": session["user"]}, {"$set": goal})
             user = mongo.db.users.find_one({"username": session["user"]})
             return render_template(
-                "mybooklog.html", page_title="MyBookLog", user=user)  
+                "mybooklog.html", page_title="MyBookLog", user=user)
 
         books = user["saved_books"]
 
         return render_template("mybooklog.html", user=user, books=books)
-    return redirect(url_for("profile", username=username)) 
+    return redirect(url_for("profile", username=username))
+
+
+# MyBookLog (Delete goal)
+# @app.route("/mybooklog/<username>", methods=["GET", "POST"])
+# def delete_goal(goal_id):
+#     mongo.db.goal.remove({"_id": ObjectId(goal_id)})
+#     flash("Goal Successfully Deleted")
+#     return redirect(url_for("add_goal"))
+
+
+# # MyBookLog (Delete saved book)
+# def delete_saved_books(saved_books_id):
+#     books = list(mongo.db.books.find_one({"book_id": book_id}))
+#     mongo.db.reviews.remove({"_id": ObjectId(review_id)})
+#     flash("Review Successfully Deleted")
+#     return redirect(url_for("add_review"))
 
 
 # Sign up
