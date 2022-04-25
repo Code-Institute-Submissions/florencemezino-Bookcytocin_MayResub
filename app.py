@@ -95,7 +95,7 @@ def community():
         "community.html", page_title="The Bookcytocin Club", user=users)
 
 
-# MyBookLog (Add / Edit goal)
+# MyBookLog (Add / Update goal)
 @app.route("/mybooklog/<username>", methods=["GET", "POST"])
 def profile(username):
     user = mongo.db.users.find_one(
@@ -121,23 +121,6 @@ def profile(username):
 
         return render_template("mybooklog.html", user=user, books=books)
     return redirect(url_for("profile", username=username))
-
-
-# MyBookLog (Delete goal)
-# @app.route("/mybooklog/<username>", methods=["GET", "POST"])
-# def delete_goal(goal_id):
-#     mongo.db.goal.remove({"_id": ObjectId(goal_id)})
-#     flash("Goal Successfully Deleted")
-#     return redirect(url_for("add_goal"))
-
-
-# # MyBookLog (Delete saved book)
-# def delete_saved_books(saved_books_id):
-#     books = list(mongo.db.books.find_one({"book_id": book_id}))
-#     mongo.db.reviews.remove({"_id": ObjectId(review_id)})
-#     flash("Review Successfully Deleted")
-#     return redirect(url_for("add_review"))
-
 
 # Sign up
 @app.route("/signup", methods=["GET", "POST"])
