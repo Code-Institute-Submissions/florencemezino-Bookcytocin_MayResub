@@ -55,7 +55,26 @@ def readflix():
     return render_template(
         "index.html", page_title="Readflix", books=books)
 
-    return redirect(url_for("readflix"))
+
+# Collection : display books and save books to profile
+# def collections():
+#     if request.method == "POST":
+#         book_id = request.form.get("book_id")
+#         book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
+
+#         user_saved_book = {
+#                 "book_image_url": book["image_url"],
+#                 "book_title": book["title"],
+#                 "book_author": book["author"],
+#                 "book_description": book["description"],
+#                 "book_amazon_link": book["amazon_link"]
+#         }
+
+#         flash("Book Successfully Saved in your Wishlist!")
+#         user = mongo.db.users.update_one({"username": session["user"]}, {
+#             "$push": {"saved_books": user_saved_book}})
+#         return render_template(
+#             "collections.html", page_title="Collections", books=books, collections=collections)
 
 
 # Collection : display books and save books to profile
@@ -121,6 +140,7 @@ def profile(username):
 
         return render_template("mybooklog.html", user=user, books=books)
     return redirect(url_for("profile", username=username))
+
 
 # Sign up
 @app.route("/signup", methods=["GET", "POST"])

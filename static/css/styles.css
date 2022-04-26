@@ -11467,7 +11467,6 @@ footer.footer {
  
   /* COLLECTIONS
   -------------------------------------------------- */
- 
 
 
   /* COMMUNITY
@@ -11484,15 +11483,30 @@ footer.footer {
   /* MYBOOKLOG
   -------------------------------------------------- */
 
+  /* Wishlist */
+
+.td 
+  {
+      height: 50px; 
+      width: 50px;
+  }
+
+#cssTable {
+  text-align: center; 
+  vertical-align: middle;
+}
+
+
   /* Style buttons */
 .btn-refresh-insights {
-  background-color: DodgerBlue; /* Blue background */
-  border: none; /* Remove borders */
-  color: white; /* White text */
-  padding: 12px 16px; /* Some padding */
-  font-size: 16px; /* Set a font size */
-  cursor: pointer; /* Mouse pointer on hover */
+  background-color: DodgerBlue;
+  border: none;
+  color: white; 
+  padding: 12px 16px; 
+  font-size: 16px;
+  cursor: pointer; 
 }
+
 
 /* Darker background on mouse-over */
 
