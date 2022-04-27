@@ -18,7 +18,7 @@
             </td> 
             <td>
               <a href="{{ book.book_amazon_link }}" class="btn btn-secondary btn-sm my-2" target="_blank">Buy</a>
-              <a href="" class="btn btn-save btn-sm my-2">Remove</a>
+              <a href="{{ url_for('delete_saved_book', book_id=book._id) }}" class="btn btn-save btn-sm my-2">Remove</a>
             </td>
           </tr>
       </tbody>

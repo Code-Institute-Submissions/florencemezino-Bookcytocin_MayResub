@@ -29,7 +29,7 @@ def about():
     return render_template("bookcytocin.html", page_title="Bookcytocin")
 
 
-# Readflix : find 4 books in one collection and save books to profile
+# Readflix : find 4 books in one collection and save book to wishlist
 @app.route("/readflix", methods=["GET", "POST"])
 def readflix():
     if request.method == "POST":
@@ -56,30 +56,27 @@ def readflix():
         "index.html", page_title="Readflix", books=books)
 
 
-# Collection : display books and save books to profile
-# def collections():
-#     if request.method == "POST":
-#         book_id = request.form.get("book_id")
-#         book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
-
-#         user_saved_book = {
-#                 "book_image_url": book["image_url"],
-#                 "book_title": book["title"],
-#                 "book_author": book["author"],
-#                 "book_description": book["description"],
-#                 "book_amazon_link": book["amazon_link"]
-#         }
-
-#         flash("Book Successfully Saved in your Wishlist!")
-#         user = mongo.db.users.update_one({"username": session["user"]}, {
-#             "$push": {"saved_books": user_saved_book}})
-#         return render_template(
-#             "collections.html", page_title="Collections", books=books, collections=collections)
-
-
-# Collection : display books and save books to profile
+# Collection : display books and save book to wishlist
 @app.route("/collections", methods=["GET", "POST"])
 def collections():
+    if request.method == "POST":
+        book_id = request.form.get("book_id")
+        book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
+
+        user_saved_book = {
+                "book_image_url": book["image_url"],
+                "book_title": book["title"],
+                "book_author": book["author"],
+                "book_description": book["description"],
+                "book_amazon_link": book["amazon_link"]
+        }
+
+        flash("Book Successfully Saved in your Wishlist!")
+        user = mongo.db.users.update_one({"username": session["user"]}, {
+            "$push": {"saved_books": user_saved_book}})
+        return render_template(
+            "collections.html", page_title="Collections", user=user)
+
     books = list(mongo.db.books.find())
     collections = list(mongo.db.collections.find())
     return render_template(
@@ -87,14 +84,24 @@ def collections():
         collections=collections)
 
 
-# Collection : display books by collection and save books to profile
+# Collection : display books by collection
 @app.route("/get_collections/<collection_name>", methods=["GET", "POST"])
 def get_collections(collection_name):
     collections = list(mongo.db.collections.find())
     books = list(mongo.db.books.find({"collection_name": collection_name}))
     return render_template(
         "collections.html", page_title="Collections",
-        collections=collections, books=books)  
+        collections=collections, books=books)
+
+
+# Delete books from wishlist
+@app.route("/delete_saved_book/<book_id>", methods=["GET", "POST"])
+def delete_saved_book(book_id):
+    mongo.db.books.remove({"_id": ObjectId(book_id)})
+    flash("Book Successfully Removed from your Wishlist")
+
+    username = session['user']
+    return redirect(url_for("profile", username=username))
 
 
 # Collection : find a book via search bar
@@ -106,7 +113,7 @@ def search():
         "collections.html", page_title="Collections", books=books)
 
 
-# Community : display review community / blog
+# Community : display community / blog
 @app.route("/community")
 def community():
     users = list(mongo.db.users.find().limit(6))
@@ -137,7 +144,6 @@ def profile(username):
                 "mybooklog.html", page_title="MyBookLog", user=user)
 
         books = user["saved_books"]
-
         return render_template("mybooklog.html", user=user, books=books)
     return redirect(url_for("profile", username=username))
 
