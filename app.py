@@ -101,7 +101,8 @@ def delete_saved_book(book_id):
     flash("Book Successfully Removed from your Wishlist")
 
     username = session['user']
-    return redirect(url_for("profile", username=username))
+    books = user["saved_books"]
+    return redirect(url_for("profile", username=username, book=book))
 
 
 # Collection : find a book via search bar
@@ -147,6 +148,8 @@ def profile(username):
         return render_template("mybooklog.html", user=user, books=books)
     return redirect(url_for("profile", username=username))
 
+# MyBookLog (Delete goal)
+
 
 # Sign up
 @app.route("/signup", methods=["GET", "POST"])
@@ -163,7 +166,7 @@ def signup():
         signup = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
-            "save_books": []
+            "saved_books": []
         }
         mongo.db.users.insert_one(signup)
 

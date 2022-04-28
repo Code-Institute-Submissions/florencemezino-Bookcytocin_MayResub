@@ -215,7 +215,7 @@ In the mobile version the navigation bar is turning into a hamburger menu for a 
 * `MyBooklog`: Allows users to 
     - specificity 1 : set and edit their reading goal statement
     - specificity 2 : view history and insights about the reviews left.
-* `Account/Profile` : 2 pages / Allows users to :
+* `Account` : 2 pages / Allows users to :
     - specificity 1 : sign up to MyBooLog profile
     - specificity 2 : log in and log out from account
 

@@ -52,8 +52,13 @@
             </div>
           </div>
       {% endfor %}
-        </div>
+        {% if session.user %}
+          <a class="lead fw-bold mb-5" href="{{ url_for('collections') }}">Back to collections</a>
+          <a class="lead fw-bold mb-5" href="{{ url_for('profile', username=session['user']) }}" style="color:purple;">Manage your wishlist</a>
+        {% else %}
+          <a class="lead fw-bold mb-5" href="{{ url_for('login') }}">Sign in to MyBookLog</a>
+        {% endif %} 
+      </div>
     </div>
-    
 {% endblock %}
     
