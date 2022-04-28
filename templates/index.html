@@ -42,6 +42,7 @@
         </div>
         {% endfor %}
       <a href="{{ url_for('collections') }}" class="lead fw-bold mt-5">Explore more collections</a>
+      <a class="lead fw-bold mt-5 mb-5" href="{{ url_for('profile', username=session['user']) }}" style="color:purple;">Manage your wishlist</a>
     </div>
   </div>
 </section>    

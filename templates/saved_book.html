@@ -8,7 +8,9 @@
             <th>Actions</th>
           </tr>
       </thead>
-      {% for book in books %}
+    {% if user.saved_books|count %}
+    <hr>
+    {% for book in books %}
       <tbody>
           <tr>
             <td class="d-none d-lg-block mt-5"><img src="{{book.book_image_url}}" class="card-img" alt="book" max-width="150" height="200"></td>
@@ -22,7 +24,27 @@
             </td>
           </tr>
       </tbody>
-      {% endfor %}
+    {% endfor %}
   </table>
 </form>
+    {% else %}
+    {% for book in books %}
+    <tbody>
+        <tr>
+          <td class="d-none d-lg-block mt-5"><img src="{{book.book_image_url}}" class="card-img" alt="book" max-width="150" height="200"></td>
+          <td>
+            <p class="fw-bold text-left">{{ book.book_title }} by {{ book.book_author }}</p>
+            <p>{{ book.book_description }}</p>
+          </td> 
+          <td>
+            <a href="{{ book.book_amazon_link }}" class="btn btn-secondary btn-sm my-2" target="_blank">Buy</a>
+            <a href="{{ url_for('delete_saved_book', book_id=book._id) }}" class="btn btn-save btn-sm my-2">Remove</a>
+          </td>
+        </tr>
+    </tbody>
+    {% endfor %}
+</table>
+</form>
+    <p class="lead text-muted">Your wishlist is empty. Start exploring !</p>
+    {% endif %}
 {% endblock %}
