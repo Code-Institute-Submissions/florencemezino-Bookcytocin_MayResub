@@ -56,7 +56,7 @@ def readflix():
         user = mongo.db.users.find_one({"username": session["user"]})
         print(user)
         return render_template(
-            "index.html", page_title="Readflix", user=user)  
+            "index.html", page_title="Readflix", user=user)
 
     books = list(mongo.db.books.find(
         {"collection_name": "Character"}).limit(4))
@@ -115,8 +115,9 @@ def delete_saved_book(book_id):
     """
     Remove book from user's wishlist
     """
-    mongo.db.users.update({"username": session["user"]}, {"$pull": {
-        "user.saved_books": {"_id": ObjectId(book_id)}}})
+    mongo.db.users.update_one({"username": session["user"]}, {"$pull": {
+        'saved_books': {"_id": book_id},
+        }})
     flash("Book Successfully Removed from your Wishlist")
 
     username = session['user']
@@ -172,9 +173,7 @@ def profile(username):
         return render_template("mybooklog.html", user=user, books=books)
     return redirect(url_for("profile", username=username))
 
-# MyBookLog (Delete goal)
-
-
+# MyBookLog (reset goal)
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
     """

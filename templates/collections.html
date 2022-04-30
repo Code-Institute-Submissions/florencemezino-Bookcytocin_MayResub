@@ -12,16 +12,29 @@
         <li>
           <a class="list-collection" href="{{ url_for('get_collections', collection_name=collection.collection_name) }}">{{ collection.collection_name }}</a>
         </li>
-      {% endfor %}
       </ul>
+      {% endfor %}
   </div>
-  <div class="col-lg-6 col-md-8 mx-auto mb-5">
-    <form class="d-flex" action="{{ url_for('search') }}" method="POST">
-      <input class="form-control me-2 validate" name="query" id="query" type="search" placeholder="Search book by title, author or collection" aria-label="Search" required>
-      <a href="{{ url_for('collections') }}" class="btn btn-secondary">Reset</a>
-      <button class="btn btn-outline-light" style="color:whitesmoke" type="submit">Submit</button>
-  </form> 
-  </div>
+    {% if query|count %}
+    <div class="col-lg-6 col-md-8 mx-auto mb-5">
+      <form class="d-flex" action="{{ url_for('search') }}" method="POST">
+        <input class="form-control me-2 validate" name="query" id="query" type="search" placeholder="Search book by title, author or collection" aria-label="Search" required>
+        <a href="{{ url_for('collections') }}" class="btn btn-secondary">Reset</a>
+        <button class="btn btn-outline-light" style="color:whitesmoke" type="submit">Submit</button>
+    </form> 
+    </div>
+    {% else %}
+    <div class="col-lg-6 col-md-8 mx-auto mb-5">
+      <form class="d-flex" action="{{ url_for('search') }}" method="POST">
+        <input class="form-control me-2 validate" name="query" id="query" type="search" placeholder="Search book by title, author or collection" aria-label="Search" required>
+        <a href="{{ url_for('collections') }}" class="btn btn-secondary">Reset</a>
+        <button class="btn btn-outline-light" style="color:whitesmoke" type="submit">Submit</button>
+    </form> 
+    </div>
+    <p class="lead" style="color:purple;">
+      <small>No results</small>
+    </p>
+    {% endif %}
   </div>
 </section>
 
