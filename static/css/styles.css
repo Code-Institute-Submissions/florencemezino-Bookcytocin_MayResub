@@ -11405,6 +11405,16 @@ footer.footer {
 
  }
 
+ /* Collections
+  -------------------------------------------------- */
+
+ ul{
+  overflow:hidden;
+  }
+  li{
+  display:inline-block;
+  }
+
   /* --- Customize the carousel (format) --- */
   
   /* Carousel base class */
