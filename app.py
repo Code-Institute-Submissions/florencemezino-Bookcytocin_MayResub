@@ -148,7 +148,7 @@ def community():
 @app.route("/mybooklog/<username>", methods=["GET", "POST"])
 def profile(username):
     """
-    Update user's goal
+    Update user's goal and get saved books
     """
     user = mongo.db.users.find_one(
         {"username": session["user"]})
@@ -173,7 +173,7 @@ def profile(username):
         return render_template("mybooklog.html", user=user, books=books)
     return redirect(url_for("profile", username=username))
 
-# MyBookLog (reset goal)
+
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
     """
