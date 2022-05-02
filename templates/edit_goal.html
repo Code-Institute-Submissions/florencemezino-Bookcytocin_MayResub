@@ -3,19 +3,20 @@
     <div class="mb-3">
       <label for="goal_level" class="form-label form-commitment mt-5 mr-5">My reading commitment </label>
       <p style="color:blue;"><small>between 1 - 12 books per year  | between 12 - 24 books per year | between 24 - 36 books per year |  36+ books per year</small></p>
-      <textarea type="text" class="form-control text-center" name ="goal_level" id="goal_level" aria-describedby="goal_level" placeholder=" pick one of the option above" required> {{ user.goal_level }}</textarea>
+      <textarea class="form-control text-center" name ="goal_level" id="goal_level" aria-describedby="goal_level" placeholder=" pick one of the option above" cols="50" required>{{ user.goal_level }}</textarea> 
     </div>
     <div class="mb-3">
       <label for="goal_reason" class="form-label form-commitment">I choose to complete this commitment mentionned above because</label>
-      <textarea type="text" class="form-control text-center" name ="goal_reason" id="goal_reason" aria-describedby="goal_reason" required>{{ user.goal_reason }}</textarea>
+      <textarea class="form-control text-center" name ="goal_reason" id="goal_reason" aria-describedby="goal_reason" cols="50" required>{{ user.goal_reason }}</textarea> 
     </div>
     <div class="mb-3">
       <label for="goal_obstacle" class="form-label form-commitment">When I run into obstacles or lack of motivation at some point, I will</label>
-      <textarea type="text" class="form-control text-center" name="goal_obstacle" id="goal_obstacle" aria-describedby="goal_obstacle" required> {{ user.goal_obstacle }}</textarea>
+      <textarea class="form-control text-center" name="goal_obstacle" id="goal_obstacle" aria-describedby="goal_obstacle" cols="50" required>{{ user.goal_obstacle }}</textarea> 
     </div>
-    <label for="goal_signature" class="form-label form-commitment">Commit here by typing your full name</label>
-    <textarea type="text" class="form-control text-center" name="goal_signature" id="goal_signature" aria-describedby="goal_signature" required>{{ user.goal_signature }}</textarea>
-  <div class="mb-3">
+    <div class="mb-3">
+      <label for="goal_signature" class="form-label form-commitment">Commit here by typing your full name</label>
+      <textarea class="form-control text-center" name="goal_signature" id="goal_signature" aria-describedby="goal_signature" cols="50" required>{{ user.goal_signature }}</textarea> 
+    </div>
     <button type="submit" class="btn btn-primary mt-5">Update</button>
     <button type="submit" class="btn btn-primary mt-5">Reset</button>
   </form>

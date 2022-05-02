@@ -1,15 +1,14 @@
 {% block content %}
 <form class="" method="POST" action="{{ url_for('profile', username=session['user','book_id']) }}">
   <table class="table table-sm table-borderless" id ="cssTable">
-      <thead class="text-muted">
-          <tr class="lead" style="color:purple;">
-            <th class="d-none d-lg-block">Books</th>
-            <th>About</th>
-            <th>Actions</th>
-          </tr>
-      </thead>
+    <thead class="text-muted">
+        <tr class="lead" style="color:purple;">
+          <th class="d-none d-lg-block">Books</th>
+          <th>About</th>
+          <th>Actions</th>
+        </tr>
+    </thead>
     {% if user.saved_books|count %}
-    <hr>
     {% for book in books %}
       <tbody>
           <tr>
