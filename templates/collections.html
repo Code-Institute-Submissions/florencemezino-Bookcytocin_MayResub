@@ -15,7 +15,7 @@
         <input class="form-control me-2 validate mt-5" name="query" id="query" type="search" placeholder="Search book by title, author or collection" aria-label="Search" required>
         <a href="{{ url_for('collections') }}" class="btn btn-secondary mt-5">Reset</a>
         <button class="btn btn-outline-light mt-5" style="color:whitesmoke" type="submit">Submit</button>
-    </form> 
+      </form> 
     </div>
     {% else %}
     <div class="col-lg-6 col-md-8 mx-auto mb-5">
@@ -23,13 +23,14 @@
         <input class="form-control me-2 validate mt-5" name="query" id="query" type="search" placeholder="Search book by title, author or collection" aria-label="Search" required>
         <a href="{{ url_for('collections') }}" class="btn btn-secondary mt-5">Reset</a>
         <button class="btn btn-outline-light mt-5" style="color:whitesmoke" type="submit">Submit</button>
-    </form> 
+      </form> 
     </div>
     <p class="lead" style="color:purple;">
       <small>No results found</small>
     </p>
     {% endif %}
   </div>
+</div>
 </section>
 
   <div class= container-fluid>   
