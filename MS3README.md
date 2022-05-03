@@ -235,6 +235,7 @@ In the mobile version the navigation bar is turning into a hamburger menu for a 
 * Share a book with a friend via social media
 * Reset a their goal commitment
 * Prevent user for saving the same book twice
+* Specify error message on sign up page (currently it is : "please match the requested format")
 
 
 ## Technologie Used 

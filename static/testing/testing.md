@@ -106,7 +106,7 @@ Most common paths through the website:
 - Confirm all buttons from each redirect to the desired / correct page.
 
 4. Book collection focus
-- cHECK IF 4 books of a specific collection appears
+- Check if 4 books of a specific collection appears
 - Check if Amazon link redirect user to the book details on Aamazon to purchase
 - Check if Save on wishlist button pushes data to profile
 
@@ -216,7 +216,7 @@ User can search by book title, author and collection types.
 
 a- Functions
 
-- If a book is saved twice in the user's wishlist, when clicking 'remove' all entry related tot the book_id gets removed. You can't remove it one by one.
+- If a book is saved twice in the user's wishlist, when clicking 'remove' all entries related to that book gets removed. You can't remove books one by one.
 - "No results found" flash message showing when saving a book in the user's wishlist
 
 
@@ -224,6 +224,7 @@ b- style
 
 * Carousel : after finishing displaying all the slides, not possible to use the arrow to go back to previous slide
 * User wishlist table has a flex issue on medium screen (blank space on the right)
+* 
 
 ## Feedback
 
