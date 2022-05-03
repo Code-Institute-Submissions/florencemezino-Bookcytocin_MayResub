@@ -4,29 +4,25 @@
   <div class="row py-lg-5">
     <div class="col-lg-12 col-md-8 mx-auto">
       <h2 class="fw-bold">{{page_title}}</h2>
-      <p class="lead fw-light text-muted">The powerful journey of life in 12 collections. Select one of the collection below or use the search bar to travel through our library of  100+ books and explore all roads leading to your inner power.</p>
+      <p class="lead fw-light text-muted mb-5">The powerful journey of life in 12 collections. Select one of the collection below or use the search bar to travel through our library of  50+ books and explore all roads leading to your inner power.</p>
       {% for collection in collections %}
-      <ul class="fw-bold list-inline list-collection">
-        <li>
-          <a class="list-collection" href="{{ url_for('get_collections', collection_name=collection.collection_name) }}">{{ collection.collection_name }}</a>
-        </li>
-      </ul>
+        <a class="fw-bold list-collection px-2 " href="{{ url_for('get_collections', collection_name=collection.collection_name) }}">  {{ collection.collection_name }} </a>
       {% endfor %}
-      {% if books|count %}
+    {% if books|count %}
   </div>
     <div class="col-lg-6 col-md-8 mx-auto mb-5">
       <form class="d-flex" action="{{ url_for('search') }}" method="POST">
-        <input class="form-control me-2 validate" name="query" id="query" type="search" placeholder="Search book by title, author or collection" aria-label="Search" required>
-        <a href="{{ url_for('collections') }}" class="btn btn-secondary">Reset</a>
-        <button class="btn btn-outline-light" style="color:whitesmoke" type="submit">Submit</button>
+        <input class="form-control me-2 validate mt-5" name="query" id="query" type="search" placeholder="Search book by title, author or collection" aria-label="Search" required>
+        <a href="{{ url_for('collections') }}" class="btn btn-secondary mt-5">Reset</a>
+        <button class="btn btn-outline-light mt-5" style="color:whitesmoke" type="submit">Submit</button>
     </form> 
     </div>
     {% else %}
     <div class="col-lg-6 col-md-8 mx-auto mb-5">
       <form class="d-flex" action="{{ url_for('search') }}" method="POST">
-        <input class="form-control me-2 validate" name="query" id="query" type="search" placeholder="Search book by title, author or collection" aria-label="Search" required>
-        <a href="{{ url_for('collections') }}" class="btn btn-secondary">Reset</a>
-        <button class="btn btn-outline-light" style="color:whitesmoke" type="submit">Submit</button>
+        <input class="form-control me-2 validate mt-5" name="query" id="query" type="search" placeholder="Search book by title, author or collection" aria-label="Search" required>
+        <a href="{{ url_for('collections') }}" class="btn btn-secondary mt-5">Reset</a>
+        <button class="btn btn-outline-light mt-5" style="color:whitesmoke" type="submit">Submit</button>
     </form> 
     </div>
     <p class="lead" style="color:purple;">

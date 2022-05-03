@@ -183,7 +183,6 @@ Imagery is important in this website in order to illustrate the books library an
 #### Experts
 * The `Community` page features 1 column wide for mobile devices, 2 columns wide for tablets and 4 columns wide for desktop. 
 * This page displays people and their readings recommandations/reviews
-* User can leave a review about a book if they are registered and logged in.
 * Users can find also multiples articles on how to integrate more reading into their life and make it part of their persoal development.
 For example : 10 ways to make mre time for reading
 
@@ -223,7 +222,7 @@ In the mobile version the navigation bar is turning into a hamburger menu for a 
 ### Features to implement in the future
 
 * Buy directly on the Bookcytocin platform directly and not go through affiliate link via Amazon
-* Users can exchange their books with other member
+* Users can exchange their books with other members
 * Users can give away their book in exchange of discounts
 * Users can have access to an history of their activities. A record is accessible if they buy a book, exchange a book or leave a review etc.
 * Users can contact the website owner to request general information thanks to a contact form
@@ -231,11 +230,11 @@ In the mobile version the navigation bar is turning into a hamburger menu for a 
 * Users can follow a profile from experts to receive recommendations by email
 * Users can track their readings with more status than saved (ie : status : saved, reading or finished )
 * Users can sell their books edit their entry
-* Possibility to edit review via MyBookLog page profile / history review
+* Possibility to add / edit reviews of books via MyBookLog page profile / history of review
 * Vote for the readflix of the month
 * Share a book with a friend via social media
-* Extend feature save to wishlist into collections\
-* Delete a save book
+* Reset a their goal commitment
+* Prevent user for saving the same book twice
 
 
 ## Technologie Used 

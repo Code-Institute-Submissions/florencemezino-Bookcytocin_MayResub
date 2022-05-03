@@ -34,9 +34,8 @@ Most common paths through the website:
 - In the community page, the reader has access to reviews from members of the Bookcytocin club.
 - Users gets recommendations and life advice through articles, events, matercass etc thank to the blog
 
-TO BE TESTED
 * As a reader, I want to save book in a wishlist so that I can buy it later
-- User can find books in the collections and save them in their profile (wishlist format) in order to buy them later
+- User can find books in readflix and collections and save them in their profile (my booklog wishlist) in order to buy them later
 
 * As a reader, I want to sell books I read already so that I can invest in buying new ones
 > Listed as future feature in Readme file
@@ -54,7 +53,7 @@ TO BE TESTED
 - Reader has access to a section Insights in their profile in which they can see the number of books saved and the numbers of books finished and reviewed.
 > Listed as future feature in Readme file
 
-TO BE TESTED
+
 * As a reader, I want to be able to share reviews about my readings so that I can also help others to decide their reading 
 - Reader can add a review about a book they read. User needs to be logged in first in order to proceed.
 > Listed as future feature in Readme file
@@ -217,7 +216,8 @@ User can search by book title, author and collection types.
 
 a- Functions
 
-- 
+- If a book is saved twice in the user's wishlist, when clicking 'remove' all entry related tot the book_id gets removed. You can't remove it one by one.
+- "No results found" flash message showing when saving a book in the user's wishlist
 
 
 b- style

@@ -72,7 +72,6 @@ def collections():
     if request.method == "POST":
         book_id = request.form.get("book_id")
         book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
-
         user_saved_book = {
                 "_id": book_id,
                 "book_image_url": book["image_url"],
@@ -89,7 +88,7 @@ def collections():
         user = mongo.db.users.find_one({"username": session["user"]})
         return render_template(
             "collections.html", page_title="Collections", user=user)
-
+    
     books = list(mongo.db.books.find())
     collections = list(mongo.db.collections.find())
     return render_template(
