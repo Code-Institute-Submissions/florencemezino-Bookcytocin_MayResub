@@ -87,7 +87,6 @@ def collections():
             "$push": {"saved_books": user_saved_book}})
 
         user = mongo.db.users.find_one({"username": session["user"]})
-        print(user)    
         return render_template(
             "collections.html", page_title="Collections", user=user)
 
@@ -133,7 +132,7 @@ def search():
     books = list(mongo.db.books.find({"$text": {"$search": query}}))
     return render_template(
         "collections.html", page_title="Collections", books=books)
-        
+
 
 @app.route("/community")
 def community():

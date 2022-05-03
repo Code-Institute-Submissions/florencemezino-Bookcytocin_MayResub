@@ -217,16 +217,13 @@ User can search by book title, author and collection types.
 
 a- Functions
 
-- Button Save on books doesn't save books to saved book profile section
-- Add review form is not displaying and not adding reviews to community page
-- Edit review and delete review icon on community page don't work
+- 
 
 
 b- style
 
 * Carousel : after finishing displaying all the slides, not possible to use the arrow to go back to previous slide
-* Navigation bar / burger icon doesn't close upon clicking on icon. Refresh or navigation selection is required.
-
+* User wishlist table has a flex issue on medium screen (blank space on the right)
 
 ## Feedback
 
