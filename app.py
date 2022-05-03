@@ -127,13 +127,13 @@ def delete_saved_book(book_id):
 @app.route("/search", methods=["GET", "POST"])
 def search():
     """
-    Find a book via search bar
+    Find a book via search bar + no results found
     """
     query = request.form.get("query")
     books = list(mongo.db.books.find({"$text": {"$search": query}}))
     return render_template(
         "collections.html", page_title="Collections", books=books)
-
+        
 
 @app.route("/community")
 def community():

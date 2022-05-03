@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
-
 <section class="py-5 text-center container">
   <div class="row py-lg-5">
     <div class="col-lg-12 col-md-8 mx-auto">
@@ -13,7 +12,7 @@
         </li>
       </ul>
       {% endfor %}
-      {% if search|count %}
+      {% if books|count %}
   </div>
     <div class="col-lg-6 col-md-8 mx-auto mb-5">
       <form class="d-flex" action="{{ url_for('search') }}" method="POST">
