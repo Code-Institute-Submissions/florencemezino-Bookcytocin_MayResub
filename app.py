@@ -20,7 +20,7 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def index():
-    return render_template("bookcytocin.html", page_title="Bookcytocin")
+    return render_template("bookcytocin.html", page_title="Home")
 
 
 @app.route("/bookcytocin")
@@ -198,7 +198,7 @@ def signup():
 
         session["user"] = request.form.get("username").lower()
         flash("You are in! Registration Successful.")
-        return redirect(url_for("login", username=session["user"]))
+        return redirect(url_for("about", username=session["user"]))
 
     return render_template("signup.html", page_title="Sign up")
 
