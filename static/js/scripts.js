@@ -14,4 +14,6 @@
 
 // Copyright : Updating year automatically
 
-
+$('.carousel').carousel({
+    interval: 2000
+  })
