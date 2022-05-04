@@ -32,7 +32,7 @@ b. expectations
 - Readers want to extend their knowledge on different dimensions of personal development such as nutrition, career, finance etc.
 - Readers have a strong willingness to integrate reading more books in their personal development.
 - Readers want to have access to a large library of books about personal development.
-- Readers wants to read reviews with great insights to esily choose their next reading
+- Readers wants to read reviews with great insights to easily choose their next reading
 
 c. restraints
 - Readers believe they don't have time to read and rarely commit to make reading a real activity, part of their daily life.
@@ -48,18 +48,14 @@ c. restraints
 * As a reader, I want to buy a book in few steps so that I can progress quickly on my reading goals
 * As a reader, I want to have access to recommendations/ reviews about books so that it can help me to choose the next book to read
 * As a reader, I want to save book in a wishlist so that I can buy it later
-* As a reader, I want to sell books I read already so that I can invest in buying new ones
-* As a reader, I want to exchange the books I read with other readers so that I can save money and interact with the readers community
 
 
 2. Returning Visitors Goals
 
 * As a reader, I want to be encouraged to read more so that I can reach my reading goal 
 * As a reader, I want to see my reading goals progress so that I can be motivated to read more
-* As a reader, I want to be able to share reviews about my readings so that I can also help others to decide their reading 
-* As a reader, I want to recommend the books I read so that I can have the feeling to be part of a community and it will motivates me to reach my goal
-* As a reader, I want to be able to eupload online a book to sell so that I can market it better or remove it when it is sold out
-
+* As a reader, I want to build a list of my future readings, so that I don't lose time browsing online for new books
+* As a reader, I want to be able to manage a list of future readings so that I know what would be my next purchase
 
 3. Frequent User Goals
 
@@ -150,7 +146,7 @@ Imagery is important in this website in order to illustrate the books library an
 * Users can find a sign up option 
 * Users can find a log in option if they already hacreated an account
 * There is a carousel components with 4 slides to match the structure of the site.
-* There is a form in which user dan request to receive a free ebook about reading/personal development
+* There is a form in which user can request to receive a free ebook about reading/personal development
 * There is a footer with copyright information and social media links. 
 * The general features of the site are in one space base_template.
 
@@ -189,7 +185,7 @@ For example : 10 ways to make mre time for reading
 #### MyBookLog
 * The `MyBookLog` page features 1 column wide for mobile devices, 2 columns wide for tablets and 4 columns wide for desktop. 
 * Users can set their reading goals and edit them if needed.
-* Users can have an history and insights of the the reviews and recommendations they made on the site
+* Users can have a list of thir future readings
 
 
 ### Existing features 
@@ -205,15 +201,17 @@ In the mobile version the navigation bar is turning into a hamburger menu for a 
 * `Reaflix`: Allows users to 
     - specificity 1 : have an oveview of the most trendy books.
     - specificity 2 : be redirected in one click to amazon site to buy the book
+    - specificity 3 : save books to profile in a wishlist
 * `Collections`: Allows users to 
     - specificity 1 : search books via a search bar by book title and book author
     - specificity 2 : search books to read via collections/genre 
+    - specificity 3 : save books to profile in a wishlist
 * `Community`: Allows users to 
-    - specificity 1 : leave a review about a book and read other reviews
+    - specificity 1 : check reviews from book authors
     - specificity 2 : read news about reading tips and personal development
 * `MyBooklog`: Allows users to 
     - specificity 1 : set and edit their reading goal statement
-    - specificity 2 : view history and insights about the reviews left.
+    - specificity 2 : view their books wishlist
 * `Account` : 2 pages / Allows users to :
     - specificity 1 : sign up to MyBooLog profile
     - specificity 2 : log in and log out from account

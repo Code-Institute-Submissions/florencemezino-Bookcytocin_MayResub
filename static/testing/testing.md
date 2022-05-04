@@ -37,12 +37,6 @@ Most common paths through the website:
 * As a reader, I want to save book in a wishlist so that I can buy it later
 - User can find books in readflix and collections and save them in their profile (my booklog wishlist) in order to buy them later
 
-* As a reader, I want to sell books I read already so that I can invest in buying new ones
-> Listed as future feature in Readme file
-
-* As a reader, I want to exchange the books I read with other readers so that I can save money and interact with the readers community
-> Listed as future feature in Readme file
-
 
 #### As a reader and returning visitor to the website :
 
@@ -50,21 +44,13 @@ Most common paths through the website:
 - User can log in to access their personal profile in which they can complete a reading commitment goal to make sure they reach their goal.
 
 * As a reader, I want to see my reading goals progress so that I can be motivated to read more
-- Reader has access to a section Insights in their profile in which they can see the number of books saved and the numbers of books finished and reviewed.
-> Listed as future feature in Readme file
+- Reader has access to a section Insights in their profile in which they can see the number of books saved and reviewed. It is specified that is feature is being working on.
 
+* As a reader, I want to build a list of my future readings, so that I don't lose time browsing online for new books
+- User is able to save books from readflix and collections page to their wishlist. This funtionnality is available only to the ones with an account.
 
-* As a reader, I want to be able to share reviews about my readings so that I can also help others to decide their reading 
-- Reader can add a review about a book they read. User needs to be logged in first in order to proceed.
-> Listed as future feature in Readme file
-
-* As a reader, I want to recommend the books I read so that I can have the feeling to be part of a community and it will motivates me to reach my goal
-- User is able to to submit their review via a "add review " functionnality. User gets notified that the review is being treated.
-- The commnunity page shows a strong sense of validation that to the many format a recommendation can be give. In the blog from the community page, user can read articles, participate to events etc.
-
-
-* As a reader, I want to be able to upload online a book to sell so that I can market it better or remove it when it is sold out
-> Listed as future feature in Readme file
+* As a reader, I want to be able to manage a list of future readings so that I know what would be my next purchase
+- Reader has access to a wishlist section in their profile in which they can view and remove books.
 
 
 #### As a reader and returning visitor to the website :
@@ -120,10 +106,18 @@ Most common paths through the website:
 2. Footer
 - Footer code is identical on all html pages. Testing already completed.
 
-3. Search bar function
+3. Search by collection
+- Go to "Collection "from a desktop
+- Click on one collection name and verify if related books are being pulled
+
+4. Search bar function
 - Go to "Collection "from a desktop
 - The Collection page appears with a section presentation of the page + a search
-User can search by book title, author and collection types.
+- User can search by book title, author, description and collection types.
+- If search doesn't match books , no results found message pops up
+
+5. Save book to profile.
+- User can save books to their profile (wishlist)
 
 > For every point mentionned above : Repeat verification of functionality and responsiveness on mobile phone and tablet via Developer Tool,
 
@@ -154,8 +148,12 @@ User can search by book title, author and collection types.
 3. 3 sections to verify
 - Go to "MyBookLog" from a desktop
     - Check goal statement form if responsive and if form can be updated
+    - Check if goal form appears correctly for new member.
     - Check that saved book are rendered using "save on wishlist" button
-
+    - Verify that the following information are present in the wishlist
+        - book's image 
+        - book's title and author 
+        - actions : buy and remove
 
 > Repeat verification of functionality and responsiveness on mobile phone and tablet via Developer Tool
 
@@ -169,10 +167,8 @@ User can search by book title, author and collection types.
 3. Log in is reachable through "MyBooklog" tab amd through last slide of carousel , button "Go"
 - Go to "MyBookLog" from a desktop
     - Log in successful, there is a flash message welcoming the user.
-    - Check if user have access to content from My Booklog page (goal statement, reviews)
-    - Check for reviews section if possible view a review 
-    - Check for reviews section if possible edit a review 
-    - Check for reviews section if possible edit a review 
+    - Check if user have access to content from My Booklog page (goal statement, wishlist)
+ 
 
 #### Log out
 1. Header / Navigation bar
@@ -201,7 +197,7 @@ User can search by book title, author and collection types.
     - Check buttons redirects to sign up form
     - Check if the link "already user" from the sign up workd
     - Check that the flash messages is working : Registration successful!
-    - Check for an existing user, flash is working : User alread exist
+    - Check for an existing user, flash is working : User alread exists
 
 
 ## Further Testing
@@ -216,7 +212,8 @@ User can search by book title, author and collection types.
 
 a- Functions
 
-- If a book is saved twice in the user's wishlist, when clicking 'remove' all entries related to that book gets removed. You can't remove books one by one.
+- A same book can be saved twice in the wishlist
+- If a book is saved twice in the user's wishlist, when clicking 'remove' all entries related to that book gets removed. 
 - "No results found" flash message showing when saving a book in the user's wishlist
 
 
@@ -224,7 +221,7 @@ b- style
 
 * Carousel : after finishing displaying all the slides, not possible to use the arrow to go back to previous slide
 * User wishlist table has a flex issue on medium screen (blank space on the right)
-* 
+* Responsiveness issue on mobile for the home page
 
 ## Feedback
 
