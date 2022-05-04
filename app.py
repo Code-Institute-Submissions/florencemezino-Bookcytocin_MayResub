@@ -131,6 +131,9 @@ def search():
     books = list(mongo.db.books.find({"$text": {"$search": query}}))
     return render_template(
         "collections.html", page_title="Collections", books=books)
+        
+    flash("No results found")
+    return redirect(url_for("login"))
 
 
 @app.route("/community")

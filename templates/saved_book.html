@@ -30,7 +30,7 @@
     {% for book in books %}
     <tbody>
         <tr>
-          <td class="d-none d-lg-block mt-5"><img src="{{book.book_image_url}}" class="card-img" alt="book" style="width:150px; height:200px;"></td>
+          <td class="d-none d-lg-block mt-5 mb-5"><img src="{{book.book_image_url}}" class="card-img" alt="book" style="width:150px; height:200px;"></td>
           <td>
             <p class="fw-bold text-left">{{ book.book_title }} by {{ book.book_author }}</p>
             <p>{{ book.book_description }}</p>
