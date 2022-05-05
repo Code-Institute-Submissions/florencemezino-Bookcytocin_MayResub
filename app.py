@@ -88,7 +88,7 @@ def collections():
         user = mongo.db.users.find_one({"username": session["user"]})
         return render_template(
             "collections.html", page_title="Collections", user=user)
-    
+            
     books = list(mongo.db.books.find())
     collections = list(mongo.db.collections.find())
     return render_template(
@@ -106,6 +106,7 @@ def get_collections(collection_name):
     return render_template(
         "collections.html", page_title="Collections",
         collections=collections, books=books)
+    return redirect(url_for("get_collections", username=session["user"]))
 
 
 @app.route("/delete_saved_book/<book_id>", methods=["GET", "POST"])
@@ -125,15 +126,12 @@ def delete_saved_book(book_id):
 @app.route("/search", methods=["GET", "POST"])
 def search():
     """
-    Find a book via search bar + no results found
+    Find a book via search bar  / flash no results if no books
     """
     query = request.form.get("query")
     books = list(mongo.db.books.find({"$text": {"$search": query}}))
     return render_template(
         "collections.html", page_title="Collections", books=books)
-        
-    flash("No results found")
-    return redirect(url_for("login"))
 
 
 @app.route("/community")

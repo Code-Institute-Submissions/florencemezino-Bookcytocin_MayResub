@@ -35,9 +35,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('community') }}">Community</a>
                     </li>
-                {% if session.user %}    
+                {% if session.user %}   
                     <li class="nav-link">
-                        <a class="nav-item" href="{{ url_for('profile', username=session['user']) }}">MyBookLog</a>
+                        <a class="nav-item" href="{{ url_for('profile', username=session['user']) }}">MyBookLog </a>
                     </li>
                 {% else %}
                     <li class="nav-item">
@@ -143,7 +143,7 @@
     {% endblock %} 
 </div>
 
-<header class="masthead" style="background-image: url('{{ url_for('static', filename='assets/img/cta_free_ebook.jpeg') }}');">
+<header class="masthead" id="free_ebook">
     <div class="container position-relative">
         <div class="row justify-content-center">
             <div class="col-xl-12">
@@ -151,7 +151,11 @@
                     <h1 class="mb-3">Get your free ebook <br>"5 ways to release your Bookcytocin"</h1>
                     <h3 class="mt-1 mb-5">The ultimate method to embrace your reading experience and become the best version of yourself</h3>
                     <div class="row justify-content-center">
-                        <button type="button" class="btn btn-primary btn-lg" onclick=" window.open('static/assets/file/free_ebook.pdf'); return true;">Download</button>
+                        {% if session.user %} 
+                        <button type="button" class="btn btn-primary btn-lg" onclick=" window.open('/static/assets/file/free_ebook.pdf'); return true;">Download</button>
+                        {% else %}
+                        <button type="button" class="btn btn-primary btn-lg" onclick=" window.open('/mybooklog/static/assets/file/free_ebook.pdf'); return true;">Download</button>
+                        {% endif %}  
                     </div>
                 </div>
             </div>

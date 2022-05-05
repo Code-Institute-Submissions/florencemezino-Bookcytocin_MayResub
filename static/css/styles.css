@@ -11383,6 +11383,14 @@ footer.footer {
   padding-bottom: 4rem;
 }
 
+/* BASE
+  -------------------------------------------------- */
+
+#free_ebook{
+  background-image: url("cta_free_ebook.jpeg");
+
+}
+
 /* READFLIX
   -------------------------------------------------- */
 
@@ -11404,6 +11412,7 @@ footer.footer {
    margin-bottom:20px;
 
  }
+
 
  /* Collections
   -------------------------------------------------- */
