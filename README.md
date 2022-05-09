@@ -350,6 +350,8 @@ SECRET_KEY :
 * Werzeug security helpers [Here](https://werkzeug.palletsprojects.com/en/2.0.x/utils/#module-werkzeug.security)
 * Code Institute task's manager project  for the authenfication : [Here](https://github.com/Code-Institute-Solutions/TaskManagerAuth)
 * Code Institute flask project Thorin et company (comparing json and mongo)
+* View decorators [Here](https://flask.palletsprojects.com/en/2.1.x/patterns/viewdecorators/)
+* Error handlers [Here](https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/#returning-api-errors-as-json)
 
 
 ### Content 

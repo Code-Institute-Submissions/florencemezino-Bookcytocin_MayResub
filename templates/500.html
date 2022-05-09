@@ -1,0 +1,14 @@
+{% extends "base.html"%}
+{% block content %}
+<div class="py-2 text-center container-fluid mt-5">
+  <div class="py-5 text-center container-fluid">
+    <div class="row mb-2">
+      <div class="col-lg-12 col-md-8 mx-auto">
+        <h2>{{page_title}}</h2>
+        <p class="lead text-muted">Oops there seems to be a problem with this page. Lets us help you get back to where you were</p>
+        <a class="btn btn-lg btn-save" href="{{ url_for('collections') }}">Back to collections</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
+

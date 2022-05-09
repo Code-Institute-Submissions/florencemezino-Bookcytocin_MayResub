@@ -88,12 +88,12 @@ def collections():
         user = mongo.db.users.find_one({"username": session["user"]})
         return render_template(
             "collections.html", page_title="Collections", user=user)
-            
-    books = list(mongo.db.books.find())
-    collections = list(mongo.db.collections.find())
-    return render_template(
-        "collections.html", page_title="Collections", books=books,
-        collections=collections)
+    else:
+        books = list(mongo.db.books.find())
+        collections = list(mongo.db.collections.find())
+        return render_template(
+            "collections.html", page_title="Collections", books=books,
+            collections=collections)
 
 
 @app.route("/get_collections/<collection_name>", methods=["GET", "POST"])
@@ -195,7 +195,8 @@ def signup():
         mongo.db.users.insert_one(signup)
 
         session["user"] = request.form.get("username").lower()
-        flash("You are in! Registration Successful.")
+        flash("You are in, {} ! Registration Successful.".format(
+            request.form.get("username")))
         return redirect(url_for("about", username=session["user"]))
 
     return render_template("signup.html", page_title="Sign up")
@@ -226,7 +227,7 @@ def login():
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
 
-    return render_template("login.html", page_title="Login")
+    return render_template("login.html", page_title="Log in")
 
 
 @app.route("/logout")
@@ -237,6 +238,36 @@ def logout():
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
+
+
+@app.route('/delete_profile/<username>', methods=['GET', 'POST'])
+def delete_profile(username):
+
+    user = mongo.db.users.find_one(
+        {"username": session["user"]})
+
+    mongo.db.users.delete_one({'_id': ObjectId(id)})
+
+    session.clear()
+    flash('Your profile has been deleted')
+
+    return render_template("signup.html", user=user, username=username)
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    """
+    404 error page / forbidden access - login required
+    """
+    return render_template('404.html', title='404 error, Page Not Found'), 404
+
+
+@app.errorhandler(500)
+def server_error(e):
+    """
+    500 error page / no results found fron search bar
+    """
+    return render_template('500.html', title='500 error, No results found')
 
 
 if __name__ == "__main__":

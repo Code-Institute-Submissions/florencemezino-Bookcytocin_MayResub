@@ -213,15 +213,13 @@ Most common paths through the website:
 a- Functions
 
 - A same book can be saved twice in the wishlist
-- If a book is saved twice in the user's wishlist, when clicking 'remove' all entries related to that book gets removed. 
+- If a book is saved twice in the user's wishlist, when clicking 'remove' all entries related to that book gets removed.  The book doesn't get remove one by one.
 - "No results found" flash message showing when saving a book in the user's wishlist
 
 
 b- style
 
-* Carousel : after finishing displaying all the slides, not possible to use the arrow to go back to previous slide
-* User wishlist table has a flex issue on medium screen (blank space on the right)
-* Responsiveness issue on mobile for the home page
+* Improve user's wishlist view on mobile 
 
 ## Feedback
 
