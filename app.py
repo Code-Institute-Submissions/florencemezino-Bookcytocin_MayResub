@@ -135,8 +135,6 @@ def get_collections(collection_name):
     return redirect(url_for("get_collections", username=session["user"]))
 
 
-
-
 @app.route("/community")
 def community():
     """
@@ -188,7 +186,6 @@ def signup():
         if existing_user:
             flash("Username already exists")
             return redirect(url_for("signup"))
-        print("password", request.form.get("password"))
 
         signup = {
             "username": request.form.get("username").lower(),
@@ -243,7 +240,7 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route('/delete_profile/<username>')
+@app.route('/delete_profile/<username>', methods=['GET', 'POST'])
 def delete_profile(username):
 
     user = mongo.db.users.find_one(
@@ -251,10 +248,9 @@ def delete_profile(username):
 
     mongo.db.users.delete_one({'_id': ObjectId(id)})
 
-    session.clear()
     flash('Your profile has been deleted')
-
-    return render_template("signup.html", user=user, username=username)
+    session.clear(user)
+    return redirect(url_for("about", username=session["user"]))
 
 
 @app.errorhandler(404)
@@ -265,6 +261,7 @@ def page_not_found(e):
     return render_template('404.html', page_title='404, Page Not Found'), 404
 
 
+# How to check if it is working
 @app.errorhandler(500)
 def server_error(e):
     """

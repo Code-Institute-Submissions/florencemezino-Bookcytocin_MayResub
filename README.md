@@ -352,6 +352,7 @@ SECRET_KEY :
 * Code Institute flask project Thorin et company (comparing json and mongo)
 * View decorators [Here](https://flask.palletsprojects.com/en/2.1.x/patterns/viewdecorators/)
 * Error handlers [Here](https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/#returning-api-errors-as-json)
+* HTML5 Form Validation With the “pattern” Attribute [Here](https://webdesign.tutsplus.com/tutorials/html5-form-validation-with-the-pattern-attribute--cms-25145)
 
 
 ### Content 
