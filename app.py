@@ -100,7 +100,10 @@ def collections():
 def search():
     query = request.form.get("query")
     books = list(mongo.db.books.find({"$text": {"$search": query}}))
-    return render_template("collections.html", books=books)
+
+    flash('Search results for "' + query + '"', 'success')
+    return render_template(
+        "collections.html", page_title="Collections", books=books)
 
 
 @app.route("/delete_saved_book/<book_id>", methods=["GET", "POST"])
