@@ -96,17 +96,11 @@ def collections():
             collections=collections)
 
 
-@app.route("/get_collections/<collection_name>", methods=["GET", "POST"])
-def get_collections(collection_name):
-    """
-    Display books by collection
-    """
-    collections = list(mongo.db.collections.find())
-    books = list(mongo.db.books.find({"collection_name": collection_name}))
-    return render_template(
-        "collections.html", page_title="Collections",
-        collections=collections, books=books)
-    return redirect(url_for("get_collections", username=session["user"]))
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    books = list(mongo.db.books.find({"$text": {"$search": query}}))
+    return render_template("collections.html", books=books)
 
 
 @app.route("/delete_saved_book/<book_id>", methods=["GET", "POST"])
@@ -123,15 +117,21 @@ def delete_saved_book(book_id):
     return redirect(url_for("profile", username=username))
 
 
-@app.route("/search", methods=["GET", "POST"])
-def search():
+@app.route("/get_collections/<collection_name>", methods=["GET", "POST"])
+def get_collections(collection_name):
     """
-    Find a book via search bar  / flash no results if no books
+    Display books by collection
     """
-    query = request.form.get("query")
-    books = list(mongo.db.books.find({"$text": {"$search": query}}))
+    collections = list(mongo.db.collections.find())
+    books = list(mongo.db.books.find({"collection_name": collection_name}))
+
+    flash('Search results for "' + collection_name + '"', 'success')
     return render_template(
-        "collections.html", page_title="Collections", books=books)
+        "collections.html", page_title="Collections",
+        collections=collections, books=books)
+    return redirect(url_for("get_collections", username=session["user"]))
+
+
 
 
 @app.route("/community")
@@ -240,7 +240,7 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route('/delete_profile/<username>', methods=['GET', 'POST'])
+@app.route('/delete_profile/<username>')
 def delete_profile(username):
 
     user = mongo.db.users.find_one(
@@ -257,17 +257,17 @@ def delete_profile(username):
 @app.errorhandler(404)
 def page_not_found(e):
     """
-    404 error page / forbidden access - login required
+    404 error page
     """
-    return render_template('404.html', title='404 error, Page Not Found'), 404
+    return render_template('404.html', page_title='404, Page Not Found'), 404
 
 
 @app.errorhandler(500)
 def server_error(e):
     """
-    500 error page / no results found fron search bar
+    500 error page
     """
-    return render_template('500.html', title='500 error, No results found')
+    return render_template('500.html', page_title='500, No results found'), 500
 
 
 if __name__ == "__main__":

@@ -3,13 +3,13 @@
 <section class="py-5 text-center container">
   <div class="row py-lg-5">
     <div class="col-lg-12 col-md-8 mx-auto">
-      <h2 class="fw-bold">{{page_title}}</h2>
+      <h2 class="fw-bold">Collections</h2>
       <p class="lead fw-light text-muted mb-5">The powerful journey of life in 12 collections. Select one of the collection below or use the search bar to travel through our library of  50+ books and explore all roads leading to your inner power.</p>
       {% for collection in collections %}
         <a class="fw-bold list-collection px-2 " href="{{ url_for('get_collections', collection_name=collection.collection_name) }}">  {{ collection.collection_name }} </a>
       {% endfor %}
     </div>
-      <div class="col-lg-6 col-md-8 mx-auto mb-5">
+      <div class="col-lg-6 col-md-8 mx-auto mb-2">
         <form class="d-flex" action="{{ url_for('search') }}" method="POST">
           <input class="form-control me-2 validate mt-5" name="query" id="query" type="search" placeholder="Search book by title, author or collection" aria-label="Search" required>
           <a href="{{ url_for('collections') }}" class="btn btn-secondary mt-5">Reset</a>
@@ -22,7 +22,8 @@
 
   <div class= container>   
     <div class="row py-lg-5 text-center">
-      {% for book in books %}
+      {% if books|length > 0 %}
+        {% for book in books %}
         <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 pl-2 mb-5">
           <div class="card text-center" style="width: 18rem;">
             <img src="{{book.image_url}}" class="card-img" alt="book" style="width:100%; height: auto;">
@@ -45,9 +46,12 @@
               </div>
             </div>
           </div>
-      {% endfor %}
+        {% endfor %}
+      {% else %}
+      <p class="lead fw-light mb-5" style="color:purple;">Sorry, no books found! Try a different search.</p>
+      {% endif %} 
       {% if session.user %}
-      <a class="lead fw-bold mb-5" href="{{ url_for('profile', username=session['user']) }}" style="color:purple;">Manage your wishlist</a>
+      <a class="lead fw-bold mt-5 mb-5" href="{{ url_for('profile', username=session['user']) }}" style="color:purple;">Manage your wishlist</a>
       <a class="lead fw-bold mb-5" href="{{ url_for('collections') }}">Back to collections</a>     
       {% else %}
       <p class="lead fw-light text-muted">Start building your reading list</p>
