@@ -42,8 +42,8 @@
                 {% if session.user %}
                 <form class="" method="POST" action="{{ url_for('collections') }}">
                   <input type="text" class="form-control" name="book_id" value="{{ book._id }}" aria-label="save_book" style="display:none;">
-                  {% if saved_books|count %}
-                  <!-- <button type="submit" class="btn btn-added btn-sm my-2">Added on wishlist</button> -->
+                  {% if saved_books|length > 0 %}
+                  <button type="submit" class="btn btn-added btn-sm my-2">Added on wishlist</button>
                   {% else %}
                   <button type="submit" class="btn btn-save btn-sm my-2">Save on wishlist</button>
                   {% endif %} 

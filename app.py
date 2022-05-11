@@ -39,7 +39,6 @@ def readflix():
     if request.method == "POST":
         book_id = request.form.get("book_id")
         book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
-
         user_saved_book = {
                 "_id": book_id,
                 "book_image_url": book["image_url"],
@@ -49,18 +48,18 @@ def readflix():
                 "book_amazon_link": book["amazon_link"]
         }
 
-        flash("Book Successfully Saved in your Wishlist!")
+        flash("Book successfully saved")
         user = mongo.db.users.update_one({"username": session["user"]}, {
             "$push": {"saved_books": user_saved_book}})
 
         user = mongo.db.users.find_one({"username": session["user"]})
         return render_template(
             "index.html", page_title="Readflix", user=user)
-
-    books = list(mongo.db.books.find(
-        {"collection_name": "Character"}).limit(4))
-    return render_template(
-        "index.html", page_title="Readflix", books=books)
+    else:
+        books = list(mongo.db.books.find(
+            {"collection_name": "Character"}).limit(4))
+        return render_template(
+            "index.html", page_title="Readflix", books=books)
 
 
 @app.route("/collections", methods=["GET", "POST"])
@@ -80,7 +79,7 @@ def collections():
                 "book_amazon_link": book["amazon_link"]
         }
 
-        flash("Book Successfully Saved in your Wishlist!")
+        flash("Book successfully saved")
         user = mongo.db.users.update_one({"username": session["user"]}, {
             "$push": {"saved_books": user_saved_book}})
 
@@ -90,6 +89,7 @@ def collections():
     else:
         books = list(mongo.db.books.find())
         collections = list(mongo.db.collections.find())
+        flash("Book already saved")
         return render_template(
             "collections.html", page_title="Collections", books=books,
             collections=collections)
@@ -113,7 +113,7 @@ def delete_saved_book(book_id):
     mongo.db.users.update_one({"username": session["user"]}, {"$pull": {
         'saved_books': {"_id": book_id},
         }})
-    flash("Book Successfully Removed from your Wishlist")
+    flash("Book successfully removed")
 
     username = session['user']
     return redirect(url_for("profile", username=username))
@@ -214,7 +214,7 @@ def login():
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
-                flash("Welcome to Bookcytocin {}".format(
+                flash("Hi {}, welcome to Bookcytocin".format(
                     request.form.get("username")))
                 return redirect(url_for(
                     "profile", username=session["user"]))
