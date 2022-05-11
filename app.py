@@ -54,7 +54,6 @@ def readflix():
             "$push": {"saved_books": user_saved_book}})
 
         user = mongo.db.users.find_one({"username": session["user"]})
-        print(user)
         return render_template(
             "index.html", page_title="Readflix", user=user)
 
@@ -240,17 +239,19 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route('/delete_profile/<username>', methods=['GET', 'POST'])
-def delete_profile(username):
-
-    user = mongo.db.users.find_one(
+@app.route('/delete_profile/<id>', methods=['GET', 'POST'])
+def delete_profile(id):
+    """
+    Allow user to delete profile
+    """
+    mongo.db.users.find_one(
         {"username": session["user"]})
-
     mongo.db.users.delete_one({'_id': ObjectId(id)})
 
+    session.clear()
     flash('Your profile has been deleted')
-    session.clear(user)
-    return redirect(url_for("about", username=session["user"]))
+
+    return redirect(url_for("signup"))
 
 
 @app.errorhandler(404)
@@ -261,7 +262,6 @@ def page_not_found(e):
     return render_template('404.html', page_title='404, Page Not Found'), 404
 
 
-# How to check if it is working
 @app.errorhandler(500)
 def server_error(e):
     """

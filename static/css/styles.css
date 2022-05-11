@@ -11551,12 +11551,12 @@ footer.footer {
   border-color: purple;
 }
 
-.btn-review {
+.btn-added {
   color: #fafafa;
   background-color: #00315B;
 }
 
-.btn-review:hover {
+.btn-added:hover {
   color: #00315B;
   background-color: #fafafa;
   border-color: #00315B;
