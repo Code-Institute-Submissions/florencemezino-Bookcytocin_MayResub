@@ -132,9 +132,9 @@ Imagery is important in this website in order to illustrate the books library an
     
 
 #### MongoDB database / collections structure
-1. Books - [[View](static/mongo_data/books.png)
-2. Collections - [[View](static/mongo_data/collections.png)
-3. Users - [[View](static/mongo_data/users.png)
+1. Books - [View](static/mongo_data/books.png)
+2. Collections - [View](static/mongo_data/collections.png)
+3. Users - [View](static/mongo_data/users.png)
 
 
 ## General Features
@@ -263,17 +263,16 @@ Balsamiq was used to create [the wireframes](All Wireframes.pdf) during the desi
 5. [Flask](https://en.wikipedia.org/wiki/Flask_(web_framework))
 Flask was used as a library to facilitate running all python functons
 
-6. [MongoDB](https://en.wikipedia.org/wiki/MongoDB#:~:text=MongoDB%20(de%20l'anglais%20humongous,est%20%C3%A9crit%20en%20C%2B%2B.)
+6. [MongoDB](https://www.mongodb.com/cloud/atlas/lp/try2?utm_source=google&utm_campaign=gs_emea_netherlands_search_core_brand_atlas_desktop&utm_term=mongodb&utm_medium=cpc_paid_search&utm_ad=e&utm_ad_campaign_id=12212624536&adgroup=115749708903&gclid=CjwKCAjwve2TBhByEiwAaktM1GoqZHlR10gmzk6ZoHXRvYuye7MQEMo_-uDTxxJTco72LtgFQzL9EhoCE_EQAvD_BwE)
 MongoDB was used to build databases / collections
 
 7. [Cloudinary](https://cloudinary.com/)
 Cloudinary was used to host images, specifically tje book images
 
 8. [Hover.css](https://ianlunn.github.io/Hover/)
-
 Hover.css was used on`social media icons for styling and give dynamim
-9. [Google Fonts](https://fonts.google.com/)
 
+9. [Google Fonts](https://fonts.google.com/)
 Google fonts were used to import the `Lato` font into the style.css file which is used on all pages throughout the project.
 
 10. [Font Awesome](https://fontawesome.com/)
@@ -321,7 +320,7 @@ SECRET_KEY :
 * how to position an element bootstrap [Here](https://www.geeksforgeeks.org/bootstrap-positioning-an-element-with-examples/)
 * Python string length | len() method Example [Here](https://www.guru99.com/python-string-length-len.html)
 * Using the len() Function in Python [Here](https://realpython.com/len-python-function/)
-* MongoDB — What is the best way to retrieve a random document from a collection? [Here](MongoDB — What is the best way to retrieve a random document from a collection?)
+* MongoDB — What is the best way to retrieve a random document from a collection? [Here](https://www.kindacode.com/snippet/mongodb-get-a-random-document-from-a-collection/)
 
 
 2. Collections
@@ -332,12 +331,13 @@ SECRET_KEY :
 
 3. Community
 * get bootstrap blog features for the community [Here](https://getbootstrap.com/docs/5.1/examples/blog/)
+* Generate random quote using JS [Here](https://codepen.io/robersonj/pen/xLOwLG)
 
 
 4. MyBooklog
 * How To Create Icon Buttons : [Here](https://www.w3schools.com/howto/howto_css_icon_buttons.asp)
 * How can I randomly select an item from a list? for the MyBookLog goal statement form / dropdown reading level [Here](https://stackoverflow.com/questions/306400/how-can-i-randomly-select-an-item-from-a-list)
-* HTML textarea tag [Here]https://www.w3schools.com/tags/tag_textarea.asp
+* HTML textarea tag [Here](https://www.w3schools.com/tags/tag_textarea.asp)
 * How to use $set for the goal statment [Here](https://docs.mongodb.com/manual/reference/operator/update/set/)
 * How do I partially update an object in MongoDB so the new object will overlay / merge with the existing one [Here](https://stackoverflow.com/questions/10290621/how-do-i-partially-update-an-object-in-mongodb-so-the-new-object-will-overlay)
 
@@ -353,6 +353,8 @@ SECRET_KEY :
 * View decorators [Here](https://flask.palletsprojects.com/en/2.1.x/patterns/viewdecorators/)
 * Error handlers [Here](https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/#returning-api-errors-as-json)
 * HTML5 Form Validation With the “pattern” Attribute [Here](https://webdesign.tutsplus.com/tutorials/html5-form-validation-with-the-pattern-attribute--cms-25145)
+* How TO - Scroll Back To Top Button [Here](https://www.w3schools.com/howto/howto_js_scroll_to_top.asp)
+
 
 
 ### Content 
@@ -366,6 +368,7 @@ Readme.md sample from Code Institute [View](https://github.com/Code-Institute-So
 Readme.md sample from Anna Greaves's portrait artist [View](https://github.com/AJGreaves/portrait-artist/blob/master/README.md)
 
 * Websites benchmark :
+Bookcytocin website was inspired by the following websites :
 - Optimize [Here](https://www.optimize.me/?gclid=Cj0KCQjw_fiLBhDOARIsAF4khR0VuMLVgM7upWtouIID8wwwlaDQ3zpRCrrKqvt46zWOAqQkaHNgW8AaAkaKEALw_wcB)
 - Bookauthority [Here](https://bookauthority.org/)
 - Bingebooks [Here](https://bingebooks.com/)
@@ -381,7 +384,7 @@ Readme.md sample from Anna Greaves's portrait artist [View](https://github.com/A
 - Peer to peer support from Code Institute Slack community.
 
 ## Author 
-- Florence Mezino, studying Full Stack Software Development at Code Institute (March 2021 - March 2022)
+- Florence Mezino, studying Full Stack Software Development at Code Institute (March 2021 - May 2022)
 [Github](https://github.com/florencemezino)
 
 ## Feedback

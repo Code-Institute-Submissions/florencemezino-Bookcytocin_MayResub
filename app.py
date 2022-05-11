@@ -90,7 +90,6 @@ def collections():
     else:
         books = list(mongo.db.books.find())
         collections = list(mongo.db.collections.find())
-        flash("Book already saved")
         return render_template(
             "collections.html", page_title="Collections", books=books,
             collections=collections)

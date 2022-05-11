@@ -4,28 +4,10 @@
   <div class="row py-lg-5">
     <div class="col-lg-12 col-md-8 mx-auto">
       <h2 class="fw-bold">MyBookLog</h2>
-      <p class="lead text-muted">Set your reading goal and start building your reading list with your favorite books </p>
+      <p class="lead text-muted">Start building your reading list with your favorite books and set your reading goal to become the best version of yourself </p>
     </div>
   </div>
 </section>
-
-<div class="py-2 text-center container bg-light" style="border-radius:5%;">
-    <div class="row mb-2">
-      <h2 class="fw-light mt-5">Goal</h2>
-      <p class="lead text-muted">Decide, Commit, Succeed.<br>
-        Commitment is what transforms a promise into a reality.</p>
-    </div>
-    <div class="row mb-2">
-      <div class="col-12 col-md-6 mt-5">
-        <img src="/static/assets/img/my_booklog.png" class="bd-placeholder-img mt-5" alt="phone with logo" style="width:100%; height:auto; border-radius:2.5%;">
-      </div>
-      <div class="col-12 col-md-6">
-      {% if session.user %} 
-        {% include 'edit_goal.html' %}
-      {% endif %}  
-        </div>
-      </div>
-  </div>
 
 <div class="py-2 text-center container-fluid bg-review mt-5" style="border-radius:5%;">
   <div class="py-5 text-center container-fluid">
@@ -51,11 +33,29 @@
 <div class="py-2 text-center container-fluid mt-5">
   <div class="py-5 text-center container-fluid">
     <div class="row mb-2">
-      <div class="col-lg-12 col-md-8 mx-auto">
+      <div class="col-lg-12 col-md-8 mx-auto mb-5">
       <a class="btn btn-lg btn-save" href="{{ url_for('collections') }}">Explore Bookcytocin collections</a>
       </div>
     </div>
   </div>
+</div>
+
+<div class="py-2 text-center container bg-light" style="border-radius:5%;">
+  <div class="row mb-2">
+    <h2 class="fw-light mt-5">Goal</h2>
+    <p class="lead text-muted">Decide, Commit, Succeed.<br>
+      Commitment is what transforms a promise into a reality.</p>
+  </div>
+  <div class="row mb-2">
+    <div class="col-12 col-md-6 mt-5">
+      <img src="/static/assets/img/my_booklog.png" class="bd-placeholder-img mt-5" alt="phone with logo" style="width:100%; height:auto; border-radius:2.5%;">
+    </div>
+    <div class="col-12 col-md-6">
+    {% if session.user %} 
+      {% include 'edit_goal.html' %}
+    {% endif %}  
+      </div>
+    </div>
 </div>
 
   <div class="py-5 text-center container">
