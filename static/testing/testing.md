@@ -10,6 +10,7 @@ W3C Markup Validator  / Jinja - `Success`
 > to validate Jinja code is to open up a webpage in your app, right click the page, click view source, and copy that code into the W3 HTML validator.
 
 - W3C CSS Validator - `Success`
+- JS - `Success`
 - Pep8 - `Success`
 
 Lighthouse - [Results](static/assets/testing/lighthousems3_results_resubmit.png)
@@ -41,13 +42,13 @@ Most common paths through the website:
 #### As a reader and returning visitor to the website :
 
 * As a reader, I want to be encouraged to read more so that I can reach my reading goal 
-- User can log in to access their personal profile in which they can complete a reading commitment goal to make sure they reach their goal.
+- Users can log in to an accesersonal profile in which they can complete a reading commitment goal to make sure they reach their goal.
 
 * As a reader, I want to see my reading goals progress so that I can be motivated to read more
-- Reader has access to a section Insights in their profile in which they can see the number of books saved and reviewed. It is specified that is feature is being working on.
+- Reader has access to a section Insights in their profile in which they can see the number of books saved and reviewed. It is specified that is feature is being worked on.
 
 * As a reader, I want to build a list of my future readings, so that I don't lose time browsing online for new books
-- User is able to save books from readflix and collections page to their wishlist. This funtionnality is available only to the ones with an account.
+- Users can save books from the readflix and collections page to their wishlist. This functionality is available only to the ones with an account.
 
 * As a reader, I want to be able to manage a list of future readings so that I know what would be my next purchase
 - Reader has access to a wishlist section in their profile in which they can view and remove books.
@@ -68,8 +69,9 @@ Most common paths through the website:
 
 1. Website purpose / description
 - Click on the logo "Bookcytocin"
-- Check if it redirect to the welcome page
-- Confirm that the purpose of the site is mentionned on each slide of the carousel
+- Check if it redirects to the welcome page
+- Confirm that the purpose of the site is mentioned on each slide of the carousel
+- Confirm that Explore button redirects to the collections page
 - Confirm the headings are responsive on all devices.
 
 #### Readflix 
@@ -85,26 +87,28 @@ Most common paths through the website:
 - Scroll down to the bottom of the page
 - Check if content is not hidden behind footer and is responsive.
 - Click on social media links Facebook, Twitter, Linkedin. The three links redirects to the respective social media.
+- Check if scroll to top button works
 
-3. Carousel
-- Go to any page from the site, the carousel will appear and show 4 slides.
+the 3. Carousel
+- Go to any page from the site, and the carousel will appear and show 4 slides.
 - Confirm images are visible and responsive on all devices.
 - Confirm all buttons from each redirect to the desired / correct page.
 
 4. Book collection focus
-- Check if 4 books of a specific collection appears
-- Check if Amazon link redirect user to the book details on Aamazon to purchase
+- Check if 4 books of a specific collection appear
+- Check if the Amazon link redirects the user to the book details on Amazon to purchase
 - Check if Save on wishlist button pushes data to profile
 
-> For every point mentionned above : Repeat verification of functionality and responsiveness on mobile phone and tablet via Developer Tool,
+
+> For every point mentioned above: Repeat verification of functionality and responsiveness on mobile phone and tablet via Developer Tool,
 
 #### Collections
 
 1. Header / Navigation bar
-- Navbar code is identical on all html pages. Testing already completed.
+- The navbar code is identical on all HTML pages. Testing already completed.
 
 2. Footer
-- Footer code is identical on all html pages. Testing already completed.
+- The footer code is identical on all HTML pages. Testing already completed.
 
 3. Search by collection
 - Go to "Collection "from a desktop
@@ -129,8 +133,10 @@ Most common paths through the website:
 2. Footer
 - Footer code is identical on all html pages. Testing already completed.
 
-3. Profiles
+3. Content
 - Go to "Community" from a desktop
+- Check if "Inspire me" refresh button works and displays a random quote.
+- Check if the twitter share button open twitter account with the quote ready to be oublished
 - Check if the images appears 
 - Check if the member profiles are responsibve
 - Check the quality of the content/image displayed for each article
@@ -139,6 +145,7 @@ Most common paths through the website:
 > Repeat verification of functionality and responsiveness on mobile phone and tablet via Developer Tool
 
 #### MyBookLog
+
 1. Header / Navigation bar
 - Navbar code is identical on all html pages. Testing already completed.
 
@@ -154,10 +161,12 @@ Most common paths through the website:
         - book's image 
         - book's title and author 
         - actions : buy and remove
+    - Check if delete profile function works
 
 > Repeat verification of functionality and responsiveness on mobile phone and tablet via Developer Tool
 
 #### Log in
+
 1. Header / Navigation bar
 - Navbar code is identical on all html pages. Testing already completed.
 
@@ -171,6 +180,7 @@ Most common paths through the website:
  
 
 #### Log out
+
 1. Header / Navigation bar
 - Navbar code is identical on all html pages. Testing already completed.
 
@@ -185,7 +195,6 @@ Most common paths through the website:
 
 
 #### Sign up
-
 1. Header / Navigation bar
 - Navbar code is identical on all html pages. Testing already completed.
 
@@ -198,12 +207,14 @@ Most common paths through the website:
     - Check if the link "already user" from the sign up workd
     - Check that the flash messages is working : Registration successful!
     - Check for an existing user, flash is working : User alread exists
-
+    - Check content of warning message about criteria regarding the creation of username and password.
+        - check length
+        - check lower case
 
 ## Further Testing
 
-* The Website was tested on Google Chrome, Internet Explorer, Microsoft Edge and Safari browsers.
-* The website was viewed on a variety of devices such as Desktop, Laptop, iPhone7, iPhone 8 & iPhoneX (using developper tool)
+* The Website was tested on Google Chrome, Internet Explorer, Microsoft Edge, and Safari browsers.
+* The website was viewed on a variety of devices such as Desktop, laptops, iPhone7, iPhone 8 & iPhone X (using developer tool)
 * A large amount of testing was done to ensure that all pages were linking correctly.
 * Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
 
@@ -212,15 +223,14 @@ Most common paths through the website:
 
 a- Functions
 
-- A same book can be saved twice in the wishlist
-- If a book is saved twice in the user's wishlist, when clicking 'remove' all entries related to that book gets removed.  The book doesn't get remove one by one.
-- "No results found" flash message showing when saving a book in the user's wishlist
+- The same book can be saved twice in the wishlist (future feature: implement if the book is already saved in the wishlist function)
+- If a book is saved twice in the user's wishlist when clicking 'remove' all entries related to that book get removed.  The book doesn't get removed one by one.
 
-
-b- style
+removedyle
 
 * Improve user's wishlist view on mobile 
+* Improve global user-friendly aspect to prevent too much scrolling
 
 ## Feedback
 
-If you have any feedback, please reach out to the developper of the this project Florence Mezino at florence.mezino@outlook.com 
+If you have any feedback, please reach out to the developer of this project Florence Mezino at florence.mezino@outlook.com 

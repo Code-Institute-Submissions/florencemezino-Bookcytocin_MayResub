@@ -8,44 +8,43 @@
 
 ## User Experience (UX)
 
-### End user 
+### End-user 
 
 1. Goal
-End users for this project are readers who wants to focus on their personal development and use the book as a real tool to grow in every area of life (Love, finance, career, spiritual, intellectual, health etc.) 
-The site owner goal is to make money ot of each sell thanks to a affiliate link but also to create a readers community.
+End users for this project are readers who want to focus on their personal development and use the book as a real tool to grow in every area of life (Love, finance, career, spiritual, intellectual, health, etc.) 
+The site owner's goal is to make money out of each sale thanks to an affiliate link but also to create a readers community.
 
 
-2.  Profile : Readers
+2.  Profile: Readers
+Users who want to focus on their personal development want to include more readings in their lives. They want to integrate more readings into their life by using the book as a real tool for their development journey. They want to take time to read more and share their recommendations/reviews. They want to have the possibility to see recommendations, save books for later and buy books online.
 
-Users who want to focus on their personnal development and want to include more readings in their life. They want to integrate more readings in their life by using the book as a real tool on their personnal development journey. They want to take time to read more and share their recommendations/reviews. They want to have the possibility to see recommandations, save books for later and buy books online.
 
+a. identity and behaviors
 
-a. identity and behaviours
-
-Readers interacting with the site are English speaker and we can determine different reader profiles :
-- Beginner : between 1 - 12 books per year : Mostly users who read very rarely.
-- Intermediate : between 12 - 24 books per year : Mostly users who read minimum 1 book per month
-- Expert : between 24 - 36 books per year : Users who reads very frequently and it is part of their habits 
-- Master : 36+ books per year : User who can read several books a month and is keen to share their recommendations online / interact with a community. At this level, users might work in the field such as book writer or book publisher. They have a important recommendations books library and wish to expand their knowledge by accessing more books, reading more books and reviews
+Readers interacting with the site are English speakers and we can determine different reader profiles :
+- Beginner: between 1 - 12 books per year: Mostly users who read very rarely.
+- Intermediate: between 12 - 24 books per year: Mostly users who read a minimum 1 book per month
+- Expert: between 24 - 36 books per year: Users who read very frequently and it is part of their habits 
+- Master: 36+ books per year: User who can read several books a month and is keen to share their recommendations online / interact with a community. At this level, users might work in the field such as book writer or book publisher. They wish to expand their knowledge by accessing more books, and news.
 
 b. expectations 
-- Readers want to extend their knowledge on different dimensions of personal development such as nutrition, career, finance etc.
-- Readers have a strong willingness to integrate reading more books in their personal development.
+- Readers want to extend their knowledge on different dimensions of personal development such as nutrition, career, finance, etc.
+- Readers have a strong willingness to integrate reading more books into their personal development.
 - Readers want to have access to a large library of books about personal development.
-- Readers wants to read reviews with great insights to easily choose their next reading
+- Readers want to read reviews with great insights to easily choose their next reading
 
 c. restraints
-- Readers believe they don't have time to read and rarely commit to make reading a real activity, part of their daily life.
-- Readers feel overwhelmed about all the great books they could read and they don't dare to start
-- Beginner readers might feel impostor symdrome when seeing other reading progress and recommendations
+- Readers believe they don't have time to read and rarely commit to making reading a real activity, part of their daily life.
+- Readers feel overwhelmed by all the great books they could read and they don't dare to start
+- Beginner readers might feel impostor syndrome when seeing other reading progress and recommendations
 
 
 ### User stories
 
 1. First Time Visitor Goals
 
-* As a reader, I want to have access to a great book library online so that I can have plenty of choice to select my next book to read
-* As a reader, I want to buy a book in few steps so that I can progress quickly on my reading goals
+* As a reader, I want to have access to a great book library online so that I can have plenty of choices to select my next book to read
+* As a reader, I want to buy a book in a few steps so that I can progress quickly on my reading goals
 * As a reader, I want to have access to recommendations/ reviews about books so that it can help me to choose the next book to read
 * As a reader, I want to save book in a wishlist so that I can buy it later
 
@@ -60,7 +59,7 @@ c. restraints
 3. Frequent User Goals
 
 * As a reader, I want to see the most liked/successful/trendy books on a certain period to not miss out so that I can be up to date about trendy readings
-* As a reader, I want to be informed about new books releases, events, masterclass so that I can improve my learning skils in general. 
+* As a reader, I want to be informed about new book releases, events, and masterclasses so that I can improve my learning skills in general. 
 
 
 ### Design
@@ -77,23 +76,23 @@ This color will be used as the background for the dark on light designs and the 
 * `RoyalBlue`: this is a grey-blue color for the light accent. A simmilar version  is also use on certain elements.
 This color is used to bring attention to design elements by contrasting with the rest of the palette.
 
-* `var(--bs-purple)`: "Purple heart" is a deep bright purple for the dark accent and `#B24DD1` : "Cindy' is a pop magenta. These colors will be to work on the dark accents. for the dark accents
-They are used to catch the eye of the user to show some important information but it can be link also to temporary information
+* `var(--bs-purple)`: "Purpleheart" is a deep bright purple for the dark accent and `#B24DD1`: "Cindy' is a pop magenta. These colors will be to work on the dark accents. for the dark accents
+They are used to catch the eye of the user to show some important information but they can be linked also to temporary information
 
-* `#2A294A` : "Martinique" is a dark-grey color for the dark shades or the outline
-This color is used for dark on ligh design and as background for inverted design.
+* `#2A294A`: "Martinique" is a dark-grey color for the dark shades or the outline
+This color is used for dark on light designs and as a background for inverted designs.
 
 
 2. Typography
 The `Lato` font is the main font used throughout the whole website with `sans-serif`
-as fallback fonts in case for any reason the font isn't being imported into the site correctly. 
-The space between letters and the conforting shape makes `Lato`font a great choice for this website as it makes reading easy and accessible.
+as fallback fonts in a case for any reason, the font isn't being imported into the site correctly. 
+The space between letters and the comforting shape makes `Lato`font a great choice for this website as it makes reading easy and accessible.
 
 
 3. Imagery / Video
-Imagery is important in this website in order to illustrate the books library and experts opinions
+Imagery is important in this website to illustrate the books library and experts' opinions
 *  A carousel component has been integrated and it has been designed to be striking and catch the user's attention on the different options that the website could offer.
-* Free images from topic "reading" "books" "library" "purple" were selected on websites sush as [Pexel](https://www.pexels.com/fr-fr/) and [Unsplash](https://unsplash.com/login) in order to illustrate the colors chosen. Also each book has their own book image displayedbooks datatbase.
+* Free images from the topic "reading" "books" "library" and "purple" were selected on websites sush as [Pexel](https://www.pexels.com/fr-fr/) and [Unsplash](https://unsplash.com/login) in order to illustrate the colors chosen. Also each book has their own book image displayedbooks datatbase.
 * Book image were taken from amazon and hosted in Cloudinary
 
 ### Branding research 
@@ -139,21 +138,22 @@ Imagery is important in this website in order to illustrate the books library an
 
 ## General Features
 
-* The website is called Bookcytocin, a mix between Book and oxytocyn, the love hormone. The idea here is to inspire readers to find their true self and find the love/passion for reading as it is connected ot self development.
+* The website is called Bookcytocin, a mix between Book and oxytocin, the love hormone. The idea here is to inspire readers to find their true selves and find the love/passion for reading as it is connected to self-development.
 * The website is structured in 4 pages : `Readflix`, `Collections`, `Community`, `MyBookLog`, + 2 extra pages for sign up and login.
 * The website's pages and different features are responsive on all device sizes. 
-* Each page features a responsive header with navigation bar and a conventional placing of logo (top left).
-* Users can find a sign up option 
-* Users can find a log in option if they already hacreated an account
-* There is a carousel components with 4 slides to match the structure of the site.
-* There is a form in which user can request to receive a free ebook about reading/personal development
+* Each page features a responsive header with a navigation bar and a convenient placement of the logo (top left).
+* Users can find a sign-up option 
+* Users can find a login option if they already created an account
+* There is a carousel component with 4 slides to match the structure of the site.
+* There is a form in which users can request to receive a free ebook about reading/personal development
 * There is a footer with copyright information and social media links. 
+* User can scroll up to the top thanks to an arrow button.
 * The general features of the site are in one space base_template.
 
 #### Readflix
 * The `Readflix` page features a special selection of books for the month.
 * There is a navigation bar with a logo and a hamburger menu for mobile.
-* A caroussel will allow to slide to different pages to access the different sections of the website. 
+* A carousel will allow you to slide to different pages to access the different sections of the website. 
 * A section called Readflix will present a selection of 12 books for the month belonging to different type of collection
 
 #### Collections
@@ -173,19 +173,20 @@ Imagery is important in this website in order to illustrate the books library an
     - Quality of life
     - Life vision
 * In each section, readers  can find a list of books related to the genre.
-* From each book, users has the option to be redirected to Amazon website to buy the book.
+* From each book, users have the option to be redirected to the Amazon website to buy the book.
 
 
-#### Experts
-* The `Community` page features 1 column wide for mobile devices, 2 columns wide for tablets and 4 columns wide for desktop. 
-* This page displays people and their readings recommandations/reviews
-* Users can find also multiples articles on how to integrate more reading into their life and make it part of their persoal development.
-For example : 10 ways to make mre time for reading
+#### Community
+* The `Community` page features 1 column wide for mobile devices, 2 columns wide for tablets, and 4 columns wide for desktops. 
+* This page displays random inspirational quotes to motivate users to read more.
+* This page displays people and their readings recommendations/reviews
+* Users can find also multiple articles on how to integrate more reading into their life and make it part of their personal development.
+For example, 10 ways to make more time for reading
 
 #### MyBookLog
-* The `MyBookLog` page features 1 column wide for mobile devices, 2 columns wide for tablets and 4 columns wide for desktop. 
+* The `MyBookLog` page features 1 column wide for mobile devices, 2 columns wide for tablets, and 4 columns wide for desktops. 
 * Users can set their reading goals and edit them if needed.
-* Users can have a list of thir future readings
+* Users can have a list of their future readings
 
 
 ### Existing features 
@@ -193,47 +194,48 @@ For example : 10 ways to make mre time for reading
 1. On every page
 * Header Logo - Clicking the logo returns users to the home page.
 * Header Fixed Navigation Bar - Allows all users to easily navigate all the website's pages and find what they are looking for quickly.
-In the mobile version the navigation bar is turning into a hamburger menu for a user friendly experience.
+In the mobile version, the navigation bar is turning into a hamburger menu for a user-friendly experience.
 * Footer copyright info - Proof of brand and content protection is available on each page.
-* Footer social media icons - Allows users to be redirected to social media platform to stay connected.
+* Footer social media icons - Allows users to be redirected to social media platforms to stay connected.
 
 2. Summary page features specificities
 * `Reaflix`: Allows users to 
-    - specificity 1 : have an oveview of the most trendy books.
-    - specificity 2 : be redirected in one click to amazon site to buy the book
-    - specificity 3 : save books to profile in a wishlist
-* `Collections`: Allows users to 
-    - specificity 1 : search books via a search bar by book title and book author
-    - specificity 2 : search books to read via collections/genre 
-    - specificity 3 : save books to profile in a wishlist
+    - specificity 1: have a specific focus of the month on a specific book collection
+    - specificity 2: be redirected in one click to the Amazon site to buy the book
+    - specificity 3: save books to profile in a wishlist
+* `Collections`: This allows users to 
+    - specificity 1: search books via a search bar by book title, book author, description
+    - specificity 2: search books to read via collections/genre 
+    - specificity 3: save books to profile in a wishlist
 * `Community`: Allows users to 
-    - specificity 1 : check reviews from book authors
-    - specificity 2 : read news about reading tips and personal development
+    - specificity 1: generate random motivational quote
+    - specificity 2: check reviews from book authors
+    - specificity 3: read news about reading tips and personal development
 * `MyBooklog`: Allows users to 
-    - specificity 1 : set and edit their reading goal statement
-    - specificity 2 : view their books wishlist
+    - specificity 1: set and edit their reading goal statement
+    - specificity 2: view their books wishlist + remove books from the wishlist
+    - specificity 3: delete profile
 * `Account` : 2 pages / Allows users to :
-    - specificity 1 : sign up to MyBooLog profile
-    - specificity 2 : log in and log out from account
+    - specificity 1: sign up to MyBooLog profile
+    - specificity 2: log in and log out from account
 
 
 ### Features to implement in the future
 
-* Buy directly on the Bookcytocin platform directly and not go through affiliate link via Amazon
+* Buy directly on the Bookcytocin platform and not go through affiliate link via Amazon
 * Users can exchange their books with other members
-* Users can give away their book in exchange of discounts
-* Users can have access to an history of their activities. A record is accessible if they buy a book, exchange a book or leave a review etc.
+* Users can give away their book in exchange for discounts
+* Users can have access to a history of their activities. A record is accessible if they buy a book, exchange a book or leave a review, etc.
 * Users can contact the website owner to request general information thanks to a contact form
 * Users receives a confirmation email once the contact form is completed.
 * Users can follow a profile from experts to receive recommendations by email
-* Users can track their readings with more status than saved (ie : status : saved, reading or finished )
-* Users can sell their books edit their entry
-* Possibility to add / edit reviews of books via MyBookLog page profile / history of review
+* Users can track their readings with more status than saved (ie : status: saved, reading, or finished )
+* Users can sell their books and edit their entry
+* Possibility to add / edit reviews of books via MyBookLog page profile/history of review
 * Vote for the readflix of the month
 * Share a book with a friend via social media
-* Reset a their goal commitment
-* Prevent user for saving the same book twice
-* Specify error message on sign up page (currently it is : "please match the requested format")
+* Reset their goal commitment
+* Prevent user from saving the same book twice
 
 
 ## Technologie Used 
@@ -282,7 +284,7 @@ Font Awesome was used on all pages throughout the website to add icons for aesth
 StartBootstrap was used to get a landing page template to build the app
 
 12. [Lucidchart](https://lucid.app/)
-Luci app was used to have mindmp and have an overview of the database strategies and structure
+Luci app was used to mindmap and have an overview of the database strategies and structure
 
 
 ## Testing 
@@ -296,13 +298,13 @@ Testing information can be found in the following file [View](testing.md))
 The project was deployed to Heroku following the next steps:
 
 1. Create a requirements.txt file using the terminal command `pip freeze > requirements.txt`
-2. Create a Procfile with the terminal command `echo web : python app.py > Procfile`
+2. Create a Procfile with the terminal command `echo web: python app.py > Procfile`
 3. Proceed with git add and git commit the new requirements and Procfile and then git push the project to GitHub
-4. Create a new app on [Heroku website](https://dashboard.heroku.com/) by clicking the "New" button in your dashboard. Give it a name an set the region to Europe.
-5. From the heroku dashboard of your newly created application, click on "Deploy", "Deployment method" and "select Github"
-6. Confirm the linking if the heroku app to the correct Github repository 
-7. in the heroku dashboard for the application, click on "Settings" > "Reveal Config Vars" 
-8. Set the following confi vars
+4. Create a new app on [Heroku website](https://dashboard.heroku.com/) by clicking the "New" button on your dashboard. Give it a name and set the region to Europe.
+5. From the Heroku dashboard of your newly created application, click on "Deploy", "Deployment method" and "select Github"
+6. Confirm the linking of the Heroku app to the correct Github repository 
+7. in the Heroku dashboard for the application, click on "Settings" > "Reveal Config Vars" 
+8. Set the following config vars
 IP : 
 MONGO_URI : 
 PORT : 
@@ -358,11 +360,10 @@ SECRET_KEY :
 
 
 ### Content 
-
 * All content was written by the developer.
 * Color scheme was found on the website Colormind, you can view it [Here](http://colormind.io/)
-* Psychological properties of colours was found [Here](http://www.colour-affects.co.uk/psychological-properties-of-colours)
-* Psychological properties of fonts was found [Here](https://designmodo.com/font-psychology/)
+* Psychological properties of colors were found [Here](http://www.colour-affects.co.uk/psychological-properties-of-colours)
+* Psychological properties of fonts were found [Here](https://designmodo.com/font-psychology/)
 * Readme.md inspiration models : 
 Readme.md sample from Code Institute [View](https://github.com/Code-Institute-Solutions/SampleREADME)
 Readme.md sample from Anna Greaves's portrait artist [View](https://github.com/AJGreaves/portrait-artist/blob/master/README.md)
@@ -380,13 +381,13 @@ Bookcytocin website was inspired by the following websites :
 
 ### Acknowledgements
 - My Mentor [Jack Washira](https://github.com/iamjackwachira) for continuous helpful feedback.
-- Tutor support at Code Institute for their support. Special mention for Igor and Fatima.
-- Peer to peer support from Code Institute Slack community.
+- Tutor support at Code Institute for their support.
+- Peer-to-peer support from the Code Institute Slack community.
 
 ## Author 
-- Florence Mezino, studying Full Stack Software Development at Code Institute (March 2021 - May 2022)
+- Florence Mezino, studying Full Stack Software Development at Code Institute (March 2021- May 2022)
 [Github](https://github.com/florencemezino)
 
 ## Feedback
-If you have any feedback, please reach out to the developper of the this project Florence Mezino at florence.mezino@outlook.com
+If you have any feedback, please reach out to the developer of this project Florence Mezino at florence.mezino@outlook.com
 Thank you!
