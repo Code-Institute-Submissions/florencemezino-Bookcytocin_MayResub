@@ -25,7 +25,7 @@ Readers interacting with the site are English speakers and we can determine diff
 - Beginner: between 1 - 12 books per year: Mostly users who read very rarely.
 - Intermediate: between 12 - 24 books per year: Mostly users who read a minimum 1 book per month
 - Expert: between 24 - 36 books per year: Users who read very frequently and it is part of their habits 
-- Master: 36+ books per year: User who can read several books a month and is keen to share their recommendations online / interact with a community. At this level, users might work in the field such as book writer or book publisher. They wish to expand their knowledge by accessing more books, and news.
+- Master: 36+ books per year: User who can read several books a month and is keen to share their recommendations online / interact with a community. At this level, users might work in the field such as book writer or book publishers. They wish to expand their knowledge by accessing more books, and news.
 
 b. expectations 
 - Readers want to extend their knowledge on different dimensions of personal development such as nutrition, career, finance, etc.
