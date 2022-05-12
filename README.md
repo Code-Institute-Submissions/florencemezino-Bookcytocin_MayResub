@@ -10,55 +10,55 @@
 
 ### End-user 
 
-1. Goal
-End users for this project are readers who want to focus on their personal development and use the book as a real tool to grow in every area of life (Love, finance, career, spiritual, intellectual, health, etc.) 
+1. Goal: 
+End users for this project are readers who want to focus on their personal development and use the book as a real tool to grow in every area of life (love, finance, career, spiritual, intellectual, health, etc.).
 The site owner's goal is to make money out of each sale thanks to an affiliate link but also to create a readers community.
 
 
 2.  Profile: Readers
-Users who want to focus on their personal development want to include more readings in their lives. They want to integrate more readings into their life by using the book as a real tool for their development journey. They want to take time to read more and share their recommendations/reviews. They want to have the possibility to see recommendations, save books for later and buy books online.
+Users who want to focus on their personal development want to include more readings in their lives. They want to integrate more readings into their life by using the book as a real tool for their personal development journey. They would like to take time to read more and share their recommendations/reviews. They wish to have the possibility to see recommendations, save books for later and buy books online.
 
 
-a. identity and behaviors
+a. Identity and behaviors
 
 Readers interacting with the site are English speakers and we can determine different reader profiles :
 - Beginner: between 1 - 12 books per year: Mostly users who read very rarely.
-- Intermediate: between 12 - 24 books per year: Mostly users who read a minimum 1 book per month
-- Expert: between 24 - 36 books per year: Users who read very frequently and it is part of their habits 
-- Master: 36+ books per year: User who can read several books a month and is keen to share their recommendations online / interact with a community. At this level, users might work in the field such as book writer or book publishers. They wish to expand their knowledge by accessing more books, and news.
+- Intermediate: between 12 - 24 books per year: Mostly users who read a minimum 1 book per month.
+- Expert: between 24 - 36 books per year: Users who read very frequently and it is part of their habits.
+- Master: 36+ books per year: User who can read several books a month and is keen to share their recommendations online / interact with a community. At this level, users might work in the field.such as book writer or book publishers. They wish to expand their knowledge by accessing more books, and news.
 
-b. expectations 
+b. Expectations 
 - Readers want to extend their knowledge on different dimensions of personal development such as nutrition, career, finance, etc.
 - Readers have a strong willingness to integrate reading more books into their personal development.
 - Readers want to have access to a large library of books about personal development.
-- Readers want to read reviews with great insights to easily choose their next reading
+- Readers want to read reviews with great insights to easily choose their next reading.
 
-c. restraints
+c. Restraints
 - Readers believe they don't have time to read and rarely commit to making reading a real activity, part of their daily life.
-- Readers feel overwhelmed by all the great books they could read and they don't dare to start
-- Beginner readers might feel impostor syndrome when seeing other reading progress and recommendations
+- Readers feel overwhelmed by all the great books they could read and they don't dare to start.
+- Beginner readers might feel impostor syndrome when seeing other reading progress and recommendations.
 
 
 ### User stories
 
 1. First Time Visitor Goals
 
-* As a reader, I want to have access to a great book library online so that I can have plenty of choices to select my next book to read
-* As a reader, I want to buy a book in a few steps so that I can progress quickly on my reading goals
-* As a reader, I want to have access to recommendations/ reviews about books so that it can help me to choose the next book to read
-* As a reader, I want to save book in a wishlist so that I can buy it later
+* As a reader, I want to have access to a great book library online so that I can have plenty of choices to select my next book to read.
+* As a reader, I want to buy a book in a few steps so that I can progress quickly on my reading goals.
+* As a reader, I want to have access to recommendations/ reviews about books so that it can help me to choose the next book to read.
+* As a reader, I want to save book in a wishlist so that I can buy it later.
 
 
 2. Returning Visitors Goals
 
-* As a reader, I want to be encouraged to read more so that I can reach my reading goal 
-* As a reader, I want to see my reading goals progress so that I can be motivated to read more
-* As a reader, I want to build a list of my future readings, so that I don't lose time browsing online for new books
-* As a reader, I want to be able to manage a list of future readings so that I know what would be my next purchase
+* As a reader, I want to be encouraged to read more so that I can reach my reading goal.
+* As a reader, I want to see my reading goals progress so that I can be motivated to read more.
+* As a reader, I want to build a list of my future readings, so that I don't lose time browsing online for new books.
+* As a reader, I want to be able to manage a list of future readings so that I know what would be my next purchase.
 
 3. Frequent User Goals
 
-* As a reader, I want to see the most liked/successful/trendy books on a certain period to not miss out so that I can be up to date about trendy readings
+* As a reader, I want to see the most liked/successful/trendy books on a certain period to not miss out so that I can be up to date about trendy readings.
 * As a reader, I want to be informed about new book releases, events, and masterclasses so that I can improve my learning skills in general. 
 
 
@@ -69,31 +69,32 @@ c. restraints
 The color scheme choosen is in blue , purple, grey tones as these colors reflects "knowledge", "trust", 'mind" in correlation with personal growth.
 
 The main colours used for this project are as follow : 
-" 
+
 * `#fafafa`: this is creamy white for the light shades.
-This color will be used as the background for the dark on light designs and the text color of an inverted design
+This color will be used as the background for the dark on light designs and the text color of an inverted design.
 
 * `RoyalBlue`: this is a grey-blue color for the light accent. A simmilar version  is also use on certain elements.
 This color is used to bring attention to design elements by contrasting with the rest of the palette.
 
-* `var(--bs-purple)`: "Purpleheart" is a deep bright purple for the dark accent and `#B24DD1`: "Cindy' is a pop magenta. These colors will be to work on the dark accents. for the dark accents
-They are used to catch the eye of the user to show some important information but they can be linked also to temporary information
+* `var(--bs-purple)`: "Purpleheart" is a deep bright purple for the dark accent and `#B24DD1`: "Cindy' is a pop magenta. These colors will be to work on the dark accents.
+They are used to catch the eye of the user to show some important information but they can be linked also to temporary information.
 
-* `#2A294A`: "Martinique" is a dark-grey color for the dark shades or the outline
+* `#2A294A`: "Martinique" is a dark-grey color for the dark shades or the outline.
 This color is used for dark on light designs and as a background for inverted designs.
 
 
 2. Typography
-The `Lato` font is the main font used throughout the whole website with `sans-serif`
+The `Lato` font is the main font used throughout the whole website with `sans-serif`.
 as fallback fonts in a case for any reason, the font isn't being imported into the site correctly. 
 The space between letters and the comforting shape makes `Lato`font a great choice for this website as it makes reading easy and accessible.
 
 
 3. Imagery / Video
-Imagery is important in this website to illustrate the books library and experts' opinions
+Imagery is important in this website to illustrate the books library and experts' opinions.
 *  A carousel component has been integrated and it has been designed to be striking and catch the user's attention on the different options that the website could offer.
 * Free images from the topic "reading" "books" "library" and "purple" were selected on websites sush as [Pexel](https://www.pexels.com/fr-fr/) and [Unsplash](https://unsplash.com/login) in order to illustrate the colors chosen. Also each book has their own book image displayedbooks datatbase.
-* Book image were taken from amazon and hosted in Cloudinary
+* Book image were taken from amazon and hosted in Cloudinary.
+
 
 ### Branding research 
 
@@ -142,10 +143,10 @@ Imagery is important in this website to illustrate the books library and experts
 * The website is structured in 4 pages : `Readflix`, `Collections`, `Community`, `MyBookLog`, + 2 extra pages for sign up and login.
 * The website's pages and different features are responsive on all device sizes. 
 * Each page features a responsive header with a navigation bar and a convenient placement of the logo (top left).
-* Users can find a sign-up option 
-* Users can find a login option if they already created an account
+* Users can find a sign-up option.
+* Users can find a login option if they already created an account.
 * There is a carousel component with 4 slides to match the structure of the site.
-* There is a form in which users can request to receive a free ebook about reading/personal development
+* There is a form in which users can request to receive a free ebook about reading/personal development.
 * There is a footer with copyright information and social media links. 
 * User can scroll up to the top thanks to an arrow button.
 * The general features of the site are in one space base_template.
@@ -154,18 +155,18 @@ Imagery is important in this website to illustrate the books library and experts
 * The `Readflix` page features a special selection of books for the month.
 * There is a navigation bar with a logo and a hamburger menu for mobile.
 * A carousel will allow you to slide to different pages to access the different sections of the website. 
-* A section called Readflix will present a selection of 12 books for the month belonging to different type of collection
+* A section called Readflix will present a selection of 12 books for the month belonging to different type of collection.
 
 #### Collections
 * The `Collections` page features 1 column wide for mobile devices, 2 columns wide for tablets and 4 columns wide for desktop.
-* THere is a search bar in which isers can search books by titlte and by author name.
-* There are 12 dimensions for personal development with a button format
-    - Health and fitness
+* There is a search bar in which users can search books by title and by author name.
+* There are 12 dimensions for personal development:
+    - Health
     - Intellectual
     - Emotionnal
     - Character
     - Spititual 
-    - Love relationship
+    - Relationship
     - Parenting
     - Social
     - Career
@@ -179,14 +180,14 @@ Imagery is important in this website to illustrate the books library and experts
 #### Community
 * The `Community` page features 1 column wide for mobile devices, 2 columns wide for tablets, and 4 columns wide for desktops. 
 * This page displays random inspirational quotes to motivate users to read more.
-* This page displays people and their readings recommendations/reviews
+* This page displays people and their readings recommendations/reviews.
 * Users can find also multiple articles on how to integrate more reading into their life and make it part of their personal development.
-For example, 10 ways to make more time for reading
+For example, 10 ways to make more time for reading.
 
 #### MyBookLog
 * The `MyBookLog` page features 1 column wide for mobile devices, 2 columns wide for tablets, and 4 columns wide for desktops. 
 * Users can set their reading goals and edit them if needed.
-* Users can have a list of their future readings
+* Users can have a list of their future readings.
 
 
 ### Existing features 
@@ -198,8 +199,8 @@ In the mobile version, the navigation bar is turning into a hamburger menu for a
 * Footer copyright info - Proof of brand and content protection is available on each page.
 * Footer social media icons - Allows users to be redirected to social media platforms to stay connected.
 
-2. Summary page features specificities
-* `Reaflix`: Allows users to 
+2. Summary page features specificities:
+* `Reaflix`: Allows users to:
     - specificity 1: have a specific focus of the month on a specific book collection
     - specificity 2: be redirected in one click to the Amazon site to buy the book
     - specificity 3: save books to profile in a wishlist
@@ -208,9 +209,8 @@ In the mobile version, the navigation bar is turning into a hamburger menu for a
     - specificity 2: search books to read via collections/genre 
     - specificity 3: save books to profile in a wishlist
 * `Community`: Allows users to 
-    - specificity 1: generate random motivational quote
-    - specificity 2: check reviews from book authors
-    - specificity 3: read news about reading tips and personal development
+    - specificity 1: check reviews from book authors
+    - specificity 2: read news about reading tips and personal development
 * `MyBooklog`: Allows users to 
     - specificity 1: set and edit their reading goal statement
     - specificity 2: view their books wishlist + remove books from the wishlist
@@ -222,20 +222,20 @@ In the mobile version, the navigation bar is turning into a hamburger menu for a
 
 ### Features to implement in the future
 
-* Buy directly on the Bookcytocin platform and not go through affiliate link via Amazon
-* Users can exchange their books with other members
-* Users can give away their book in exchange for discounts
+* Buy directly on the Bookcytocin platform and not go through affiliate link via Amazon.
+* Users can exchange their books with other members.
+* Users can give away their book in exchange for discounts.
 * Users can have access to a history of their activities. A record is accessible if they buy a book, exchange a book or leave a review, etc.
-* Users can contact the website owner to request general information thanks to a contact form
+* Users can contact the website owner to request general information thanks to a contact form.
 * Users receives a confirmation email once the contact form is completed.
-* Users can follow a profile from experts to receive recommendations by email
-* Users can track their readings with more status than saved (ie : status: saved, reading, or finished )
-* Users can sell their books and edit their entry
-* Possibility to add / edit reviews of books via MyBookLog page profile/history of review
-* Vote for the readflix of the month
-* Share a book with a friend via social media
-* Reset their goal commitment
-* Prevent user from saving the same book twice
+* Users can follow a profile from experts to receive recommendations by email.
+* Users can track their readings with more status than saved (ie : status: saved, reading, or finished ).
+* Users can sell their books and edit their entry.
+* Possibility to add / edit reviews of books via MyBookLog page profile/history of review.
+* Vote for the readflix of the month.
+* Share a book with a friend via social media.
+* Reset their goal commitment.
+* Prevent users from saving the same book twice.
 
 
 ## Technologie Used 
@@ -289,7 +289,7 @@ Luci app was used to mindmap and have an overview of the database strategies and
 
 ## Testing 
 
-Testing information can be found in the following file [View](testing.md))
+Testing information can be found in the following file [View](testing.md).
 
 ## Deployment
 
@@ -297,20 +297,20 @@ Testing information can be found in the following file [View](testing.md))
 
 The project was deployed to Heroku following the next steps:
 
-1. Create a requirements.txt file using the terminal command `pip freeze > requirements.txt`
-2. Create a Procfile with the terminal command `echo web: python app.py > Procfile`
-3. Proceed with git add and git commit the new requirements and Procfile and then git push the project to GitHub
+1. Create a requirements.txt file using the terminal command `pip freeze > requirements.txt`.
+2. Create a Procfile with the terminal command `echo web: python app.py > Procfile`.
+3. Proceed with git add and git commit the new requirements and Procfile and then git push the project to GitHub.
 4. Create a new app on [Heroku website](https://dashboard.heroku.com/) by clicking the "New" button on your dashboard. Give it a name and set the region to Europe.
-5. From the Heroku dashboard of your newly created application, click on "Deploy", "Deployment method" and "select Github"
-6. Confirm the linking of the Heroku app to the correct Github repository 
-7. in the Heroku dashboard for the application, click on "Settings" > "Reveal Config Vars" 
-8. Set the following config vars
+5. From the Heroku dashboard of your newly created application, click on "Deploy", "Deployment method" and "select Github".
+6. Confirm the linking of the Heroku app to the correct Github repository.
+7. In the Heroku dashboard for the application, click on "Settings" > "Reveal Config Vars".
+8. Set the following config vars:
 IP : 
 MONGO_URI : 
 PORT : 
 SECRET_KEY : 
-9. Click on enable deployment
-10. Wait until you get notified a the bottom of the page that your app is deployed and vie the deployment
+9. Click on enable deployment.
+10. Wait until you get notified a the bottom of the page that your app is deployed and vie the deployment.
 
 
 ## Credits
@@ -319,20 +319,20 @@ SECRET_KEY :
 
 1. Readflix
 * Using for loop in Flask [Here](https://www.geeksforgeeks.org/python-using-for-loop-in-flask/)
-* how to position an element bootstrap [Here](https://www.geeksforgeeks.org/bootstrap-positioning-an-element-with-examples/)
+* How to position an element bootstrap [Here](https://www.geeksforgeeks.org/bootstrap-positioning-an-element-with-examples/)
 * Python string length | len() method Example [Here](https://www.guru99.com/python-string-length-len.html)
 * Using the len() Function in Python [Here](https://realpython.com/len-python-function/)
 * MongoDB — What is the best way to retrieve a random document from a collection? [Here](https://www.kindacode.com/snippet/mongodb-get-a-random-document-from-a-collection/)
 
 
 2. Collections
-* “how to display information if button is pressed flask” [Here](https://www.codegrepper.com/code-examples/python/how+to+display+information+if+button+is+pressed+flask)
-* how to detect which update button was clicked with Flask python(mongoDB) [Here](https://stackoverflow.com/questions/55089384/how-to-detect-which-update-button-was-clicked-with-flask-pythonmongodb)
+* “How to display information if button is pressed flask” [Here](https://www.codegrepper.com/code-examples/python/how+to+display+information+if+button+is+pressed+flask)
+* How to detect which update button was clicked with Flask python(mongoDB) [Here](https://stackoverflow.com/questions/55089384/how-to-detect-which-update-button-was-clicked-with-flask-pythonmongodb)
 * HTML DOM addEventListener() Method for the button collections [Here](https://www.w3schools.com/jsref/met_element_addeventlistener.asp)
 
 
 3. Community
-* get bootstrap blog features for the community [Here](https://getbootstrap.com/docs/5.1/examples/blog/)
+* Get bootstrap blog features for the community [Here](https://getbootstrap.com/docs/5.1/examples/blog/)
 * Generate random quote using JS [Here](https://codepen.io/robersonj/pen/xLOwLG)
 
 
@@ -345,7 +345,7 @@ SECRET_KEY :
 
 5. Sign up / Log in / Log out
 * Code Institute task's manager project : [Here](https://github.com/Code-Institute-Solutions/TaskManagerAuth)
-* Jinja loops and conditionnal tutorial [Here](https://ttl255.com/jinja2-tutorial-part-2-loops-and-conditionals/)
+* Jinja loops and conditionnal tutorial : [Here](https://ttl255.com/jinja2-tutorial-part-2-loops-and-conditionals/)
 
 5. General 
 
@@ -386,9 +386,9 @@ Bookcytocin website was inspired by the following websites :
 - Peer-to-peer support from the Code Institute Slack community.
 
 ## Author 
-- Florence Mezino, studying Full Stack Software Development at Code Institute (March 2021- May 2022)
+- Florence Mezino, studying Full Stack Software Development at Code Institute (March 2021- May 2022).
 [Github](https://github.com/florencemezino)
 
 ## Feedback
-If you have any feedback, please reach out to the developer of this project Florence Mezino at florence.mezino@outlook.com
+If you have any feedback, please reach out to the developer of this project Florence Mezino at florence.mezino@outlook.com.
 Thank you!

@@ -41,10 +41,6 @@ def readflix():
     """
     Display books in readflix view and save book to user's wishlist
     """
-    if 'user' not in session:
-        flash('please login to complete this request')
-        return redirect(url_for('login'))
-
     if request.method == "POST":
         book_id = request.form.get("book_id")
         book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
@@ -90,10 +86,6 @@ def collections():
     """
     Display books in collections, save book to user's wishlist
     """
-    if 'user' not in session:
-        flash('please login to complete this request')
-        return redirect(url_for('login'))
-
     if request.method == "POST":
         book_id = request.form.get("book_id")
         book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
@@ -140,7 +132,7 @@ def delete_saved_book(book_id):
     Remove book from user's wishlist
     """
     if 'user' not in session:
-        flash('please login to complete this request')
+        flash('Please login to complete this request')
         return redirect(url_for('login'))
     mongo.db.users.update_one({"username": session["user"]}, {"$pull": {
         'saved_books': {"_id": book_id},
@@ -167,7 +159,7 @@ def profile(username):
     Update user's goal and get saved books
     """
     if 'user' not in session:
-        flash('please login to complete this request')
+        flash('Please login to complete this request')
         return redirect(url_for('login'))
 
     user = mongo.db.users.find_one(
@@ -266,7 +258,7 @@ def delete_profile(id):
     Allow user to delete profile
     """
     if 'user' not in session:
-        flash('please login to complete this request')
+        flash('Please login to complete this request')
         return redirect(url_for('login'))
 
     mongo.db.users.find_one(
@@ -299,4 +291,4 @@ if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP"),
         port=int(os.environ.get("PORT")),
-        debug=True)
+        debug=False)
