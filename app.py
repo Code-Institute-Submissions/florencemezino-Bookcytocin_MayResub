@@ -1,6 +1,4 @@
 # pylint: disable=missing-module-docstring
-# pylint: disable=missing-class-docstring
-# pylint: disable=missing-function-docstring
 
 import os
 from flask import (
@@ -24,6 +22,9 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def index():
+    """
+    Display home page
+    """
     return render_template("bookcytocin.html", page_title="Home")
 
 
@@ -40,6 +41,10 @@ def readflix():
     """
     Display books in readflix view and save book to user's wishlist
     """
+    if 'user' not in session:
+        flash('please login to complete this request')
+        return redirect(url_for('login'))
+
     if request.method == "POST":
         book_id = request.form.get("book_id")
         book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
@@ -66,11 +71,29 @@ def readflix():
             "index.html", page_title="Readflix", books=books)
 
 
+@app.route("/get_collections/<collection_name>", methods=["GET", "POST"])
+def get_collections(collection_name):
+    """
+    Display books by collection
+    """
+    allcollections = list(mongo.db.collections.find())
+    books = list(mongo.db.books.find({"collection_name": collection_name}))
+
+    flash('Search results for "' + collection_name + '"', 'success')
+    return render_template(
+        "collections.html", page_title="Collections",
+        allcollections=allcollections, books=books)
+
+
 @app.route("/collections", methods=["GET", "POST"])
 def collections():
     """
-    Display books in collections view and save book to user's wishlist
+    Display books in collections, save book to user's wishlist
     """
+    if 'user' not in session:
+        flash('please login to complete this request')
+        return redirect(url_for('login'))
+
     if request.method == "POST":
         book_id = request.form.get("book_id")
         book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
@@ -92,14 +115,17 @@ def collections():
             "collections.html", page_title="Collections", user=user)
     else:
         books = list(mongo.db.books.find())
-        collections = list(mongo.db.collections.find())
+        allcollections = list(mongo.db.collections.find())
         return render_template(
             "collections.html", page_title="Collections", books=books,
-            collections=collections)
+            allcollections=allcollections)
 
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
+    """
+    Search books in the collections
+    """
     query = request.form.get("query")
     books = list(mongo.db.books.find({"$text": {"$search": query}}))
 
@@ -113,6 +139,9 @@ def delete_saved_book(book_id):
     """
     Remove book from user's wishlist
     """
+    if 'user' not in session:
+        flash('please login to complete this request')
+        return redirect(url_for('login'))
     mongo.db.users.update_one({"username": session["user"]}, {"$pull": {
         'saved_books': {"_id": book_id},
         }})
@@ -120,20 +149,6 @@ def delete_saved_book(book_id):
 
     username = session['user']
     return redirect(url_for("profile", username=username))
-
-
-@app.route("/get_collections/<collection_name>", methods=["GET", "POST"])
-def get_collections(collection_name):
-    """
-    Display books by collection
-    """
-    collections = list(mongo.db.collections.find())
-    books = list(mongo.db.books.find({"collection_name": collection_name}))
-
-    flash('Search results for "' + collection_name + '"', 'success')
-    return render_template(
-        "collections.html", page_title="Collections",
-        collections=collections, books=books)
 
 
 @app.route("/community")
@@ -151,6 +166,10 @@ def profile(username):
     """
     Update user's goal and get saved books
     """
+    if 'user' not in session:
+        flash('please login to complete this request')
+        return redirect(url_for('login'))
+
     user = mongo.db.users.find_one(
         {"username": session["user"]})
     if user:
@@ -246,6 +265,10 @@ def delete_profile(id):
     """
     Allow user to delete profile
     """
+    if 'user' not in session:
+        flash('please login to complete this request')
+        return redirect(url_for('login'))
+
     mongo.db.users.find_one(
         {"username": session["user"]})
     mongo.db.users.delete_one({'_id': ObjectId(id)})

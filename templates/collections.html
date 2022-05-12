@@ -5,7 +5,7 @@
     <div class="col-lg-12 col-md-8 mx-auto">
       <h2 class="fw-bold">Collections</h2>
       <p class="lead fw-light text-muted mb-5">The powerful journey of life in 12 collections. Select one of the collection below or use the search bar to travel through our library of  50+ books and explore all roads leading to your inner power.</p>
-      {% for collection in collections %}
+      {% for collection in allcollections %}
         <a class="fw-bold list-collection px-2 " href="{{ url_for('get_collections', collection_name=collection.collection_name) }}">  {{ collection.collection_name }} </a>
       {% endfor %}
     </div>
