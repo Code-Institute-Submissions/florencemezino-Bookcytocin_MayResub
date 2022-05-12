@@ -86,7 +86,6 @@ def collections():
         user = mongo.db.users.find_one({"username": session["user"]})
         return render_template(
             "collections.html", page_title="Collections", user=user)
-        
     else:
         books = list(mongo.db.books.find())
         collections = list(mongo.db.collections.find())
@@ -194,7 +193,7 @@ def signup():
         mongo.db.users.insert_one(signup)
 
         session["user"] = request.form.get("username").lower()
-        flash("You are in, {} ! Registration Successful.".format(
+        flash("You are in {} ! Registration Successful.".format(
             request.form.get("username")))
         return redirect(url_for("about", username=session["user"]))
 

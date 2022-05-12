@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="py-5 text-center container">
+<section class="py-2 text-center container">
   <div class="row py-lg-5">
     <div class="col-lg-12 col-md-8 mx-auto">
       <h2 class="fw-bold">MyBookLog</h2>
@@ -13,7 +13,7 @@
   <div class="py-5 text-center container-fluid">
     <div class="row mb-2">
       <div class="col-lg-12 col-md-8 mb-5">
-        <h2 class="fw-light">My Wishlist</h2>
+        <h2 class="fw-light">Wishlist</h2>
         <p class="lead text-muted">Manage your saved books and prepare your next reading. Remember, the world belongs to those who reads.</p>
       </div>
     </div>
@@ -95,7 +95,7 @@
     <div class="row mb-2">
       <div class="col-lg-12 col-md-8 mx-auto">
         <a class="lead fw-bold mb-5" href="{{ url_for('delete_profile', id=user._id) }}">Delete my profile</a>
-        <p class="text-muted small mb-4 mb-lg-0"></i> Are you sure you want to leave Bookcytocin ? By clicking all your data will be deleted.</p>
+        <p class="text-muted small mb-4 mb-lg-0">Are you sure you want to leave Bookcytocin ? By clicking all your data will be deleted.</p>
     </div>
     </div>
   </div>

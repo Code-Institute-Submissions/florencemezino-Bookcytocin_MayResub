@@ -4515,7 +4515,6 @@ textarea.form-control-lg {
   display: flex;
   flex-direction: column;
   min-width: 0;
-  height : -10rem;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
@@ -11444,7 +11443,7 @@ footer.footer {
   
   /* Carousel base class */
   .carousel {
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
   }
   /* Since positioning the image, we need to help out the caption */
   .carousel-caption {

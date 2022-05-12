@@ -15,7 +15,7 @@ W3C Markup Validator  / Jinja - `Success`
 
 Lighthouse - [Results](static/assets/testing/lighthousems3_results_resubmit.png)
 
-### Testing User Stories from User Experience (UX) Section
+### Testing User Stories from the User Experience (UX) Section
 
 Most common paths through the website:
 1. Reaflix > Collections > Community > MyBookLog

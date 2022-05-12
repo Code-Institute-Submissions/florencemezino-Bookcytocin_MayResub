@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="py-5 text-center container">
+<section class="py-2 text-center container">
   <div class="row py-lg-5">
     <div class="col-lg-12 col-md-8 mx-auto">
       <h2 class="fw-bold">Collections</h2>
@@ -9,7 +9,6 @@
         <a class="fw-bold list-collection px-2 " href="{{ url_for('get_collections', collection_name=collection.collection_name) }}">  {{ collection.collection_name }} </a>
       {% endfor %}
     </div>
-    
       <div class="col-lg-6 col-md-8 mx-auto mb-2">
         <form class="d-flex" action="{{ url_for('search') }}" method="POST">
           <input class="form-control me-2 validate mt-5" name="query" id="query" type="search" placeholder="Search book by title, author or collection" aria-label="Search" required>
@@ -17,9 +16,7 @@
           <button class="btn btn-outline-light mt-5" style="color:whitesmoke" type="submit">Submit</button>
         </form> 
       </div>
-
     </div>
-  </div>
 </section>
 
   <div class= container>   
@@ -42,19 +39,13 @@
                 {% if session.user %}
                 <form class="" method="POST" action="{{ url_for('collections') }}">
                   <input type="text" class="form-control" name="book_id" value="{{ book._id }}" aria-label="save_book" style="display:none;">
-                  {% if saved_books|length > 0 %}
-                  <button type="submit" class="btn btn-added btn-sm my-2">Added on wishlist</button>
-                  {% else %}
                   <button type="submit" class="btn btn-save btn-sm my-2">Save on wishlist</button>
-                  {% endif %} 
                 </form>
                 {% endif %} 
               </div>
             </div>
           </div>
         {% endfor %}
-      {% else %}
-      <!-- <p class="lead fw-light mb-5" style="color:purple;">Sorry, no books found! Try a different search</p> -->
       {% endif %} 
       {% if session.user %}
       <a class="lead fw-bold mt-5 mb-5" href="{{ url_for('profile', username=session['user']) }}" style="color:purple;">Manage your wishlist</a>
