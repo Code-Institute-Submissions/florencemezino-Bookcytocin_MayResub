@@ -1,3 +1,7 @@
+# pylint: disable=missing-module-docstring
+# pylint: disable=missing-class-docstring
+# pylint: disable=missing-function-docstring
+
 import os
 from flask import (
     Flask, render_template, redirect,
@@ -130,7 +134,6 @@ def get_collections(collection_name):
     return render_template(
         "collections.html", page_title="Collections",
         collections=collections, books=books)
-    return redirect(url_for("get_collections", username=session["user"]))
 
 
 @app.route("/community")
@@ -185,12 +188,12 @@ def signup():
             flash("Username already exists")
             return redirect(url_for("signup"))
 
-        signup = {
+        sign_up = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
             "saved_books": []
         }
-        mongo.db.users.insert_one(signup)
+        mongo.db.users.insert_one(sign_up)
 
         session["user"] = request.form.get("username").lower()
         flash("You are in {} ! Registration Successful.".format(
@@ -254,7 +257,7 @@ def delete_profile(id):
 
 
 @app.errorhandler(404)
-def page_not_found(e):
+def page_not_found(_e):
     """
     404 error page
     """
@@ -262,7 +265,7 @@ def page_not_found(e):
 
 
 @app.errorhandler(500)
-def server_error(e):
+def server_error(_e):
     """
     500 error page
     """

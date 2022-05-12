@@ -356,6 +356,7 @@ SECRET_KEY :
 * Error handlers [Here](https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/#returning-api-errors-as-json)
 * HTML5 Form Validation With the “pattern” Attribute [Here](https://webdesign.tutsplus.com/tutorials/html5-form-validation-with-the-pattern-attribute--cms-25145)
 * How TO - Scroll Back To Top Button [Here](https://www.w3schools.com/howto/howto_js_scroll_to_top.asp)
+* How do I disable "missing docstring" warnings at a file-level in Pylint? [Here](https://stackoverflow.com/questions/7877522/how-do-i-disable-missing-docstring-warnings-at-a-file-level-in-pylint)
 
 
 

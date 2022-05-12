@@ -65,8 +65,7 @@ function topFunction() {
 function generateQuote() {
     var randomNumber = Math.floor(Math.random() * quotes.length);
     var quote = quotes[randomNumber];
-//    document.getElementById("quote").textContent = quote.quote;
-//    document.getElementById("author").textContent = quote.author;
+
     $("#quote, #author").fadeOut(750, function(){
         $("#quote").text(quote.quote);
         $("#author").text(quote.author);
