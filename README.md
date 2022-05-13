@@ -128,7 +128,9 @@ Imagery is important in this website to illustrate the books library and experts
     - programs / functions overview - [[View](static/mindmap/programs.png)
         - register / login / search bar - [[View](static/mindmap/program1.png)
         - view books selections / browse books collections / browse recommendations - [View](static/mindmap/program2.png)
-        - view and edit goal statement / manage reading performance / add and view review / view reading or review insights - [View](static/mindmap/program3.png)
+        - view and edit goal statement / manage reading performance / wishlist [View](static/mindmap/program3.png)
+
+        - future feature : add, view, edit, remove review / view reading or review insights - [View](static/mindmap/program3.png)
     
 
 #### MongoDB database / collections structure
@@ -156,7 +158,8 @@ Imagery is important in this website to illustrate the books library and experts
 * The `Readflix` page features a special selection of books for the month.
 * There is a navigation bar with a logo and a hamburger menu for mobile.
 * A carousel will allow you to slide to different pages to access the different sections of the website. 
-* A section called Readflix will present a selection of 12 books for the month belonging to different type of collection.
+* A section called Readflix will present a special selection of 4 books (focus on one collection)
+* * From each book presented, users have the option to be save a book to their wishlist.
 
 #### Collections
 * The `Collections` page features 1 column wide for mobile devices, 2 columns wide for tablets and 4 columns wide for desktop.
@@ -172,15 +175,15 @@ Imagery is important in this website to illustrate the books library and experts
     - Social
     - Career
     - Financial 
-    - Quality of life
-    - Life vision
+    - Well-being
+    - Life 
 * In each section, readers  can find a list of books related to the genre.
 * From each book, users have the option to be redirected to the Amazon website to buy the book.
+* From each book, users have the option to be save a book to their wishlist.
 
 
 #### Community
 * The `Community` page features 1 column wide for mobile devices, 2 columns wide for tablets, and 4 columns wide for desktops. 
-* This page displays random inspirational quotes to motivate users to read more.
 * This page displays people and their readings recommendations/reviews.
 * Users can find also multiple articles on how to integrate more reading into their life and make it part of their personal development.
 For example, 10 ways to make more time for reading.
@@ -188,8 +191,8 @@ For example, 10 ways to make more time for reading.
 #### MyBookLog
 * The `MyBookLog` page features 1 column wide for mobile devices, 2 columns wide for tablets, and 4 columns wide for desktops. 
 * Users can set their reading goals and edit them if needed.
-* Users can have a list of their future readings.
-
+* Users can set a wishlist of their future readings and manage it.
+* Users can delete their profile.
 
 ### Existing features 
 
@@ -219,6 +222,7 @@ In the mobile version, the navigation bar is turning into a hamburger menu for a
 * `Account` : 2 pages / Allows users to :
     - specificity 1: sign up to MyBooLog profile
     - specificity 2: log in and log out from account
+    - other : for every page of the site, option to scroll to the top of the page
 
 
 ### Features to implement in the future
@@ -237,6 +241,7 @@ In the mobile version, the navigation bar is turning into a hamburger menu for a
 * Share a book with a friend via social media.
 * Reset their goal commitment.
 * Prevent users from saving the same book twice.
+* Set a "no result found" if no books appear using the search bar
 
 ---
 
