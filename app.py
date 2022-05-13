@@ -253,7 +253,7 @@ def logout():
 
 
 @app.route('/delete_profile/<id>', methods=['GET', 'POST'])
-def delete_profile(id):
+def delete_profile(user):
     """
     Allow user to delete profile
     """
@@ -265,7 +265,7 @@ def delete_profile(id):
         {"username": session["user"]})
     mongo.db.users.delete_one({'_id': ObjectId(id)})
 
-    session.clear()
+    session.clear(user)
     flash('Your profile has been deleted')
 
     return redirect(url_for("signup"))
