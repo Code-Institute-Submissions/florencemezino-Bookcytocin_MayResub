@@ -38,7 +38,7 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 - Lighthouse : [view results](static/testing/lighthousems3_results_resubmit.png)
 
----
+
 
 ## Testing User Stories from the User Experience (UX) Section
 
@@ -247,7 +247,6 @@ Most common paths through the website:
             - check length
             - check lower case
 
----
 
 ## Further Testing
 
@@ -268,7 +267,6 @@ Most common paths through the website:
     * A large amount of testing was done to ensure that all pages were linking correctly.
     * Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
 
----
 
 ## Known Bugs
 
@@ -282,7 +280,6 @@ b - Style
 * Improve user's wishlist view on mobile 
 * Improve global user-friendly aspect to prevent too much scrolling
 
----
 
 ## Feedback
 
