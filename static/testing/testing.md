@@ -16,7 +16,7 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 - Pep8 - `Success`
 
-- Gitpod report : delete_profile function (1)
+- Gitpod report (1)
 
     * Summary: 
         The delete_profile function works. When clicking "Delete profile", user profile gets deleted. However the following items appears in the console:
