@@ -10,13 +10,13 @@
 
 ### End-user 
 
-1. Goal: 
-End users for this project are readers who want to focus on their personal development and use the book as a real tool to grow in every area of life (love, finance, career, spiritual, intellectual, health, etc.).
+1. Goal
+- End users for this project are readers who want to focus on their personal development and use the book as a real tool to grow in every area of life (love, finance, career, spiritual, intellectual, health, etc.).
 The site owner's goal is to make money out of each sale thanks to an affiliate link but also to create a readers community.
 
 
 2.  Profile: Readers
-Users who want to focus on their personal development want to include more readings in their lives. They want to integrate more readings into their life by using the book as a real tool for their personal development journey. They would like to take time to read more and share their recommendations/reviews. They wish to have the possibility to see recommendations, save books for later and buy books online.
+- Users who want to focus on their personal development want to include more readings in their lives. They want to integrate more readings into their life by using the book as a real tool for their personal development journey. They would like to take time to read more and share their recommendations/reviews. They wish to have the possibility to see recommendations, save books for later and buy books online.
 
 
 a. Identity and behaviors
