@@ -136,6 +136,7 @@ Imagery is important in this website to illustrate the books library and experts
 2. Collections - [View](static/mongo_data/collections.png)
 3. Users - [View](static/mongo_data/users.png)
 
+---
 
 ## General Features
 
@@ -237,6 +238,7 @@ In the mobile version, the navigation bar is turning into a hamburger menu for a
 * Reset their goal commitment.
 * Prevent users from saving the same book twice.
 
+---
 
 ## Technologie Used 
 
@@ -286,10 +288,13 @@ StartBootstrap was used to get a landing page template to build the app
 12. [Lucidchart](https://lucid.app/)
 Luci app was used to mindmap and have an overview of the database strategies and structure
 
+---
 
 ## Testing 
 
 Testing information can be found in the following file [View](testing.md).
+
+---
 
 ## Deployment
 
@@ -312,6 +317,7 @@ SECRET_KEY :
 9. Click on enable deployment.
 10. Wait until you get notified a the bottom of the page that your app is deployed and vie the deployment.
 
+---
 
 ## Credits
 
@@ -385,9 +391,14 @@ Bookcytocin website was inspired by the following websites :
 - Tutor support at Code Institute for their support.
 - Peer-to-peer support from the Code Institute Slack community.
 
+---
+
 ## Author 
 - Florence Mezino, studying Full Stack Software Development at Code Institute (March 2021- May 2022).
 [Github](https://github.com/florencemezino)
+
+
+---
 
 ## Feedback
 If you have any feedback, please reach out to the developer of this project Florence Mezino at florence.mezino@outlook.com.
