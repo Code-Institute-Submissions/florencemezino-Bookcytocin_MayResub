@@ -12,7 +12,7 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 - W3C CSS Validator - `Success`
 
-- JS - `Success`
+- JShint - `Success`
 
 - Pep8 - `Success`
 
@@ -24,7 +24,7 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
         - info: Argument name "id" doesn't conform to snake_case naming style
 
     * Screens:
-        - delete profile function in app.py : [View](static/testing/delete_profile_function.png)
+        - delete profile function in app.py : [view](static/testing/delete_profile_function.png)
         - report delete profile id issue : [view](static/testing/delete_profile_report.png)
         - confirmation of working delete profile function : [view](static/testing/delete_profile_results.png)
 
@@ -222,11 +222,11 @@ Most common paths through the website:
 2. Footer
     - Footer code is identical on all html pages. Testing already completed.
 
-3. Log out appear
+3. Log out 
     - Go to "MyBookLog" from a desktop
         - Log in through the form
         - Check for button sign up transform into button log out for when user wants to log out
-        - Check when loggin out if flash appears : You are successfully logged out
+        - Check when logging out if flash appears : You are successfully logged out
 
 
 ### Sign up
@@ -240,7 +240,7 @@ Most common paths through the website:
 3. Sign up buttons 
     - Go to "Sign up" button in the top corner left from a desktop
         - Check buttons redirects to sign up form
-        - Check if the link "already user" from the sign up workd
+        - Check if link "already user" redirect to log in page
         - Check that the flash messages is working : Registration successful! + redirect to home page
         - Check for an existing user, flash is working : User alread exists
         - Check content of warning message about criteria regarding the creation of username and password.
