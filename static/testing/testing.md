@@ -13,6 +13,7 @@ W3C Markup Validator  / Jinja - `Success`
 - JS - `Success`
 - Pep8 - `Success`
 
+
 Lighthouse - [Results](static/assets/testing/lighthousems3_results_resubmit.png)
 
 ### Testing User Stories from the User Experience (UX) Section
@@ -74,6 +75,7 @@ Most common paths through the website:
 - Confirm that Explore button redirects to the collections page
 - Confirm the headings are responsive on all devices
 - Confirm that new member gets a welcome flash message 
+
 
 #### Readflix 
 
@@ -222,21 +224,28 @@ Most common paths through the website:
 
 ## Further Testing
 
-* The Website was tested on Google Chrome, Internet Explorer, Microsoft Edge, and Safari browsers.
-* Verify security of account / protect user account routing using a different browser (Safari) than the one used to develop this project (Google Chrome)
-    - flash message appears : "Please login to complete this request"
-* The website was viewed on a variety of devices such as Desktop, laptops, iPhone7, iPhone 8 & iPhone X (using developer tool)
-* A large amount of testing was done to ensure that all pages were linking correctly.
-* Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
+- Security:
+    * Verify security of account / protect user account routing using a different browser (Safari) than the one used to develop this project (Google Chrome)
+        - flash message appears : "Please login to complete this request"
 
+- Error handler:
+    * Verify if a wrong/unknown url will redirect to 404 error page.
 
+- Scroll to top:
+    * Verify if scroll to top button function works on every page
+
+- Other:
+    * The Website was tested on Google Chrome, Internet Explorer, Microsoft Edge, and Safari browsers.
+    * The website was viewed on a variety of devices such as Desktop, laptops, iPhone7, iPhone 8 & iPhone X (using developer tool)
+    * A large amount of testing was done to ensure that all pages were linking correctly.
+    * Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
 
 
 ## Known Bugs
 
 a- Functions
 
-- The same book can be saved twice in the wishlist (future feature: implement if the book is already saved in the wishlist function)
+- The same book can be saved twice in the wishlist (future feature: implement if the book is already saved in the wishlist, do not add)
 - If a book is saved twice in the user's wishlist when clicking 'remove' all entries related to that book get removed.  The book doesn't get removed one by one.
 
 b- Style
