@@ -138,7 +138,6 @@ Imagery is important in this website to illustrate the books library and experts
 2. Collections - [View](static/mongo_data/collections.png)
 3. Users - [View](static/mongo_data/users.png)
 
----
 
 ## General Features
 
