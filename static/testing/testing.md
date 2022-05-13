@@ -230,6 +230,7 @@ Most common paths through the website:
 
 - Error handler:
     * Verify if a wrong/unknown url will redirect to 404 error page.
+    * Forcing to crash using delete profile function to see 500 error page.
 
 - Scroll to top:
     * Verify if scroll to top button function works on every page
