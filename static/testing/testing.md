@@ -7,11 +7,13 @@ View the live project [Here](https://bookcytocin-project.herokuapp.com/)
 
 The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
 
-W3C Markup Validator  / Jinja - `Success` 
-> to validate Jinja code is to open up a webpage in your app, right click the page, click view source, and copy that code into the W3 HTML validator.
+- W3C Markup Validator  / Jinja - `Success` 
+(to validate Jinja code is to open up a webpage in your app, right click the page, click view source, and copy that code into the W3 HTML validator.)
 
 - W3C CSS Validator - `Success`
+
 - JS - `Success`
+
 - Pep8 - `Success`
 
 - Gitpod report : delete_profile function (1)
@@ -34,8 +36,7 @@ W3C Markup Validator  / Jinja - `Success`
         - Ignore a specific builtin "id" using Pylint : [Here](https://pythonshowcase.com/question/ignore-a-specific-builtin-id-using-pylint-python)
         - How to fix Pylint Warnings : [Here](https://www.mantidproject.org/How_to_fix_Pylint_Warnings.html)
 
-
-- Lighthouse : ![Results](static/testing/lighthousems3_results_resubmit.png)
+- Lighthouse : [view results](static/testing/lighthousems3_results_resubmit.png)
 
 ---
 
